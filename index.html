@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Les Dinedourelles</title>
+<meta name="description" content="Art africain, objets anciens et curiosités. La vitrine de la boutique eBay Les Dinedourelles.">
+<meta name="theme-color" content="#f4f4f1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>
+(function () {
+  var t = '';
+  try { t = localStorage.getItem('dd_theme') || ''; } catch (e) {}
+  if (t) document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="logo" href="#top" aria-label="Les Dinedourelles, accueil">Les Dinedourelles</a>
+    <nav class="bar-nav" aria-label="Navigation">
+      <a href="#collection">Collection</a>
+      <a href="#maison">La maison</a>
+      <button class="theme" id="themeBtn" type="button" aria-label="Changer de thème" title="Clair / sombre">◐</button>
+      <a class="ebay-link" id="storeLink" href="https://www.ebay.com/str/lesdinedourelles" target="_blank" rel="noopener">Boutique eBay ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <p class="eyebrow">Cabinet de curiosités</p>
+    <h1>Art africain, objets anciens et curiosités, <em>choisis un par un.</em></h1>
+    <ul class="facts" aria-label="La boutique en chiffres">
+      <li><b>176</b> objets déjà vendus</li>
+      <li><b>100 %</b> d'avis positifs</li>
+      <li><b>eBay</b> paiement et livraison sécurisés</li>
+    </ul>
+  </section>
+
+  <section id="collection" class="wrap collection">
+    <div class="notice" id="exampleNotice" hidden>
+      <b>Aperçu.</b> Ces objets sont un échantillon de la boutique, sans leurs photos. Le catalogue complet, avec photos et prix à jour, s'affichera automatiquement une fois la vitrine reliée à eBay.
+    </div>
+
+    <div class="toolbar">
+      <label class="search"><span class="sr-only">Rechercher</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="q" type="search" placeholder="Rechercher un objet, une origine, une matière…" autocomplete="off">
+      </label>
+      <label class="sort"><span class="sr-only">Trier</span>
+        <select id="sort">
+          <option value="recent">Ajouts récents</option>
+          <option value="asc">Prix croissant</option>
+          <option value="desc">Prix décroissant</option>
+        </select>
+      </label>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Catégories"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="maison" class="wrap maison">
+    <div>
+      <p class="eyebrow">La maison</p>
+      <h2>Des objets qui ont déjà eu une vie.</h2>
+    </div>
+    <div class="maison-text">
+      <p>Les Dinedourelles réunit des pièces d'art africain, des objets anciens et des curiosités chinés un à un : statuaire, mobilier, instruments, céramiques, objets de collection.</p>
+      <p>Chaque objet est vendu sur eBay. Le bouton « Voir sur eBay » vous mène à l'annonce, où se font la commande, le paiement et le suivi de livraison.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span class="logo small">Les Dinedourelles</span>
+    <span id="updated" class="muted"></span>
+    <a href="https://www.ebay.com/str/lesdinedourelles" target="_blank" rel="noopener" id="storeLink2">Boutique eBay ↗</a>
+  </div>
+</footer>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheetTitle">
+  <button class="close" id="closeSheet" type="button" aria-label="Fermer">✕</button>
+  <div class="sheet-body">
+    <div class="gallery">
+      <div class="stage" id="stage"></div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+    <div class="cartel big">
+      <p class="cat" id="sheetCat"></p>
+      <h2 id="sheetTitle"></h2>
+      <dl class="specs" id="sheetSpecs"></dl>
+      <p class="price" id="sheetPrice"></p>
+      <a class="buy" id="sheetBuy" href="#" target="_blank" rel="noopener">Voir sur eBay ↗</a>
+      <p class="muted small">Commande, paiement et livraison se font sur eBay.</p>
+    </div>
+  </div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+ "shop": "Les Dinedourelles",
+ "seller": "lesdinedourelles",
+ "storeUrl": "https://www.ebay.com/str/lesdinedourelles",
+ "updated": "",
+ "items": [
+  {"id": "ex1", "example": true, "title": "Congo Teke Fetish Statue", "price": 267.68, "currency": "USD", "condition": "Occasion", "category": "Art", "subcategory": "Art africain", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex2", "example": true, "title": "Lobi Wooden Stool", "price": 280.00, "currency": "USD", "condition": "Occasion", "category": "Art", "subcategory": "Art africain", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex3", "example": true, "title": "Antique Moroccan Khanjar 19th Century", "price": 358.40, "currency": "USD", "condition": "Occasion", "category": "Antiquités", "subcategory": "Armes anciennes", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex4", "example": true, "title": "Bronze Maria Jesus URGOITI, \"La Cigarrera\" 1986", "price": 334.88, "currency": "USD", "condition": "Occasion", "category": "Art", "subcategory": "Sculptures", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex5", "example": true, "title": "Antique drawing / 18th century", "price": 558.88, "currency": "USD", "condition": "Occasion", "category": "Art", "subcategory": "Dessins", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex6", "example": true, "title": "19th century cylinder music box", "price": 558.88, "currency": "USD", "condition": "Occasion", "category": "Antiquités", "subcategory": "Boîtes à musique", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex7", "example": true, "title": "Wooden Art Deco Selette", "price": 222.88, "currency": "USD", "condition": "Occasion", "category": "Antiquités", "subcategory": "Mobilier", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex8", "example": true, "title": "Career 19th Century Veterinary Surgeon Kit", "price": 537.60, "currency": "USD", "condition": "Occasion", "category": "Objets de collection", "subcategory": "Médecine ancienne", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex9", "example": true, "title": "Suite of Two Crystal and Silver Metal Ewer Decanters", "price": 537.60, "currency": "USD", "condition": "Occasion", "category": "Poterie et verre", "subcategory": "Cristal", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex10", "example": true, "title": "Antique Ceramic Flower Spade MICHEL GARDELLE Signed", "price": 189.28, "currency": "USD", "condition": "Occasion", "category": "Poterie et verre", "subcategory": "Céramique", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex11", "example": true, "title": "Venus with Roses after Falconet", "price": 190.40, "currency": "USD", "condition": "Occasion", "category": "Art", "subcategory": "Sculptures", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex12", "example": true, "title": "Industrial Artist's Mirror", "price": 313.60, "currency": "USD", "condition": "Occasion", "category": "Antiquités", "subcategory": "Mobilier", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex13", "example": true, "title": "Early 20th Century Leather Doctor Bag", "price": 99.68, "currency": "USD", "condition": "Occasion", "category": "Objets de collection", "subcategory": "Médecine ancienne", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex14", "example": true, "title": "Relief map South of France, signed Alabert", "price": 234.08, "currency": "USD", "condition": "Occasion", "category": "Objets de collection", "subcategory": "Cartes", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"},
+  {"id": "ex15", "example": true, "title": "1924 Roman parishioner in mother-of-pearl", "price": 189.28, "currency": "USD", "condition": "Occasion", "category": "Objets de collection", "subcategory": "Objets religieux", "images": [], "url": "https://www.ebay.com/str/lesdinedourelles", "location": "France"}
+ ]
+}
