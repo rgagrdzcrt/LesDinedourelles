@@ -24,7 +24,7 @@
       errT: 'Catalogue indisponible', errS: 'Rechargez la page dans un instant, ou consultez directement la boutique eBay.',
       onEbay: 'Voir sur eBay ↗', storeBtn: 'Voir la boutique eBay ↗', priceOnEbay: 'Prix sur eBay',
       condition: 'État', place: 'Lieu', ref: 'Référence', updated: 'Catalogue mis à jour le ', photo: 'Photo',
-      langBtn: 'EN', langAria: 'Switch to English', locale: 'fr-FR', cats: 'Catégories',
+      langBtn: 'EN', langAria: 'Switch to English', locale: 'fr-FR', cats: 'Catégories', view: "Voir l'objet",
     },
     en: {
       'nav.collection': 'Collection', 'nav.house': 'About', store: 'eBay store ↗', theme: 'Change theme',
@@ -44,7 +44,7 @@
       errT: 'Catalogue unavailable', errS: 'Reload the page in a moment, or visit the eBay store directly.',
       onEbay: 'View on eBay ↗', storeBtn: 'Visit the eBay store ↗', priceOnEbay: 'Price on eBay',
       condition: 'Condition', place: 'Location', ref: 'Reference', updated: 'Catalogue updated ', photo: 'Photo',
-      langBtn: 'FR', langAria: 'Passer en français', locale: 'en-US', cats: 'Categories',
+      langBtn: 'FR', langAria: 'Passer en français', locale: 'en-US', cats: 'Categories', view: 'View item',
     },
   };
   const CAT_EN = {
@@ -114,7 +114,7 @@
     $('count').textContent = list.length + ' ' + (list.length > 1 ? t('many') : t('one'));
     $('grid').innerHTML = list.length ? list.map((p, i) => `
       <button class="piece" type="button" data-id="${esc(p.id)}">
-        <div class="plinth">${plinth(p, i)}</div>
+        <div class="plinth" data-view="${esc(t('view'))}" style="view-transition-name:p${esc(String(p.id).replace(/[^a-zA-Z0-9]/g, ''))}">${plinth(p, i)}</div>
         <div class="cartel">
           <p class="cat">${esc(tr(p.subcategory || p.category))}</p>
           <h3>${esc(p.title)}</h3>
@@ -145,10 +145,53 @@
     $('sheet').showModal();
   }
 
+  /* ---------- Mouvement ---------- */
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Changement de filtre ou de tri : les objets glissent vers leur nouvelle place.
+  const swap = fn => (!calm && document.startViewTransition) ? document.startViewTransition(fn) : fn();
+
+  // Inclinaison du socle sous la souris (écrans avec survol uniquement).
+  if (!calm && matchMedia('(hover: hover)').matches) {
+    $('grid').addEventListener('pointermove', e => {
+      const pl = e.target.closest('.plinth');
+      if (!pl) return;
+      const r = pl.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      pl.style.setProperty('--ry', (x * 9).toFixed(2) + 'deg');
+      pl.style.setProperty('--rx', (-y * 9).toFixed(2) + 'deg');
+    });
+    $('grid').addEventListener('pointerout', e => {
+      const pl = e.target.closest('.plinth');
+      if (pl && !pl.contains(e.relatedTarget)) { pl.style.removeProperty('--rx'); pl.style.removeProperty('--ry'); }
+    });
+  }
+
+  // Barre resserrée une fois la page défilée.
+  const bar = document.querySelector('.bar');
+  const onScroll = () => bar.classList.toggle('scrolled', scrollY > 24);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Chiffres de l'ouverture qui défilent jusqu'à leur valeur.
+  function countUp() {
+    document.querySelectorAll('.facts b').forEach(b => {
+      const m = b.textContent.match(/^(\d+)(.*)$/);
+      if (!m || calm) return;
+      const end = Number(m[1]), rest = m[2], t0 = performance.now(), dur = 1400;
+      const step = now => {
+        const k = Math.min(1, (now - t0) / dur), v = Math.round(end * (1 - Math.pow(1 - k, 4)));
+        b.textContent = v + rest;
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  }
+
   $('grid').addEventListener('click', e => { const b = e.target.closest('.piece'); if (b) open(b.dataset.id); });
-  $('chips').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; active = b.dataset.cat; renderChips(); render(); });
+  $('chips').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; active = b.dataset.cat; swap(() => { renderChips(); render(); }); });
   $('q').addEventListener('input', render);
-  $('sort').addEventListener('change', render);
+  $('sort').addEventListener('change', () => swap(render));
   $('closeSheet').addEventListener('click', () => $('sheet').close());
   $('sheet').addEventListener('click', e => { if (e.target === $('sheet')) $('sheet').close(); });
 
@@ -174,7 +217,7 @@
       data = d;
       ['storeLink', 'storeLink2'].forEach(id => { if (d.storeUrl) $(id).href = d.storeUrl; });
       $('exampleNotice').hidden = !d.items.some(p => p.example);
-      applyLang(); renderChips(); render();
+      applyLang(); renderChips(); render(); countUp();
     })
-    .catch(() => { $('grid').innerHTML = `<div class="empty"><strong>${t('errT')}</strong>${t('errS')}</div>`; });
+    .catch(() => { countUp(); $('grid').innerHTML = `<div class="empty"><strong>${t('errT')}</strong>${t('errS')}</div>`; });
 })();
