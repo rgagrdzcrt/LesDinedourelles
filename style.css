@@ -103,6 +103,16 @@ h1 em { color: var(--brass); }
 .maison-text { max-width: 60ch; color: var(--muted); font-size: 17px; }
 .maison-text p:first-child { margin-top: 0; }
 
+.insta { display: inline-flex; align-items: center; gap: 14px; margin-top: 10px; padding: 14px 18px 14px 14px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; transition: border-color .15s ease; }
+.insta:hover { border-color: var(--brass); }
+.insta svg { width: 30px; height: 30px; flex: none; fill: none; stroke: var(--brass); stroke-width: 1.6; }
+.insta svg .dot { fill: var(--brass); stroke: none; }
+.insta span { display: grid; min-width: 0; }
+.insta b { font-weight: 700; font-size: 15px; overflow-wrap: anywhere; }
+.insta small { color: var(--muted); font-size: 13px; }
+.lang { width: auto; min-width: 36px; padding: 0 9px; border-radius: 999px; font: 500 12px/1 var(--mono); letter-spacing: .08em; }
+.foot-links { display: flex; gap: 18px; }
+
 .foot { border-top: 1px solid var(--line); padding-block: 28px calc(28px + env(safe-area-inset-bottom, 0px)); font-size: 14px; }
 .foot-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
 
@@ -146,6 +156,13 @@ h1 em { color: var(--brass); }
   .sheet-body { grid-template-columns: 1fr; }
   .gallery { padding: 56px 16px 16px; }
   .cartel.big { padding: 24px 20px calc(28px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (max-width: 420px) {
+  .logo { font-size: 18px; }
+  .bar-nav { gap: 6px; }
+  .bar-nav .ebay-link { min-height: 36px; padding: 0 10px; font-size: 12px; }
+  .theme { width: 34px; height: 34px; }
+  .foot-links { gap: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
