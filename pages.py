@@ -161,6 +161,56 @@ document.getElementById('thumbs').addEventListener('click', function (ev) {{
 """
 
 
+def write_feeds(items, data):
+    """Catalogue Pinterest (CSV) et flux RSS des nouveautés, liés aux pages objet."""
+    import csv
+    from email.utils import format_datetime
+
+    cols = ["id", "title", "description", "link", "image_link", "additional_image_link", "price",
+            "availability", "condition", "brand", "product_type", "google_product_category"]
+    with (ROOT / "pinterest.csv").open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=cols)
+        w.writeheader()
+        for p in items:
+            if p.get("price") is None:
+                continue
+            w.writerow({
+                "id": p["id"],
+                "title": p["title"][:500],
+                "description": summary(p),
+                "link": SITE + p["page"],
+                "image_link": p["images"][0],
+                "additional_image_link": ",".join(p["images"][1:10]),
+                "price": f"{p['price']:.2f} {p.get('currency') or 'USD'}",
+                "availability": "in stock",
+                "condition": "used",
+                "brand": SHOP,
+                "product_type": " > ".join(x for x in (p.get("category"), p.get("subcategory")) if x),
+                "google_product_category": "Home & Garden > Decor",
+            })
+
+    def date(p):
+        raw = p.get("listed") or p.get("firstSeen") or data.get("updated") or ""
+        try:
+            return datetime.fromisoformat(raw.replace("Z", "+00:00")[:25])
+        except ValueError:
+            return datetime.now(timezone.utc)
+    recent = sorted(items, key=date, reverse=True)[:50]
+    entries = "".join(
+        f"<item><title>{e(p['title'])} · {e(money(p))}</title><link>{SITE}{p['page']}</link>"
+        f"<guid isPermaLink=\"true\">{SITE}{p['page']}</guid><pubDate>{format_datetime(date(p).astimezone(timezone.utc))}</pubDate>"
+        f"<description>{e(summary(p))}</description>"
+        f"<enclosure url=\"{e(p['images'][0])}\" type=\"image/jpeg\" length=\"0\"/>"
+        f"<media:content url=\"{e(p['images'][0])}\" medium=\"image\"/></item>\n"
+        for p in recent
+    )
+    (ROOT / "feed.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">\n<channel>'
+        f"<title>{SHOP} · Nouveautés</title><link>{SITE}</link>"
+        "<description>Art africain, objets anciens et curiosités chinés à Pézenas. Nouvelles pièces chaque semaine.</description>"
+        "<language>fr</language>\n" + entries + "</channel></rss>\n", encoding="utf-8")
+
+
 def build(data):
     items = [p for p in data.get("items", []) if p.get("images") and not p.get("example")]
     tmp = ROOT / "objet.tmp"
@@ -177,6 +227,8 @@ def build(data):
     if PAGES_DIR.exists():
         shutil.rmtree(PAGES_DIR)
     tmp.rename(PAGES_DIR)
+
+    write_feeds(items, data)
 
     day = (data.get("updated") or datetime.now(timezone.utc).isoformat())[:10]
     urls = [f"<url><loc>{SITE}</loc><lastmod>{day}</lastmod></url>"]
