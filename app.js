@@ -186,14 +186,6 @@
     $('cats').innerHTML = cats.map(([c, list]) => `<button type="button" class="cat" data-cat="${esc(c)}"><div class="ph"><img src="${esc(list[0].images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></div><h3>${esc(tr(c))}</h3><p>${esc(t('pieces')(list.length))}</p></button>`).join('');
   }
 
-  const BANDS = [[0, 100], [100, 200], [200, 400], [400, Infinity]];
-  function bandLabel([a, b]) { return a === 0 ? t('under')(fmt(b)) : b === Infinity ? t('over')(fmt(a)) : t('between')(fmt(a), fmt(b)); }
-  function renderPrices() {
-    $('prices').innerHTML = BANDS.map((b, i) => {
-      const n = items.filter(p => p.price != null && p.price >= b[0] && p.price < b[1]).length;
-      return `<button type="button" class="price-tile" data-band="${i}"><b>${esc(bandLabel(b))}</b><span>${esc(t('piecesArrow')(n))}</span></button>`;
-    }).join('');
-  }
 
   function renderMosaic() {
     $('mosaic').innerHTML = items.slice(8, 16).map(p => `<button type="button" data-id="${esc(p.id)}" aria-label="${esc(ttl(p))}"><img src="${esc(p.images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('');
@@ -291,8 +283,6 @@
     if (col) { const c = COLLECTIONS.find(x => x.key === col.dataset.col); setFilter(filter && filter.key === c.key ? null : { key: c.key, label: t('cols')[c.key], test: c.test }); return; }
     const cat = e.target.closest('[data-cat]');
     if (cat) { const c = cat.dataset.cat; setFilter({ key: 'cat:' + c, label: tr(c), test: p => p.category === c }); return; }
-    const band = e.target.closest('[data-band]');
-    if (band) { const b = BANDS[Number(band.dataset.band)]; setFilter({ key: 'band' + band.dataset.band, label: bandLabel(b), test: p => p.price != null && p.price >= b[0] && p.price < b[1] }); return; }
     const opener = e.target.closest('[data-id]');
     if (opener && !opener.closest('#sheet')) {
       // Ctrl/Cmd-clic ou clic molette : la page de l'objet s'ouvre dans un nouvel onglet.
@@ -325,7 +315,7 @@
   function renderAll() {
     applyLang();
     if (!items.length) return;
-    renderNav(); renderHero(); renderCats(); renderPrices(); renderMosaic(); renderGrid();
+    renderNav(); renderHero(); renderCats(); renderMosaic(); renderGrid();
   }
 
   $('year').textContent = new Date().getFullYear();
