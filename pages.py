@@ -116,7 +116,7 @@ def render(p, related):
 <meta property="og:image" content="{e(images[0] if images else SITE + 'og-image.png')}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../style.css">
 {f'<script data-goatcounter="https://{GC}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>' if GC else ''}
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
@@ -126,7 +126,7 @@ def render(p, related):
 <div class="promo">Nouveautés chaque semaine · <b>Expédition soignée depuis l'Aude</b> · Paiement sécurisé par eBay</div>
 <header class="site-head">
   <div class="wrap top">
-    <a class="logo" href="../">Les <i>Dinedourelles</i></a>
+    <a class="logo" href="../" aria-label="Les Dinedourelles"><svg class="bird" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 14 C54 16 56 22 56 28 C66 26 84 22 98 30 C84 34 68 40 58 46 L60 62 L72 94 L54 70 L50 74 L46 70 L28 94 L40 62 L42 46 C32 40 16 34 2 30 C16 22 34 26 44 28 C44 22 46 16 50 14 Z"/></svg><span class="word">les <i>dinedourelles</i></span></a>
     <span></span>
     <div class="icons"><a class="icon-link" href="../#collection">← La collection</a></div>
   </div>

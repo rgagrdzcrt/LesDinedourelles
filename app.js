@@ -126,7 +126,6 @@
     { key: 'glass', test: p => /verre|glass|cristal|crystal|murano|opaline|carafe|decanter/.test(text(p)) },
     { key: 'asia', test: p => /asiat|chin|japan|japon|asian|satsuma|imari/.test(text(p)) },
     { key: 'collect', test: p => p.category === 'Objets de collection' },
-    { key: 'cheap', test: p => p.price != null && p.price < 100, hot: true },
   ];
 
   /* ---------- Langue ---------- */
