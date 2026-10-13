@@ -1,0 +1,11 @@
+{
+ "_note": "Corrections de vocabulaire appliquées après DeepL : si le texte français contient « fr », le mot anglais « faux » est remplacé par « en ».",
+ "termes": [
+  {"fr": "selette", "faux": "harness", "en": "plant stand"},
+  {"fr": "sellette", "faux": "harness", "en": "plant stand"},
+  {"fr": "selette", "faux": "chair", "en": "plant stand"},
+  {"fr": "sellette", "faux": "chair", "en": "plant stand"},
+  {"fr": "pique fleur", "faux": "flower vase", "en": "flower frog"},
+  {"fr": "pique-fleur", "faux": "flower vase", "en": "flower frog"}
+ ]
+}

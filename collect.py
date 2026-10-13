@@ -262,6 +262,24 @@ def add_english(products, previous, key):
     print(f"{len(todo)} annonce(s) traduite(s) en anglais.")
 
 
+CORRECTIONS = ROOT / "corrections.json"
+
+
+def fix_terms(products):
+    """Contresens connus de DeepL sur le vocabulaire de brocante (corrections.json)."""
+    if not CORRECTIONS.exists():
+        return
+    rules = json.loads(CORRECTIONS.read_text(encoding="utf-8")).get("termes", [])
+    for p in products:
+        for field, src in (("title_en", "title"), ("description_en", "description")):
+            text, fr = p.get(field) or "", (p.get(src) or "").lower()
+            for r in rules:
+                if r["fr"] in fr:
+                    text = re.sub(re.escape(r["faux"]), lambda m: r["en"] if m.group(0).islower() else r["en"].title() if field == "title_en" else r["en"].capitalize(), text, flags=re.I)
+            if text:
+                p[field] = text
+
+
 def slug(text):
     text = unicodedata.normalize("NFD", text.lower())
     text = "".join(c for c in text if not unicodedata.combining(c))
@@ -393,8 +411,9 @@ def main():
     products = sorted(found.values(), key=lambda p: p.get("listed") or "", reverse=True)
     deepl_key = os.environ.get("DEEPL_API_KEY", "").strip()
     add_english(products, previous, deepl_key)
+    fix_terms(products)
     cat_en = previous_data.get("cat_en", {})
-    missing = sorted({p["subcategory"] for p in products if p.get("subcategory")} - cat_en.keys())
+    missing = sorted({p.get(k) for p in products for k in ("category", "subcategory") if p.get(k)} - cat_en.keys())
     if missing and deepl_key:
         try:
             cat_en.update(zip(missing, deepl(missing, deepl_key)))
