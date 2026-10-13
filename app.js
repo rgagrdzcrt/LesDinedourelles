@@ -78,6 +78,16 @@
   try { favs = JSON.parse(localStorage.getItem('dd_favs') || '[]'); } catch (e) {}
   const saveFavs = () => { try { localStorage.setItem('dd_favs', JSON.stringify(favs)); } catch (e) {} };
 
+  /* ---------- Statistiques (GoatCounter, sans cookies) ---------- */
+  const track = (path, title) => { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path, title, event: true }); } catch (e) {} };
+  fetch('config.json', { cache: 'no-cache' }).then(r => r.json()).then(c => {
+    if (!c.goatcounter) return;
+    const sc = document.createElement('script');
+    sc.async = true; sc.src = 'https://gc.zgo.at/count.js';
+    sc.dataset.goatcounter = `https://${c.goatcounter}.goatcounter.com/count`;
+    document.head.appendChild(sc);
+  }).catch(() => {});
+
   /* ---------- Outils ---------- */
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -224,6 +234,7 @@
     const rows = [[t('category'), tr(p.category)], [t('detail'), p.subcategory], [t('condition'), tr(p.condition)], [t('shipping'), t('shipFrom')], [t('ref'), p.example ? '' : p.id]].filter(r => r[1]);
     $('sheetSpecs').innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
     $('sheet').showModal();
+    track('fiche/' + p.id, p.title);
   }
   function renderSheetFav() {
     if (!current) return;
@@ -234,7 +245,7 @@
   /* ---------- Événements ---------- */
   document.addEventListener('click', e => {
     const fav = e.target.closest('[data-fav]');
-    if (fav) { toggleFav(fav.dataset.fav); renderGrid(); return; }
+    if (fav) { toggleFav(fav.dataset.fav); if (favs.includes(String(fav.dataset.fav))) track('favori/' + fav.dataset.fav, 'Favori'); renderGrid(); return; }
     const col = e.target.closest('[data-col]');
     if (col) { const c = COLLECTIONS.find(x => x.key === col.dataset.col); setFilter(filter && filter.key === c.key ? null : { key: c.key, label: t('cols')[c.key], test: c.test }); return; }
     const cat = e.target.closest('[data-cat]');
@@ -256,6 +267,11 @@
   $('q').addEventListener('keydown', e => { if (e.key === 'Enter') $('collection').scrollIntoView({ behavior: 'smooth' }); });
   $('sort').addEventListener('change', () => { shown = PAGE; renderGrid(); });
   $('sheetFav').addEventListener('click', () => { if (current) { toggleFav(current.id); renderSheetFav(); renderGrid(); } });
+  $('sheetBuy').addEventListener('click', () => { if (current) track('ebay/' + current.id, 'Clic eBay : ' + current.title); });
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href*="instagram.com"], a[href*="linktr.ee"], #storeLink');
+    if (a) track(a.href.includes('instagram') ? 'sortie/instagram' : a.href.includes('linktr') ? 'sortie/linktree' : 'sortie/boutique-ebay', a.textContent.trim());
+  });
   $('closeSheet').addEventListener('click', () => $('sheet').close());
   $('sheet').addEventListener('click', e => { if (e.target === $('sheet')) $('sheet').close(); });
   $('langBtn').addEventListener('click', () => {

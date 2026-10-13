@@ -30,6 +30,7 @@ ROOT = Path(__file__).resolve().parent
 CONFIG = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
 OUT = ROOT / "products.json"
 SHOPIFY_OUT = ROOT / "shopify_products.csv"
+SOLD = ROOT / "sold.json"
 
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
@@ -159,6 +160,7 @@ def fetch_details(token, legacy_id):
     })
     aspects = [[a.get("name", ""), a.get("value", "")] for a in resp.get("localizedAspects") or [] if a.get("value")]
     return {
+        "listed": resp.get("itemCreationDate") or "",
         "aspects": aspects[:12],
         "description": plain_text(resp.get("shortDescription") or resp.get("description") or ""),
     }
@@ -202,6 +204,33 @@ def write_shopify(products):
     tmp.replace(SHOPIFY_OUT)
 
 
+def record_sold(before, found, today, partial):
+    """Objets présents à la collecte précédente et absents maintenant : vendus,
+    ou annonce retirée (l'API ne fait pas la différence). Ajoutés à sold.json."""
+    gone = [p for pid, p in before.items() if pid not in {str(k) for k in found}]
+    # Prudence : une collecte incomplète ou une chute brutale ne sont pas des ventes.
+    if partial or (before and len(gone) > max(10, len(before) * .3)):
+        print(f"{len(gone)} objets absents mais collecte douteuse : ventes non enregistrées.")
+        return
+    sold = json.loads(SOLD.read_text(encoding="utf-8")) if SOLD.exists() else []
+    known = {str(s["id"]) for s in sold}
+    for p in gone:
+        if str(p["id"]) in known:
+            continue
+        first = p.get("firstSeen") or today
+        try:
+            days = (datetime.fromisoformat(today) - datetime.fromisoformat(first[:10])).days
+        except ValueError:
+            days = None
+        sold.append({
+            "id": p["id"], "title": p.get("title"), "price": p.get("price"), "currency": p.get("currency"),
+            "category": p.get("category"), "subcategory": p.get("subcategory"),
+            "image": (p.get("images") or [""])[0], "firstSeen": first, "goneOn": today, "days": days,
+        })
+    SOLD.write_text(json.dumps(sold, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"{len(gone)} objet(s) sorti(s) du catalogue depuis la dernière collecte.")
+
+
 def main():
     client_id = os.environ.get("EBAY_CLIENT_ID", "").strip()
     client_secret = os.environ.get("EBAY_CLIENT_SECRET", "").strip()
@@ -211,12 +240,14 @@ def main():
 
     token = get_token(client_id, client_secret)
     found = {}
+    partial = False
     for cat_id, label in TOP_CATEGORIES.items():
         try:
             for raw in fetch_category(token, cat_id):
                 product = to_product(raw, label)
                 found.setdefault(product["id"], product)
         except RuntimeError as err:
+            partial = True
             print(f"Catégorie {label} ignorée : {err}")
         time.sleep(.3)
 
@@ -228,13 +259,20 @@ def main():
         print("Aucune annonce reçue : catalogue précédent conservé.")
         return 1
 
+    today = datetime.now(timezone.utc).date().isoformat()
+    before = {str(p.get("id")): p for p in previous if not p.get("example")}
+    for p in found.values():
+        old = before.get(str(p["id"]))
+        p["firstSeen"] = (old or {}).get("firstSeen") or today  # corrigée plus bas par la date eBay
+    record_sold(before, found, today, partial)
+
     # Détails : repris du catalogue précédent, demandés à eBay pour les nouvelles annonces seulement.
-    known = {str(p.get("id")): p for p in previous if "aspects" in p}
+    known = {str(p.get("id")): p for p in previous if "aspects" in p and p.get("listed")}
     asked = 0
     for p in found.values():
         old = known.get(str(p["id"]))
         if old:
-            p["aspects"], p["description"] = old.get("aspects", []), old.get("description", "")
+            p["aspects"], p["description"], p["listed"] = old.get("aspects", []), old.get("description", ""), old["listed"]
         elif asked < MAX_DETAILS_PER_RUN:
             try:
                 p.update(fetch_details(token, p["id"]))
@@ -243,6 +281,9 @@ def main():
             asked += 1
             time.sleep(.2)
     print(f"Détails demandés pour {asked} nouvelle(s) annonce(s).")
+    for p in found.values():
+        if p.get("listed") and p["listed"][:10] < p["firstSeen"]:
+            p["firstSeen"] = p["listed"][:10]
 
     products = sorted(found.values(), key=lambda p: p.get("listed") or "", reverse=True)
     data = {

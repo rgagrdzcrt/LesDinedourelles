@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parent
 PAGES_DIR = ROOT / "objet"
 SITE = "https://rgagrdzcrt.github.io/LesDinedourelles/"
 SHOP = "Les Dinedourelles"
+CONFIG = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
+GC = CONFIG.get("goatcounter", "")
 
 
 def slug(text):
@@ -116,6 +118,7 @@ def render(p, related):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../style.css">
+{f'<script data-goatcounter="https://{GC}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>' if GC else ''}
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body class="obj-page">
@@ -138,7 +141,7 @@ def render(p, related):
       <p class="kicker">{e(p.get('subcategory') or p.get('category'))}</p>
       <h1>{e(p['title'])}</h1>
       <p class="sheet-price">{e(money(p))}</p>
-      <a class="cta wide" href="{e(p.get('url'))}" target="_blank" rel="noopener">Acheter sur eBay ↗</a>
+      <a class="cta wide" href="{e(p.get('url'))}" target="_blank" rel="noopener" data-goatcounter-click="ebay/{e(p['id'])}" data-goatcounter-title="Clic eBay : {e(p['title'])}">Acheter sur eBay ↗</a>
       <dl class="specs">{''.join(rows)}</dl>
       {long_desc}
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>

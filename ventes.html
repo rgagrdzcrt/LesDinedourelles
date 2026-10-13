@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Ventes · Les Dinedourelles</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+.dash { padding-block: 40px 60px; }
+.dash h1 { font: 400 clamp(36px, 4vw, 54px)/1.05 var(--serif); }
+.dash .sub { color: var(--muted); margin: 6px 0 28px; max-width: 70ch; }
+.periods { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
+.periods button { padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; font-weight: 600; }
+.periods button[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 36px; }
+.kpi { padding: 20px; border: 1px solid var(--line); border-radius: 8px; }
+.kpi span { color: var(--muted); font-size: 13px; }
+.kpi b { display: block; margin-top: 6px; font: 400 36px/1 var(--serif); font-variant-numeric: tabular-nums; }
+.two-col { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px; align-items: start; }
+.dash h2 { font-size: 28px; margin-bottom: 14px; }
+.bars div { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 10px; align-items: center; margin: 8px 0; font-size: 14px; }
+.bars i { display: block; height: 10px; border-radius: 99px; background: var(--accent); min-width: 2px; }
+.bars em { font-style: normal; color: var(--muted); font-variant-numeric: tabular-nums; }
+.sold-list { display: grid; gap: 10px; }
+.sold-row { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px; border: 1px solid var(--line); border-radius: 8px; }
+.sold-row img { width: 56px; height: 56px; object-fit: cover; border-radius: 6px; background: var(--shade); }
+.sold-row b { display: block; font-size: 14px; line-height: 1.3; }
+.sold-row small { color: var(--muted); }
+.sold-row .p { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+.sold-row .p small { display: block; font-weight: 400; }
+.note-box { margin-top: 28px; padding: 14px 16px; border-radius: 8px; background: var(--soft); color: var(--muted); font-size: 13px; }
+@media (max-width: 760px) { .kpis { grid-template-columns: 1fr 1fr; } .two-col { grid-template-columns: 1fr; } .bars div { grid-template-columns: 110px minmax(0, 1fr) auto; } }
+</style>
+</head>
+<body>
+<header class="site-head"><div class="wrap top" style="grid-template-columns:auto auto;justify-content:space-between"><a class="logo" href="./">Les <i>Dinedourelles</i></a><span class="icon-link">Tableau de bord des ventes</span></div></header>
+<main class="wrap dash">
+  <h1>Ventes</h1>
+  <p class="sub" id="since">Objets sortis du catalogue eBay, vérifiés à chaque collecte (toutes les 6 heures).</p>
+  <div class="periods" id="periods">
+    <button type="button" data-days="30" aria-pressed="true">30 derniers jours</button>
+    <button type="button" data-days="90">3 mois</button>
+    <button type="button" data-days="365">12 mois</button>
+    <button type="button" data-days="0">Tout</button>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><span>Objets partis</span><b id="kN">—</b></div>
+    <div class="kpi"><span>Valeur des annonces</span><b id="kV">—</b></div>
+    <div class="kpi"><span>Délai moyen de vente</span><b id="kD">—</b></div>
+    <div class="kpi"><span>En vente actuellement</span><b id="kS">—</b></div>
+  </div>
+  <div class="two-col">
+    <section><h2>Par catégorie</h2><div class="bars" id="bars"></div></section>
+    <section><h2>Derniers objets partis</h2><div class="sold-list" id="list"></div></section>
+  </div>
+  <p class="note-box">« Partis » regroupe les objets vendus et les annonces retirées ou expirées : l'API eBay ne permet pas de les distinguer. La valeur correspond au dernier prix affiché, pas forcément au prix de vente final. Les délais sont calculés depuis la date de mise en ligne sur eBay.</p>
+</main>
+<script>
+(function () {
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  let sold = [], stock = [], days = 30;
+  const fmt = (v, c) => new Intl.NumberFormat('fr-FR', { style: 'currency', currency: c || 'USD', maximumFractionDigits: 0 }).format(v);
+
+  function render() {
+    const cut = days ? new Date(Date.now() - days * 864e5).toISOString().slice(0, 10) : '';
+    const list = sold.filter(s => !cut || s.goneOn >= cut).sort((a, b) => b.goneOn.localeCompare(a.goneOn));
+    const cur = (list[0] || stock[0] || {}).currency || 'USD';
+    const delays = list.map(s => s.days).filter(d => d != null);
+    $('kN').textContent = list.length;
+    $('kV').textContent = fmt(list.reduce((t, s) => t + (s.price || 0), 0), cur);
+    $('kD').textContent = delays.length ? Math.round(delays.reduce((a, b) => a + b, 0) / delays.length) + ' j' : '—';
+    $('kS').textContent = stock.length;
+    const by = {};
+    list.forEach(s => { const k = s.subcategory || s.category || 'Autres'; by[k] = (by[k] || 0) + 1; });
+    const max = Math.max(1, ...Object.values(by));
+    $('bars').innerHTML = Object.keys(by).length
+      ? Object.entries(by).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([k, n]) => `<div><span>${esc(k)}</span><i style="width:${n / max * 100}%"></i><em>${n}</em></div>`).join('')
+      : '<p class="sub">Aucun objet parti sur cette période.</p>';
+    $('list').innerHTML = list.length
+      ? list.slice(0, 40).map(s => `<div class="sold-row"><img src="${esc(s.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"><div><b>${esc(s.title)}</b><small>${esc(s.subcategory || s.category)} · parti le ${new Date(s.goneOn).toLocaleDateString('fr-FR')}</small></div><div class="p">${s.price != null ? esc(fmt(s.price, s.currency)) : ''}<small>${s.days != null ? 'en ' + s.days + ' j' : ''}</small></div></div>`).join('')
+      : '<p class="sub">Les premiers départs apparaîtront ici après les prochaines collectes.</p>';
+  }
+
+  $('periods').addEventListener('click', e => {
+    const b = e.target.closest('[data-days]'); if (!b) return;
+    days = Number(b.dataset.days);
+    document.querySelectorAll('#periods button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    render();
+  });
+
+  Promise.all([
+    fetch('sold.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : []).catch(() => []),
+    fetch('products.json', { cache: 'no-cache' }).then(r => r.json()).catch(() => ({ items: [] })),
+  ]).then(([s, p]) => {
+    sold = s; stock = p.items || [];
+    if (sold.length) $('since').textContent = `Objets sortis du catalogue eBay depuis le ${new Date(sold.map(x => x.goneOn).sort()[0]).toLocaleDateString('fr-FR')}, vérifiés toutes les 6 heures.`;
+    render();
+  });
+})();
+</script>
+</body>
+</html>

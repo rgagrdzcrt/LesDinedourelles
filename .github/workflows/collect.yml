@@ -31,6 +31,7 @@ jobs:
           git add products.json
           if [ -f shopify_products.csv ]; then git add shopify_products.csv; fi
           if [ -f sitemap.xml ]; then git add sitemap.xml; fi
+          if [ -f sold.json ]; then git add sold.json; fi
           if [ -d objet ]; then git add -A objet; fi
           if git diff --cached --quiet; then echo "Catalogue inchangé."; exit 0; fi
           git commit -m "Mise à jour du catalogue"
