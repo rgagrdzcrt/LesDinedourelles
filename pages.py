@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 PAGES_DIR = ROOT / "objet"
-SITE = "https://rgagrdzcrt.github.io/LesDinedourelles/"
+SITE = "https://lesdinedourelles.com/"
 SHOP = "Les Dinedourelles"
 CONFIG = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
 GC = CONFIG.get("goatcounter", "")

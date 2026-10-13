@@ -21,7 +21,7 @@ OUT = ROOT / "instagram"
 FONTS = ROOT / "fonts"
 PER_WEEK = 5
 INK, PAPER, SOFT, ACCENT, MUTED = (20, 20, 20), (255, 255, 255), (246, 245, 242), (156, 74, 42), (107, 107, 107)
-SITE = "rgagrdzcrt.github.io/LesDinedourelles"
+SITE = "lesdinedourelles.com"
 
 
 def font(name, size, weight=None):
