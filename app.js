@@ -33,7 +33,7 @@
       linktreeNote: '@broc_deco_les_dinedourelles · Selency, Vinted, WhatsApp et Facebook sur son Linktree', footText: "Art africain, objets anciens et curiosités. Brocante à Pézenas, envois depuis l'Aude.",
       footCol: 'Collection', footBuy: 'Acheter', footHouse: 'La maison', footStory: 'Notre histoire',
       updated: 'Catalogue mis à jour le ', close: 'Fermer', sheetNote: 'Commande, paiement et livraison se font sur eBay.',
-      buy: 'Acheter sur eBay ↗', seeStore: 'Voir la boutique eBay ↗', category: 'Catégorie', detail: 'Détail', condition: 'État',
+      descTitle: 'Description', descNote: '', buy: 'Acheter sur eBay ↗', seeStore: 'Voir la boutique eBay ↗', category: 'Catégorie', detail: 'Détail', condition: 'État',
       shipping: 'Expédition', shipFrom: "Depuis l'Aude, France", ref: 'Référence', photo: 'Photo', priceOnEbay: 'Prix sur eBay',
       locale: 'fr-FR', under: a => `Moins de ${a}`, between: (a, b) => `${a} à ${b}`, over: a => `Plus de ${a}`,
       cols: { africa: 'Arts premiers', ceramics: 'Céramiques', glass: 'Verrerie', asia: 'Asie', collect: 'Objets de collection', cheap: 'Moins de 100 $', all: 'Toute la collection' },
@@ -62,7 +62,7 @@
       linktreeNote: '@broc_deco_les_dinedourelles · Selency, Vinted, WhatsApp and Facebook on his Linktree', footText: 'African art, antiques and curiosities. Antiques stall in Pézenas, shipping from the Aude, France.',
       footCol: 'Collection', footBuy: 'Shop', footHouse: 'About', footStory: 'Our story',
       updated: 'Catalogue updated ', close: 'Close', sheetNote: 'Ordering, payment and delivery take place on eBay.',
-      buy: 'Buy on eBay ↗', seeStore: 'Visit the eBay store ↗', category: 'Category', detail: 'Detail', condition: 'Condition',
+      descTitle: 'Description', descNote: 'Written by the seller in French.', buy: 'Buy on eBay ↗', seeStore: 'Visit the eBay store ↗', category: 'Category', detail: 'Detail', condition: 'Condition',
       shipping: 'Shipping', shipFrom: 'From the Aude, France', ref: 'Reference', photo: 'Photo', priceOnEbay: 'Price on eBay',
       locale: 'en-US', under: a => `Under ${a}`, between: (a, b) => `${a} to ${b}`, over: a => `Over ${a}`,
       cols: { africa: 'Tribal art', ceramics: 'Ceramics', glass: 'Glassware', asia: 'Asian art', collect: 'Collectibles', cheap: 'Under $100', all: 'Whole collection' },
@@ -252,6 +252,11 @@
     $('sheetBuy').href = p.url || data.storeUrl;
     $('sheetBuy').textContent = p.example ? t('seeStore') : t('buy');
     renderSheetFav();
+    const desc = String(p.description || '').trim();
+    $('sheetDesc').hidden = !desc;
+    $('sheetDescTitle').textContent = t('descTitle');
+    $('sheetDescText').textContent = desc;
+    $('sheetDesc').dataset.note = t('descNote');
     const rows = [[t('category'), tr(p.category)], [t('detail'), tr(p.subcategory)], [t('condition'), tr(p.condition)], [t('shipping'), t('shipFrom')], [t('ref'), p.example ? '' : p.id]].filter(r => r[1]);
     $('sheetSpecs').innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
     $('sheet').showModal();
