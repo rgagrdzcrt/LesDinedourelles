@@ -1,0 +1,34 @@
+name: Kit Instagram de la semaine
+on:
+  schedule:
+    - cron: '0 5 * * 1'   # chaque lundi, 6 h ou 7 h en France
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: catalogue
+  cancel-in-progress: false
+jobs:
+  kit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Préparer les visuels
+        run: |
+          pip install --quiet pillow
+          python instagram.py
+      - name: Enregistrer le kit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A instagram
+          if git diff --cached --quiet; then echo "Kit inchangé."; exit 0; fi
+          git commit -m "Kit Instagram de la semaine"
+          git pull --rebase || { git rebase --abort; echo "Mise à jour concurrente : ignorée."; exit 0; }
+          git push
