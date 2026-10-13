@@ -36,7 +36,7 @@
       descTitle: 'Description', descNote: '', buy: 'Acheter sur eBay ↗', seeStore: 'Voir la boutique eBay ↗', category: 'Catégorie', detail: 'Détail', condition: 'État',
       shipping: 'Expédition', shipFrom: "Depuis l'Aude, France", ref: 'Référence', photo: 'Photo', priceOnEbay: 'Prix sur eBay',
       locale: 'fr-FR', under: a => `Moins de ${a}`, between: (a, b) => `${a} à ${b}`, over: a => `Plus de ${a}`,
-      cols: { africa: 'Arts premiers', ceramics: 'Céramiques', glass: 'Verrerie', asia: 'Asie', collect: 'Objets de collection', cheap: 'Moins de 100 €', all: 'Toute la collection' },
+      cols: { africa: 'Arts premiers', sculpture: 'Sculptures et statues', ceramics: 'Céramiques', vases: 'Vases', glass: 'Verrerie', asia: 'Asie', metal: 'Bronze et métal', lighting: 'Luminaires', pictures: 'Tableaux et dessins', jewellery: 'Bijoux', furniture: 'Mobilier et miroirs', antique: 'XIXe et avant', all: 'Toute la collection' },
     },
     en: {
       proto: '<b>Prototype</b> · This showcase is still being built: more features are coming soon. Purchases are made securely on eBay.',
@@ -65,7 +65,7 @@
       descTitle: 'Description', descNote: 'Written by the seller in French.', descAuto: 'Automatically translated from French.', buy: 'Buy on eBay ↗', seeStore: 'Visit the eBay store ↗', category: 'Category', detail: 'Detail', condition: 'Condition',
       shipping: 'Shipping', shipFrom: 'From the Aude, France', ref: 'Reference', photo: 'Photo', priceOnEbay: 'Price on eBay',
       locale: 'en-US', under: a => `Under ${a}`, between: (a, b) => `${a} to ${b}`, over: a => `Over ${a}`,
-      cols: { africa: 'Tribal art', ceramics: 'Ceramics', glass: 'Glassware', asia: 'Asian art', collect: 'Collectibles', cheap: 'Under €100', all: 'Whole collection' },
+      cols: { africa: 'Tribal art', sculpture: 'Sculpture', ceramics: 'Ceramics', vases: 'Vases', glass: 'Glassware', asia: 'Asian art', metal: 'Bronze and metal', lighting: 'Lighting', pictures: 'Paintings and drawings', jewellery: 'Jewellery', furniture: 'Furniture and mirrors', antique: '19th century and earlier', all: 'Whole collection' },
     },
   };
   const CAT_EN = { 'Antiquités': 'Antiques', 'Art': 'Art', 'Objets de collection': 'Collectibles', 'Poterie et verre': 'Pottery & glass', 'Jouets et modélisme': 'Toys & models', 'Bijoux et montres': 'Jewellery & watches', 'Maison et jardin': 'Home & garden', 'Livres': 'Books', 'Occasion': 'Used' };
@@ -119,13 +119,25 @@
   const text = p => norm([p.title, p.title_en, p.category, p.subcategory].join(' '));
   const heartSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 4.5 6.8 4.5c2.2 0 3.6 1.2 5.2 3 1.6-1.8 3-3 5.2-3 3.8 0 5.9 4 4.4 7.3C19.5 16.4 12 21 12 21Z"/></svg>';
 
-  /* Rubriques du menu : règles de tri sur le titre, la catégorie et le détail eBay. */
+  /* Rubriques du menu : mots-clés cherchés dans le titre (français et anglais) et le détail eBay.
+     Un objet peut appartenir à plusieurs rubriques. */
+  const words = p => norm([p.title, p.title_en, p.subcategory].join(' '));
+  const rule = re => p => re.test(words(p));
+  const titleOnly = p => norm([p.title, p.title_en].join(' '));
+  const ASIA = /asiat|\bchin(e|ois|oise|a|ese)|japan|japon|asian|satsuma|imari|vietnam|bouddha|buddha|\bthai|\binde?\b|indien|india|timor|indones|tibet|nepal|birman|meiji/;
   const COLLECTIONS = [
-    { key: 'africa', test: p => /ethni|afric|tribal|congo|lobi|teke|baoul|dogon|senouf|senufo|fang|yoruba|ashanti|bambara|kota|fetich|fetish|mask|masque/.test(text(p)) },
-    { key: 'ceramics', test: p => /ceram|faience|porcelain|porcelaine|gres|stoneware|poterie|pottery|earthenware|terre cuite/.test(text(p)) },
-    { key: 'glass', test: p => /verre|glass|cristal|crystal|murano|opaline|carafe|decanter/.test(text(p)) },
-    { key: 'asia', test: p => /asiat|chin|japan|japon|asian|satsuma|imari/.test(text(p)) },
-    { key: 'collect', test: p => p.category === 'Objets de collection' },
+    { key: 'africa', test: p => /afric|tribal|congo|lobi|teke|baoul|dogon|senouf|senufo|\bfang\b|yoruba|ashanti|bambara|\bkota\b|fetich|fetish|\bmask|masque|burkina|\bmali\b|nigeria|cote d.ivoire|gabon|cameroun|somalie|berbere|\brdc\b/.test(titleOnly(p)) || (/ethni/.test(words(p)) && !ASIA.test(words(p))) },
+    { key: 'sculpture', test: rule(/sculpt|statue|statuette|\bbuste?s?\b|figurine/) },
+    { key: 'ceramics', test: rule(/ceram|faience|porcelain|porcelaine|\bgres\b|stoneware|poterie|pottery|earthenware|terre cuite|vallauris|barbotine|majolica/) },
+    { key: 'vases', test: rule(/\bvases?\b|soliflore|tulipier/) },
+    { key: 'glass', test: rule(/\bverres?\b|glass|cristal|crystal|murano|opaline|carafe|decanter|\bflacons?\b|pate de verre/) },
+    { key: 'asia', test: p => ASIA.test(words(p).replace('encre de chine', '')) },
+    { key: 'metal', test: rule(/bronze|laiton|brass|cuivre|copper|\betain\b|pewter|fer forge|wrought iron|\bargent|silver|\bmetal/) },
+    { key: 'lighting', test: rule(/\blampes?\b|\blamps?\b|lustre|applique|eclairage|lighting|bougeoir|candlestick|chandelier/) },
+    { key: 'pictures', test: p => !/palette|sucrier/.test(titleOnly(p)) && (/tableau|peinture|painting|huile sur|oil on|aquarelle|watercolou?r|gravure|engraving|lithograph|dessin|drawing|lavis|photo d.art|encre de chine/.test(titleOnly(p)) || ['Peintures', 'Dessins, lavis', "Photographies d'art"].includes(p.subcategory)) },
+    { key: 'jewellery', test: p => !/boite a bijoux|jewel(le)?ry box/.test(titleOnly(p)) && /\bbagues?\b|collier|bracelet|bijou|pendentif|broche|jewel|necklace|pendant/.test(words(p)) },
+    { key: 'furniture', test: rule(/tabouret|\bstool|\bsieges?\b|chaise|fauteuil|armchair|s[e]?ll?ette|plant stand|miroir|mirror|horloge|pendule|\bclock|meuble|furniture|\bconsole\b|chairs?\b/) },
+    { key: 'antique', test: rule(/\bxix|\bxviii|\bxvii|19e|18e|17e|19th|18th|17th|objets du xixe et avant|napoleon|empire|louis (xv|xvi|philippe)/) },
   ];
 
   /* ---------- Langue ---------- */
@@ -142,8 +154,10 @@
 
   /* ---------- Sections fixes ---------- */
   function renderNav() {
-    $('nav').innerHTML = COLLECTIONS.map(c => `<button type="button" data-col="${c.key}" class="${c.hot ? 'hot' : ''}" aria-pressed="${filter && filter.key === c.key}">${esc(t('cols')[c.key])}</button>`).join('');
-    $('footCats').innerHTML = COLLECTIONS.slice(0, 5).map(c => `<li><button type="button" data-col="${c.key}">${esc(t('cols')[c.key])}</button></li>`).join('');
+    const shown = items.length ? COLLECTIONS.filter(c => items.some(c.test)) : COLLECTIONS;
+    const count = c => items.length ? `<small>${items.filter(c.test).length}</small>` : '';
+    $('nav').innerHTML = shown.map(c => `<button type="button" data-col="${c.key}" aria-pressed="${filter && filter.key === c.key}">${esc(t('cols')[c.key])}${count(c)}</button>`).join('');
+    $('footCats').innerHTML = shown.slice(0, 6).map(c => `<li><button type="button" data-col="${c.key}">${esc(t('cols')[c.key])}</button></li>`).join('');
   }
 
   function renderHero() {
