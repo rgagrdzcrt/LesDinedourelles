@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-13T18:21:22+00:00",
+ "updated": "2026-10-13T18:45:42+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -72,7 +72,18 @@
   "Vases": "Vases",
   "Vases, tulipiers, soliflores": "Vases, tulip vases, single-flower vases",
   "Verres, flûtes, services": "Glasses, flutes, sets",
-  "Voitures, camions et fourgons": "Cars, trucks, and vans"
+  "Voitures, camions et fourgons": "Cars, trucks, and vans",
+  "Art": "Art",
+  "Bijoux, montres": "Jewelry, watches",
+  "Instruments de musique": "Musical Instruments",
+  "Jouets et modélisme": "Toys and Model Making",
+  "Livres, BD, revues": "Books, Comics, Magazines",
+  "Maison": "Home",
+  "Monnaies": "Currencies",
+  "Objets de collection": "Collectibles",
+  "Photo, caméscopes": "Cameras, camcorders",
+  "Poterie et verre": "Pottery and Glass",
+  "Sports, vacances": "Sports, Vacations"
  },
  "items": [
   {
@@ -98,8 +109,8 @@
    "firstSeen": "2026-07-16",
    "aspects": [],
    "description": "Rare Et Ancien, pique fleurs MICHEL GARDELLE Objet De Collection Signé. 23*13cm 1 kilo",
-   "title_en": "Antique Ceramic Flower Vase by MICHEL GARDELLE, Signed Collectible Item",
-   "description_en": "Rare and Antique, MICHEL GARDELLE Signed Collectible Flower Vase. 23 x 13 cm, 1 kilo",
+   "title_en": "Antique Ceramic Flower Frog by MICHEL GARDELLE, Signed Collectible Item",
+   "description_en": "Rare and Antique, MICHEL GARDELLE Signed Collectible Flower frog. 23 x 13 cm, 1 kilo",
    "tr_src": "1352b23313e2",
    "page": "objet/ceramique-ancienne-pique-fleurs-michel-gardelle-objet-de-collection-si-257624060508.html"
   },
@@ -232,8 +243,8 @@
     ]
    ],
    "description": "Selette Art déco en bois (noyer), très bon état général. Très joli modèle. Dimensions 38*26cm Poids 3,2 kilos",
-   "title_en": "Art Deco Wooden Harness",
-   "description_en": "Art Deco wooden chair (walnut), in very good overall condition. Very attractive design. Dimensions: 38 x 26 cm. Weight: 3.2 kilograms",
+   "title_en": "Art Deco Wooden Plant Stand",
+   "description_en": "Art Deco wooden plant stand (walnut), in very good overall condition. Very attractive design. Dimensions: 38 x 26 cm. Weight: 3.2 kilograms",
    "tr_src": "6a8834e76003",
    "page": "objet/selette-art-deco-en-bois-257538439228.html"
   },
