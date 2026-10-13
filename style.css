@@ -48,9 +48,13 @@ button { cursor: pointer; border: 0; background: none; }
 #favBtn[aria-pressed="true"] svg { fill: var(--accent); }
 .badge { display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; }
 .lang { min-width: 38px; height: 32px; justify-content: center; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .06em; }
-.col-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 44px; align-items: start; }
-.col-layout .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.side { position: sticky; top: 150px; max-height: calc(100vh - 170px); overflow-y: auto; scrollbar-width: thin; }
+/* Colonne des catégories : fixe sur toute la hauteur, à gauche (ordinateur) ; panneau coulissant (téléphone). */
+@media (min-width: 1001px) {
+  .with-side { padding-left: 250px; }
+  .side { position: fixed; inset: 0 auto 0 0; z-index: 6; width: 250px; padding: 30px 18px; overflow-y: auto; scrollbar-width: thin; background: var(--paper); border-right: 1px solid var(--line); }
+  .with-side .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 1400px) { .with-side .products { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .side-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .side-head h3 { font: 600 12px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .side-close, .cats-btn { display: none; }
@@ -177,8 +181,6 @@ h2 { font: 400 clamp(32px, 3.4vw, 46px)/1.05 var(--serif); letter-spacing: -.01e
 
 /* ---------- Écrans moyens et téléphones ---------- */
 @media (max-width: 1000px) {
-  .col-layout { grid-template-columns: minmax(0, 1fr); }
-  .col-layout .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .side { position: fixed; inset: 0 auto 0 0; z-index: 20; width: min(330px, 86vw); max-height: none; padding: 22px 18px; background: var(--paper); transform: translateX(-102%); transition: transform .35s var(--ease); box-shadow: 8px 0 30px rgba(0, 0, 0, .12); }
   .side-open .side { transform: none; }
   .side-close { display: block; width: 36px; height: 36px; border-radius: 50%; font-size: 16px; }

@@ -27,7 +27,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="with-side">
+  <aside class="side" id="side">
+    <div class="side-head"><h3 data-i18n="catsTitle">Catégories</h3><button type="button" class="side-close" id="sideClose" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
+    <nav class="side-list" id="nav" aria-label="Catégories"></nav>
+  </aside>
 <div class="proto" data-i18n-html="proto"><b>Prototype</b> · La vitrine est en cours d’aménagement : certaines fonctions arrivent bientôt. Les achats se font en toute sécurité sur eBay.</div>
 <div class="promo" data-i18n-html="promo">Nouveautés chaque semaine · <b>Expédition soignée depuis l'Aude</b> · Paiement sécurisé par eBay</div>
 
@@ -88,15 +92,9 @@
         </label>
       </div>
     </div>
-    <div class="col-layout">
-      <aside class="side" id="side">
-        <div class="side-head"><h3 data-i18n="catsTitle">Catégories</h3><button type="button" class="side-close" id="sideClose" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
-        <nav class="side-list" id="nav" aria-label="Catégories"></nav>
-      </aside>
-      <div class="col-main">
+    <div class="col-main">
         <div class="products" id="grid"></div>
         <div class="more-wrap"><button type="button" class="cta ghost" id="moreBtn" hidden></button></div>
-      </div>
     </div>
     <div class="side-backdrop" id="sideBackdrop" hidden></div>
   </section>
