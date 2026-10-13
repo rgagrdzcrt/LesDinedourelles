@@ -62,7 +62,7 @@
       linktreeNote: '@broc_deco_les_dinedourelles · Selency, Vinted, WhatsApp and Facebook on his Linktree', footText: 'African art, antiques and curiosities. Antiques stall in Pézenas, shipping from the Aude, France.',
       footCol: 'Collection', footBuy: 'Shop', footHouse: 'About', footStory: 'Our story',
       updated: 'Catalogue updated ', close: 'Close', sheetNote: 'Ordering, payment and delivery take place on eBay.',
-      descTitle: 'Description', descNote: 'Written by the seller in French.', buy: 'Buy on eBay ↗', seeStore: 'Visit the eBay store ↗', category: 'Category', detail: 'Detail', condition: 'Condition',
+      descTitle: 'Description', descNote: 'Written by the seller in French.', descAuto: 'Automatically translated from French.', buy: 'Buy on eBay ↗', seeStore: 'Visit the eBay store ↗', category: 'Category', detail: 'Detail', condition: 'Condition',
       shipping: 'Shipping', shipFrom: 'From the Aude, France', ref: 'Reference', photo: 'Photo', priceOnEbay: 'Price on eBay',
       locale: 'en-US', under: a => `Under ${a}`, between: (a, b) => `${a} to ${b}`, over: a => `Over ${a}`,
       cols: { africa: 'Tribal art', ceramics: 'Ceramics', glass: 'Glassware', asia: 'Asian art', collect: 'Collectibles', cheap: 'Under $100', all: 'Whole collection' },
@@ -94,6 +94,7 @@
   if (lang !== 'en') lang = 'fr'; // français par défaut, anglais seulement si le visiteur le choisit
   const t = k => T[lang][k];
   const tr = s => (lang === 'en' && CAT_EN[s]) || s;
+  const ttl = p => (lang === 'en' && p.title_en) || p.title;
 
   let favs = [];
   try { favs = JSON.parse(localStorage.getItem('dd_favs') || '[]'); } catch (e) {}
@@ -115,7 +116,7 @@
   const cur = () => (items[0] && items[0].currency) || 'USD';
   const fmt = (v, c) => new Intl.NumberFormat(t('locale'), { style: 'currency', currency: c || cur(), maximumFractionDigits: 0 }).format(v);
   const money = p => p.price == null ? t('priceOnEbay') : new Intl.NumberFormat(t('locale'), { style: 'currency', currency: p.currency || cur(), minimumFractionDigits: 2 }).format(p.price);
-  const text = p => norm([p.title, p.category, p.subcategory].join(' '));
+  const text = p => norm([p.title, p.title_en, p.category, p.subcategory].join(' '));
   const heartSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 4.5 6.8 4.5c2.2 0 3.6 1.2 5.2 3 1.6-1.8 3-3 5.2-3 3.8 0 5.9 4 4.4 7.3C19.5 16.4 12 21 12 21Z"/></svg>';
 
   /* Rubriques du menu : règles de tri sur le titre, la catégorie et le détail eBay. */
@@ -150,7 +151,7 @@
     const pick = re => items.find(p => re.test(p.title));
     const heroes = [pick(/lobi|stool/i), pick(/teke|fetish|statue|mask/i), pick(/chinese|japanese|dish/i)]
       .filter(Boolean).concat(items).filter((p, i, a) => a.indexOf(p) === i).slice(0, 3);
-    $('heroImgs').innerHTML = heroes.map((p, i) => `<button type="button" class="${i === slide ? 'on' : ''}" data-id="${esc(p.id)}" aria-label="${esc(p.title)}"><img src="${esc(p.images[0])}" alt="${esc(p.title)}" ${i ? 'loading="lazy"' : ''} referrerpolicy="no-referrer"><span class="cap">${esc(p.title)} · ${esc(money(p))}</span></button>`).join('');
+    $('heroImgs').innerHTML = heroes.map((p, i) => `<button type="button" class="${i === slide ? 'on' : ''}" data-id="${esc(p.id)}" aria-label="${esc(ttl(p))}"><img src="${esc(p.images[0])}" alt="${esc(ttl(p))}" ${i ? 'loading="lazy"' : ''} referrerpolicy="no-referrer"><span class="cap">${esc(ttl(p))} · ${esc(money(p))}</span></button>`).join('');
     $('dots').innerHTML = `<b id="slideNo">${slide + 1}</b>/${heroes.length} ` + heroes.map((_, i) => `<span class="${i === slide ? 'on' : ''}"></span>`).join('');
     $('heroCta').textContent = t('heroCta')(items.length);
     clearInterval(timer);
@@ -182,7 +183,7 @@
   }
 
   function renderMosaic() {
-    $('mosaic').innerHTML = items.slice(8, 16).map(p => `<button type="button" data-id="${esc(p.id)}" aria-label="${esc(p.title)}"><img src="${esc(p.images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('');
+    $('mosaic').innerHTML = items.slice(8, 16).map(p => `<button type="button" data-id="${esc(p.id)}" aria-label="${esc(ttl(p))}"><img src="${esc(p.images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('');
   }
 
   /* ---------- Catalogue ---------- */
@@ -198,8 +199,8 @@
   function card(p) {
     const on = favs.includes(String(p.id));
     return `<div class="card"><a class="open" href="${esc(p.page || '#')}" data-id="${esc(p.id)}" style="display:block">
-      <div class="ph"><img src="${esc(p.images[0])}" alt="${esc(p.title)}" loading="lazy" referrerpolicy="no-referrer"><span class="tag">${esc(t('unique'))}</span></div>
-      <h3>${esc(p.title)}</h3><div class="sub">${esc(tr(p.subcategory || p.category))}</div><div class="pr">${esc(money(p))}</div></a>
+      <div class="ph"><img src="${esc(p.images[0])}" alt="${esc(ttl(p))}" loading="lazy" referrerpolicy="no-referrer"><span class="tag">${esc(t('unique'))}</span></div>
+      <h3>${esc(ttl(p))}</h3><div class="sub">${esc(tr(p.subcategory || p.category))}</div><div class="pr">${esc(money(p))}</div></a>
       <button type="button" class="heart${on ? ' on' : ''}" data-fav="${esc(p.id)}" aria-pressed="${on}" aria-label="${esc(on ? t('favRemove') : t('favAdd'))}">${heartSvg}</button></div>`;
   }
 
@@ -240,23 +241,24 @@
     current = p;
     const imgs = p.images || [];
     const show = i => {
-      $('stage').innerHTML = imgs[i] ? `<img src="${esc(imgs[i])}" alt="${esc(p.title)}" referrerpolicy="no-referrer">` : '';
+      $('stage').innerHTML = imgs[i] ? `<img src="${esc(imgs[i])}" alt="${esc(ttl(p))}" referrerpolicy="no-referrer">` : '';
       $('thumbs').querySelectorAll('button').forEach((b, j) => b.setAttribute('aria-current', j === i));
     };
     $('thumbs').innerHTML = imgs.length > 1 ? imgs.map((src, i) => `<button type="button" data-i="${i}" aria-label="${esc(t('photo'))} ${i + 1}"><img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('') : '';
     $('thumbs').onclick = e => { const b = e.target.closest('[data-i]'); if (b) show(Number(b.dataset.i)); };
     show(0);
     $('sheetCat').textContent = [tr(p.category), tr(p.subcategory)].filter(Boolean).join(' · ');
-    $('sheetTitle').textContent = p.title;
+    $('sheetTitle').textContent = ttl(p);
     $('sheetPrice').textContent = money(p);
     $('sheetBuy').href = p.url || data.storeUrl;
     $('sheetBuy').textContent = p.example ? t('seeStore') : t('buy');
     renderSheetFav();
-    const desc = String(p.description || '').trim();
+    const descEn = lang === 'en' && String(p.description_en || '').trim();
+    const desc = descEn || String(p.description || '').trim();
     $('sheetDesc').hidden = !desc;
     $('sheetDescTitle').textContent = t('descTitle');
     $('sheetDescText').textContent = desc;
-    $('sheetDesc').dataset.note = t('descNote');
+    $('sheetDesc').dataset.note = descEn ? t('descAuto') : t('descNote');
     const rows = [[t('category'), tr(p.category)], [t('detail'), tr(p.subcategory)], [t('condition'), tr(p.condition)], [t('shipping'), t('shipFrom')], [t('ref'), p.example ? '' : p.id]].filter(r => r[1]);
     $('sheetSpecs').innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
     $('sheet').showModal();

@@ -7,10 +7,12 @@ publiques). Sorties :
 
 Identifiants attendus dans l'environnement (secrets GitHub) :
   EBAY_CLIENT_ID, EBAY_CLIENT_SECRET
+  DEEPL_API_KEY (facultatif) : titres et descriptions traduits en anglais.
 """
 
 import base64
 import csv
+import hashlib
 import html
 import json
 import os
@@ -166,6 +168,57 @@ def fetch_details(token, legacy_id):
     }
 
 
+DEEPL_BATCH = 50  # nombre maximal de textes par requête DeepL
+
+
+def deepl(texts, key):
+    """Traduit une liste de textes du français vers l'anglais (API DeepL)."""
+    host = "api-free.deepl.com" if key.endswith(":fx") else "api.deepl.com"
+    out = []
+    for i in range(0, len(texts), DEEPL_BATCH):
+        body = json.dumps({"text": texts[i:i + DEEPL_BATCH], "source_lang": "FR", "target_lang": "EN-US"}).encode()
+        resp = http(f"https://{host}/v2/translate", data=body, headers={
+            "Authorization": f"DeepL-Auth-Key {key}",
+            "Content-Type": "application/json",
+        })
+        out += [t["text"] for t in resp["translations"]]
+    return out
+
+
+def source_hash(p):
+    return hashlib.sha1(f"{p.get('title', '')}\n{p.get('description', '')}".encode()).hexdigest()[:12]
+
+
+def add_english(products, previous, key):
+    """Version anglaise des titres et descriptions. Une traduction est reprise
+    tant que le texte français n'a pas changé : seules les nouveautés coûtent."""
+    old = {str(p.get("id")): p for p in previous}
+    todo = []
+    for p in products:
+        src, o = source_hash(p), old.get(str(p["id"])) or {}
+        if o.get("title_en") and o.get("tr_src") == src:
+            p["title_en"], p["description_en"], p["tr_src"] = o["title_en"], o.get("description_en", ""), src
+        else:
+            todo.append(p)
+    if not todo:
+        return
+    if not key:
+        print(f"Clé DeepL absente : {len(todo)} annonce(s) sans version anglaise.")
+        return
+    try:
+        titles = deepl([p["title"] for p in todo], key)
+        with_desc = [p for p in todo if p.get("description")]
+        descs = deepl([p["description"] for p in with_desc], key)
+    except (RuntimeError, KeyError, urllib.error.URLError) as err:
+        print(f"Traduction indisponible : {err}")
+        return
+    for p, t in zip(todo, titles):
+        p["title_en"], p["description_en"], p["tr_src"] = t, "", source_hash(p)
+    for p, d in zip(with_desc, descs):
+        p["description_en"] = d
+    print(f"{len(todo)} annonce(s) traduite(s) en anglais.")
+
+
 def slug(text):
     text = unicodedata.normalize("NFD", text.lower())
     text = "".join(c for c in text if not unicodedata.combining(c))
@@ -286,6 +339,7 @@ def main():
             p["firstSeen"] = p["listed"][:10]
 
     products = sorted(found.values(), key=lambda p: p.get("listed") or "", reverse=True)
+    add_english(products, previous, os.environ.get("DEEPL_API_KEY", "").strip())
     data = {
         "shop": CONFIG["shopName"],
         "seller": CONFIG["seller"],
