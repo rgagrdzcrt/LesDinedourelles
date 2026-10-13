@@ -17,7 +17,7 @@
       heroKicker: 'Cabinet de curiosités · Pézenas', heroTitle: 'Des pièces uniques, <i>chinées une à une.</i>',
       heroText: 'Art africain, céramiques signées, verrerie et objets anciens choisis par Jean-Pierre Cartier, brocanteur depuis quinze ans.',
       heroCta: n => `Découvrir les ${n} pièces →`,
-      byCat: 'Explorer la collection', origins: { africa: 'Afrique', europe: 'Europe', asia: 'Asie', signed: 'Pièces signées' }, catsTitle: 'Catégories', byPrice: 'Acheter par prix', collection: 'La collection',
+      byCat: 'Explorer la collection', origins: { africa: 'Afrique', europe: 'Europe', asia: 'Asie', signed: 'Signatures et grands noms' }, catsTitle: 'Catégories', byPrice: 'Acheter par prix', collection: 'La collection',
       pieces: n => n + (n > 1 ? ' pièces' : ' pièce'), piecesArrow: n => `${n} ${n > 1 ? 'pièces' : 'pièce'} →`,
       sortLabel: 'Trier', sortRecent: "Nouveautés d'abord", sortAsc: 'Prix croissant', sortDesc: 'Prix décroissant',
       more: n => `Voir ${n} pièces de plus`, unique: 'Pièce unique', favAdd: 'Ajouter aux favoris', favRemove: 'Retirer des favoris',
@@ -46,7 +46,7 @@
       heroKicker: 'Cabinet of curiosities · Pézenas', heroTitle: 'Unique pieces, <i>found one by one.</i>',
       heroText: 'African art, signed ceramics, glassware and antiques chosen by Jean-Pierre Cartier, an antiques dealer for fifteen years.',
       heroCta: n => `Discover all ${n} pieces →`,
-      byCat: 'Explore the collection', origins: { africa: 'Africa', europe: 'Europe', asia: 'Asia', signed: 'Signed pieces' }, catsTitle: 'Categories', byPrice: 'Shop by price', collection: 'The collection',
+      byCat: 'Explore the collection', origins: { africa: 'Africa', europe: 'Europe', asia: 'Asia', signed: 'Signatures and big names' }, catsTitle: 'Categories', byPrice: 'Shop by price', collection: 'The collection',
       pieces: n => n + (n > 1 ? ' pieces' : ' piece'), piecesArrow: n => `${n} ${n > 1 ? 'pieces' : 'piece'} →`,
       sortLabel: 'Sort', sortRecent: 'Newest first', sortAsc: 'Price: low to high', sortDesc: 'Price: high to low',
       more: n => `Show ${n} more pieces`, unique: 'One of a kind', favAdd: 'Add to favourites', favRemove: 'Remove from favourites',
@@ -186,7 +186,7 @@
     { key: 'africa', re: /afric|tribal|congo|lobi|teke|baoul|dogon|senouf|senufo|\bfang\b|yoruba|ashanti|bambara|\bkota\b|fetich|fetish|burkina|\bmali\b|nigeria|cote d.ivoire|gabon|cameroun|somalie|berbere|\brdc\b|maroc|morocc|tunisi|alger|egypt|ethiopi|\bdan\b|\blega\b|\bbobo\b|ngombe|kenya|senegal/ },
     { key: 'europe', re: /murano|venise|venetian|\bital|allemagne|german|kienzle|vienne|vienna|autriche|austria|anglais|angleterre|english|england|scandinav|suede|swedish|orrefors|danois|danish|norv|espagn|spanish|portug|belg|suisse|swiss|boheme|bohemi|tcheque|czech|\bruss|hollande|dutch|delft|\bgrec|greek|foret noire|black forest|franc(e|ais|aise)\b|french|vallauri|vallaurys|limoges|quimper|\bgien\b|sarreguemines|longwy|nancy|daum|lalique|legras|moustiers|\bbiot\b|paris|provence|corse|normandie|bretagne|alsace|marseille|cassis|rambervilliers|desvres|luneville|baccarat|christofle|languedoc|poilus|guerlain|solido|renault|gardelle/ },
     { key: 'asia', re: ASIA },
-    { key: 'signed', re: /\bsigne|\bsigned|\bsignature|attribue|monogramm|lalique|legras|daum|orrefors|gardelle|christofle|baccarat|verlys|\blotz\b|delatte|badessi/ },
+    { key: 'signed', re: /\bsigne|\bsigned|\bsignature|attribue|monogramm|lalique|legras|daum|orrefors|gardelle|christofle|baccarat|verlys|\blotz\b|loetz|delatte|badessi|flavio poli|seguso|venini|jonasson|ohrstrom|gustave asch|mdina/ },
   ];
   function renderCats() {
     $('cats').innerHTML = ORIGINS.map(o => {
