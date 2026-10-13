@@ -70,6 +70,25 @@
   };
   const CAT_EN = { 'Antiquités': 'Antiques', 'Art': 'Art', 'Objets de collection': 'Collectibles', 'Poterie et verre': 'Pottery & glass', 'Jouets et modélisme': 'Toys & models', 'Bijoux et montres': 'Jewellery & watches', 'Maison et jardin': 'Home & garden', 'Livres': 'Books', 'Occasion': 'Used' };
 
+
+  // Sous-catégories eBay (reçues en français).
+  Object.assign(CAT_EN, {
+    'Arts, objets ethniques': 'Tribal & ethnographic art', 'Sculptures, statues': 'Sculptures & statues',
+    'Vases, tulipiers, soliflores': 'Vases', 'Peintures': 'Paintings', 'Asiatiques': 'Asian art',
+    'Grands noms étrangers': 'Famous foreign makers', 'Autres': 'Other', 'Crucifix': 'Crucifixes',
+    'Grands céramistes du XXe': '20th-century ceramists', 'Pipes': 'Pipes', 'Verres, flûtes, services': 'Glasses & glassware sets',
+    'Vallauris': 'Vallauris pottery', 'Allemagne': 'German pottery', 'Cendriers, coupes, coupelles': 'Bowls & ashtrays',
+    'Coupes, coupelles, cendriers': 'Bowls & ashtrays', 'Dessins, lavis': 'Drawings', 'Absinthe, cuillère': 'Absinthe items',
+    'Flacons': 'Perfume bottles', 'Sciences médicales': 'Medical antiques', 'Statues, figurines': 'Statues & figurines',
+    'Bouteilles': 'Bottles', 'Voitures, camions et fourgons': 'Model cars & trucks', 'Bougeoirs, lampes': 'Candlesticks & lamps',
+    "Photographies d'art": 'Fine art photography', 'France': 'French militaria', 'Carafes, bouteilles': 'Carafes & bottles',
+    'Carafes, bouteilles, flacons': 'Carafes & bottles', 'Produits dérivés': 'Advertising collectibles',
+    'Salières, poivrières': 'Salt & pepper shakers', 'Plats, soupières': 'Dishes & tureens',
+    '1ère guerre mondiale 14-18': 'World War I (1914-1918)', 'Plateaux, pots': 'Trays & pots', 'Encriers': 'Inkwells',
+    'Petits soldats': 'Toy soldiers', 'Cartes': 'Maps', 'Malicorne': 'Malicorne faience', 'Italie': 'Italian ceramics',
+    'Rouen': 'Rouen faience', 'Chapeaux, coiffes': 'Hats & headdresses', 'Estampes, gravures': 'Prints & engravings',
+  });
+
   let lang = '';
   try { lang = localStorage.getItem('dd_lang') || ''; } catch (e) {}
   if (lang !== 'en') lang = 'fr'; // français par défaut, anglais seulement si le visiteur le choisit
@@ -180,7 +199,7 @@
     const on = favs.includes(String(p.id));
     return `<div class="card"><a class="open" href="${esc(p.page || '#')}" data-id="${esc(p.id)}" style="display:block">
       <div class="ph"><img src="${esc(p.images[0])}" alt="${esc(p.title)}" loading="lazy" referrerpolicy="no-referrer"><span class="tag">${esc(t('unique'))}</span></div>
-      <h3>${esc(p.title)}</h3><div class="sub">${esc(p.subcategory || tr(p.category))}</div><div class="pr">${esc(money(p))}</div></a>
+      <h3>${esc(p.title)}</h3><div class="sub">${esc(tr(p.subcategory || p.category))}</div><div class="pr">${esc(money(p))}</div></a>
       <button type="button" class="heart${on ? ' on' : ''}" data-fav="${esc(p.id)}" aria-pressed="${on}" aria-label="${esc(on ? t('favRemove') : t('favAdd'))}">${heartSvg}</button></div>`;
   }
 
@@ -227,13 +246,13 @@
     $('thumbs').innerHTML = imgs.length > 1 ? imgs.map((src, i) => `<button type="button" data-i="${i}" aria-label="${esc(t('photo'))} ${i + 1}"><img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('') : '';
     $('thumbs').onclick = e => { const b = e.target.closest('[data-i]'); if (b) show(Number(b.dataset.i)); };
     show(0);
-    $('sheetCat').textContent = [tr(p.category), p.subcategory].filter(Boolean).join(' · ');
+    $('sheetCat').textContent = [tr(p.category), tr(p.subcategory)].filter(Boolean).join(' · ');
     $('sheetTitle').textContent = p.title;
     $('sheetPrice').textContent = money(p);
     $('sheetBuy').href = p.url || data.storeUrl;
     $('sheetBuy').textContent = p.example ? t('seeStore') : t('buy');
     renderSheetFav();
-    const rows = [[t('category'), tr(p.category)], [t('detail'), p.subcategory], [t('condition'), tr(p.condition)], [t('shipping'), t('shipFrom')], [t('ref'), p.example ? '' : p.id]].filter(r => r[1]);
+    const rows = [[t('category'), tr(p.category)], [t('detail'), tr(p.subcategory)], [t('condition'), tr(p.condition)], [t('shipping'), t('shipFrom')], [t('ref'), p.example ? '' : p.id]].filter(r => r[1]);
     $('sheetSpecs').innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
     $('sheet').showModal();
     track('fiche/' + p.id, p.title);
