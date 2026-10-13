@@ -10,6 +10,7 @@
   /* ---------- Traductions ---------- */
   const T = {
     fr: {
+      proto: '<b>Prototype</b> · La vitrine est en cours d’aménagement : certaines fonctions arrivent bientôt. Les achats se font en toute sécurité sur eBay.',
       promo: "Nouveautés chaque semaine · <b>Expédition soignée depuis l'Aude</b> · Paiement sécurisé par eBay",
       searchLabel: 'Rechercher', searchPh: 'Rechercher une pièce, une origine, une matière…',
       favs: 'Favoris', store: 'Boutique eBay', langBtn: 'EN', langAria: 'Switch to English',
@@ -38,6 +39,7 @@
       cols: { africa: 'Arts premiers', ceramics: 'Céramiques', glass: 'Verrerie', asia: 'Asie', collect: 'Objets de collection', cheap: 'Moins de 100 $', all: 'Toute la collection' },
     },
     en: {
+      proto: '<b>Prototype</b> · This showcase is still being built: more features are coming soon. Purchases are made securely on eBay.',
       promo: 'New finds every week · <b>Carefully shipped from the south of France</b> · Secure payment through eBay',
       searchLabel: 'Search', searchPh: 'Search for a piece, an origin, a material…',
       favs: 'Favourites', store: 'eBay store', langBtn: 'FR', langAria: 'Passer en français',

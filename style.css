@@ -222,3 +222,7 @@ h2 { font: 400 clamp(32px, 3.4vw, 46px)/1.05 var(--serif); letter-spacing: -.01e
 }
 .obj-page .top { grid-template-columns: auto auto; justify-content: space-between; }
 .obj-page .top > span { display: none; }
+
+/* Bandeau « prototype » (temporaire) */
+.proto { padding: 8px 16px; background: var(--accent-soft); color: var(--accent); text-align: center; font-size: 13px; line-height: 1.4; border-bottom: 1px solid rgba(156, 74, 42, .18); }
+.proto b { font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: 11px; margin-right: 2px; }

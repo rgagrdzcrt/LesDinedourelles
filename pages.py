@@ -122,6 +122,7 @@ def render(p, related):
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body class="obj-page">
+<div class="proto"><b>Prototype</b> · La vitrine est en cours d’aménagement : certaines fonctions arrivent bientôt. Les achats se font en toute sécurité sur eBay.</div>
 <div class="promo">Nouveautés chaque semaine · <b>Expédition soignée depuis l'Aude</b> · Paiement sécurisé par eBay</div>
 <header class="site-head">
   <div class="wrap top">
