@@ -17,7 +17,7 @@
       heroKicker: 'Cabinet de curiosités · Pézenas', heroTitle: 'Des pièces uniques, <i>chinées une à une.</i>',
       heroText: 'Art africain, céramiques signées, verrerie et objets anciens choisis par Jean-Pierre Cartier, brocanteur depuis quinze ans.',
       heroCta: n => `Découvrir les ${n} pièces →`,
-      byCat: 'Acheter par catégorie', byPrice: 'Acheter par prix', collection: 'La collection',
+      byCat: 'Acheter par catégorie', catsTitle: 'Catégories', byPrice: 'Acheter par prix', collection: 'La collection',
       pieces: n => n + (n > 1 ? ' pièces' : ' pièce'), piecesArrow: n => `${n} ${n > 1 ? 'pièces' : 'pièce'} →`,
       sortLabel: 'Trier', sortRecent: "Nouveautés d'abord", sortAsc: 'Prix croissant', sortDesc: 'Prix décroissant',
       more: n => `Voir ${n} pièces de plus`, unique: 'Pièce unique', favAdd: 'Ajouter aux favoris', favRemove: 'Retirer des favoris',
@@ -46,7 +46,7 @@
       heroKicker: 'Cabinet of curiosities · Pézenas', heroTitle: 'Unique pieces, <i>found one by one.</i>',
       heroText: 'African art, signed ceramics, glassware and antiques chosen by Jean-Pierre Cartier, an antiques dealer for fifteen years.',
       heroCta: n => `Discover all ${n} pieces →`,
-      byCat: 'Shop by category', byPrice: 'Shop by price', collection: 'The collection',
+      byCat: 'Shop by category', catsTitle: 'Categories', byPrice: 'Shop by price', collection: 'The collection',
       pieces: n => n + (n > 1 ? ' pieces' : ' piece'), piecesArrow: n => `${n} ${n > 1 ? 'pieces' : 'piece'} →`,
       sortLabel: 'Sort', sortRecent: 'Newest first', sortAsc: 'Price: low to high', sortDesc: 'Price: high to low',
       more: n => `Show ${n} more pieces`, unique: 'One of a kind', favAdd: 'Add to favourites', favRemove: 'Remove from favourites',
@@ -156,7 +156,8 @@
   function renderNav() {
     const shown = items.length ? COLLECTIONS.filter(c => items.some(c.test)) : COLLECTIONS;
     const count = c => items.length ? `<small>${items.filter(c.test).length}</small>` : '';
-    $('nav').innerHTML = shown.map(c => `<button type="button" data-col="${c.key}" aria-pressed="${filter && filter.key === c.key}">${esc(t('cols')[c.key])}${count(c)}</button>`).join('');
+    const all = `<button type="button" data-col="all" aria-pressed="${!filter && !favOnly}">${esc(t('cols').all)}${items.length ? `<small>${items.length}</small>` : ''}</button>`;
+    $('nav').innerHTML = all + shown.map(c => `<button type="button" data-col="${c.key}" aria-pressed="${!!filter && filter.key === c.key}">${esc(t('cols')[c.key])}${count(c)}</button>`).join('');
     $('footCats').innerHTML = shown.slice(0, 6).map(c => `<li><button type="button" data-col="${c.key}">${esc(t('cols')[c.key])}</button></li>`).join('');
   }
 
@@ -215,6 +216,7 @@
     $('colTitle').textContent = title;
     $('count').textContent = t('pieces')(all.length);
     $('clearFilter').hidden = !filter && !favOnly;
+    document.querySelectorAll('#nav [data-col]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.col === (filter ? filter.key : favOnly ? '' : 'all'))));
     $('clearFilter').textContent = title;
     $('grid').innerHTML = all.length ? all.slice(0, shown).map(card).join('')
       : `<div class="empty"><strong>${esc(t('emptyT'))}</strong>${esc(favOnly ? t('emptyFav') : t('emptyS'))}</div>`;
@@ -223,7 +225,6 @@
     if (rest > 0) $('moreBtn').textContent = t('more')(Math.min(rest, PAGE));
     $('favCount').textContent = favs.length;
     $('favBtn').setAttribute('aria-pressed', favOnly);
-    document.querySelectorAll('#nav [data-col]').forEach(b => b.setAttribute('aria-pressed', !!filter && filter.key === b.dataset.col));
   }
 
   function setFilter(f, scroll = true) {
@@ -231,6 +232,14 @@
     renderGrid();
     if (scroll) $('collection').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   }
+
+  /* Panneau des catégories (téléphone et tablette) */
+  function openSide() { document.body.classList.add('side-open'); $('sideBackdrop').hidden = false; $('catsBtn').setAttribute('aria-expanded', 'true'); }
+  function closeSide() { document.body.classList.remove('side-open'); $('sideBackdrop').hidden = true; $('catsBtn').setAttribute('aria-expanded', 'false'); }
+  $('catsBtn').addEventListener('click', openSide);
+  $('sideClose').addEventListener('click', closeSide);
+  $('sideBackdrop').addEventListener('click', closeSide);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSide(); });
 
   function toggleFav(id) {
     id = String(id);
@@ -280,7 +289,8 @@
     const fav = e.target.closest('[data-fav]');
     if (fav) { toggleFav(fav.dataset.fav); if (favs.includes(String(fav.dataset.fav))) track('favori/' + fav.dataset.fav, 'Favori'); renderGrid(); return; }
     const col = e.target.closest('[data-col]');
-    if (col) { const c = COLLECTIONS.find(x => x.key === col.dataset.col); setFilter(filter && filter.key === c.key ? null : { key: c.key, label: t('cols')[c.key], test: c.test }); return; }
+    if (col && col.dataset.col === 'all') { closeSide(); setFilter(null); return; }
+    if (col) { closeSide(); const c = COLLECTIONS.find(x => x.key === col.dataset.col); setFilter(filter && filter.key === c.key ? null : { key: c.key, label: t('cols')[c.key], test: c.test }); return; }
     const cat = e.target.closest('[data-cat]');
     if (cat) { const c = cat.dataset.cat; setFilter({ key: 'cat:' + c, label: tr(c), test: p => p.category === c }); return; }
     const opener = e.target.closest('[data-id]');

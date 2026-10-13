@@ -48,12 +48,19 @@ button { cursor: pointer; border: 0; background: none; }
 #favBtn[aria-pressed="true"] svg { fill: var(--accent); }
 .badge { display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; }
 .lang { min-width: 38px; height: 32px; justify-content: center; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .06em; }
-.nav { display: flex; gap: 28px; padding-bottom: 12px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; font-size: 14px; font-weight: 500; }
-.nav button { padding: 4px 0; border-bottom: 2px solid transparent; transition: color .2s ease, border-color .2s ease; }
-.nav button:hover { color: var(--accent); }
-.nav button[aria-pressed="true"] { border-color: var(--ink); }
-.nav button small { margin-left: 5px; font-size: 11px; font-weight: 400; color: var(--muted); }
-@media (min-width: 900px) { .nav { flex-wrap: wrap; row-gap: 6px; gap: 6px 24px; } }
+.col-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 44px; align-items: start; }
+.col-layout .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.side { position: sticky; top: 150px; max-height: calc(100vh - 170px); overflow-y: auto; scrollbar-width: thin; }
+.side-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.side-head h3 { font: 600 12px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.side-close, .cats-btn { display: none; }
+.side-list { display: flex; flex-direction: column; gap: 2px; }
+.side-list button { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; width: 100%; padding: 9px 12px; border-radius: 8px; text-align: left; font-size: 14.5px; font-weight: 500; transition: background .2s ease, color .2s ease; }
+.side-list button:hover { background: var(--soft); color: var(--accent); }
+.side-list button small { font-size: 12px; font-weight: 400; color: var(--muted); }
+.side-list button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.side-list button[aria-pressed="true"] small { color: #c9c6c0; }
+.side-backdrop { position: fixed; inset: 0; z-index: 19; background: rgba(20, 18, 16, .4); }
 
 /* ---------- Ouverture ---------- */
 .hero { display: grid; grid-template-columns: 1.15fr 1fr; min-height: 540px; background: var(--soft); }
@@ -170,6 +177,13 @@ h2 { font: 400 clamp(32px, 3.4vw, 46px)/1.05 var(--serif); letter-spacing: -.01e
 
 /* ---------- Écrans moyens et téléphones ---------- */
 @media (max-width: 1000px) {
+  .col-layout { grid-template-columns: minmax(0, 1fr); }
+  .col-layout .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .side { position: fixed; inset: 0 auto 0 0; z-index: 20; width: min(330px, 86vw); max-height: none; padding: 22px 18px; background: var(--paper); transform: translateX(-102%); transition: transform .35s var(--ease); box-shadow: 8px 0 30px rgba(0, 0, 0, .12); }
+  .side-open .side { transform: none; }
+  .side-close { display: block; width: 36px; height: 36px; border-radius: 50%; font-size: 16px; }
+  .cats-btn { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 16px; border: 1px solid var(--ink); border-radius: 999px; font-size: 14px; font-weight: 600; }
+  .cats-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
   .top { grid-template-columns: auto 1fr; gap: 12px 20px; }
   .search { grid-column: 1 / -1; grid-row: 2; max-width: none; }
   .icons { justify-self: end; gap: 14px; }
@@ -189,7 +203,7 @@ h2 { font: 400 clamp(32px, 3.4vw, 46px)/1.05 var(--serif); letter-spacing: -.01e
   .hero-text { gap: 18px; padding: 30px 16px 40px; }
   .block { padding-top: 56px; }
   .head { flex-direction: column; align-items: flex-start; }
-  .tools { width: 100%; justify-content: space-between; }
+  .tools { width: 100%; flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
   .products { gap: 28px 12px; }
   .card h3 { font-size: 14px; }
   .heart { width: 34px; height: 34px; top: 8px; right: 8px; }

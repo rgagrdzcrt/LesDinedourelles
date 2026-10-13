@@ -51,7 +51,6 @@
       </a>
     </div>
   </div>
-  <nav class="wrap nav" id="nav" aria-label="Collections"></nav>
 </header>
 
 <main id="top">
@@ -78,6 +77,7 @@
         <p class="count" id="count" aria-live="polite"></p>
       </div>
       <div class="tools">
+        <button type="button" class="cats-btn" id="catsBtn" aria-controls="side" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg><span data-i18n="catsTitle">Catégories</span></button>
         <button type="button" class="clear" id="clearFilter" hidden></button>
         <label class="sort"><span class="sr-only" data-i18n="sortLabel">Trier</span>
           <select id="sort">
@@ -88,8 +88,17 @@
         </label>
       </div>
     </div>
-    <div class="products" id="grid"></div>
-    <div class="more-wrap"><button type="button" class="cta ghost" id="moreBtn" hidden></button></div>
+    <div class="col-layout">
+      <aside class="side" id="side">
+        <div class="side-head"><h3 data-i18n="catsTitle">Catégories</h3><button type="button" class="side-close" id="sideClose" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
+        <nav class="side-list" id="nav" aria-label="Catégories"></nav>
+      </aside>
+      <div class="col-main">
+        <div class="products" id="grid"></div>
+        <div class="more-wrap"><button type="button" class="cta ghost" id="moreBtn" hidden></button></div>
+      </div>
+    </div>
+    <div class="side-backdrop" id="sideBackdrop" hidden></div>
   </section>
 
   <section class="trust wrap">
