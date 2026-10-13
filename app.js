@@ -17,7 +17,7 @@
       heroKicker: 'Cabinet de curiosités · Pézenas', heroTitle: 'Des pièces uniques, <i>chinées une à une.</i>',
       heroText: 'Art africain, céramiques signées, verrerie et objets anciens choisis par Jean-Pierre Cartier, brocanteur depuis quinze ans.',
       heroCta: n => `Découvrir les ${n} pièces →`,
-      byCat: 'Acheter par catégorie', catsTitle: 'Catégories', byPrice: 'Acheter par prix', collection: 'La collection',
+      byCat: 'Explorer la collection', origins: { africa: 'Afrique', europe: 'Europe', asia: 'Asie', signed: 'Pièces signées' }, catsTitle: 'Catégories', byPrice: 'Acheter par prix', collection: 'La collection',
       pieces: n => n + (n > 1 ? ' pièces' : ' pièce'), piecesArrow: n => `${n} ${n > 1 ? 'pièces' : 'pièce'} →`,
       sortLabel: 'Trier', sortRecent: "Nouveautés d'abord", sortAsc: 'Prix croissant', sortDesc: 'Prix décroissant',
       more: n => `Voir ${n} pièces de plus`, unique: 'Pièce unique', favAdd: 'Ajouter aux favoris', favRemove: 'Retirer des favoris',
@@ -46,7 +46,7 @@
       heroKicker: 'Cabinet of curiosities · Pézenas', heroTitle: 'Unique pieces, <i>found one by one.</i>',
       heroText: 'African art, signed ceramics, glassware and antiques chosen by Jean-Pierre Cartier, an antiques dealer for fifteen years.',
       heroCta: n => `Discover all ${n} pieces →`,
-      byCat: 'Shop by category', catsTitle: 'Categories', byPrice: 'Shop by price', collection: 'The collection',
+      byCat: 'Explore the collection', origins: { africa: 'Africa', europe: 'Europe', asia: 'Asia', signed: 'Signed pieces' }, catsTitle: 'Categories', byPrice: 'Shop by price', collection: 'The collection',
       pieces: n => n + (n > 1 ? ' pieces' : ' piece'), piecesArrow: n => `${n} ${n > 1 ? 'pieces' : 'piece'} →`,
       sortLabel: 'Sort', sortRecent: 'Newest first', sortAsc: 'Price: low to high', sortDesc: 'Price: high to low',
       more: n => `Show ${n} more pieces`, unique: 'One of a kind', favAdd: 'Add to favourites', favRemove: 'Remove from favourites',
@@ -180,11 +180,20 @@
     }
   }
 
+  /* Explorer la collection (origine, pièces signées) : mots-clés dans le titre, le détail eBay et les caractéristiques (« Origine »…). */
+  const place = p => norm([p.title, p.title_en, p.subcategory, ...(p.aspects || []).map(a => a[1])].join(' ')).replace('encre de chine', '');
+  const ORIGINS = [
+    { key: 'africa', re: /afric|tribal|congo|lobi|teke|baoul|dogon|senouf|senufo|\bfang\b|yoruba|ashanti|bambara|\bkota\b|fetich|fetish|burkina|\bmali\b|nigeria|cote d.ivoire|gabon|cameroun|somalie|berbere|\brdc\b|maroc|morocc|tunisi|alger|egypt|ethiopi|\bdan\b|\blega\b|\bbobo\b|ngombe|kenya|senegal/ },
+    { key: 'europe', re: /murano|venise|venetian|\bital|allemagne|german|kienzle|vienne|vienna|autriche|austria|anglais|angleterre|english|england|scandinav|suede|swedish|orrefors|danois|danish|norv|espagn|spanish|portug|belg|suisse|swiss|boheme|bohemi|tcheque|czech|\bruss|hollande|dutch|delft|\bgrec|greek|foret noire|black forest|franc(e|ais|aise)\b|french|vallauri|vallaurys|limoges|quimper|\bgien\b|sarreguemines|longwy|nancy|daum|lalique|legras|moustiers|\bbiot\b|paris|provence|corse|normandie|bretagne|alsace|marseille|cassis|rambervilliers|desvres|luneville|baccarat|christofle|languedoc|poilus|guerlain|solido|renault|gardelle/ },
+    { key: 'asia', re: ASIA },
+    { key: 'signed', re: /\bsigne|\bsigned|\bsignature|attribue|monogramm|lalique|legras|daum|orrefors|gardelle|christofle|baccarat|verlys|\blotz\b|delatte|badessi/ },
+  ];
   function renderCats() {
-    const byCat = {};
-    items.forEach(p => (byCat[p.category] = byCat[p.category] || []).push(p));
-    const cats = Object.entries(byCat).sort((a, b) => b[1].length - a[1].length).slice(0, 4);
-    $('cats').innerHTML = cats.map(([c, list]) => `<button type="button" class="cat" data-cat="${esc(c)}"><div class="ph"><img src="${esc(list[0].images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></div><h3>${esc(tr(c))}</h3><p>${esc(t('pieces')(list.length))}</p></button>`).join('');
+    $('cats').innerHTML = ORIGINS.map(o => {
+      const list = items.filter(p => o.re.test(place(p)));
+      if (!list.length) return '';
+      return `<button type="button" class="cat" data-origin="${o.key}"><div class="ph"><img src="${esc(list[0].images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></div><h3>${esc(t('origins')[o.key])}</h3><p>${esc(t('pieces')(list.length))}</p></button>`;
+    }).join('');
   }
 
 
@@ -291,8 +300,8 @@
     const col = e.target.closest('[data-col]');
     if (col && col.dataset.col === 'all') { closeSide(); setFilter(null); return; }
     if (col) { closeSide(); const c = COLLECTIONS.find(x => x.key === col.dataset.col); setFilter(filter && filter.key === c.key ? null : { key: c.key, label: t('cols')[c.key], test: c.test }); return; }
-    const cat = e.target.closest('[data-cat]');
-    if (cat) { const c = cat.dataset.cat; setFilter({ key: 'cat:' + c, label: tr(c), test: p => p.category === c }); return; }
+    const origin = e.target.closest('[data-origin]');
+    if (origin) { const o = ORIGINS.find(x => x.key === origin.dataset.origin); setFilter({ key: 'origin:' + o.key, label: t('origins')[o.key], test: p => o.re.test(place(p)) }); return; }
     const opener = e.target.closest('[data-id]');
     if (opener && !opener.closest('#sheet')) {
       // Ctrl/Cmd-clic ou clic molette : la page de l'objet s'ouvre dans un nouvel onglet.
@@ -319,6 +328,7 @@
     lang = lang === 'fr' ? 'en' : 'fr';
     try { localStorage.setItem('dd_lang', lang); } catch (e) {}
     if (filter && COLLECTIONS.some(c => c.key === filter.key)) filter.label = t('cols')[filter.key];
+    if (filter && filter.key.startsWith('origin:')) filter.label = t('origins')[filter.key.slice(7)];
     renderAll();
   });
 
