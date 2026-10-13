@@ -12,6 +12,7 @@ Identifiants attendus dans l'environnement (secrets GitHub) :
 
 import base64
 import csv
+import gzip
 import hashlib
 import html
 import json
@@ -66,12 +67,15 @@ TOP_CATEGORIES = {
 }
 
 
-def http(url, data=None, headers=None, retries=3):
+def http(url, data=None, headers=None, retries=3, timeout=30):
     for attempt in range(retries):
         req = urllib.request.Request(url, data=data, headers=headers or {})
         try:
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                return json.loads(resp.read().decode("utf-8"))
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                body = resp.read()
+                if resp.headers.get("Content-Encoding") == "gzip":
+                    body = gzip.decompress(body)
+                return json.loads(body.decode("utf-8"))
         except urllib.error.HTTPError as err:
             body = err.read().decode("utf-8", "replace")[:300]
             if err.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
@@ -93,6 +97,42 @@ def get_token(client_id, client_secret):
         "Content-Type": "application/x-www-form-urlencoded",
     })
     return resp["access_token"]
+
+
+TAXONOMY_URL = "https://api.ebay.com/commerce/taxonomy/v1"
+
+
+def category_tree(token):
+    """Arborescence des catégories du site eBay choisi (eBay France n'a pas les
+    mêmes numéros qu'eBay US). Renvoie les grandes catégories et, pour chaque
+    catégorie, son chemin depuis la racine."""
+    marketplace = CONFIG.get("marketplace", "EBAY_US")
+    auth = {"Authorization": f"Bearer {token}"}
+    tree_id = http(f"{TAXONOMY_URL}/get_default_category_tree_id?marketplace_id={marketplace}", headers=auth)["categoryTreeId"]
+    tree = http(f"{TAXONOMY_URL}/category_tree/{tree_id}", headers={**auth, "Accept-Encoding": "gzip"}, timeout=180)
+    root = tree["rootCategoryNode"]
+    roots = {n["category"]["categoryId"]: n["category"]["categoryName"] for n in root.get("childCategoryTreeNodes") or []}
+    paths, stack = {}, [(n, []) for n in root.get("childCategoryTreeNodes") or []]
+    while stack:
+        node, parent = stack.pop()
+        path = parent + [node["category"]["categoryName"]]
+        paths[node["category"]["categoryId"]] = path
+        stack.extend((child, path) for child in node.get("childCategoryTreeNodes") or [])
+    return roots, paths
+
+
+def our_category(path, fallback):
+    """Rubrique de la vitrine à partir du chemin de catégorie eBay."""
+    joined = " ".join(path or [fallback]).lower()
+    if re.search(r"c[ée]ramique|fa[ïi]ence|porcelaine|poterie|verre|cristal|gr[èe]s", joined):
+        return "Poterie et verre"
+    if "collection" in joined and not joined.startswith("art"):
+        return "Objets de collection"
+    if joined.startswith("art"):
+        return "Art"
+    if "jouet" in joined or "modélisme" in joined:
+        return "Jouets et modélisme"
+    return (path or [fallback])[0]
 
 
 def big_image(url):
@@ -121,8 +161,11 @@ def fetch_category(token, category_id):
             return items
 
 
-def to_product(raw, category_label):
+def to_product(raw, category_label, paths=None):
     price = raw.get("price") or {}
+    leaf = (raw.get("categories") or [{}])[0]
+    if paths is not None:
+        category_label = our_category(paths.get(leaf.get("categoryId")), category_label)
     location = raw.get("itemLocation") or {}
     images = [big_image((raw.get("image") or {}).get("imageUrl"))]
     images += [big_image(i.get("imageUrl")) for i in raw.get("additionalImages") or []]
@@ -133,7 +176,7 @@ def to_product(raw, category_label):
         "currency": price.get("currency") or "",
         "condition": raw.get("condition") or "",
         "category": category_label,
-        "subcategory": ((raw.get("categories") or [{}])[0]).get("categoryName", ""),
+        "subcategory": leaf.get("categoryName", ""),
         "images": [i for i in images if i],
         "url": raw.get("itemWebUrl") or "",
         "location": ", ".join(x for x in (location.get("city"), location.get("country")) if x),
@@ -292,24 +335,33 @@ def main():
         return 0
 
     token = get_token(client_id, client_secret)
+    if CONFIG.get("marketplace", "EBAY_US") == "EBAY_US":
+        roots, paths = TOP_CATEGORIES, None
+    else:
+        roots, paths = category_tree(token)
+        print(f"{len(roots)} grandes catégories sur {CONFIG['marketplace']}.")
     found = {}
     partial = False
-    for cat_id, label in TOP_CATEGORIES.items():
+    for cat_id, label in roots.items():
         try:
             for raw in fetch_category(token, cat_id):
-                product = to_product(raw, label)
+                product = to_product(raw, label, paths)
                 found.setdefault(product["id"], product)
         except RuntimeError as err:
             partial = True
             print(f"Catégorie {label} ignorée : {err}")
         time.sleep(.3)
 
-    previous = []
-    if OUT.exists():
-        previous = json.loads(OUT.read_text(encoding="utf-8")).get("items", [])
+    previous_data = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
+    previous = previous_data.get("items", [])
     # Sécurité : une réponse vide (panne, jeton refusé) n'efface jamais le catalogue.
     if not found and previous and not all(p.get("example") for p in previous):
         print("Aucune annonce reçue : catalogue précédent conservé.")
+        return 1
+
+    real = [p for p in previous if not p.get("example")]
+    if len(real) >= 20 and len(found) < len(real) * .7:
+        print(f"Seulement {len(found)} annonces contre {len(real)} : catalogue précédent conservé.")
         return 1
 
     today = datetime.now(timezone.utc).date().isoformat()
@@ -339,12 +391,21 @@ def main():
             p["firstSeen"] = p["listed"][:10]
 
     products = sorted(found.values(), key=lambda p: p.get("listed") or "", reverse=True)
-    add_english(products, previous, os.environ.get("DEEPL_API_KEY", "").strip())
+    deepl_key = os.environ.get("DEEPL_API_KEY", "").strip()
+    add_english(products, previous, deepl_key)
+    cat_en = previous_data.get("cat_en", {})
+    missing = sorted({p["subcategory"] for p in products if p.get("subcategory")} - cat_en.keys())
+    if missing and deepl_key:
+        try:
+            cat_en.update(zip(missing, deepl(missing, deepl_key)))
+        except (RuntimeError, KeyError, urllib.error.URLError) as err:
+            print(f"Catégories non traduites : {err}")
     data = {
         "shop": CONFIG["shopName"],
         "seller": CONFIG["seller"],
         "storeUrl": CONFIG["storeUrl"],
         "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "cat_en": cat_en,
         "items": products,
     }
     pages.build(data)  # une page par objet + sitemap.xml (ajoute le chemin "page" à chaque objet)

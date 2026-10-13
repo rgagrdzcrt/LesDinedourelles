@@ -36,7 +36,7 @@
       descTitle: 'Description', descNote: '', buy: 'Acheter sur eBay ↗', seeStore: 'Voir la boutique eBay ↗', category: 'Catégorie', detail: 'Détail', condition: 'État',
       shipping: 'Expédition', shipFrom: "Depuis l'Aude, France", ref: 'Référence', photo: 'Photo', priceOnEbay: 'Prix sur eBay',
       locale: 'fr-FR', under: a => `Moins de ${a}`, between: (a, b) => `${a} à ${b}`, over: a => `Plus de ${a}`,
-      cols: { africa: 'Arts premiers', ceramics: 'Céramiques', glass: 'Verrerie', asia: 'Asie', collect: 'Objets de collection', cheap: 'Moins de 100 $', all: 'Toute la collection' },
+      cols: { africa: 'Arts premiers', ceramics: 'Céramiques', glass: 'Verrerie', asia: 'Asie', collect: 'Objets de collection', cheap: 'Moins de 100 €', all: 'Toute la collection' },
     },
     en: {
       proto: '<b>Prototype</b> · This showcase is still being built: more features are coming soon. Purchases are made securely on eBay.',
@@ -65,7 +65,7 @@
       descTitle: 'Description', descNote: 'Written by the seller in French.', descAuto: 'Automatically translated from French.', buy: 'Buy on eBay ↗', seeStore: 'Visit the eBay store ↗', category: 'Category', detail: 'Detail', condition: 'Condition',
       shipping: 'Shipping', shipFrom: 'From the Aude, France', ref: 'Reference', photo: 'Photo', priceOnEbay: 'Price on eBay',
       locale: 'en-US', under: a => `Under ${a}`, between: (a, b) => `${a} to ${b}`, over: a => `Over ${a}`,
-      cols: { africa: 'Tribal art', ceramics: 'Ceramics', glass: 'Glassware', asia: 'Asian art', collect: 'Collectibles', cheap: 'Under $100', all: 'Whole collection' },
+      cols: { africa: 'Tribal art', ceramics: 'Ceramics', glass: 'Glassware', asia: 'Asian art', collect: 'Collectibles', cheap: 'Under €100', all: 'Whole collection' },
     },
   };
   const CAT_EN = { 'Antiquités': 'Antiques', 'Art': 'Art', 'Objets de collection': 'Collectibles', 'Poterie et verre': 'Pottery & glass', 'Jouets et modélisme': 'Toys & models', 'Bijoux et montres': 'Jewellery & watches', 'Maison et jardin': 'Home & garden', 'Livres': 'Books', 'Occasion': 'Used' };
@@ -322,6 +322,7 @@
     .then(r => r.json())
     .then(d => {
       data = d;
+      Object.entries(d.cat_en || {}).forEach(([fr, en]) => { if (!CAT_EN[fr]) CAT_EN[fr] = en; });
       items = d.items.filter(p => p.images && p.images.length);
       if (d.storeUrl) $('storeLink').href = d.storeUrl;
       renderAll();

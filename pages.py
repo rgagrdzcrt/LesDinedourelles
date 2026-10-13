@@ -224,6 +224,15 @@ def build(data):
         if len(related) < 4:
             related += [r for r in items if r is not p and r not in related and r.get("category") == p.get("category")][: 4 - len(related)]
         (tmp / Path(p["page"]).name).write_text(render(p, related), encoding="utf-8")
+    # Titre modifié : l'ancienne adresse (déjà connue de Google ou Pinterest) renvoie vers la nouvelle.
+    by_id = {str(p["id"]): Path(p["page"]).name for p in items}
+    for old in PAGES_DIR.glob("*.html") if PAGES_DIR.exists() else []:
+        new = by_id.get(old.stem.rsplit("-", 1)[-1])
+        if new and new != old.name:
+            (tmp / old.name).write_text(
+                f'<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex">'
+                f'<link rel="canonical" href="{SITE}objet/{new}"><meta http-equiv="refresh" content="0; url={new}">'
+                f'<a href="{new}">{new}</a>\n', encoding="utf-8")
     # Remplacement d'un bloc : les pages des objets vendus disparaissent.
     if PAGES_DIR.exists():
         shutil.rmtree(PAGES_DIR)
