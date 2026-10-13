@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Les Dinedourelles</title>
-<meta name="description" content="Art africain, objets anciens et curiosités chinés par Jean-Pierre Cartier, brocanteur à Pézenas. La vitrine de la boutique eBay Les Dinedourelles.">
-<meta name="theme-color" content="#f4f4f1">
+<meta name="description" content="Art africain, céramiques, verrerie et objets anciens chinés par Jean-Pierre Cartier, brocanteur à Pézenas. Pièces uniques en vente sur eBay.">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Les Dinedourelles">
-<meta property="og:title" content="Les Dinedourelles · Cabinet de curiosités">
-<meta property="og:description" content="Art africain, objets anciens et curiosités, choisis un par un.">
+<meta property="og:title" content="Les Dinedourelles · Pièces uniques chinées une à une">
+<meta property="og:description" content="Art africain, céramiques, verrerie et objets anciens. Brocante à Pézenas, envois depuis l'Aude.">
 <meta property="og:url" content="https://rgagrdzcrt.github.io/LesDinedourelles/">
 <meta property="og:image" content="https://rgagrdzcrt.github.io/LesDinedourelles/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -20,117 +20,129 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="style.css">
-<script>
-(function () {
-  var t = '';
-  try { t = localStorage.getItem('dd_theme') || ''; } catch (e) {}
-  if (t) document.documentElement.setAttribute('data-theme', t);
-})();
-</script>
 </head>
 <body>
-<header class="bar">
-  <div class="wrap bar-in">
-    <a class="logo" href="#top" aria-label="Les Dinedourelles">Les Dinedourelles</a>
-    <nav class="bar-nav" aria-label="Navigation">
-      <a href="#collection" data-i18n="nav.collection">Collection</a>
-      <a href="#maison" data-i18n="nav.house">La maison</a>
-      <button class="theme lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
-      <button class="theme" id="themeBtn" type="button" data-i18n-aria="theme" aria-label="Changer de thème">◐</button>
-      <a class="ebay-link" id="storeLink" href="https://www.ebay.com/str/lesdinedourelles" target="_blank" rel="noopener" data-i18n="store">Boutique eBay ↗</a>
-    </nav>
+<div class="promo" data-i18n-html="promo">Nouveautés chaque semaine · <b>Expédition soignée depuis l'Aude</b> · Paiement sécurisé par eBay</div>
+
+<header class="site-head">
+  <div class="wrap top">
+    <a class="logo" href="#top" aria-label="Les Dinedourelles">Les <i>Dinedourelles</i></a>
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <span class="sr-only" data-i18n="searchLabel">Rechercher</span>
+      <input id="q" type="search" autocomplete="off" data-i18n-ph="searchPh" placeholder="Rechercher une pièce, une origine, une matière…">
+    </label>
+    <div class="icons">
+      <button type="button" id="favBtn" class="icon-link" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 4.5 6.8 4.5c2.2 0 3.6 1.2 5.2 3 1.6-1.8 3-3 5.2-3 3.8 0 5.9 4 4.4 7.3C19.5 16.4 12 21 12 21Z"/></svg>
+        <span class="lbl" data-i18n="favs">Favoris</span><span class="badge" id="favCount">0</span>
+      </button>
+      <button type="button" id="langBtn" class="icon-link lang">EN</button>
+      <a class="icon-link store" id="storeLink" href="https://www.ebay.com/str/lesdinedourelles" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="lbl" data-i18n="store">Boutique eBay</span>
+      </a>
+    </div>
   </div>
+  <nav class="wrap nav" id="nav" aria-label="Collections"></nav>
 </header>
 
 <main id="top">
-  <section class="hero wrap">
-    <svg class="seal" viewBox="0 0 200 200" aria-hidden="true">
-      <defs><path id="sealPath" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
-      <g class="seal-ring"><text><textPath href="#sealPath" textLength="472">CABINET DE CURIOSITÉS · PÉZENAS · ART AFRICAIN · </textPath></text></g>
-      <circle cx="100" cy="100" r="52" class="seal-disc"/>
-      <text x="100" y="121" text-anchor="middle" class="seal-d">D</text>
-    </svg>
-    <p class="eyebrow" data-i18n="eyebrow">Cabinet de curiosités</p>
-    <h1 data-i18n-html="hero">Art africain, objets anciens et curiosités, <em>choisis un par un.</em></h1>
-    <ul class="facts">
-      <li data-i18n-html="fact.sold"><b>176</b> objets déjà vendus</li>
-      <li data-i18n-html="fact.reviews"><b>100 %</b> d'avis positifs</li>
-      <li data-i18n-html="fact.ship"><b>Aude</b> expédié depuis le sud de la France</li>
-    </ul>
+  <section class="hero">
+    <div class="hero-img" id="heroImgs"></div>
+    <div class="hero-text">
+      <span class="kicker" data-i18n="heroKicker">Cabinet de curiosités · Pézenas</span>
+      <h1 data-i18n-html="heroTitle">Des pièces uniques, <i>chinées une à une.</i></h1>
+      <p data-i18n="heroText">Art africain, céramiques signées, verrerie et objets anciens choisis par Jean-Pierre Cartier, brocanteur depuis quinze ans.</p>
+      <a class="cta" href="#collection" id="heroCta">Découvrir la collection →</a>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+    </div>
   </section>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="track">
-      <span>Statuaire Teke</span><i>✦</i><span>Tabourets Lobi</span><i>✦</i><span>Bronzes</span><i>✦</i><span>Art déco</span><i>✦</i><span>Dessins anciens</span><i>✦</i><span>Boîtes à musique</span><i>✦</i><span>Céramiques signées</span><i>✦</i><span>Curiosités médicales</span><i>✦</i>
-      <span>Statuaire Teke</span><i>✦</i><span>Tabourets Lobi</span><i>✦</i><span>Bronzes</span><i>✦</i><span>Art déco</span><i>✦</i><span>Dessins anciens</span><i>✦</i><span>Boîtes à musique</span><i>✦</i><span>Céramiques signées</span><i>✦</i><span>Curiosités médicales</span><i>✦</i>
-    </div>
-  </div>
-
-  <section id="collection" class="wrap collection">
-    <div class="notice" id="exampleNotice" hidden data-i18n-html="notice"><b>Aperçu.</b> Ces objets sont un échantillon de la boutique, sans leurs photos. Le catalogue complet, avec photos et prix à jour, s'affichera automatiquement une fois la vitrine reliée à eBay.</div>
-
-    <div class="toolbar">
-      <label class="search"><span class="sr-only" data-i18n="search.label">Rechercher</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-        <input id="q" type="search" data-i18n-ph="search.ph" placeholder="Rechercher un objet, une origine, une matière…" autocomplete="off">
-      </label>
-      <label class="sort"><span class="sr-only" data-i18n="sort.label">Trier</span>
-        <select id="sort">
-          <option value="recent" data-i18n="sort.recent">Ajouts récents</option>
-          <option value="asc" data-i18n="sort.asc">Prix croissant</option>
-          <option value="desc" data-i18n="sort.desc">Prix décroissant</option>
-        </select>
-      </label>
-    </div>
-    <div class="chips" id="chips" role="group" aria-label="Catégories"></div>
-    <p class="count" id="count" aria-live="polite"></p>
-    <div class="grid" id="grid"></div>
+  <section class="block wrap">
+    <div class="head"><h2 data-i18n="byCat">Acheter par catégorie</h2></div>
+    <div class="cats" id="cats"></div>
   </section>
 
-  <section id="maison" class="wrap maison">
-    <div>
-      <p class="eyebrow" data-i18n="house.eyebrow">La maison</p>
-      <h2 data-i18n="house.title">Des objets qui ont déjà eu une vie.</h2>
+  <section class="block wrap">
+    <div class="head"><h2 data-i18n="byPrice">Acheter par prix</h2></div>
+    <div class="prices" id="prices"></div>
+  </section>
+
+  <section class="block wrap" id="collection">
+    <div class="head">
+      <div>
+        <h2 id="colTitle" data-i18n="collection">La collection</h2>
+        <p class="count" id="count" aria-live="polite"></p>
+      </div>
+      <div class="tools">
+        <button type="button" class="clear" id="clearFilter" hidden></button>
+        <label class="sort"><span class="sr-only" data-i18n="sortLabel">Trier</span>
+          <select id="sort">
+            <option value="recent" data-i18n="sortRecent">Nouveautés d'abord</option>
+            <option value="asc" data-i18n="sortAsc">Prix croissant</option>
+            <option value="desc" data-i18n="sortDesc">Prix décroissant</option>
+          </select>
+        </label>
+      </div>
     </div>
-    <div class="maison-text">
-      <p data-i18n="house.p1">Derrière Les Dinedourelles, il y a Jean-Pierre Cartier, collectionneur et brocanteur. Depuis quinze ans, il tient une brocante à Pézenas, dans l'Hérault.</p>
-      <p data-i18n="house.p2">Les objets viennent des brocantes du sud de la France et de ses voyages en Afrique : statuaire, mobilier, instruments anciens, céramiques et objets de collection, chacun choisi pour son histoire.</p>
-      <p data-i18n="house.p3">Les ventes passent par eBay, qui assure le paiement et le suivi. Les colis partent d'Escales ou de Lézignan-Corbières, dans l'Aude.</p>
-      <a class="insta" href="https://www.instagram.com/broc_deco_les_dinedourelles/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="dot"/></svg>
-        <span><b>@broc_deco_les_dinedourelles</b><small data-i18n="insta">Les nouveautés et la brocante, sur Instagram</small></span>
-      </a>
+    <div class="products" id="grid"></div>
+    <div class="more-wrap"><button type="button" class="cta ghost" id="moreBtn" hidden></button></div>
+  </section>
+
+  <section class="trust wrap">
+    <div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><h3 data-i18n="t1">Paiement sécurisé</h3><p data-i18n="t1p">Chaque achat passe par eBay et sa garantie client.</p></div>
+    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><h3 data-i18n="t2">Envoi soigné</h3><p data-i18n="t2p">Emballé à la main et expédié depuis l'Aude.</p></div>
+    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7L12 3Z"/></svg><h3 data-i18n="t3">100 % d'avis positifs</h3><p data-i18n="t3p">Plus de 176 objets déjà vendus sur eBay.</p></div>
+    <div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3 data-i18n="t4">Arrivages réguliers</h3><p data-i18n="t4p">De nouvelles pièces chaque semaine, chinées en brocante.</p></div>
+  </section>
+
+  <section class="wrap" id="maison">
+    <div class="insta">
+      <div>
+        <span class="kicker" data-i18n="houseKicker">La maison</span>
+        <h2 data-i18n="houseTitle">La brocante en coulisses</h2>
+        <p data-i18n="houseText">Derrière Les Dinedourelles, il y a Jean-Pierre Cartier, collectionneur et brocanteur. Depuis quinze ans, il tient une brocante à Pézenas, dans l'Hérault. Les objets viennent des brocantes du sud de la France et de ses voyages en Afrique. Les colis partent d'Escales ou de Lézignan-Corbières, dans l'Aude.</p>
+        <a class="cta" href="https://www.instagram.com/broc_deco_les_dinedourelles/" target="_blank" rel="noopener" data-i18n="instaCta">Suivre sur Instagram</a>
+        <p class="handle">@broc_deco_les_dinedourelles</p>
+      </div>
+      <div class="insta-grid" id="mosaic"></div>
     </div>
   </section>
 </main>
 
-<footer class="foot">
-  <div class="wrap foot-in">
-    <span class="logo small">Les Dinedourelles</span>
-    <span id="updated" class="muted"></span>
-    <span class="foot-links">
-      <a href="https://www.instagram.com/broc_deco_les_dinedourelles/" target="_blank" rel="noopener">Instagram ↗</a>
-      <a href="https://www.ebay.com/str/lesdinedourelles" target="_blank" rel="noopener" id="storeLink2" data-i18n="store">Boutique eBay ↗</a>
-    </span>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div><div class="logo">Les <i>Dinedourelles</i></div><p class="foot-text" data-i18n="footText">Art africain, objets anciens et curiosités. Brocante à Pézenas, envois depuis l'Aude.</p></div>
+      <div><h4 data-i18n="footCol">Collection</h4><ul id="footCats"></ul></div>
+      <div><h4 data-i18n="footBuy">Acheter</h4><ul>
+        <li><a href="https://www.ebay.com/str/lesdinedourelles" target="_blank" rel="noopener" data-i18n="store">Boutique eBay</a></li>
+        <li><a href="#collection" data-i18n="collection">La collection</a></li>
+      </ul></div>
+      <div><h4 data-i18n="footHouse">La maison</h4><ul>
+        <li><a href="#maison" data-i18n="footStory">Notre histoire</a></li>
+        <li><a href="https://www.instagram.com/broc_deco_les_dinedourelles/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul></div>
+    </div>
+    <div class="legal"><span>© <span id="year">2026</span> Les Dinedourelles</span><span id="updated"></span></div>
   </div>
 </footer>
 
 <dialog class="sheet" id="sheet" aria-labelledby="sheetTitle">
   <button class="close" id="closeSheet" type="button" data-i18n-aria="close" aria-label="Fermer">✕</button>
   <div class="sheet-body">
-    <div class="gallery">
-      <div class="stage" id="stage"></div>
-      <div class="thumbs" id="thumbs"></div>
-    </div>
-    <div class="cartel big">
-      <p class="cat" id="sheetCat"></p>
+    <div class="gallery"><div class="stage" id="stage"></div><div class="thumbs" id="thumbs"></div></div>
+    <div class="info">
+      <p class="kicker" id="sheetCat"></p>
       <h2 id="sheetTitle"></h2>
+      <p class="sheet-price" id="sheetPrice"></p>
+      <a class="cta wide" id="sheetBuy" href="#" target="_blank" rel="noopener"></a>
+      <button class="cta ghost wide" id="sheetFav" type="button"></button>
       <dl class="specs" id="sheetSpecs"></dl>
-      <p class="price" id="sheetPrice"></p>
-      <a class="buy" id="sheetBuy" href="#" target="_blank" rel="noopener">Voir sur eBay ↗</a>
-      <p class="muted small" data-i18n="sheet.note">Commande, paiement et livraison se font sur eBay.</p>
+      <p class="note" data-i18n="sheetNote">Commande, paiement et livraison se font sur eBay.</p>
     </div>
   </div>
 </dialog>
