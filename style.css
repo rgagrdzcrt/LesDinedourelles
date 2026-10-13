@@ -204,3 +204,21 @@ h2 { font: 400 clamp(32px, 3.4vw, 46px)/1.05 var(--serif); letter-spacing: -.01e
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- Page d'un objet (générée par pages.py) ---------- */
+.obj { padding-block: 28px 0; }
+.crumbs { margin-bottom: 20px; color: var(--muted); font-size: 13px; }
+.crumbs a:hover { color: var(--accent); }
+.obj-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+.obj-grid .gallery { border-radius: 8px; }
+.obj-grid .info { position: sticky; top: 110px; padding: 8px 0 0; overflow: visible; }
+.obj-grid h1 { font: 400 clamp(32px, 3.2vw, 46px)/1.05 var(--serif); letter-spacing: -.01em; text-wrap: balance; }
+.obj-desc { color: var(--muted); font-size: 15px; max-width: 62ch; }
+.obj-page .products .card { display: block; }
+@media (max-width: 760px) {
+  .obj-grid { grid-template-columns: 1fr; gap: 20px; }
+  .obj-grid .gallery { padding: 12px; }
+  .obj-grid .info { position: static; padding: 0; }
+}
+.obj-page .top { grid-template-columns: auto auto; justify-content: space-between; }
+.obj-page .top > span { display: none; }

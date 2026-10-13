@@ -166,9 +166,9 @@
 
   function card(p) {
     const on = favs.includes(String(p.id));
-    return `<div class="card"><button type="button" class="open" data-id="${esc(p.id)}" style="display:block;width:100%;text-align:left">
+    return `<div class="card"><a class="open" href="${esc(p.page || '#')}" data-id="${esc(p.id)}" style="display:block">
       <div class="ph"><img src="${esc(p.images[0])}" alt="${esc(p.title)}" loading="lazy" referrerpolicy="no-referrer"><span class="tag">${esc(t('unique'))}</span></div>
-      <h3>${esc(p.title)}</h3><div class="sub">${esc(p.subcategory || tr(p.category))}</div><div class="pr">${esc(money(p))}</div></button>
+      <h3>${esc(p.title)}</h3><div class="sub">${esc(p.subcategory || tr(p.category))}</div><div class="pr">${esc(money(p))}</div></a>
       <button type="button" class="heart${on ? ' on' : ''}" data-fav="${esc(p.id)}" aria-pressed="${on}" aria-label="${esc(on ? t('favRemove') : t('favAdd'))}">${heartSvg}</button></div>`;
   }
 
@@ -242,7 +242,12 @@
     const band = e.target.closest('[data-band]');
     if (band) { const b = BANDS[Number(band.dataset.band)]; setFilter({ key: 'band' + band.dataset.band, label: bandLabel(b), test: p => p.price != null && p.price >= b[0] && p.price < b[1] }); return; }
     const opener = e.target.closest('[data-id]');
-    if (opener && !opener.closest('#sheet')) { open(opener.dataset.id); }
+    if (opener && !opener.closest('#sheet')) {
+      // Ctrl/Cmd-clic ou clic molette : la page de l'objet s'ouvre dans un nouvel onglet.
+      if (opener.tagName === 'A' && (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1)) return;
+      e.preventDefault();
+      open(opener.dataset.id);
+    }
   });
   $('clearFilter').addEventListener('click', () => { favOnly = false; setFilter(null, false); });
   $('favBtn').addEventListener('click', () => { favOnly = !favOnly; filter = null; shown = PAGE; renderGrid(); $('collection').scrollIntoView({ behavior: 'smooth' }); });

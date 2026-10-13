@@ -30,6 +30,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add products.json
           if [ -f shopify_products.csv ]; then git add shopify_products.csv; fi
+          if [ -f sitemap.xml ]; then git add sitemap.xml; fi
+          if [ -d objet ]; then git add -A objet; fi
           if git diff --cached --quiet; then echo "Catalogue inchangé."; exit 0; fi
           git commit -m "Mise à jour du catalogue"
           git pull --rebase || { git rebase --abort; echo "Mise à jour concurrente : ignorée."; exit 0; }

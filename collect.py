@@ -11,6 +11,7 @@ Identifiants attendus dans l'environnement (secrets GitHub) :
 
 import base64
 import csv
+import html
 import json
 import os
 import re
@@ -23,6 +24,8 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import pages
+
 ROOT = Path(__file__).resolve().parent
 CONFIG = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
 OUT = ROOT / "products.json"
@@ -32,6 +35,7 @@ TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
 SCOPE = "https://api.ebay.com/oauth/api_scope"
 PAGE_SIZE = 200
+MAX_DETAILS_PER_RUN = 250  # largement sous le quota quotidien de l'API (5 000 appels)
 
 # L'API exige une catégorie (ou un mot-clé) : on parcourt les grandes catégories
 # eBay en filtrant sur le vendeur. Une catégorie vide ne coûte qu'une requête.
@@ -134,6 +138,32 @@ def to_product(raw, category_label):
     }
 
 
+ITEM_URL = "https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id"
+
+
+def plain_text(raw_html, limit=700):
+    """Description eBay (HTML) réduite à un paragraphe lisible."""
+    text = re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", raw_html or "")
+    text = re.sub(r"(?s)<[^>]+>", " ", text)
+    text = html.unescape(re.sub(r"\s+", " ", text)).strip()
+    return text if len(text) <= limit else text[:limit].rsplit(" ", 1)[0] + "…"
+
+
+def fetch_details(token, legacy_id):
+    """Caractéristiques (origine, matière, époque…) et description d'une annonce."""
+    params = urllib.parse.urlencode({"legacy_item_id": legacy_id})
+    resp = http(f"{ITEM_URL}?{params}", headers={
+        "Authorization": f"Bearer {token}",
+        "X-EBAY-C-MARKETPLACE-ID": CONFIG.get("marketplace", "EBAY_US"),
+        "Accept-Language": "fr-FR",
+    })
+    aspects = [[a.get("name", ""), a.get("value", "")] for a in resp.get("localizedAspects") or [] if a.get("value")]
+    return {
+        "aspects": aspects[:12],
+        "description": plain_text(resp.get("shortDescription") or resp.get("description") or ""),
+    }
+
+
 def slug(text):
     text = unicodedata.normalize("NFD", text.lower())
     text = "".join(c for c in text if not unicodedata.combining(c))
@@ -198,6 +228,22 @@ def main():
         print("Aucune annonce reçue : catalogue précédent conservé.")
         return 1
 
+    # Détails : repris du catalogue précédent, demandés à eBay pour les nouvelles annonces seulement.
+    known = {str(p.get("id")): p for p in previous if "aspects" in p}
+    asked = 0
+    for p in found.values():
+        old = known.get(str(p["id"]))
+        if old:
+            p["aspects"], p["description"] = old.get("aspects", []), old.get("description", "")
+        elif asked < MAX_DETAILS_PER_RUN:
+            try:
+                p.update(fetch_details(token, p["id"]))
+            except RuntimeError as err:
+                print(f"Détails indisponibles pour {p['id']} : {err}")
+            asked += 1
+            time.sleep(.2)
+    print(f"Détails demandés pour {asked} nouvelle(s) annonce(s).")
+
     products = sorted(found.values(), key=lambda p: p.get("listed") or "", reverse=True)
     data = {
         "shop": CONFIG["shopName"],
@@ -206,6 +252,7 @@ def main():
         "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "items": products,
     }
+    pages.build(data)  # une page par objet + sitemap.xml (ajoute le chemin "page" à chaque objet)
     tmp = OUT.with_suffix(".tmp")
     tmp.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     tmp.replace(OUT)
