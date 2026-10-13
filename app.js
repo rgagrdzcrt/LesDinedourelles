@@ -28,7 +28,7 @@
       t4: 'Arrivages réguliers', t4p: 'De nouvelles pièces chaque semaine, chinées en brocante.',
       houseKicker: 'La maison', houseTitle: 'La brocante en coulisses',
       houseText: "Derrière Les Dinedourelles, il y a Jean-Pierre Cartier, collectionneur et brocanteur. Depuis quinze ans, il tient une brocante à Pézenas, dans l'Hérault. Les objets viennent des brocantes du sud de la France et de ses voyages en Afrique. Les colis partent d'Escales ou de Lézignan-Corbières, dans l'Aude.",
-      instaCta: 'Suivre sur Instagram', linktreeCta: 'Tous ses liens ↗',
+      instaCta: 'Suivre sur Instagram', linktreeCta: 'Linktree ↗',
       linktreeNote: '@broc_deco_les_dinedourelles · Selency, Vinted, WhatsApp et Facebook sur son Linktree', footText: "Art africain, objets anciens et curiosités. Brocante à Pézenas, envois depuis l'Aude.",
       footCol: 'Collection', footBuy: 'Acheter', footHouse: 'La maison', footStory: 'Notre histoire',
       updated: 'Catalogue mis à jour le ', close: 'Fermer', sheetNote: 'Commande, paiement et livraison se font sur eBay.',
@@ -56,7 +56,7 @@
       t4: 'Regular new arrivals', t4p: 'New pieces every week, found at flea markets.',
       houseKicker: 'About', houseTitle: 'Behind the stall',
       houseText: 'Les Dinedourelles is run by Jean-Pierre Cartier, a collector and antiques dealer. He has kept a stall in Pézenas, in the south of France, for fifteen years. The pieces come from flea markets across southern France and from his travels in Africa. Parcels ship from Escales or Lézignan-Corbières, in the Aude region.',
-      instaCta: 'Follow on Instagram', linktreeCta: 'All his links ↗',
+      instaCta: 'Follow on Instagram', linktreeCta: 'Linktree ↗',
       linktreeNote: '@broc_deco_les_dinedourelles · Selency, Vinted, WhatsApp and Facebook on his Linktree', footText: 'African art, antiques and curiosities. Antiques stall in Pézenas, shipping from the Aude, France.',
       footCol: 'Collection', footBuy: 'Shop', footHouse: 'About', footStory: 'Our story',
       updated: 'Catalogue updated ', close: 'Close', sheetNote: 'Ordering, payment and delivery take place on eBay.',
@@ -70,7 +70,7 @@
 
   let lang = '';
   try { lang = localStorage.getItem('dd_lang') || ''; } catch (e) {}
-  if (lang !== 'fr' && lang !== 'en') lang = /^fr/i.test(navigator.language || 'fr') ? 'fr' : 'en';
+  if (lang !== 'en') lang = 'fr'; // français par défaut, anglais seulement si le visiteur le choisit
   const t = k => T[lang][k];
   const tr = s => (lang === 'en' && CAT_EN[s]) || s;
 
