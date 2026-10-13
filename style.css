@@ -126,6 +126,7 @@ h2 { font: 400 clamp(32px, 3.4vw, 46px)/1.05 var(--serif); letter-spacing: -.01e
 .insta { display: grid; grid-template-columns: 1fr 1.3fr; gap: 44px; align-items: center; margin-top: 88px; padding: 56px; border-radius: 8px; background: var(--accent-soft); }
 .insta h2 { margin-top: 10px; }
 .insta p { max-width: 54ch; margin: 14px 0 24px; color: var(--muted); }
+.house-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
 .insta .handle { margin: 12px 0 0; font-size: 13px; font-weight: 600; color: var(--ink); }
 .insta-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .insta-grid button { aspect-ratio: 1; border-radius: 6px; overflow: hidden; background: var(--shade); }
