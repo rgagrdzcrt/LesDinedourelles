@@ -127,7 +127,7 @@ def render(p, related):
 <div class="promo">Nouveautés chaque semaine · <b>Expédition soignée depuis l'Aude</b> · Paiement sécurisé par eBay</div>
 <header class="site-head">
   <div class="wrap top">
-    <a class="logo" href="../" aria-label="Les Dinedourelles"><img class="mascot" src="../logo-jp.webp" width="141" height="160" alt=""><span class="word">les <i>dinedourelles</i></span></a>
+    <a class="logo" href="../" aria-label="Les Dinedourelles"><img class="mascot" src="../logo-jp.webp" width="137" height="160" alt=""><span class="word">les <i>dinedourelles</i></span></a>
     <span></span>
     <div class="icons"><a class="icon-link" href="../#collection">← La collection</a></div>
   </div>
