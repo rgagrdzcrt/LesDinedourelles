@@ -205,7 +205,10 @@
 
 
   function renderMosaic() {
-    $('mosaic').innerHTML = items.slice(8, 16).map(p => `<button type="button" data-id="${esc(p.id)}" aria-label="${esc(ttl(p))}"><img src="${esc(p.images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('');
+    // Une pièce par rubrique du menu (Arts premiers, Céramiques, Verrerie…), sans doublon ni pièce du carrousel.
+    const used = new Set([...$('heroImgs').querySelectorAll('[data-id]')].map(b => b.dataset.id)), pick = [];
+    COLLECTIONS.forEach(c => { const p = items.find(x => c.test(x) && !used.has(String(x.id))); if (p) { used.add(String(p.id)); pick.push(p); } });
+    $('mosaic').innerHTML = pick.map(p => `<button type="button" data-id="${esc(p.id)}" aria-label="${esc(ttl(p))}"><img src="${esc(p.images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('');
   }
 
   /* Déjà vendus : sold.json (objets sortis du catalogue), sans ceux remis en vente depuis. */
