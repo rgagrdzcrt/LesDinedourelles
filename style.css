@@ -193,6 +193,9 @@ h2 { font: 400 clamp(32px, 3.4vw, 46px)/1.05 var(--serif); letter-spacing: -.01e
 
 .insta { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 44px; align-items: center; margin-top: 88px; padding: 56px; border-radius: 8px; background: var(--accent-soft); }
 .insta h2 { margin-top: 10px; }
+.house-head { display: flex; align-items: center; gap: 20px; }
+.portrait { flex: none; width: 120px; height: 120px; border-radius: 50%; object-fit: cover; background: #fff; box-shadow: 0 0 0 4px var(--paper), 0 6px 18px rgba(0, 0, 0, .12); transform: rotate(-3deg); }
+@media (max-width: 560px) { .portrait { width: 88px; height: 88px; } .house-head { gap: 14px; } }
 .insta p { max-width: 54ch; margin: 14px 0 24px; color: var(--muted); }
 .house-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
 .insta .house-text p { margin: 0 0 12px; }
