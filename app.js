@@ -6,6 +6,9 @@
   const PAGE = 24;
   let data = { items: [] }, items = [];
   let soldCount = 176, sold = [], heroPick = null;
+  // Curseur de prix : paliers (plus fins là où se trouvent la plupart des pièces). Le dernier palier = « et plus ».
+  const STEPS = [0, 20, 50, 75, 100, 150, 200, 300, 500, 750, 1000, 1500];
+  const LAST = STEPS.length - 1;
   let filter = null, favOnly = false, shown = PAGE, slide = 0, timer = null;
 
   /* ---------- Traductions ---------- */
@@ -19,6 +22,8 @@
       heroCta: n => `Découvrir les ${n} pièces →`,
       byCat: 'Explorer la collection', origins: { africa: 'Afrique', europe: 'Europe', asia: 'Asie', signed: 'Signatures et grands noms' }, catsTitle: 'Catégories', byPrice: 'Acheter par prix', collection: 'La collection',
       pieces: n => n + (n > 1 ? ' pièces' : ' pièce'), piecesArrow: n => `${n} ${n > 1 ? 'pièces' : 'pièce'} →`,
+      priceTitle: 'Prix', priceAll: 'Tous les prix', priceMin: 'Prix minimum', priceMax: 'Prix maximum',
+      priceUp: a => `${a} et plus`, priceUpTo: a => `Jusqu'à ${a}`, priceFromTo: (a, b) => `De ${a} à ${b}`,
       sortLabel: 'Trier', sortRecent: "Nouveautés d'abord", sortAsc: 'Prix croissant', sortDesc: 'Prix décroissant',
       more: n => `Voir ${n} pièces de plus`, unique: 'Pièce unique', fresh: 'Nouveau', favAdd: 'Ajouter aux favoris', favRemove: 'Retirer des favoris',
       favFilter: 'Mes favoris', emptyT: 'Aucune pièce ne correspond', emptyS: 'Essayez un autre mot ou une autre rubrique.',
@@ -50,6 +55,8 @@
       heroCta: n => `Discover all ${n} pieces →`,
       byCat: 'Explore the collection', origins: { africa: 'Africa', europe: 'Europe', asia: 'Asia', signed: 'Signatures and big names' }, catsTitle: 'Categories', byPrice: 'Shop by price', collection: 'The collection',
       pieces: n => n + (n > 1 ? ' pieces' : ' piece'), piecesArrow: n => `${n} ${n > 1 ? 'pieces' : 'piece'} →`,
+      priceTitle: 'Price', priceAll: 'All prices', priceMin: 'Minimum price', priceMax: 'Maximum price',
+      priceUp: a => `${a} and up`, priceUpTo: a => `Up to ${a}`, priceFromTo: (a, b) => `${a} to ${b}`,
       sortLabel: 'Sort', sortRecent: 'Newest first', sortAsc: 'Price: low to high', sortDesc: 'Price: high to low',
       more: n => `Show ${n} more pieces`, unique: 'One of a kind', fresh: 'New', favAdd: 'Add to favourites', favRemove: 'Remove from favourites',
       favFilter: 'My favourites', emptyT: 'No matching pieces', emptyS: 'Try another word or section.',
@@ -230,10 +237,31 @@
     $('goneGrid').innerHTML = list.map(s => `<div class="gone-item"><div class="ph"><img src="${esc(s.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="tag">${esc(t('soldTag'))}</span></div><h3>${esc(s.title)}</h3><div class="sub">${esc(tr(s.subcategory || s.category))}</div></div>`).join('');
   }
 
+  /* ---------- Curseur de prix ---------- */
+  const lo = () => Number($('pMin').value), hi = () => Number($('pMax').value);
+  const priceOk = p => {
+    if (lo() === 0 && hi() === LAST) return true;
+    if (p.price == null) return false;
+    return p.price >= STEPS[lo()] && (hi() === LAST || p.price <= STEPS[hi()]);
+  };
+  function renderPrice() {
+    const a = lo(), b = hi(), f = i => fmt(STEPS[i], 'EUR');
+    $('priceVal').textContent = a === 0 && b === LAST ? t('priceAll') : b === LAST ? t('priceUp')(f(a)) : a === 0 ? t('priceUpTo')(f(b)) : t('priceFromTo')(f(a), f(b));
+    $('rangeFill').style.left = (a / LAST * 100) + '%';
+    $('rangeFill').style.right = (100 - b / LAST * 100) + '%';
+    $('priceReset').hidden = a === 0 && b === LAST;
+  }
+  ['pMin', 'pMax'].forEach(id => $(id).addEventListener('input', () => {
+    // Les deux poignées ne se croisent pas : au moins un palier d'écart.
+    if (lo() >= hi()) { if (id === 'pMin') $('pMin').value = hi() - 1; else $('pMax').value = lo() + 1; }
+    shown = PAGE; renderPrice(); renderGrid();
+  }));
+  $('priceReset').addEventListener('click', () => { $('pMin').value = 0; $('pMax').value = LAST; shown = PAGE; renderPrice(); renderGrid(); });
+
   /* ---------- Catalogue ---------- */
   function list() {
     const q = norm($('q').value.trim());
-    let out = items.filter(p => (!filter || filter.test(p)) && (!favOnly || favs.includes(String(p.id))) && (!q || text(p).includes(q)));
+    let out = items.filter(p => (!filter || filter.test(p)) && (!favOnly || favs.includes(String(p.id))) && (!q || text(p).includes(q)) && priceOk(p));
     const sort = $('sort').value;
     if (sort === 'asc') out = out.slice().sort((a, b) => (a.price ?? 1e9) - (b.price ?? 1e9));
     if (sort === 'desc') out = out.slice().sort((a, b) => (b.price ?? -1) - (a.price ?? -1));
@@ -377,7 +405,7 @@
   function renderAll() {
     applyLang();
     if (!items.length) return;
-    renderNav(); renderHero(); renderCats(); renderMosaic(); renderGrid(); renderGone();
+    renderNav(); renderHero(); renderCats(); renderMosaic(); renderPrice(); renderGrid(); renderGone();
   }
 
   $('year').textContent = new Date().getFullYear();
