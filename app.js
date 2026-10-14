@@ -5,7 +5,7 @@
   const $ = id => document.getElementById(id);
   const PAGE = 24;
   let data = { items: [] }, items = [];
-  let soldCount = 176, sold = [];
+  let soldCount = 176, sold = [], heroPick = null;
   let filter = null, favOnly = false, shown = PAGE, slide = 0, timer = null;
 
   /* ---------- Traductions ---------- */
@@ -169,9 +169,15 @@
   }
 
   function renderHero() {
-    const pick = re => items.find(p => re.test(p.title));
-    const heroes = [pick(/lobi|stool/i), pick(/teke|fetish|statue|mask/i), pick(/chinese|japanese|dish/i)]
-      .filter(Boolean).concat(items).filter((p, i, a) => a.indexOf(p) === i).slice(0, 3);
+    // 6 pièces tirées au hasard à chaque visite, parmi celles des rubriques du menu à 50 € et plus (pas de magazines ni de petits objets).
+    // Le tirage est gardé pour la visite : changer de langue ne mélange pas à nouveau.
+    if (!heroPick) {
+      const pool = items.filter(p => p.price >= 50 && COLLECTIONS.some(c => c.test(p)));
+      const list = (pool.length >= 6 ? pool : items).slice();
+      for (let i = list.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [list[i], list[j]] = [list[j], list[i]]; }
+      heroPick = list.slice(0, 6);
+    }
+    const heroes = heroPick;
     $('heroImgs').innerHTML = heroes.map((p, i) => `<button type="button" class="${i === slide ? 'on' : ''}" data-id="${esc(p.id)}" aria-label="${esc(ttl(p))}"><img src="${esc(p.images[0])}" alt="${esc(ttl(p))}" ${i ? 'loading="lazy"' : ''} referrerpolicy="no-referrer"><span class="cap">${esc(ttl(p))} · ${esc(money(p))}</span></button>`).join('');
     $('dots').innerHTML = `<b id="slideNo">${slide + 1}</b>/${heroes.length} ` + heroes.map((_, i) => `<span class="${i === slide ? 'on' : ''}"></span>`).join('');
     $('heroCta').textContent = t('heroCta')(items.length);
