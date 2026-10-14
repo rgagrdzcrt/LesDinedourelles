@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-14T13:01:05+00:00",
+ "updated": "2026-10-14T18:59:19+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -1359,6 +1359,33 @@
    "description_en": "Oil on canvas painting titled “Starry Night,” by Tucé, École De Cassis, 1973. A very beautiful painting. 50 x 61 cm. Weight: 3.3 kilograms",
    "tr_src": "a600dbdc6a18",
    "page": "objet/tableau-huile-nuit-etoilee-tuce-ecole-de-cassis-257493062166.html"
+  },
+  {
+   "id": "257493061891",
+   "title": "Horloge années 70 Kienzle Automatic",
+   "price": 179.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Horloges, pendules",
+   "images": [
+    "https://i.ebayimg.com/images/g/DxEAAeSw2QVpx72b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/BOMAAeSwgHhpx72b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/YZ8AAeSwg0Bpx72b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/4RUAAeSwsaxpx72b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/7o4AAeSwPxVpx72c/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/bhsAAeSwFVNpx72b/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257493061891?hash=item3bf3c85103:g:DxEAAeSw2QVpx72b",
+   "location": "FR",
+   "listed": "2026-05-16T18:00:01.000Z",
+   "firstSeen": "2026-05-16",
+   "aspects": [],
+   "description": "Horloge années 60-70 Kienzle Automatic. Joli design, bel état général. 30*25cm 1,3 kilo",
+   "title_en": "1970s Kienzle Automatic Clock",
+   "description_en": "Kienzle Automatic clock from the 1960s–1970s. Attractive design, in good overall condition. 30 x 25 cm, 1.3 kg",
+   "tr_src": "6d75e1b43ea8",
+   "page": "objet/horloge-annees-70-kienzle-automatic-257493061891.html"
   },
   {
    "id": "257493061779",
@@ -9659,39 +9686,6 @@
    "description_en": "Foot 12 14.",
    "tr_src": "f85d8903e11e",
    "page": "objet/paire-de-lampes-en-bois-patine-ancien-257054720142.html"
-  },
-  {
-   "id": "257053348672",
-   "title": "Éventail Ethnique Kota 20ème",
-   "price": 400.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Sculptures, statues",
-   "images": [
-    "https://i.ebayimg.com/images/g/LQ0AAeSwnYVoXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/qlIAAeSwtlpoXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/bLcAAeSwtS9oXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/qtoAAeSwCdVoXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/5I0AAeSwUK9oXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/gRwAAeSwIcFoXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/IxQAAeSwHNhoXnYY/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257053348672?hash=item3bd992d340:g:LQ0AAeSwnYVoXnYX",
-   "location": "FR",
-   "listed": "2025-08-06T13:06:22.000Z",
-   "firstSeen": "2025-08-06",
-   "aspects": [
-    [
-     "Matière",
-     "Cuivre"
-    ]
-   ],
-   "description": "Hauteur 50cm.",
-   "title_en": "20th-Century Kota Ethnic Fan",
-   "description_en": "Height: 50 cm.",
-   "tr_src": "3646cb7379f1",
-   "page": "objet/eventail-ethnique-kota-20eme-257053348672.html"
   },
   {
    "id": "257038024858",

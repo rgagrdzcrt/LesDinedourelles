@@ -22,5 +22,17 @@
   "firstSeen": "2026-05-16",
   "goneOn": "2026-10-14",
   "days": 151
+ },
+ {
+  "id": "257053348672",
+  "title": "Éventail Ethnique Kota 20ème",
+  "price": 400.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Sculptures, statues",
+  "image": "https://i.ebayimg.com/images/g/LQ0AAeSwnYVoXnYX/s-l1600.jpg",
+  "firstSeen": "2025-08-06",
+  "goneOn": "2026-10-14",
+  "days": 434
  }
 ]
