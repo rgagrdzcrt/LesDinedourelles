@@ -118,6 +118,7 @@ def render(p, related):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../style.css">
+<script>try{{var th=localStorage.getItem(\"dd_theme\");if(th)document.documentElement.dataset.theme=th}}catch(e){{}}</script>
 {f'<script data-goatcounter="https://{GC}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>' if GC else ''}
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>

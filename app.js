@@ -13,7 +13,7 @@
     fr: {
       promo: "Nouveautés chaque semaine · <b>Expédition soignée depuis l'Aude</b> · Paiement sécurisé par eBay",
       searchLabel: 'Rechercher', searchPh: 'Rechercher une pièce, une origine, une matière…',
-      favs: 'Favoris', store: 'Boutique eBay', langBtn: 'EN', langAria: 'Switch to English',
+      favs: 'Favoris', store: 'Boutique eBay', themeAria: 'Changer de mode (jour / nuit)', langBtn: 'EN', langAria: 'Switch to English',
       heroKicker: 'Cabinet de curiosités · Pézenas', heroTitle: 'Des pièces uniques, <i>chinées une à une.</i>',
       heroText: 'Art africain, céramiques signées, verrerie et objets anciens choisis par Jean-Pierre Cartier, brocanteur depuis plus de dix ans.',
       heroCta: n => `Découvrir les ${n} pièces →`,
@@ -42,7 +42,7 @@
     en: {
       promo: 'New finds every week · <b>Carefully shipped from the south of France</b> · Secure payment through eBay',
       searchLabel: 'Search', searchPh: 'Search for a piece, an origin, a material…',
-      favs: 'Favourites', store: 'eBay store', langBtn: 'FR', langAria: 'Passer en français',
+      favs: 'Favourites', store: 'eBay store', themeAria: 'Switch light / dark mode', langBtn: 'FR', langAria: 'Passer en français',
       heroKicker: 'Cabinet of curiosities · Pézenas', heroTitle: 'Unique pieces, <i>found one by one.</i>',
       heroText: 'African art, signed ceramics, glassware and antiques chosen by Jean-Pierre Cartier, an antiques dealer for more than ten years.',
       heroCta: n => `Discover all ${n} pieces →`,
@@ -192,10 +192,14 @@
     { key: 'signed', re: /\bsigne|\bsigned|\bsignature|attribue|monogramm|lalique|legras|daum|orrefors|gardelle|christofle|baccarat|verlys|\blotz\b|loetz|delatte|badessi|flavio poli|seguso|venini|jonasson|ohrstrom|gustave asch|mdina/ },
   ];
   function renderCats() {
+    // Photo de vignette : une pièce pas déjà montrée dans le carrousel ni sur une autre vignette.
+    const used = new Set([...$('heroImgs').querySelectorAll('[data-id]')].map(b => b.dataset.id));
     $('cats').innerHTML = ORIGINS.map(o => {
       const list = items.filter(p => o.re.test(place(p)));
       if (!list.length) return '';
-      return `<button type="button" class="cat" data-origin="${o.key}"><div class="ph"><img src="${esc(list[0].images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></div><h3>${esc(t('origins')[o.key])}</h3><p>${esc(t('pieces')(list.length))}</p></button>`;
+      const cover = list.find(p => !used.has(String(p.id))) || list[0];
+      used.add(String(cover.id));
+      return `<button type="button" class="cat" data-origin="${o.key}"><div class="ph"><img src="${esc(cover.images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></div><h3>${esc(t('origins')[o.key])}</h3><p>${esc(t('pieces')(list.length))}</p></button>`;
     }).join('');
   }
 
@@ -342,6 +346,12 @@
   });
   $('closeSheet').addEventListener('click', () => $('sheet').close());
   $('sheet').addEventListener('click', e => { if (e.target === $('sheet')) $('sheet').close(); });
+  $('themeBtn').addEventListener('click', () => {
+    const root = document.documentElement;
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('dd_theme', root.dataset.theme); } catch (e) {}
+  });
   $('langBtn').addEventListener('click', () => {
     lang = lang === 'fr' ? 'en' : 'fr';
     try { localStorage.setItem('dd_lang', lang); } catch (e) {}

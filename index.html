@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Les Dinedourelles</title>
 <meta name="description" content="Art africain, céramiques, verrerie et objets anciens chinés par Jean-Pierre Cartier, brocanteur à Pézenas. Pièces uniques en vente sur eBay.">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161412" media="(prefers-color-scheme: dark)">
+<script>try{var th=localStorage.getItem("dd_theme");if(th)document.documentElement.dataset.theme=th}catch(e){}</script>
 <meta name="p:domain_verify" content="967c2b2405df464fd634aa66e46da966">
 <meta name="google-site-verification" content="TJPEppQ8wEdP-wqFYLwCtC36HODSltxeH5kXtNWhSSg">
 <meta name="google-site-verification" content="fBNyrEQQayQlYhOyuO2kYaFMFbaGSo70zTRT_ysLnCc">
@@ -47,6 +49,7 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 4.5 6.8 4.5c2.2 0 3.6 1.2 5.2 3 1.6-1.8 3-3 5.2-3 3.8 0 5.9 4 4.4 7.3C19.5 16.4 12 21 12 21Z"/></svg>
         <span class="lbl" data-i18n="favs">Favoris</span><span class="badge" id="favCount">0</span>
       </button>
+      <button type="button" id="themeBtn" class="icon-link theme" data-i18n-aria="themeAria" aria-label="Mode nuit"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
       <button type="button" id="langBtn" class="icon-link lang">EN</button>
       <a class="icon-link store" id="storeLink" href="https://www.ebay.fr/str/lesdinedourelles" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
