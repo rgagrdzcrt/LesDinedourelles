@@ -5,12 +5,12 @@
   const $ = id => document.getElementById(id);
   const PAGE = 24;
   let data = { items: [] }, items = [];
+  let soldCount = 176, sold = [];
   let filter = null, favOnly = false, shown = PAGE, slide = 0, timer = null;
 
   /* ---------- Traductions ---------- */
   const T = {
     fr: {
-      proto: '<b>Prototype</b> · La vitrine est en cours d’aménagement : certaines fonctions arrivent bientôt. Les achats se font en toute sécurité sur eBay.',
       promo: "Nouveautés chaque semaine · <b>Expédition soignée depuis l'Aude</b> · Paiement sécurisé par eBay",
       searchLabel: 'Rechercher', searchPh: 'Rechercher une pièce, une origine, une matière…',
       favs: 'Favoris', store: 'Boutique eBay', langBtn: 'EN', langAria: 'Switch to English',
@@ -20,12 +20,13 @@
       byCat: 'Explorer la collection', origins: { africa: 'Afrique', europe: 'Europe', asia: 'Asie', signed: 'Signatures et grands noms' }, catsTitle: 'Catégories', byPrice: 'Acheter par prix', collection: 'La collection',
       pieces: n => n + (n > 1 ? ' pièces' : ' pièce'), piecesArrow: n => `${n} ${n > 1 ? 'pièces' : 'pièce'} →`,
       sortLabel: 'Trier', sortRecent: "Nouveautés d'abord", sortAsc: 'Prix croissant', sortDesc: 'Prix décroissant',
-      more: n => `Voir ${n} pièces de plus`, unique: 'Pièce unique', favAdd: 'Ajouter aux favoris', favRemove: 'Retirer des favoris',
+      more: n => `Voir ${n} pièces de plus`, unique: 'Pièce unique', fresh: 'Nouveau', favAdd: 'Ajouter aux favoris', favRemove: 'Retirer des favoris',
       favFilter: 'Mes favoris', emptyT: 'Aucune pièce ne correspond', emptyS: 'Essayez un autre mot ou une autre rubrique.',
       emptyFav: 'Touchez le cœur d’une pièce pour la retrouver ici.',
+      goneTitle: 'Déjà vendus', goneSub: "Ces pièces ont trouvé preneur. D'autres arrivent chaque semaine.", soldTag: 'Vendu',
       t1: 'Paiement sécurisé', t1p: 'Chaque achat passe par eBay et sa garantie client.',
       t2: 'Envoi soigné', t2p: "Emballé à la main et expédié depuis l'Aude.",
-      t3: "100 % d'avis positifs", t3p: 'Plus de 176 objets déjà vendus sur eBay.',
+      t3: "100 % d'avis positifs", t3p: n => `Plus de ${n} objets déjà vendus sur eBay.`,
       t4: 'Arrivages réguliers', t4p: 'De nouvelles pièces chaque semaine, chinées en brocante.',
       houseKicker: 'La maison', houseTitle: 'La brocante en coulisses',
       houseText: "Derrière Les Dinedourelles, il y a Jean-Pierre Cartier, brocanteur et collectionneur. Depuis plus d'une dizaine d'années, il tient sa brocante à Pézenas, dans l'Hérault. Il chine dans les brocantes et rapporte de ses voyages en Afrique des pièces qu'on ne trouve pas ailleurs. Chaque objet est choisi pour son histoire, sa patine ou sa signature, puis emballé à la main et expédié depuis l'Aude.",
@@ -33,13 +34,12 @@
       linktreeNote: 'Retrouvez aussi Jean-Pierre sur Selency, Vinted, WhatsApp et Facebook, tous réunis dans le Linktree ci-dessus.', footText: "Art africain, objets anciens et curiosités. Brocante à Pézenas, envois depuis l'Aude.",
       footCol: 'Collection', footBuy: 'Acheter', footHouse: 'La maison', footStory: 'Notre histoire',
       updated: 'Catalogue mis à jour le ', close: 'Fermer', sheetNote: 'Commande, paiement et livraison se font sur eBay.',
-      descTitle: 'Description', descNote: '', buy: 'Acheter sur eBay ↗', seeStore: 'Voir la boutique eBay ↗', category: 'Catégorie', detail: 'Détail', condition: 'État',
+      descTitle: 'Description', descNote: '', buy: 'Acheter sur eBay ↗', ask: 'Poser une question au vendeur ↗', seeStore: 'Voir la boutique eBay ↗', category: 'Catégorie', detail: 'Détail', condition: 'État',
       shipping: 'Expédition', shipFrom: "Depuis l'Aude, France", ref: 'Référence', photo: 'Photo', priceOnEbay: 'Prix sur eBay',
       locale: 'fr-FR', under: a => `Moins de ${a}`, between: (a, b) => `${a} à ${b}`, over: a => `Plus de ${a}`,
       cols: { africa: 'Arts premiers', sculpture: 'Sculptures et statues', ceramics: 'Céramiques', vases: 'Vases', glass: 'Verrerie', asia: 'Asie', metal: 'Bronze et métal', lighting: 'Luminaires', pictures: 'Tableaux et dessins', jewellery: 'Bijoux', furniture: 'Mobilier et miroirs', antique: 'XIXe et avant', all: 'Toute la collection' },
     },
     en: {
-      proto: '<b>Prototype</b> · This showcase is still being built: more features are coming soon. Purchases are made securely on eBay.',
       promo: 'New finds every week · <b>Carefully shipped from the south of France</b> · Secure payment through eBay',
       searchLabel: 'Search', searchPh: 'Search for a piece, an origin, a material…',
       favs: 'Favourites', store: 'eBay store', langBtn: 'FR', langAria: 'Passer en français',
@@ -49,12 +49,13 @@
       byCat: 'Explore the collection', origins: { africa: 'Africa', europe: 'Europe', asia: 'Asia', signed: 'Signatures and big names' }, catsTitle: 'Categories', byPrice: 'Shop by price', collection: 'The collection',
       pieces: n => n + (n > 1 ? ' pieces' : ' piece'), piecesArrow: n => `${n} ${n > 1 ? 'pieces' : 'piece'} →`,
       sortLabel: 'Sort', sortRecent: 'Newest first', sortAsc: 'Price: low to high', sortDesc: 'Price: high to low',
-      more: n => `Show ${n} more pieces`, unique: 'One of a kind', favAdd: 'Add to favourites', favRemove: 'Remove from favourites',
+      more: n => `Show ${n} more pieces`, unique: 'One of a kind', fresh: 'New', favAdd: 'Add to favourites', favRemove: 'Remove from favourites',
       favFilter: 'My favourites', emptyT: 'No matching pieces', emptyS: 'Try another word or section.',
       emptyFav: 'Tap the heart on a piece to keep it here.',
+      goneTitle: 'Already sold', goneSub: 'These pieces have found a home. New ones arrive every week.', soldTag: 'Sold',
       t1: 'Secure payment', t1p: 'Every purchase goes through eBay and its buyer guarantee.',
       t2: 'Careful shipping', t2p: 'Hand-packed and shipped from the Aude, France.',
-      t3: '100% positive feedback', t3p: 'More than 176 items already sold on eBay.',
+      t3: '100% positive feedback', t3p: n => `More than ${n} items already sold on eBay.`,
       t4: 'Regular new arrivals', t4p: 'New pieces every week, found at flea markets.',
       houseKicker: 'About', houseTitle: 'Behind the stall',
       houseText: "Les Dinedourelles is run by Jean-Pierre Cartier, an antiques dealer and collector. For more than ten years he has kept his stall in Pézenas, in the south of France. He hunts through flea markets and brings back from his travels in Africa pieces you won't find anywhere else. Each object is chosen for its history, its patina or its signature, then packed by hand and shipped from the Aude, France.",
@@ -62,7 +63,7 @@
       linktreeNote: 'You can also find Jean-Pierre on Selency, Vinted, WhatsApp and Facebook, all gathered in the Linktree above.', footText: 'African art, antiques and curiosities. Antiques stall in Pézenas, shipping from the Aude, France.',
       footCol: 'Collection', footBuy: 'Shop', footHouse: 'About', footStory: 'Our story',
       updated: 'Catalogue updated ', close: 'Close', sheetNote: 'Ordering, payment and delivery take place on eBay.',
-      descTitle: 'Description', descNote: 'Written by the seller in French.', descAuto: 'Automatically translated from French.', buy: 'Buy on eBay ↗', seeStore: 'Visit the eBay store ↗', category: 'Category', detail: 'Detail', condition: 'Condition',
+      descTitle: 'Description', descNote: 'Written by the seller in French.', descAuto: 'Automatically translated from French.', buy: 'Buy on eBay ↗', ask: 'Ask the seller a question ↗', seeStore: 'Visit the eBay store ↗', category: 'Category', detail: 'Detail', condition: 'Condition',
       shipping: 'Shipping', shipFrom: 'From the Aude, France', ref: 'Reference', photo: 'Photo', priceOnEbay: 'Price on eBay',
       locale: 'en-US', under: a => `Under ${a}`, between: (a, b) => `${a} to ${b}`, over: a => `Over ${a}`,
       cols: { africa: 'Tribal art', sculpture: 'Sculpture', ceramics: 'Ceramics', vases: 'Vases', glass: 'Glassware', asia: 'Asian art', metal: 'Bronze and metal', lighting: 'Lighting', pictures: 'Paintings and drawings', jewellery: 'Jewellery', furniture: 'Furniture and mirrors', antique: '19th century and earlier', all: 'Whole collection' },
@@ -103,6 +104,7 @@
   /* ---------- Statistiques (GoatCounter, sans cookies) ---------- */
   const track = (path, title) => { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path, title, event: true }); } catch (e) {} };
   fetch('config.json', { cache: 'no-cache' }).then(r => r.json()).then(c => {
+    if (c.soldCount) { soldCount = c.soldCount; $('soldTxt').textContent = t('t3p')(soldCount); }
     if (!c.goatcounter) return;
     const sc = document.createElement('script');
     sc.async = true; sc.src = 'https://gc.zgo.at/count.js';
@@ -148,6 +150,7 @@
     document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
     document.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
     $('langBtn').textContent = t('langBtn');
+    $('soldTxt').textContent = t('t3p')(soldCount);
     $('langBtn').setAttribute('aria-label', t('langAria'));
     if (data.updated) $('updated').textContent = t('updated') + new Date(data.updated).toLocaleDateString(t('locale'), { day: 'numeric', month: 'long', year: 'numeric' });
   }
@@ -201,6 +204,14 @@
     $('mosaic').innerHTML = items.slice(8, 16).map(p => `<button type="button" data-id="${esc(p.id)}" aria-label="${esc(ttl(p))}"><img src="${esc(p.images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('');
   }
 
+  /* Déjà vendus : sold.json (objets sortis du catalogue), sans ceux remis en vente depuis. */
+  function renderGone() {
+    const live = new Set(items.map(p => String(p.id)));
+    const list = sold.filter(s => s.image && !live.has(String(s.id))).sort((a, b) => b.goneOn.localeCompare(a.goneOn)).slice(0, 8);
+    $('gone').hidden = !list.length;
+    $('goneGrid').innerHTML = list.map(s => `<div class="gone-item"><div class="ph"><img src="${esc(s.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="tag">${esc(t('soldTag'))}</span></div><h3>${esc(s.title)}</h3><div class="sub">${esc(tr(s.subcategory || s.category))}</div></div>`).join('');
+  }
+
   /* ---------- Catalogue ---------- */
   function list() {
     const q = norm($('q').value.trim());
@@ -211,10 +222,12 @@
     return out;
   }
 
+  const isNew = p => { const d = (p.listed || p.firstSeen || '').slice(0, 10); return !!d && Date.now() - new Date(d) < 7 * 864e5; };
+
   function card(p) {
     const on = favs.includes(String(p.id));
     return `<div class="card"><a class="open" href="${esc(p.page || '#')}" data-id="${esc(p.id)}" style="display:block">
-      <div class="ph"><img src="${esc(p.images[0])}" alt="${esc(ttl(p))}" loading="lazy" referrerpolicy="no-referrer"><span class="tag">${esc(t('unique'))}</span></div>
+      <div class="ph"><img src="${esc(p.images[0])}" alt="${esc(ttl(p))}" loading="lazy" referrerpolicy="no-referrer"><span class="tag${isNew(p) ? ' new' : ''}">${esc(t(isNew(p) ? 'fresh' : 'unique'))}</span></div>
       <h3>${esc(ttl(p))}</h3><div class="sub">${esc(tr(p.subcategory || p.category))}</div><div class="pr">${esc(money(p))}</div></a>
       <button type="button" class="heart${on ? ' on' : ''}" data-fav="${esc(p.id)}" aria-pressed="${on}" aria-label="${esc(on ? t('favRemove') : t('favAdd'))}">${heartSvg}</button></div>`;
   }
@@ -275,6 +288,10 @@
     $('sheetPrice').textContent = money(p);
     $('sheetBuy').href = p.url || data.storeUrl;
     $('sheetBuy').textContent = p.example ? t('seeStore') : t('buy');
+    // m2mOpen=1 : eBay ouvre directement la fenêtre de message au vendeur.
+    $('sheetAsk').hidden = !!p.example;
+    $('sheetAsk').href = `${new URL(data.storeUrl || 'https://www.ebay.fr').origin}/itm/${p.id}?m2mOpen=1`;
+    $('sheetAsk').textContent = t('ask');
     renderSheetFav();
     const descEn = lang === 'en' && String(p.description_en || '').trim();
     const desc = descEn || String(p.description || '').trim();
@@ -318,6 +335,7 @@
   $('sort').addEventListener('change', () => { shown = PAGE; renderGrid(); });
   $('sheetFav').addEventListener('click', () => { if (current) { toggleFav(current.id); renderSheetFav(); renderGrid(); } });
   $('sheetBuy').addEventListener('click', () => { if (current) track('ebay/' + current.id, 'Clic eBay : ' + current.title); });
+  $('sheetAsk').addEventListener('click', () => { if (current) track('question/' + current.id, 'Question : ' + current.title); });
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href*="instagram.com"], a[href*="linktr.ee"], #storeLink');
     if (a) track(a.href.includes('instagram') ? 'sortie/instagram' : a.href.includes('linktr') ? 'sortie/linktree' : 'sortie/boutique-ebay', a.textContent.trim());
@@ -335,7 +353,7 @@
   function renderAll() {
     applyLang();
     if (!items.length) return;
-    renderNav(); renderHero(); renderCats(); renderMosaic(); renderGrid();
+    renderNav(); renderHero(); renderCats(); renderMosaic(); renderGrid(); renderGone();
   }
 
   $('year').textContent = new Date().getFullYear();
@@ -350,5 +368,8 @@
       if (d.storeUrl) $('storeLink').href = d.storeUrl;
       renderAll();
     })
+    .then(() => fetch('sold.json', { cache: 'no-cache' }))
+    .then(r => r.json())
+    .then(s => { sold = Array.isArray(s) ? s : []; renderGone(); }, () => {})
     .catch(() => { $('grid').innerHTML = `<div class="empty"><strong>${esc(t('emptyT'))}</strong></div>`; });
 })();

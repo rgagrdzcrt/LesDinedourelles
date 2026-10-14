@@ -32,7 +32,6 @@
     <div class="side-head"><h3 data-i18n="catsTitle">Catégories</h3><button type="button" class="side-close" id="sideClose" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
     <nav class="side-list" id="nav" aria-label="Catégories"></nav>
   </aside>
-<div class="proto" data-i18n-html="proto"><b>Prototype</b> · La vitrine est en cours d’aménagement : certaines fonctions arrivent bientôt. Les achats se font en toute sécurité sur eBay.</div>
 <div class="promo" data-i18n-html="promo">Nouveautés chaque semaine · <b>Expédition soignée depuis l'Aude</b> · Paiement sécurisé par eBay</div>
 
 <header class="site-head">
@@ -99,10 +98,15 @@
     <div class="side-backdrop" id="sideBackdrop" hidden></div>
   </section>
 
+  <section class="block wrap" id="gone" hidden>
+    <div class="head"><div><h2 data-i18n="goneTitle">Déjà vendus</h2><p class="count" data-i18n="goneSub">Ces pièces ont trouvé preneur. D'autres arrivent chaque semaine.</p></div></div>
+    <div class="gone" id="goneGrid"></div>
+  </section>
+
   <section class="trust wrap">
     <div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><h3 data-i18n="t1">Paiement sécurisé</h3><p data-i18n="t1p">Chaque achat passe par eBay et sa garantie client.</p></div>
     <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><h3 data-i18n="t2">Envoi soigné</h3><p data-i18n="t2p">Emballé à la main et expédié depuis l'Aude.</p></div>
-    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7L12 3Z"/></svg><h3 data-i18n="t3">100 % d'avis positifs</h3><p data-i18n="t3p">Plus de 176 objets déjà vendus sur eBay.</p></div>
+    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7L12 3Z"/></svg><h3 data-i18n="t3">100 % d'avis positifs</h3><p id="soldTxt">Plus de 176 objets déjà vendus sur eBay.</p></div>
     <div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3 data-i18n="t4">Arrivages réguliers</h3><p data-i18n="t4p">De nouvelles pièces chaque semaine, chinées en brocante.</p></div>
   </section>
 
@@ -152,6 +156,7 @@
       <p class="sheet-price" id="sheetPrice"></p>
       <a class="cta wide" id="sheetBuy" href="#" target="_blank" rel="noopener"></a>
       <button class="cta ghost wide" id="sheetFav" type="button"></button>
+      <a class="ask" id="sheetAsk" href="#" target="_blank" rel="noopener"></a>
       <div class="sheet-desc" id="sheetDesc" hidden><h3 id="sheetDescTitle"></h3><p id="sheetDescText"></p></div>
       <dl class="specs" id="sheetSpecs"></dl>
       <p class="note" data-i18n="sheetNote">Commande, paiement et livraison se font sur eBay.</p>
