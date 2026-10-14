@@ -203,6 +203,9 @@ h2 { font: 400 clamp(32px, 3.4vw, 46px)/1.05 var(--serif); letter-spacing: -.01e
 .hours dt { font-weight: 600; }
 .hours dt small { color: var(--muted); font-weight: 400; }
 .hours dd { color: var(--muted); font-variant-numeric: tabular-nums; }
+.hours .addr { color: var(--ink); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent); text-underline-offset: 3px; }
+.hours .addr:hover { color: var(--accent); }
+.hours dt, .hours dd { margin-bottom: 6px; }
 .insta .handle { margin: 12px 0 0; font-size: 13px; font-weight: 600; color: var(--ink); }
 .insta-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .insta-grid button { aspect-ratio: 1; border-radius: 6px; overflow: hidden; background: var(--shade); }
