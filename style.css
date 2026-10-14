@@ -66,10 +66,10 @@ button { cursor: pointer; border: 0; background: none; }
 /* ---------- En-tête ---------- */
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); }
 .top { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 32px; padding-block: 16px; }
-.logo { display: inline-flex; flex-direction: column; align-items: center; font: 300 28px/1 'Fraunces', var(--serif); font-variation-settings: 'opsz' 72; letter-spacing: -.04em; white-space: nowrap; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font: 300 28px/1 'Fraunces', var(--serif); font-variation-settings: 'opsz' 72; letter-spacing: -.04em; white-space: nowrap; }
 .logo i { font-style: italic; }
-.logo .bird { width: 27px; height: 27px; margin-bottom: -3px; fill: var(--accent); transform: rotate(-28deg); }
-.site-foot .logo .bird { fill: #e07a4f; }
+.logo .mascot { width: auto; height: 58px; margin-block: -8px -6px; }
+.site-foot .logo .mascot { height: 72px; margin: 0; }
 .search { display: flex; align-items: center; gap: 10px; justify-self: center; width: 100%; max-width: 560px; padding: 0 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--soft); transition: border-color .2s ease, background-color .2s ease; }
 .search:focus-within { border-color: var(--ink); background: var(--paper); }
 .search input { flex: 1; min-width: 0; height: 44px; border: 0; outline: 0; background: transparent; font-size: 15px; }
@@ -283,8 +283,9 @@ h2 { font: 400 clamp(32px, 3.4vw, 46px)/1.05 var(--serif); letter-spacing: -.01e
 @media (max-width: 760px) {
   .wrap { padding-inline: 16px; }
   .promo { font-size: 12px; }
-  .logo { font-size: 23px; }
-  .logo .bird { width: 22px; height: 22px; }
+  .logo { font-size: 21px; gap: 6px; min-width: 0; }
+  .logo .mascot { height: 40px; margin-block: -4px; }
+  .icons { gap: 10px; }
   .icon-link .lbl { display: none; }
   .hero { grid-template-columns: 1fr; min-height: 0; }
   .hero-img { height: 360px; }
