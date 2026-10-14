@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-14T01:01:27+00:00",
+ "updated": "2026-10-14T07:03:32+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -2177,6 +2177,44 @@
    "description_en": "1930 Verlys Oval Art Deco dish in excellent condition. Dimensions: 8 x 44 x 35 cm. Weight: 2.8 kg",
    "tr_src": "d07d2b590731",
    "page": "objet/plat-art-deco-verlys-ovale-1930-257396009699.html"
+  },
+  {
+   "id": "257396009400",
+   "title": "Statue Africaine Baoulé",
+   "price": 299.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/E68AAeSwCJhpcN5~/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/WGoAAeSweaZpcN5~/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/R6cAAeSwwhFpcN5~/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/R~MAAeSwdnNpcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/WEQAAeSwlVdpcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/MloAAeSwkgVpcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/XLAAAeSwcG1pcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/XlMAAeSwd49pcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/LUsAAeSwMw5pcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/SP0AAeSwdkdpcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/DFcAAeSwO6ZpcN6B/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/RokAAeSwzFVpcN6B/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257396009400?hash=item3bedff69b8:g:E68AAeSwCJhpcN5~",
+   "location": "FR",
+   "listed": "2026-03-20T16:15:01.000Z",
+   "firstSeen": "2026-03-20",
+   "aspects": [
+    [
+     "Origine",
+     "Afrique"
+    ]
+   ],
+   "description": "Statue Africaine Baoulé en état général satisfaisant. 2 très légers accidents sur les oreilles. Le bras gauche est légèrement abîmé. Très joli décor. Poids 2,2 kilos Dimensions 63*20*17cm",
+   "title_en": "Baoulé African Statue",
+   "description_en": "Baoulé African statue in generally satisfactory condition. Two very slight chips on the ears. The left arm is slightly damaged. Very attractive decoration. Weight: 2.2 kilograms. Dimensions: 63 × 20 × 17 cm",
+   "tr_src": "15b1bf098cfc",
+   "page": "objet/statue-africaine-baoule-257396009400.html"
   },
   {
    "id": "257396008919",
