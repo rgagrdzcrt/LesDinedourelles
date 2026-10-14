@@ -65,7 +65,7 @@ button { cursor: pointer; border: 0; background: none; }
 
 /* ---------- En-tête ---------- */
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); }
-.top { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 32px; padding-block: 16px; }
+.top { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 32px; padding-block: 16px; }
 .logo { display: inline-flex; flex-direction: column; align-items: center; font: 300 28px/1 'Fraunces', var(--serif); font-variation-settings: 'opsz' 72; letter-spacing: -.04em; white-space: nowrap; }
 .logo i { font-style: italic; }
 .logo .bird { width: 27px; height: 27px; margin-bottom: -3px; fill: var(--accent); transform: rotate(-28deg); }
@@ -191,10 +191,18 @@ h2 { font: 400 clamp(32px, 3.4vw, 46px)/1.05 var(--serif); letter-spacing: -.01e
 .trust h3 { margin: 14px 0 4px; font-size: 16px; }
 .trust p { color: var(--muted); font-size: 14px; }
 
-.insta { display: grid; grid-template-columns: 1fr 1.3fr; gap: 44px; align-items: center; margin-top: 88px; padding: 56px; border-radius: 8px; background: var(--accent-soft); }
+.insta { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 44px; align-items: center; margin-top: 88px; padding: 56px; border-radius: 8px; background: var(--accent-soft); }
 .insta h2 { margin-top: 10px; }
 .insta p { max-width: 54ch; margin: 14px 0 24px; color: var(--muted); }
 .house-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+.insta .house-text p { margin: 0 0 12px; }
+.insta .house-text { margin: 14px 0 20px; }
+.hours { margin: 0 0 24px; padding: 16px 18px; border-radius: 6px; background: var(--paper); font-size: 14px; }
+.hours h3 { margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+.hours dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 16px; }
+.hours dt { font-weight: 600; }
+.hours dt small { color: var(--muted); font-weight: 400; }
+.hours dd { color: var(--muted); font-variant-numeric: tabular-nums; }
 .insta .handle { margin: 12px 0 0; font-size: 13px; font-weight: 600; color: var(--ink); }
 .insta-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .insta-grid button { aspect-ratio: 1; border-radius: 6px; overflow: hidden; background: var(--shade); }
