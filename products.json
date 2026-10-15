@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-14T18:59:19+00:00",
+ "updated": "2026-10-15T00:59:20+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -9688,6 +9688,39 @@
    "page": "objet/paire-de-lampes-en-bois-patine-ancien-257054720142.html"
   },
   {
+   "id": "257053348672",
+   "title": "Éventail Ethnique Kota 20ème",
+   "price": 400.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Sculptures, statues",
+   "images": [
+    "https://i.ebayimg.com/images/g/LQ0AAeSwnYVoXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/qlIAAeSwtlpoXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/bLcAAeSwtS9oXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/qtoAAeSwCdVoXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/5I0AAeSwUK9oXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/gRwAAeSwIcFoXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/IxQAAeSwHNhoXnYY/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257053348672?hash=item3bd992d340:g:LQ0AAeSwnYVoXnYX",
+   "location": "FR",
+   "listed": "2025-08-06T13:06:22.000Z",
+   "firstSeen": "2025-08-06",
+   "aspects": [
+    [
+     "Matière",
+     "Cuivre"
+    ]
+   ],
+   "description": "Hauteur 50cm.",
+   "title_en": "20th-Century Kota Ethnic Fan",
+   "description_en": "Height: 50 cm.",
+   "tr_src": "3646cb7379f1",
+   "page": "objet/eventail-ethnique-kota-20eme-257053348672.html"
+  },
+  {
    "id": "257038024858",
    "title": "Pendule Mechanique 1960",
    "price": 129.0,
@@ -10569,34 +10602,6 @@
    "description_en": "Early 20th-century African mask (from the village of Toumokoro, Ivory Coast) with a few minor chips. Width: 37 cm; Height without base: 55 cm; Height with base: 66 cm; Weight with base: 2.150 kg",
    "tr_src": "76791abe5b20",
    "page": "objet/masque-africain-du-xxeme-257020399883.html"
-  },
-  {
-   "id": "257020381853",
-   "title": "Peinture A. Guers XXeme",
-   "price": 540.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Peintures",
-   "images": [
-    "https://i.ebayimg.com/images/g/bVEAAeSwjAxoW9E1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/iMAAAeSwOoRoW9E2/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/YhoAAeSwxvVoW9E1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/hUYAAeSwphBoW9E1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/0nAAAeSweb9oW9E3/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/gFMAAeSwC~1oW9E3/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Nb8AAeSwMnZoW9E3/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257020381853?hash=item3bd79bca9d:g:bVEAAeSwjAxoW9E1",
-   "location": "FR",
-   "listed": "2025-07-17T08:09:35.000Z",
-   "firstSeen": "2025-07-17",
-   "aspects": [],
-   "description": "Huile sur toile signée A. Guers début XXème. Longueur 65 Largeur 55 Poids +-800 grammes",
-   "title_en": "Painting by A. Guers, 20th century",
-   "description_en": "Oil on canvas, signed A. Guers, early 20th century. Length 65, Width 55, Weight approximately 800 grams",
-   "tr_src": "857b522e0b63",
-   "page": "objet/peinture-a-guers-xxeme-257020381853.html"
   },
   {
    "id": "257020370812",

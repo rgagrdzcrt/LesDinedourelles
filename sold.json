@@ -34,5 +34,17 @@
   "firstSeen": "2025-08-06",
   "goneOn": "2026-10-14",
   "days": 434
+ },
+ {
+  "id": "257020381853",
+  "title": "Peinture A. Guers XXeme",
+  "price": 540.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Peintures",
+  "image": "https://i.ebayimg.com/images/g/bVEAAeSwjAxoW9E1/s-l1600.jpg",
+  "firstSeen": "2025-07-17",
+  "goneOn": "2026-10-15",
+  "days": 455
  }
 ]
