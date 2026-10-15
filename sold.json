@@ -46,5 +46,29 @@
   "firstSeen": "2025-07-17",
   "goneOn": "2026-10-15",
   "days": 455
+ },
+ {
+  "id": "257305128210",
+  "title": "Petite statuette de divinité Indou en bois 19eme",
+  "price": 79.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Arts, objets ethniques",
+  "image": "https://i.ebayimg.com/images/g/OAQAAeSwm~NpOZTS/s-l1600.jpg",
+  "firstSeen": "2026-01-15",
+  "goneOn": "2026-10-15",
+  "days": 273
+ },
+ {
+  "id": "257112283101",
+  "title": "Sculpture en cristal de Jésus",
+  "price": 119.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Sculptures, statues",
+  "image": "https://i.ebayimg.com/images/g/l4UAAeSwCIdomzWn/s-l1600.jpg",
+  "firstSeen": "2025-09-25",
+  "goneOn": "2026-10-15",
+  "days": 385
  }
 ]
