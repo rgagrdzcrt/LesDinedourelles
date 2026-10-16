@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-16T07:04:10+00:00",
+ "updated": "2026-10-16T13:03:05+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -615,7 +615,7 @@
   },
   {
    "id": "257537969463",
-   "title": "Plat en porcelaine japonaise début 20eme",
+   "title": "Plat en porcelaine japonaise 20eme",
    "price": 119.0,
    "currency": "EUR",
    "condition": "",
@@ -636,14 +636,14 @@
    "firstSeen": "2026-05-31",
    "aspects": [],
    "description": "Plat en porcelaine japonaise début 20eme en très bon état. Décoration de 3 personnages et de fleurs. Poids 2,1k Dimensions 38cm de diamètre.",
-   "title_en": "Early 20th-century Japanese porcelain plate",
+   "title_en": "20th-century Japanese porcelain plate",
    "description_en": "Early 20th-century Japanese porcelain plate in very good condition. Decorated with three figures and flowers. Weight: 2.1 kg. Dimensions: 38 cm in diameter.",
-   "tr_src": "6f92265c2387",
-   "page": "objet/plat-en-porcelaine-japonaise-debut-20eme-257537969463.html"
+   "tr_src": "739a03ebe099",
+   "page": "objet/plat-en-porcelaine-japonaise-20eme-257537969463.html"
   },
   {
    "id": "257537936524",
-   "title": "Crucifix en laiton richement décoré",
+   "title": "Crucifix en Bronze Doré richement décoré",
    "price": 129.0,
    "currency": "EUR",
    "condition": "Occasion",
@@ -669,10 +669,10 @@
     ]
    ],
    "description": "Crucifix en laiton richement décoré. Très bel état. Le crucifix vient avec sa boîte qui est également très élégante. Poids 650g Dimensions crucifix 19*11cm.",
-   "title_en": "Richly Decorated Brass Crucifix",
+   "title_en": "Richly Decorated Gilded Bronze Crucifix",
    "description_en": "Richly decorated brass crucifix. In very good condition. The crucifix comes with its box, which is also very elegant. Weight: 650 g. Dimensions of the crucifix: 19 × 11 cm.",
-   "tr_src": "7a3cb5f599a0",
-   "page": "objet/crucifix-en-laiton-richement-decore-257537936524.html"
+   "tr_src": "e52336cbe6ab",
+   "page": "objet/crucifix-en-bronze-dore-richement-decore-257537936524.html"
   },
   {
    "id": "257537932108",
@@ -735,8 +735,8 @@
   },
   {
    "id": "257537930566",
-   "title": "Boîte asiatique en bois",
-   "price": 85.0,
+   "title": "Boîte asiatique en bois Début 20 Eme",
+   "price": 115.0,
    "currency": "EUR",
    "condition": "",
    "category": "Art",
@@ -763,10 +763,10 @@
     ]
    ],
    "description": "Boîte asiatique en bois ronde. Belle patine. Joli état d’usage. Bois léger. Poids 250g 10*15*15cm.",
-   "title_en": "Asian wooden box",
+   "title_en": "Asian wooden box, early 20th century",
    "description_en": "Round Asian wooden box. Beautiful patina. In nice, well-used condition. Lightweight wood. Weight: 250 g; 10 × 15 × 15 cm.",
-   "tr_src": "0758fdde04fe",
-   "page": "objet/boite-asiatique-en-bois-257537930566.html"
+   "tr_src": "2a06a8f9be7d",
+   "page": "objet/boite-asiatique-en-bois-debut-20-eme-257537930566.html"
   },
   {
    "id": "257537929863",
@@ -828,7 +828,7 @@
   },
   {
    "id": "257537928230",
-   "title": "Ancien semoir art populaire indien bois sculpté",
+   "title": "Ancien Bougeoir art populaire indien bois sculpté",
    "price": 99.0,
    "currency": "EUR",
    "condition": "",
@@ -853,10 +853,10 @@
     ]
    ],
    "description": "Ancien semoir art populaire indien bois sculpté. 20*24cm 1,2k",
-   "title_en": "Antique Indian folk art seed dispenser, carved from wood",
+   "title_en": "Antique Indian Folk Art Carved Wooden Candleholder",
    "description_en": "Antique Indian folk art seed dispenser, carved from wood. 20 x 24 cm, 1.2 kg",
-   "tr_src": "f13526c45375",
-   "page": "objet/ancien-semoir-art-populaire-indien-bois-sculpte-257537928230.html"
+   "tr_src": "519e915bcd0e",
+   "page": "objet/ancien-bougeoir-art-populaire-indien-bois-sculpte-257537928230.html"
   },
   {
    "id": "257537928081",
@@ -1230,37 +1230,6 @@
    "description_en": "Contemporary bronze sculpture depicting the catacombs. Artist unknown. 15 x 14 cm, 2.9 kg",
    "tr_src": "4c43b5eebd6b",
    "page": "objet/sculpture-bronze-comtemporain-catacombes-257537909421.html"
-  },
-  {
-   "id": "257537909279",
-   "title": "Paire de porte-manteaux en cuir années 1950",
-   "price": 79.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/E1AAAeSwhYVqDzPh/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/8z0AAeSwOhNqDzPh/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Sg4AAeSw9zpqDzPh/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/8hIAAeSw7LZqDzPh/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/eLkAAeSwKuRqDzPi/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257537909279?hash=item3bf674a21f:g:E1AAAeSwhYVqDzPh",
-   "location": "FR",
-   "listed": "2026-05-31T11:38:51.000Z",
-   "firstSeen": "2026-05-31",
-   "aspects": [
-    [
-     "Matière",
-     "Cuir"
-    ]
-   ],
-   "description": "Paire de porte-manteaux en cuir années 1950. 550g 22*9cm",
-   "title_en": "Pair of leather coat racks from the 1950s",
-   "description_en": "Pair of leather coat hooks from the 1950s. 550g, 22 x 9 cm",
-   "tr_src": "408feb903673",
-   "page": "objet/paire-de-porte-manteaux-en-cuir-annees-1950-257537909279.html"
   },
   {
    "id": "257537906112",
@@ -3947,7 +3916,7 @@
   },
   {
    "id": "257350627238",
-   "title": "bol décoratif en céramique japonaise",
+   "title": "bol décoratif en céramique",
    "price": 109.0,
    "currency": "EUR",
    "condition": "",
@@ -3967,10 +3936,10 @@
    "firstSeen": "2026-02-14",
    "aspects": [],
    "description": "bol décoratif en céramique japonaise de très bonne facture. Très beau travail. Excellent état. Poids 160g Dimensions 7*10*10cm",
-   "title_en": "decorative Japanese ceramic bowl",
+   "title_en": "decorative ceramic bowl",
    "description_en": "A decorative Japanese ceramic bowl of very fine craftsmanship. Beautifully made. Excellent condition. Weight: 160 g. Dimensions: 7 × 10 × 10 cm",
-   "tr_src": "673fe35443d9",
-   "page": "objet/bol-decoratif-en-ceramique-japonaise-257350627238.html"
+   "tr_src": "5ceac8006287",
+   "page": "objet/bol-decoratif-en-ceramique-257350627238.html"
   },
   {
    "id": "257350626450",
@@ -4138,44 +4107,6 @@
    "description_en": "Marble ball and stand. In perfect condition. Weight: 2.9 kilograms. Dimensions: 13 cm in diameter",
    "tr_src": "96d9043f1c82",
    "page": "objet/boule-en-marbre-257350625950.html"
-  },
-  {
-   "id": "257350625745",
-   "title": "Buste de jeune femme art nouveau en plâtre",
-   "price": 239.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Sculptures, statues",
-   "images": [
-    "https://i.ebayimg.com/images/g/WuQAAeSwRPRpQTE~/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/W1kAAeSwTThpQTE~/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/qmMAAeSwsU5pQTE~/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/IeMAAeSwoYRpQTE~/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/9uYAAeSwVfZpQTFB/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/VHoAAeSw8wtpQTFA/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/iQoAAeSws8ZpQTFA/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/ljMAAeSwNDtpQTFA/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257350625745?hash=item3beb4ae9d1:g:WuQAAeSwRPRpQTE~",
-   "location": "FR",
-   "listed": "2026-02-11T18:15:01.000Z",
-   "firstSeen": "2026-02-11",
-   "aspects": [
-    [
-     "Matière",
-     "Plâtre"
-    ],
-    [
-     "Thème",
-     "Buste"
-    ]
-   ],
-   "description": "Buste de jeune femme art nouveau en plâtre. Bel état général et très jolie patine. Poids 6-7 kilos Dimensions 64*40*20cm",
-   "title_en": "Art Nouveau plaster bust of a young woman",
-   "description_en": "Art Nouveau plaster bust of a young woman. In good overall condition with a very attractive patina. Weight: 6–7 kilograms. Dimensions: 64 × 40 × 20 cm",
-   "tr_src": "5496ec70c2c3",
-   "page": "objet/buste-de-jeune-femme-art-nouveau-en-platre-257350625745.html"
   },
   {
    "id": "257350624667",
@@ -5439,32 +5370,6 @@
    "page": "objet/ancien-moule-a-brioche-en-ceramique-257305145291.html"
   },
   {
-   "id": "257305144999",
-   "title": "Vase de Gustave Asch Art Déco",
-   "price": 450.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Poterie et verre",
-   "subcategory": "Grands céramistes du XXe",
-   "images": [
-    "https://i.ebayimg.com/images/g/INAAAeSwdilpFe~B/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/nQIAAeSwNsppFe~B/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/I-sAAeSwi8hpFe~B/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Oj0AAeSw1xFpFe~B/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/3SgAAeSwjjFpFe~C/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257305144999?hash=item3be894eea7:g:INAAAeSwdilpFe~B",
-   "location": "FR",
-   "listed": "2026-01-25T17:15:01.000Z",
-   "firstSeen": "2026-01-25",
-   "aspects": [],
-   "description": "Vase de Gustave Asch Art Déco en céramique bleue de Tours. Très bon état. Poids 2,4 kilos Dimensions 49*14*15cm",
-   "title_en": "Art Deco Vase by Gustave Asch",
-   "description_en": "Art Deco vase by Gustave Asch, made of blue Tours ceramic. In very good condition. Weight: 2.4 kilograms. Dimensions: 49 × 14 × 15 cm",
-   "tr_src": "91f0c849c34e",
-   "page": "objet/vase-de-gustave-asch-art-deco-257305144999.html"
-  },
-  {
    "id": "257305144603",
    "title": "Trio d’œufs en verre décoratifs",
    "price": 79.0,
@@ -5499,39 +5404,6 @@
    "description_en": "Set of three decorative glass eggs. In excellent condition. Signed. Weight: 1.1 kilograms for all three. Dimensions: 10 × 6 cm, 18 × 10 cm, 26 × 10 cm",
    "tr_src": "768a28527b63",
    "page": "objet/trio-d-ufs-en-verre-decoratifs-257305144603.html"
-  },
-  {
-   "id": "257305144238",
-   "title": "Grand pot à eau en terre cuite 19eme",
-   "price": 299.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XIXe et avant",
-   "images": [
-    "https://i.ebayimg.com/images/g/iPkAAeSwP2JpGuT0/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/H2cAAeSwstBpGuT0/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/aCEAAeSw6flpGuT0/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/hLMAAeSwbaxpGuT0/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/~WsAAeSwjjFpGuT1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/y-YAAeSwlphpGuT1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Y4UAAeSwA0BpGuT1/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257305144238?hash=item3be894ebae:g:iPkAAeSwP2JpGuT0",
-   "location": "FR",
-   "listed": "2026-01-24T18:15:01.000Z",
-   "firstSeen": "2026-01-24",
-   "aspects": [
-    [
-     "Matière",
-     "Terre cuite"
-    ]
-   ],
-   "description": "Grand pot à eau lobby en terre cuite début 20eme. Belle patine. En état d’usage. Poids 7-8 kilos Dimensions 37*36*36cm",
-   "title_en": "Large 19th-century terracotta water jug",
-   "description_en": "Large terracotta water jug from the early 20th century, originally used in lobbies. Beautiful patina. Shows signs of use. Weight: 7–8 kilograms. Dimensions: 37 × 36 × 36 cm",
-   "tr_src": "6ec91930eeff",
-   "page": "objet/grand-pot-a-eau-en-terre-cuite-19eme-257305144238.html"
   },
   {
    "id": "257305143921",
@@ -6256,36 +6128,6 @@
    "page": "objet/sculpture-en-terre-cuite-visage-a-gueule-de-singe-257305128326.html"
   },
   {
-   "id": "257305128210",
-   "title": "Petite statuette de divinité Indou en bois 19eme",
-   "price": 79.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Arts, objets ethniques",
-   "images": [
-    "https://i.ebayimg.com/images/g/OAQAAeSwm~NpOZTS/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/9fUAAeSwITNpOZTR/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/IlEAAeSwzkRpOZTR/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/~ZYAAeSwuylpOZTT/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257305128210?hash=item3be894ad12:g:OAQAAeSwm~NpOZTS",
-   "location": "FR",
-   "listed": "2026-01-15T16:00:01.000Z",
-   "firstSeen": "2026-01-15",
-   "aspects": [
-    [
-     "Matière",
-     "Bois"
-    ]
-   ],
-   "description": "Petite statuette de divinité Indou en bois 19eme belle patine d’usage. Poids 50g Dimensions 10*8*4cm",
-   "title_en": "Small 19th-century wooden statuette of a Hindu deity",
-   "description_en": "Small wooden statuette of a Hindu deity from the 19th century, with a beautiful patina from age. Weight: 50 g. Dimensions: 10 × 8 × 4 cm",
-   "tr_src": "6cd3a49ca519",
-   "page": "objet/petite-statuette-de-divinite-indou-en-bois-19eme-257305128210.html"
-  },
-  {
    "id": "257305126162",
    "title": "Statuette en bois 20eme homme indonésien",
    "price": 79.0,
@@ -6909,31 +6751,6 @@
    "page": "objet/boite-coffret-debut-20eme-257245104457.html"
   },
   {
-   "id": "257245104243",
-   "title": "Vase en verre chinois 20ème peint à la main",
-   "price": 259.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Poterie et verre",
-   "subcategory": "Asiatiques",
-   "images": [
-    "https://i.ebayimg.com/images/g/zhkAAeSwxr1oqdnE/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/ABUAAeSw9tBoqdnE/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/UdYAAeSw8~ZoqdnE/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/WigAAeSwRQ5oqdnE/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257245104243?hash=item3be500c873:g:zhkAAeSwxr1oqdnE",
-   "location": "FR",
-   "listed": "2025-12-20T16:45:01.000Z",
-   "firstSeen": "2025-12-20",
-   "aspects": [],
-   "description": "Vase en verre chinois 20eme peint à la main. Décor de montagne qui rappellent les « Yellow Mountains ». En excellent état. Poids : 4,4 kilos Dimensions : 33*11*11cm",
-   "title_en": "20th-century Chinese hand-painted glass vase",
-   "description_en": "20th-century Chinese hand-painted glass vase. Mountain motif reminiscent of the \"Yellow Mountains.\" In excellent condition. Weight: 4.4 kilograms. Dimensions: 33 x 11 x 11 cm",
-   "tr_src": "1847945b7245",
-   "page": "objet/vase-en-verre-chinois-20eme-peint-a-la-main-257245104243.html"
-  },
-  {
    "id": "257245103961",
    "title": "Ancienne gourde à lait Masaï calebasse début 20eme",
    "price": 219.0,
@@ -7001,32 +6818,6 @@
    "page": "objet/sculpture-chinoise-en-terre-vernissee-a-decor-de-paon-fin-19eme-257245103782.html"
   },
   {
-   "id": "257245097712",
-   "title": "Paire de vide poches décoratives fin 19eme",
-   "price": 180.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/dtEAAeSwZHZpA3eO/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Bs8AAeSwKnZpA3eO/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/7DEAAeSwbTRpA3eO/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Bv8AAeSwjCxpA3eP/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/2XQAAeSwoJhpA3eP/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257245097712?hash=item3be500aef0:g:dtEAAeSwZHZpA3eO",
-   "location": "FR",
-   "listed": "2025-12-17T16:30:01.000Z",
-   "firstSeen": "2025-12-17",
-   "aspects": [],
-   "description": "Paire de vide poches fin 19eme en excellent état. Décor de vignes et raisins. Poids 500 grammes la paire Dimensions 27*14*7cm",
-   "title_en": "Pair of decorative trinket dishes from the late 19th century",
-   "description_en": "Pair of late 19th-century trinket dishes in excellent condition. Decorated with grapevines and grapes. Weight: 500 grams per pair. Dimensions: 27 × 14 × 7 cm",
-   "tr_src": "dc8e71b2619b",
-   "page": "objet/paire-de-vide-poches-decoratives-fin-19eme-257245097712.html"
-  },
-  {
    "id": "257245096877",
    "title": "Encrier ancien en acajou et cristal",
    "price": 120.0,
@@ -7060,77 +6851,6 @@
    "description_en": "Antique mahogany and crystal inkwell from the 20th century. In perfect condition. Weight: 950 g. Dimensions: 11 × 18 × 18 cm",
    "tr_src": "aa5800b65b87",
    "page": "objet/encrier-ancien-en-acajou-et-cristal-257245096877.html"
-  },
-  {
-   "id": "257245096559",
-   "title": "Panier en métal argenté tressé",
-   "price": 140.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/knAAAeSwWjtpA3km/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/g-gAAeSwIrFpA3km/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Ac0AAeSwHZZpA3km/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/GtsAAeSwtmNpA3km/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/jJkAAeSwWwFpA3kn/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257245096559?hash=item3be500aa6f:g:knAAAeSwWjtpA3km",
-   "location": "FR",
-   "listed": "2025-12-16T17:30:01.000Z",
-   "firstSeen": "2025-12-16",
-   "aspects": [
-    [
-     "Matière",
-     "Métal argenté"
-    ],
-    [
-     "Sous-type",
-     "Panier"
-    ]
-   ],
-   "description": "Panier en métal argenté tressé de très bonne facture et en parfait état. Poids 800g Dimensions 10*30*30cm",
-   "title_en": "Silver-colored woven metal basket",
-   "description_en": "A beautifully crafted, silver-colored woven metal basket in perfect condition. Weight: 800 g. Dimensions: 10 × 30 × 30 cm",
-   "tr_src": "98e2e77a5090",
-   "page": "objet/panier-en-metal-argente-tresse-257245096559.html"
-  },
-  {
-   "id": "257245096441",
-   "title": "Buste d’homme en terre cuite",
-   "price": 399.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Sculptures, statues",
-   "images": [
-    "https://i.ebayimg.com/images/g/jAcAAeSwwaBpA3oD/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/etQAAeSwumFpA3oD/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/e7oAAeSwjXlpA3oD/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/gsMAAeSwsGBpA3oD/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/hJwAAeSwf-hpA3oD/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/AgEAAeSwZklpA3oD/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257245096441?hash=item3be500a9f9:g:jAcAAeSwwaBpA3oD",
-   "location": "FR",
-   "listed": "2025-12-16T16:30:01.000Z",
-   "firstSeen": "2025-12-16",
-   "aspects": [
-    [
-     "Matière",
-     "Terre cuite"
-    ],
-    [
-     "Thème",
-     "Buste"
-    ]
-   ],
-   "description": "Buste d’homme en terre cuite en parfait état. Très élégant. Poids 6-7 kilos Dimensions 40*30*20cm",
-   "title_en": "Terracotta bust of a man",
-   "description_en": "Terracotta bust of a man in perfect condition. Very elegant. Weight: 6–7 kilograms. Dimensions: 40 × 30 × 20 cm",
-   "tr_src": "8b742bb60767",
-   "page": "objet/buste-d-homme-en-terre-cuite-257245096441.html"
   },
   {
    "id": "257245095868",
@@ -8542,40 +8262,6 @@
    "description_en": "Ethiopian ethnic headrest, beautiful patina, and in excellent condition. Weight: 150 grams. Dimensions: 18 × 17 × 6 cm",
    "tr_src": "2205de3ba09d",
    "page": "objet/repose-tete-ethnique-ethiopien-257112283579.html"
-  },
-  {
-   "id": "257112283101",
-   "title": "Sculpture en cristal de Jésus",
-   "price": 119.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Sculptures, statues",
-   "images": [
-    "https://i.ebayimg.com/images/g/l4UAAeSwCIdomzWn/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/YekAAeSwsDhomzWn/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/KDUAAeSw2ZdomzWn/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/ZTAAAeSwiU1omzWn/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257112283101?hash=item3bdd1617dd:g:l4UAAeSwCIdomzWn",
-   "location": "FR",
-   "listed": "2025-09-25T16:00:01.000Z",
-   "firstSeen": "2025-09-25",
-   "aspects": [
-    [
-     "Matière",
-     "Cristal"
-    ],
-    [
-     "Type",
-     "Sculpture"
-    ]
-   ],
-   "description": "Sculpture en cristal de Jésus en parfait état. Poids : 700 grammes Dimensions : 16*8*6cm",
-   "title_en": "Crystal Sculpture of Jesus",
-   "description_en": "Crystal sculpture of Jesus in perfect condition. Weight: 700 grams. Dimensions: 16 x 8 x 6 cm",
-   "tr_src": "c746fa4d3fa6",
-   "page": "objet/sculpture-en-cristal-de-jesus-257112283101.html"
   },
   {
    "id": "257112278941",

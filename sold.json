@@ -70,5 +70,101 @@
   "firstSeen": "2025-09-25",
   "goneOn": "2026-10-15",
   "days": 385
+ },
+ {
+  "id": "257537909279",
+  "title": "Paire de porte-manteaux en cuir années 1950",
+  "price": 79.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "image": "https://i.ebayimg.com/images/g/E1AAAeSwhYVqDzPh/s-l1600.jpg",
+  "firstSeen": "2026-05-31",
+  "goneOn": "2026-10-16",
+  "days": 138
+ },
+ {
+  "id": "257350625745",
+  "title": "Buste de jeune femme art nouveau en plâtre",
+  "price": 239.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Sculptures, statues",
+  "image": "https://i.ebayimg.com/images/g/WuQAAeSwRPRpQTE~/s-l1600.jpg",
+  "firstSeen": "2026-02-11",
+  "goneOn": "2026-10-16",
+  "days": 247
+ },
+ {
+  "id": "257305144999",
+  "title": "Vase de Gustave Asch Art Déco",
+  "price": 450.0,
+  "currency": "EUR",
+  "category": "Poterie et verre",
+  "subcategory": "Grands céramistes du XXe",
+  "image": "https://i.ebayimg.com/images/g/INAAAeSwdilpFe~B/s-l1600.jpg",
+  "firstSeen": "2026-01-25",
+  "goneOn": "2026-10-16",
+  "days": 264
+ },
+ {
+  "id": "257305144238",
+  "title": "Grand pot à eau en terre cuite 19eme",
+  "price": 299.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XIXe et avant",
+  "image": "https://i.ebayimg.com/images/g/iPkAAeSwP2JpGuT0/s-l1600.jpg",
+  "firstSeen": "2026-01-24",
+  "goneOn": "2026-10-16",
+  "days": 265
+ },
+ {
+  "id": "257245104243",
+  "title": "Vase en verre chinois 20ème peint à la main",
+  "price": 259.0,
+  "currency": "EUR",
+  "category": "Poterie et verre",
+  "subcategory": "Asiatiques",
+  "image": "https://i.ebayimg.com/images/g/zhkAAeSwxr1oqdnE/s-l1600.jpg",
+  "firstSeen": "2025-12-20",
+  "goneOn": "2026-10-16",
+  "days": 300
+ },
+ {
+  "id": "257245097712",
+  "title": "Paire de vide poches décoratives fin 19eme",
+  "price": 180.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "image": "https://i.ebayimg.com/images/g/dtEAAeSwZHZpA3eO/s-l1600.jpg",
+  "firstSeen": "2025-12-17",
+  "goneOn": "2026-10-16",
+  "days": 303
+ },
+ {
+  "id": "257245096559",
+  "title": "Panier en métal argenté tressé",
+  "price": 140.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "image": "https://i.ebayimg.com/images/g/knAAAeSwWjtpA3km/s-l1600.jpg",
+  "firstSeen": "2025-12-16",
+  "goneOn": "2026-10-16",
+  "days": 304
+ },
+ {
+  "id": "257245096441",
+  "title": "Buste d’homme en terre cuite",
+  "price": 399.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Sculptures, statues",
+  "image": "https://i.ebayimg.com/images/g/jAcAAeSwwaBpA3oD/s-l1600.jpg",
+  "firstSeen": "2025-12-16",
+  "goneOn": "2026-10-16",
+  "days": 304
  }
 ]
