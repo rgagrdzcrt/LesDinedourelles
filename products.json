@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-15T18:59:26+00:00",
+ "updated": "2026-10-16T00:58:36+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -6256,6 +6256,36 @@
    "page": "objet/sculpture-en-terre-cuite-visage-a-gueule-de-singe-257305128326.html"
   },
   {
+   "id": "257305128210",
+   "title": "Petite statuette de divinité Indou en bois 19eme",
+   "price": 79.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/OAQAAeSwm~NpOZTS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/9fUAAeSwITNpOZTR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/IlEAAeSwzkRpOZTR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/~ZYAAeSwuylpOZTT/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257305128210?hash=item3be894ad12:g:OAQAAeSwm~NpOZTS",
+   "location": "FR",
+   "listed": "2026-01-15T16:00:01.000Z",
+   "firstSeen": "2026-01-15",
+   "aspects": [
+    [
+     "Matière",
+     "Bois"
+    ]
+   ],
+   "description": "Petite statuette de divinité Indou en bois 19eme belle patine d’usage. Poids 50g Dimensions 10*8*4cm",
+   "title_en": "Small 19th-century wooden statuette of a Hindu deity",
+   "description_en": "Small wooden statuette of a Hindu deity from the 19th century, with a beautiful patina from age. Weight: 50 g. Dimensions: 10 × 8 × 4 cm",
+   "tr_src": "6cd3a49ca519",
+   "page": "objet/petite-statuette-de-divinite-indou-en-bois-19eme-257305128210.html"
+  },
+  {
    "id": "257305126162",
    "title": "Statuette en bois 20eme homme indonésien",
    "price": 79.0,
@@ -8512,6 +8542,40 @@
    "description_en": "Ethiopian ethnic headrest, beautiful patina, and in excellent condition. Weight: 150 grams. Dimensions: 18 × 17 × 6 cm",
    "tr_src": "2205de3ba09d",
    "page": "objet/repose-tete-ethnique-ethiopien-257112283579.html"
+  },
+  {
+   "id": "257112283101",
+   "title": "Sculpture en cristal de Jésus",
+   "price": 119.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Sculptures, statues",
+   "images": [
+    "https://i.ebayimg.com/images/g/l4UAAeSwCIdomzWn/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/YekAAeSwsDhomzWn/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/KDUAAeSw2ZdomzWn/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/ZTAAAeSwiU1omzWn/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257112283101?hash=item3bdd1617dd:g:l4UAAeSwCIdomzWn",
+   "location": "FR",
+   "listed": "2025-09-25T16:00:01.000Z",
+   "firstSeen": "2025-09-25",
+   "aspects": [
+    [
+     "Matière",
+     "Cristal"
+    ],
+    [
+     "Type",
+     "Sculpture"
+    ]
+   ],
+   "description": "Sculpture en cristal de Jésus en parfait état. Poids : 700 grammes Dimensions : 16*8*6cm",
+   "title_en": "Crystal Sculpture of Jesus",
+   "description_en": "Crystal sculpture of Jesus in perfect condition. Weight: 700 grams. Dimensions: 16 x 8 x 6 cm",
+   "tr_src": "c746fa4d3fa6",
+   "page": "objet/sculpture-en-cristal-de-jesus-257112283101.html"
   },
   {
    "id": "257112278941",
