@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-16T18:55:35+00:00",
+ "updated": "2026-10-17T01:00:11+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -6128,6 +6128,36 @@
    "page": "objet/sculpture-en-terre-cuite-visage-a-gueule-de-singe-257305128326.html"
   },
   {
+   "id": "257305128210",
+   "title": "Petite statuette de divinité Indou en bois 19eme",
+   "price": 79.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/OAQAAeSwm~NpOZTS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/9fUAAeSwITNpOZTR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/IlEAAeSwzkRpOZTR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/~ZYAAeSwuylpOZTT/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257305128210?hash=item3be894ad12:g:OAQAAeSwm~NpOZTS",
+   "location": "FR",
+   "listed": "2026-01-15T16:00:01.000Z",
+   "firstSeen": "2026-01-15",
+   "aspects": [
+    [
+     "Matière",
+     "Bois"
+    ]
+   ],
+   "description": "Petite statuette de divinité Indou en bois 19eme belle patine d’usage. Poids 50g Dimensions 10*8*4cm",
+   "title_en": "Small 19th-century wooden statuette of a Hindu deity",
+   "description_en": "Small wooden statuette of a Hindu deity from the 19th century, with a beautiful patina from age. Weight: 50 g. Dimensions: 10 × 8 × 4 cm",
+   "tr_src": "6cd3a49ca519",
+   "page": "objet/petite-statuette-de-divinite-indou-en-bois-19eme-257305128210.html"
+  },
+  {
    "id": "257305126162",
    "title": "Statuette en bois 20eme homme indonésien",
    "price": 79.0,
@@ -10288,34 +10318,6 @@
    "description_en": "Early 20th-century African mask (from the village of Toumokoro, Ivory Coast) with a few minor chips. Width: 37 cm; Height without base: 55 cm; Height with base: 66 cm; Weight with base: 2.150 kg",
    "tr_src": "76791abe5b20",
    "page": "objet/masque-africain-du-xxeme-257020399883.html"
-  },
-  {
-   "id": "257020381853",
-   "title": "Peinture A. Guers XXeme",
-   "price": 540.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Peintures",
-   "images": [
-    "https://i.ebayimg.com/images/g/bVEAAeSwjAxoW9E1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/iMAAAeSwOoRoW9E2/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/YhoAAeSwxvVoW9E1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/hUYAAeSwphBoW9E1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/0nAAAeSweb9oW9E3/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/gFMAAeSwC~1oW9E3/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Nb8AAeSwMnZoW9E3/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257020381853?hash=item3bd79bca9d:g:bVEAAeSwjAxoW9E1",
-   "location": "FR",
-   "listed": "2025-07-17T08:09:35.000Z",
-   "firstSeen": "2025-07-17",
-   "aspects": [],
-   "description": "Huile sur toile signée A. Guers début XXème. Longueur 65 Largeur 55 Poids +-800 grammes",
-   "title_en": "Painting by A. Guers, 20th century",
-   "description_en": "Oil on canvas, signed A. Guers, early 20th century. Length 65, Width 55, Weight approximately 800 grams",
-   "tr_src": "857b522e0b63",
-   "page": "objet/peinture-a-guers-xxeme-257020381853.html"
   },
   {
    "id": "257020370812",
