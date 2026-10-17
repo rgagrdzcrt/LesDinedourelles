@@ -166,5 +166,17 @@
   "firstSeen": "2025-12-16",
   "goneOn": "2026-10-16",
   "days": 304
+ },
+ {
+  "id": "255069982745",
+  "title": "Arme de céremonie ou de combat Mangbetu XXème",
+  "price": 300.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Arts, objets ethniques",
+  "image": "https://i.ebayimg.com/images/g/w6UAAOSwjatgq67v/s-l1600.jpg",
+  "firstSeen": "2021-07-28",
+  "goneOn": "2026-10-17",
+  "days": 1907
  }
 ]

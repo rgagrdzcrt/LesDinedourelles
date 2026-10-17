@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-17T12:53:46+00:00",
+ "updated": "2026-10-17T18:47:41+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -2146,6 +2146,44 @@
    "description_en": "1930 Verlys Oval Art Deco dish in excellent condition. Dimensions: 8 x 44 x 35 cm. Weight: 2.8 kg",
    "tr_src": "d07d2b590731",
    "page": "objet/plat-art-deco-verlys-ovale-1930-257396009699.html"
+  },
+  {
+   "id": "257396009400",
+   "title": "Statue Africaine Baoulé",
+   "price": 299.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/E68AAeSwCJhpcN5~/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/WGoAAeSweaZpcN5~/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/R6cAAeSwwhFpcN5~/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/R~MAAeSwdnNpcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/WEQAAeSwlVdpcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/MloAAeSwkgVpcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/XLAAAeSwcG1pcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/XlMAAeSwd49pcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/LUsAAeSwMw5pcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/SP0AAeSwdkdpcN6A/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/DFcAAeSwO6ZpcN6B/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/RokAAeSwzFVpcN6B/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257396009400?hash=item3bedff69b8:g:E68AAeSwCJhpcN5~",
+   "location": "FR",
+   "listed": "2026-03-20T16:15:01.000Z",
+   "firstSeen": "2026-03-20",
+   "aspects": [
+    [
+     "Origine",
+     "Afrique"
+    ]
+   ],
+   "description": "Statue Africaine Baoulé en état général satisfaisant. 2 très légers accidents sur les oreilles. Le bras gauche est légèrement abîmé. Très joli décor. Poids 2,2 kilos Dimensions 63*20*17cm",
+   "title_en": "Baoulé African Statue",
+   "description_en": "Baoulé African statue in generally satisfactory condition. Two very slight chips on the ears. The left arm is slightly damaged. Very attractive decoration. Weight: 2.2 kg. Dimensions: 63 × 20 × 17 cm",
+   "tr_src": "15b1bf098cfc",
+   "page": "objet/statue-africaine-baoule-257396009400.html"
   },
   {
    "id": "257396008919",
@@ -11364,7 +11402,7 @@
   {
    "id": "256590634807",
    "title": "Plat Art déco Verlys",
-   "price": 380.0,
+   "price": 280.0,
    "currency": "EUR",
    "condition": "",
    "category": "Art",
@@ -12046,7 +12084,7 @@
   {
    "id": "255086537253",
    "title": "Ancienne monnaie d'échange Africaine",
-   "price": 300.0,
+   "price": 250.0,
    "currency": "EUR",
    "condition": "",
    "category": "Art",
@@ -12180,8 +12218,8 @@
   },
   {
    "id": "255069983896",
-   "title": "Ancienne arme Africaine du Congo XXème",
-   "price": 240.0,
+   "title": "Outil Agricole Africain du Congo XXème",
+   "price": 140.0,
    "currency": "EUR",
    "condition": "",
    "category": "Art",
@@ -12234,15 +12272,15 @@
     ]
    ],
    "description": "Ancienne arme africaine du Congo datant du début XXème siècle en acier.",
-   "title_en": "Antique African Weapon from the Congo, 20th Century",
+   "title_en": "African Agricultural Tool from the Congo, 20th Century",
    "description_en": "An antique African weapon from the Congo, dating from the early 20th century and made of steel.",
-   "tr_src": "a280607e66ee",
-   "page": "objet/ancienne-arme-africaine-du-congo-xxeme-255069983896.html"
+   "tr_src": "dc91d6cb933f",
+   "page": "objet/outil-agricole-africain-du-congo-xxeme-255069983896.html"
   },
   {
    "id": "255069983694",
-   "title": "Ancienne arme africaine Congo  XXème",
-   "price": 240.0,
+   "title": "Outil Agricole africain Congo  XXème",
+   "price": 180.0,
    "currency": "EUR",
    "condition": "",
    "category": "Art",
@@ -12296,10 +12334,10 @@
     ]
    ],
    "description": "Ancienne arme africaine provenant du Congo datant du début XXème en bois et métal.",
-   "title_en": "Antique African Weapon from the Congo, 20th Century",
+   "title_en": "African Farming Tool, Congo, 20th Century",
    "description_en": "An antique African weapon from the Congo, dating from the early 20th century, made of wood and metal.",
-   "tr_src": "593af0c1d4e2",
-   "page": "objet/ancienne-arme-africaine-congo-xxeme-255069983694.html"
+   "tr_src": "ac288f018a99",
+   "page": "objet/outil-agricole-africain-congo-xxeme-255069983694.html"
   },
   {
    "id": "255069982982",
@@ -12363,68 +12401,6 @@
    "description_en": "A pair of antique bronze stirrups from the early 20th century, originating from North Africa.",
    "tr_src": "e9967679c175",
    "page": "objet/paire-d-etrier-xxeme-255069982982.html"
-  },
-  {
-   "id": "255069982745",
-   "title": "Arme de céremonie ou de combat Mangbetu XXème",
-   "price": 300.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Arts, objets ethniques",
-   "images": [
-    "https://i.ebayimg.com/images/g/w6UAAOSwjatgq67v/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/8PQAAOSwkPBgq67x/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/JLQAAOSwV0Jgq67z/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/U3EAAOSw6hFgq670/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/255069982745?hash=item3b635b1019:g:w6UAAOSwjatgq67v",
-   "location": "FR",
-   "listed": "2021-07-28T20:39:16.000Z",
-   "firstSeen": "2021-07-28",
-   "aspects": [
-    [
-     "Authenticité",
-     "Original"
-    ],
-    [
-     "Poids",
-     "580"
-    ],
-    [
-     "Origine",
-     "Afrique"
-    ],
-    [
-     "Période",
-     "1900-1949"
-    ],
-    [
-     "Quantité unitaire",
-     "1"
-    ],
-    [
-     "Unité de mesure",
-     "kg"
-    ],
-    [
-     "Hauteur",
-     "40"
-    ],
-    [
-     "Matière",
-     "Métal"
-    ],
-    [
-     "Largeur",
-     "21"
-    ]
-   ],
-   "description": "Arme de céremonie ou de combat MANGBETU provenant du Congo. Datant du début XXème en bois et métal.",
-   "title_en": "Mangbetu ceremonial or combat weapon, 20th century",
-   "description_en": "A MANGBETU ceremonial or combat weapon from the Congo. Dating from the early 20th century, made of wood and metal.",
-   "tr_src": "49669a84c577",
-   "page": "objet/arme-de-ceremonie-ou-de-combat-mangbetu-xxeme-255069982745.html"
   },
   {
    "id": "255069982539",
