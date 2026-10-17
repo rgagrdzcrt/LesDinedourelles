@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-17T01:00:11+00:00",
+ "updated": "2026-10-17T06:58:46+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -8294,6 +8294,40 @@
    "page": "objet/repose-tete-ethnique-ethiopien-257112283579.html"
   },
   {
+   "id": "257112283101",
+   "title": "Sculpture en cristal de Jésus",
+   "price": 119.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Sculptures, statues",
+   "images": [
+    "https://i.ebayimg.com/images/g/l4UAAeSwCIdomzWn/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/YekAAeSwsDhomzWn/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/KDUAAeSw2ZdomzWn/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/ZTAAAeSwiU1omzWn/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257112283101?hash=item3bdd1617dd:g:l4UAAeSwCIdomzWn",
+   "location": "FR",
+   "listed": "2025-09-25T16:00:01.000Z",
+   "firstSeen": "2025-09-25",
+   "aspects": [
+    [
+     "Matière",
+     "Cristal"
+    ],
+    [
+     "Type",
+     "Sculpture"
+    ]
+   ],
+   "description": "Sculpture en cristal de Jésus en parfait état. Poids : 700 grammes Dimensions : 16*8*6cm",
+   "title_en": "Crystal Sculpture of Jesus",
+   "description_en": "Crystal sculpture of Jesus in perfect condition. Weight: 700 grams. Dimensions: 16 x 8 x 6 cm",
+   "tr_src": "c746fa4d3fa6",
+   "page": "objet/sculpture-en-cristal-de-jesus-257112283101.html"
+  },
+  {
    "id": "257112278941",
    "title": "Dessin au stylo TUCE",
    "price": 189.0,
@@ -8654,33 +8688,6 @@
    "page": "objet/pichet-20eme-en-faience-de-malicorne-257112267051.html"
   },
   {
-   "id": "257100839628",
-   "title": "Louche à lait Marocaine XXeme",
-   "price": 149.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/PAQAAeSwOfNomxSe/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/39gAAeSwEhNomxSe/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/3qkAAeSwl~RomxSe/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/ygYAAeSwXJhomxSe/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/u6MAAeSwB~ZomxSf/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/4-EAAeSwUpBomxSf/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257100839628?hash=item3bdc677acc:g:PAQAAeSwOfNomxSe",
-   "location": "FR",
-   "listed": "2025-09-12T16:45:01.000Z",
-   "firstSeen": "2025-09-12",
-   "aspects": [],
-   "description": "Louche à lait Marocaine XXeme. En très bel état avec une jolie patine. Poids : 600 grammes Dimensions : 31*16*10cm",
-   "title_en": "20th-Century Moroccan Milk Ladle",
-   "description_en": "20th-century Moroccan milk ladle. In excellent condition with a lovely patina. Weight: 600 grams. Dimensions: 31 x 16 x 10 cm",
-   "tr_src": "8b9ae9915819",
-   "page": "objet/louche-a-lait-marocaine-xxeme-257100839628.html"
-  },
-  {
    "id": "257100840129",
    "title": "Sculpture terre cuite Claude Parent-Saura, 2014",
    "price": 400.0,
@@ -8716,6 +8723,33 @@
    "description_en": "Terracotta sculpture by Claude Parent-Saura, 2014. Weight: 1.1 kilograms. Dimensions: 21 × 15 × 15 cm",
    "tr_src": "45f751c00afe",
    "page": "objet/sculpture-terre-cuite-claude-parent-saura-2014-257100840129.html"
+  },
+  {
+   "id": "257100839628",
+   "title": "Louche à lait Marocaine XXeme",
+   "price": 149.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/PAQAAeSwOfNomxSe/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/39gAAeSwEhNomxSe/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/3qkAAeSwl~RomxSe/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/ygYAAeSwXJhomxSe/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/u6MAAeSwB~ZomxSf/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/4-EAAeSwUpBomxSf/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257100839628?hash=item3bdc677acc:g:PAQAAeSwOfNomxSe",
+   "location": "FR",
+   "listed": "2025-09-12T16:45:01.000Z",
+   "firstSeen": "2025-09-12",
+   "aspects": [],
+   "description": "Louche à lait Marocaine XXeme. En très bel état avec une jolie patine. Poids : 600 grammes Dimensions : 31*16*10cm",
+   "title_en": "20th-Century Moroccan Milk Ladle",
+   "description_en": "20th-century Moroccan milk ladle. In excellent condition with a lovely patina. Weight: 600 grams. Dimensions: 31 x 16 x 10 cm",
+   "tr_src": "8b9ae9915819",
+   "page": "objet/louche-a-lait-marocaine-xxeme-257100839628.html"
   },
   {
    "id": "257100838940",
@@ -10318,6 +10352,34 @@
    "description_en": "Early 20th-century African mask (from the village of Toumokoro, Ivory Coast) with a few minor chips. Width: 37 cm; Height without base: 55 cm; Height with base: 66 cm; Weight with base: 2.150 kg",
    "tr_src": "76791abe5b20",
    "page": "objet/masque-africain-du-xxeme-257020399883.html"
+  },
+  {
+   "id": "257020381853",
+   "title": "Peinture A. Guers XXeme",
+   "price": 540.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Peintures",
+   "images": [
+    "https://i.ebayimg.com/images/g/bVEAAeSwjAxoW9E1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/iMAAAeSwOoRoW9E2/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/YhoAAeSwxvVoW9E1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/hUYAAeSwphBoW9E1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/0nAAAeSweb9oW9E3/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/gFMAAeSwC~1oW9E3/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/Nb8AAeSwMnZoW9E3/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257020381853?hash=item3bd79bca9d:g:bVEAAeSwjAxoW9E1",
+   "location": "FR",
+   "listed": "2025-07-17T08:09:35.000Z",
+   "firstSeen": "2025-07-17",
+   "aspects": [],
+   "description": "Huile sur toile signée A. Guers début XXème. Longueur 65 Largeur 55 Poids +-800 grammes",
+   "title_en": "Painting by A. Guers, 20th century",
+   "description_en": "Oil on canvas, signed A. Guers, early 20th century. Length 65, Width 55, Weight approximately 800 grams",
+   "tr_src": "857b522e0b63",
+   "page": "objet/peinture-a-guers-xxeme-257020381853.html"
   },
   {
    "id": "257020370812",
