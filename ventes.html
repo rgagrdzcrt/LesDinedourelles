@@ -77,13 +77,13 @@
     $('kD').textContent = delays.length ? Math.round(delays.reduce((a, b) => a + b, 0) / delays.length) + ' j' : '—';
     $('kS').textContent = stock.length;
     const by = {};
-    list.forEach(s => { const k = s.subcategory || s.category || 'Autres'; by[k] = (by[k] || 0) + 1; });
+    list.forEach(s => { const k = s.cat || s.subcategory || s.category || 'Autres'; by[k] = (by[k] || 0) + 1; });
     const max = Math.max(1, ...Object.values(by));
     $('bars').innerHTML = Object.keys(by).length
       ? Object.entries(by).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([k, n]) => `<div><span>${esc(k)}</span><i style="width:${n / max * 100}%"></i><em>${n}</em></div>`).join('')
       : '<p class="sub">Aucun objet parti sur cette période.</p>';
     $('list').innerHTML = list.length
-      ? list.slice(0, 40).map(s => `<div class="sold-row"><img src="${esc(s.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"><div><b>${esc(s.title)}</b><small>${esc(s.subcategory || s.category)} · parti le ${new Date(s.goneOn).toLocaleDateString('fr-FR')}</small></div><div class="p">${s.price != null ? esc(fmt(s.price, s.currency)) : ''}<small>${s.days != null ? 'en ' + s.days + ' j' : ''}</small></div></div>`).join('')
+      ? list.slice(0, 40).map(s => `<div class="sold-row"><img src="${esc(s.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"><div><b>${esc(s.title)}</b><small>${esc(s.sub || s.subcategory || s.category)} · parti le ${new Date(s.goneOn).toLocaleDateString('fr-FR')}</small></div><div class="p">${s.price != null ? esc(fmt(s.price, s.currency)) : ''}<small>${s.days != null ? 'en ' + s.days + ' j' : ''}</small></div></div>`).join('')
       : '<p class="sub">Les premiers départs apparaîtront ici après les prochaines collectes.</p>';
   }
 

@@ -51,6 +51,11 @@ def summary(p):
     return text if len(text) <= 300 else text[:297].rsplit(" ", 1)[0] + "…"
 
 
+def thumb(url):
+    """Photo eBay réduite (500 px) pour les vignettes : bien plus légère que l'originale en 1600 px."""
+    return url.replace("/s-l1600.", "/s-l500.")
+
+
 def e(s):
     return html.escape(str(s or ""), quote=True)
 
@@ -66,7 +71,7 @@ def render(p, related):
         "image": images[:6],
         "description": desc,
         "sku": str(p["id"]),
-        "category": " > ".join(x for x in (p.get("category"), p.get("subcategory")) if x),
+        "category": " > ".join(x for x in (p.get("cat") or p.get("category"), p.get("sub") or p.get("subcategory")) if x),
         "brand": {"@type": "Brand", "name": SHOP},
         "offers": {
             "@type": "Offer",
@@ -80,7 +85,7 @@ def render(p, related):
     }
     if ld["offers"]["price"] is None:
         del ld["offers"]["price"]
-    specs = [("Catégorie", p.get("category")), ("Détail", p.get("subcategory")), ("État", p.get("condition"))]
+    specs = [("Catégorie", p.get("cat") or p.get("category")), ("Détail", p.get("sub") or p.get("subcategory")), ("État", p.get("condition"))]
     specs += [(k, v) for k, v in (p.get("aspects") or [])]
     specs += [("Expédition", "Depuis l'Aude, France"), ("Référence eBay", p["id"])]
     seen, rows = set(), []
@@ -93,8 +98,8 @@ def render(p, related):
         for i, src in enumerate(images)
     ) if len(images) > 1 else ""
     rel = "".join(
-        f'<a class="card" href="../{e(page_path(r))}"><div class="ph"><img src="{e(r["images"][0])}" alt="{e(r["title"])}" loading="lazy" referrerpolicy="no-referrer"></div>'
-        f'<h3>{e(r["title"])}</h3><div class="sub">{e(r.get("subcategory") or r.get("category"))}</div><div class="pr">{e(money(r))}</div></a>'
+        f'<a class="card" href="../{e(page_path(r))}"><div class="ph"><img src="{e(thumb(r["images"][0]))}" alt="{e(r["title"])}" loading="lazy" referrerpolicy="no-referrer"></div>'
+        f'<h3>{e(r["title"])}</h3><div class="sub">{e(r.get("sub") or r.get("subcategory") or r.get("category"))}</div><div class="pr">{e(money(r))}</div></a>'
         for r in related
     )
     long_desc = f'<p class="obj-desc">{e(p["description"])}</p>' if p.get("description") else ""
@@ -123,7 +128,6 @@ def render(p, related):
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body class="obj-page">
-<div class="proto"><b>Prototype</b> · La vitrine est en cours d’aménagement : certaines fonctions arrivent bientôt. Les achats se font en toute sécurité sur eBay.</div>
 <div class="promo">Nouveautés chaque semaine · <b>Expédition soignée depuis l'Aude</b> · Paiement sécurisé par eBay</div>
 <header class="site-head">
   <div class="wrap top">
@@ -133,17 +137,18 @@ def render(p, related):
   </div>
 </header>
 <main class="wrap obj">
-  <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../">Accueil</a> / <a href="../#collection">{e(p.get('category'))}</a> / <span>{e(p.get('subcategory'))}</span></nav>
+  <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../">Accueil</a> / <a href="../#collection">{e(p.get('cat') or p.get('category'))}</a> / <span>{e(p.get('sub') or p.get('subcategory'))}</span></nav>
   <div class="obj-grid">
     <div class="gallery">
       <div class="stage" id="stage">{f'<img src="{e(images[0])}" alt="{e(p["title"])}" referrerpolicy="no-referrer">' if images else ''}</div>
       <div class="thumbs" id="thumbs">{thumbs}</div>
     </div>
     <div class="info">
-      <p class="kicker">{e(p.get('subcategory') or p.get('category'))}</p>
+      <p class="kicker">{e(p.get('cat') or p.get('category'))} · {e(p.get('sub') or p.get('subcategory'))}</p>
       <h1>{e(p['title'])}</h1>
       <p class="sheet-price">{e(money(p))}</p>
       <a class="cta wide" href="{e(p.get('url'))}" target="_blank" rel="noopener" data-goatcounter-click="ebay/{e(p['id'])}" data-goatcounter-title="Clic eBay : {e(p['title'])}">Acheter sur eBay ↗</a>
+      <button class="cta ghost wide" type="button" id="favBtn" data-id="{e(p['id'])}">♡ Ajouter aux favoris</button>
       <dl class="specs">{''.join(rows)}</dl>
       {long_desc}
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -151,8 +156,19 @@ def render(p, related):
   </div>
   {f'<section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products">{rel}</div></section>' if rel else ''}
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© {datetime.now().year} {SHOP} · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="https://linktr.ee/jeanpierrecartier" target="_blank" rel="noopener">Linktree</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© {datetime.now().year} {SHOP} · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
+(function () {{
+  var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
+  try {{ favs = JSON.parse(localStorage.getItem('dd_favs') || '[]'); }} catch (e) {{}}
+  function show() {{ var on = favs.indexOf(id) >= 0; b.textContent = on ? '♥ Retirer des favoris' : '♡ Ajouter aux favoris'; b.setAttribute('aria-pressed', on); }}
+  b.addEventListener('click', function () {{
+    favs = favs.indexOf(id) >= 0 ? favs.filter(function (x) {{ return x !== id; }}) : favs.concat(id);
+    try {{ localStorage.setItem('dd_favs', JSON.stringify(favs)); }} catch (e) {{}}
+    show();
+  }});
+  show();
+}})();
 document.getElementById('thumbs').addEventListener('click', function (ev) {{
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;
@@ -221,9 +237,9 @@ def build(data):
     tmp.mkdir()
     for p in items:
         p["page"] = page_path(p)
-        related = [r for r in items if r is not p and r.get("subcategory") == p.get("subcategory")][:4]
+        related = [r for r in items if r is not p and r.get("sub") and r.get("sub") == p.get("sub")][:4]
         if len(related) < 4:
-            related += [r for r in items if r is not p and r not in related and r.get("category") == p.get("category")][: 4 - len(related)]
+            related += [r for r in items if r is not p and r not in related and r.get("cat") == p.get("cat")][: 4 - len(related)]
         (tmp / Path(p["page"]).name).write_text(render(p, related), encoding="utf-8")
     # Titre modifié : l'ancienne adresse (déjà connue de Google ou Pinterest) renvoie vers la nouvelle.
     by_id = {str(p["id"]): Path(p["page"]).name for p in items}

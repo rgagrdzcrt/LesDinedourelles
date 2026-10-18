@@ -9,7 +9,9 @@
   "image": "https://i.ebayimg.com/images/g/E68AAeSwCJhpcN5~/s-l1600.jpg",
   "firstSeen": "2026-03-20",
   "goneOn": "2026-10-13",
-  "days": 207
+  "days": 207,
+  "cat": "Arts d'Afrique",
+  "sub": "Statues et fétiches"
  },
  {
   "id": "257493061891",
@@ -21,7 +23,9 @@
   "image": "https://i.ebayimg.com/images/g/DxEAAeSw2QVpx72b/s-l1600.jpg",
   "firstSeen": "2026-05-16",
   "goneOn": "2026-10-14",
-  "days": 151
+  "days": 151,
+  "cat": "Mobilier et décoration",
+  "sub": "Horloges et pendules"
  },
  {
   "id": "257053348672",
@@ -33,7 +37,9 @@
   "image": "https://i.ebayimg.com/images/g/LQ0AAeSwnYVoXnYX/s-l1600.jpg",
   "firstSeen": "2025-08-06",
   "goneOn": "2026-10-14",
-  "days": 434
+  "days": 434,
+  "cat": "Arts d'Afrique",
+  "sub": "Objets rituels et du quotidien"
  },
  {
   "id": "257020381853",
@@ -45,7 +51,9 @@
   "image": "https://i.ebayimg.com/images/g/bVEAAeSwjAxoW9E1/s-l1600.jpg",
   "firstSeen": "2025-07-17",
   "goneOn": "2026-10-15",
-  "days": 455
+  "days": 455,
+  "cat": "Tableaux et dessins",
+  "sub": "Peintures"
  },
  {
   "id": "257305128210",
@@ -57,7 +65,9 @@
   "image": "https://i.ebayimg.com/images/g/OAQAAeSwm~NpOZTS/s-l1600.jpg",
   "firstSeen": "2026-01-15",
   "goneOn": "2026-10-15",
-  "days": 273
+  "days": 273,
+  "cat": "Asie et Orient",
+  "sub": "Inde, Tibet et Népal"
  },
  {
   "id": "257112283101",
@@ -69,7 +79,9 @@
   "image": "https://i.ebayimg.com/images/g/l4UAAeSwCIdomzWn/s-l1600.jpg",
   "firstSeen": "2025-09-25",
   "goneOn": "2026-10-15",
-  "days": 385
+  "days": 385,
+  "cat": "Cabinet de curiosités",
+  "sub": "Art religieux"
  },
  {
   "id": "257537909279",
@@ -81,7 +93,9 @@
   "image": "https://i.ebayimg.com/images/g/E1AAAeSwhYVqDzPh/s-l1600.jpg",
   "firstSeen": "2026-05-31",
   "goneOn": "2026-10-16",
-  "days": 138
+  "days": 138,
+  "cat": "Mobilier et décoration",
+  "sub": "Objets de décoration"
  },
  {
   "id": "257350625745",
@@ -93,7 +107,9 @@
   "image": "https://i.ebayimg.com/images/g/WuQAAeSwRPRpQTE~/s-l1600.jpg",
   "firstSeen": "2026-02-11",
   "goneOn": "2026-10-16",
-  "days": 247
+  "days": 247,
+  "cat": "Sculptures et bronzes",
+  "sub": "Marbre, pierre et terre cuite"
  },
  {
   "id": "257305144999",
@@ -105,7 +121,9 @@
   "image": "https://i.ebayimg.com/images/g/INAAAeSwdilpFe~B/s-l1600.jpg",
   "firstSeen": "2026-01-25",
   "goneOn": "2026-10-16",
-  "days": 264
+  "days": 264,
+  "cat": "Céramique et faïence",
+  "sub": "Grès, terre cuite et céramique"
  },
  {
   "id": "257305144238",
@@ -117,7 +135,9 @@
   "image": "https://i.ebayimg.com/images/g/iPkAAeSwP2JpGuT0/s-l1600.jpg",
   "firstSeen": "2026-01-24",
   "goneOn": "2026-10-16",
-  "days": 265
+  "days": 265,
+  "cat": "Céramique et faïence",
+  "sub": "Grès, terre cuite et céramique"
  },
  {
   "id": "257245104243",
@@ -129,7 +149,9 @@
   "image": "https://i.ebayimg.com/images/g/zhkAAeSwxr1oqdnE/s-l1600.jpg",
   "firstSeen": "2025-12-20",
   "goneOn": "2026-10-16",
-  "days": 300
+  "days": 300,
+  "cat": "Asie et Orient",
+  "sub": "Chine"
  },
  {
   "id": "257245097712",
@@ -141,7 +163,9 @@
   "image": "https://i.ebayimg.com/images/g/dtEAAeSwZHZpA3eO/s-l1600.jpg",
   "firstSeen": "2025-12-17",
   "goneOn": "2026-10-16",
-  "days": 303
+  "days": 303,
+  "cat": "Mobilier et décoration",
+  "sub": "Objets de décoration"
  },
  {
   "id": "257245096559",
@@ -153,7 +177,9 @@
   "image": "https://i.ebayimg.com/images/g/knAAAeSwWjtpA3km/s-l1600.jpg",
   "firstSeen": "2025-12-16",
   "goneOn": "2026-10-16",
-  "days": 304
+  "days": 304,
+  "cat": "Mobilier et décoration",
+  "sub": "Objets de décoration"
  },
  {
   "id": "257245096441",
@@ -165,7 +191,9 @@
   "image": "https://i.ebayimg.com/images/g/jAcAAeSwwaBpA3oD/s-l1600.jpg",
   "firstSeen": "2025-12-16",
   "goneOn": "2026-10-16",
-  "days": 304
+  "days": 304,
+  "cat": "Sculptures et bronzes",
+  "sub": "Marbre, pierre et terre cuite"
  },
  {
   "id": "255069982745",
@@ -177,7 +205,9 @@
   "image": "https://i.ebayimg.com/images/g/w6UAAOSwjatgq67v/s-l1600.jpg",
   "firstSeen": "2021-07-28",
   "goneOn": "2026-10-17",
-  "days": 1907
+  "days": 1907,
+  "cat": "Arts d'Afrique",
+  "sub": "Objets rituels et du quotidien"
  },
  {
   "id": "257396008402",
@@ -189,6 +219,8 @@
   "image": "https://i.ebayimg.com/images/g/Rd0AAeSwPMdpcOXE/s-l1600.jpg",
   "firstSeen": "2026-03-18",
   "goneOn": "2026-10-18",
-  "days": 214
+  "days": 214,
+  "cat": "Asie et Orient",
+  "sub": "Asie du Sud-Est et Océanie"
  }
 ]

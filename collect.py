@@ -340,6 +340,7 @@ def record_sold(before, found, today, partial):
         sold.append({
             "id": p["id"], "title": p.get("title"), "price": p.get("price"), "currency": p.get("currency"),
             "category": p.get("category"), "subcategory": p.get("subcategory"),
+            "cat": p.get("cat"), "sub": p.get("sub"),
             "image": (p.get("images") or [""])[0], "firstSeen": first, "goneOn": today, "days": days,
         })
     SOLD.write_text(json.dumps(sold, ensure_ascii=False, indent=1), encoding="utf-8")

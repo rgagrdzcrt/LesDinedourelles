@@ -130,6 +130,8 @@
   const fmt = (v, c) => new Intl.NumberFormat(t('locale'), { style: 'currency', currency: c || cur(), maximumFractionDigits: 0 }).format(v);
   const money = p => p.price == null ? t('priceOnEbay') : new Intl.NumberFormat(t('locale'), { style: 'currency', currency: p.currency || cur(), minimumFractionDigits: 2 }).format(p.price);
   const text = p => norm([p.title, p.title_en, p.category, p.subcategory].join(' '));
+  // Vignettes : photo eBay en 500 px (7 fois plus légère que l'originale en 1600 px). Carrousel et fiche gardent la grande.
+  const thumb = u => String(u || '').replace('/s-l1600.', '/s-l500.');
   const heartSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 4.5 6.8 4.5c2.2 0 3.6 1.2 5.2 3 1.6-1.8 3-3 5.2-3 3.8 0 5.9 4 4.4 7.3C19.5 16.4 12 21 12 21Z"/></svg>';
 
   const ASIA = /asiat|\bchin(e|ois|oise|a|ese)|japan|japon|asian|satsuma|imari|vietnam|bouddha|buddha|\bthai|\binde?\b|indien|india|timor|indones|tibet|nepal|birman|meiji/;
@@ -229,7 +231,7 @@
       if (!list.length) return '';
       const cover = list.find(p => !used.has(String(p.id))) || list[0];
       used.add(String(cover.id));
-      return `<button type="button" class="cat" data-origin="${o.key}"><div class="ph"><img src="${esc(cover.images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></div><h3>${esc(t('origins')[o.key])}</h3><p>${esc(t('pieces')(list.length))}</p></button>`;
+      return `<button type="button" class="cat" data-origin="${o.key}"><div class="ph"><img src="${esc(thumb(cover.images[0]))}" alt="" loading="lazy" referrerpolicy="no-referrer"></div><h3>${esc(t('origins')[o.key])}</h3><p>${esc(t('pieces')(list.length))}</p></button>`;
     }).join('');
   }
 
@@ -238,7 +240,7 @@
     // Une pièce par catégorie du menu (Afrique, Asie, Céramique…), sans doublon ni pièce du carrousel.
     const used = new Set([...$('heroImgs').querySelectorAll('[data-id]')].map(b => b.dataset.id)), pick = [];
     CAT_ORDER.forEach(c => { const p = items.find(x => x.cat === c && x.price >= 50 && !used.has(String(x.id))) || items.find(x => x.cat === c && !used.has(String(x.id))); if (p) { used.add(String(p.id)); pick.push(p); } });
-    $('mosaic').innerHTML = pick.map(p => `<button type="button" data-id="${esc(p.id)}" aria-label="${esc(ttl(p))}"><img src="${esc(p.images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('');
+    $('mosaic').innerHTML = pick.map(p => `<button type="button" data-id="${esc(p.id)}" aria-label="${esc(ttl(p))}"><img src="${esc(thumb(p.images[0]))}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('');
   }
 
   /* Déjà vendus : sold.json (objets sortis du catalogue), sans ceux remis en vente depuis. */
@@ -246,7 +248,7 @@
     const live = new Set(items.map(p => String(p.id)));
     const list = sold.filter(s => s.image && !live.has(String(s.id))).sort((a, b) => b.goneOn.localeCompare(a.goneOn)).slice(0, 8);
     $('gone').hidden = !list.length;
-    $('goneGrid').innerHTML = list.map(s => `<div class="gone-item"><div class="ph"><img src="${esc(s.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="tag">${esc(t('soldTag'))}</span></div><h3>${esc(s.title)}</h3><div class="sub">${esc(tr(s.subcategory || s.category))}</div></div>`).join('');
+    $('goneGrid').innerHTML = list.map(s => `<div class="gone-item"><div class="ph"><img src="${esc(thumb(s.image))}" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="tag">${esc(t('soldTag'))}</span></div><h3>${esc(s.title)}</h3><div class="sub">${esc(s.sub ? cn(s.sub) : tr(s.subcategory || s.category))}</div></div>`).join('');
   }
 
   /* ---------- Curseur de prix ---------- */
@@ -285,7 +287,7 @@
   function card(p) {
     const on = favs.includes(String(p.id));
     return `<div class="card"><a class="open" href="${esc(p.page || '#')}" data-id="${esc(p.id)}" style="display:block">
-      <div class="ph"><img src="${esc(p.images[0])}" alt="${esc(ttl(p))}" loading="lazy" referrerpolicy="no-referrer"><span class="tag${isNew(p) ? ' new' : ''}">${esc(t(isNew(p) ? 'fresh' : 'unique'))}</span></div>
+      <div class="ph"><img src="${esc(thumb(p.images[0]))}" alt="${esc(ttl(p))}" loading="lazy" referrerpolicy="no-referrer"><span class="tag${isNew(p) ? ' new' : ''}">${esc(t(isNew(p) ? 'fresh' : 'unique'))}</span></div>
       <h3>${esc(ttl(p))}</h3><div class="sub">${esc(p.sub ? cn(p.sub) : tr(p.subcategory || p.category))}</div><div class="pr">${esc(money(p))}</div></a>
       <button type="button" class="heart${on ? ' on' : ''}" data-fav="${esc(p.id)}" aria-pressed="${on}" aria-label="${esc(on ? t('favRemove') : t('favAdd'))}">${heartSvg}</button></div>`;
   }
@@ -339,7 +341,7 @@
       $('stage').innerHTML = imgs[i] ? `<img src="${esc(imgs[i])}" alt="${esc(ttl(p))}" referrerpolicy="no-referrer">` : '';
       $('thumbs').querySelectorAll('button').forEach((b, j) => b.setAttribute('aria-current', j === i));
     };
-    $('thumbs').innerHTML = imgs.length > 1 ? imgs.map((src, i) => `<button type="button" data-i="${i}" aria-label="${esc(t('photo'))} ${i + 1}"><img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('') : '';
+    $('thumbs').innerHTML = imgs.length > 1 ? imgs.map((src, i) => `<button type="button" data-i="${i}" aria-label="${esc(t('photo'))} ${i + 1}"><img src="${esc(thumb(src))}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('') : '';
     $('thumbs').onclick = e => { const b = e.target.closest('[data-i]'); if (b) show(Number(b.dataset.i)); };
     show(0);
     $('sheetCat').textContent = p.cat ? [cn(p.cat), cn(p.sub)].join(' · ') : [tr(p.category), tr(p.subcategory)].filter(Boolean).join(' · ');

@@ -12,6 +12,7 @@ TEST_TO="a@x.fr,b@y.fr" : envoie un exemple de chaque e-mail à ces adresses seu
 import html
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -40,9 +41,9 @@ def subscribers():
                      {"apikey": key, "Authorization": f"Bearer {key}"} if not key.startswith("sb_secret_") else {"apikey": key})
 
 
-def send(to, subject, content):
+def send(to, subject, content, text):
     http_json("https://api.brevo.com/v3/smtp/email", {"api-key": os.environ["BREVO_API_KEY"], "accept": "application/json"},
-              {"sender": SENDER, "to": [{"email": to}], "subject": subject, "htmlContent": content})
+              {"sender": SENDER, "to": [{"email": to}], "subject": subject, "htmlContent": content, "textContent": text})
     print(f"Envoyé : {subject} -> {to[:3]}…")
 
 
@@ -58,7 +59,7 @@ def card(p):
     img = html.escape((p.get("images") or [""])[0])
     link = 'style="color:#1d1914;text-decoration:none"'
     return (f'<tr><td width="96" valign="top" style="padding:12px 14px 12px 0;border-top:1px solid #e3d8c6">'
-            f'<a href="{url}"><img src="{img}" width="96" height="96" alt="{html.escape(p["title"])}" style="display:block;width:96px;height:96px;object-fit:cover;border-radius:6px;border:0"></a></td>'
+            f'<a href="{url}"><img src="{img}" width="96" alt="{html.escape(p["title"])}" style="display:block;width:96px;height:auto;max-height:128px;border-radius:6px;border:0"></a></td>'
             f'<td valign="top" style="padding:12px 0;border-top:1px solid #e3d8c6;font-family:Arial,sans-serif">'
             f'<a href="{url}" {link}><span style="font-size:15px;line-height:1.35;font-weight:bold">{html.escape(p["title"])}</span></a>'
             f'<div style="margin-top:4px;font-size:13px;color:#6e655a">{html.escape(p.get("sub") or "")}</div>'
@@ -67,11 +68,12 @@ def card(p):
             f'</td></tr>')
 
 
-def layout(title, intro, pieces, unsub_token=None):
+def layout(title, intro, pieces, unsub_token=None, preheader=""):
     rows = "".join(card(p) for p in pieces[:MAX_PIECES])
     more = f'<p style="font:14px Arial,sans-serif;color:#6e655a">… et {len(pieces) - MAX_PIECES} autre(s) sur le site.</p>' if len(pieces) > MAX_PIECES else ""
     unsub = f"{SITE}/desinscription.html?t={unsub_token}" if unsub_token else f"{SITE}/desinscription.html"
-    return f'''<div style="margin:0;padding:32px 16px;background:#f6efe2;font-family:Georgia,serif;color:#1d1914">
+    hidden = f'<div style="display:none;max-height:0;overflow:hidden;opacity:0">{html.escape(preheader)}{"&#8199;&#847;" * 40}</div>' if preheader else ""
+    return f'''{hidden}<div style="margin:0;padding:32px 16px;background:#f6efe2;font-family:Georgia,serif;color:#1d1914">
   <div style="max-width:560px;margin:0 auto;padding:32px 28px;background:#fffcf6;border-radius:10px">
     <p style="margin:0 0 14px;text-align:center"><a href="{SITE}"><img src="{SITE}/logo-mail.png" width="78" height="88" alt="Les Dinedourelles" style="display:inline-block;border:0"></a></p>
     <p style="margin:0 0 4px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#9c4a2a;font-family:Arial,sans-serif;text-align:center">Les Dinedourelles</p>
@@ -87,19 +89,33 @@ def layout(title, intro, pieces, unsub_token=None):
 </div>'''
 
 
+def text_version(title, intro, pieces, unsub_token=None):
+    plain = html.unescape(re.sub("<[^>]+>", "", intro))
+    lines = [title, "", plain, ""]
+    for p in pieces[:MAX_PIECES]:
+        lines.append(f"- {p['title']} — {money(p)}")
+        lines.append(f"  {SITE}/{p.get('page', '')}")
+    lines += ["", f"Toute la collection : {SITE}/#collection", f"Gérer mes alertes : {SITE}/#compte",
+              f"Me désinscrire : {SITE}/desinscription.html" + (f"?t={unsub_token}" if unsub_token else ""),
+              "Les Dinedourelles · 5 ter Impasse des Pins, 11200 Escales"]
+    return "\n".join(lines)
+
+
 def alert_mail(pieces, cats, token=None):
     n = len(pieces)
     names = ", ".join(cats)
     subject = f"Nouveau aux Dinedourelles : {pieces[0]['title']}" if n == 1 else f"{n} nouvelles pièces aux Dinedourelles"
     intro = f"Jean-Pierre vient de mettre en ligne {'une nouvelle pièce' if n == 1 else f'{n} nouvelles pièces'} dans les catégories que vous suivez ({html.escape(names)}). Pièces uniques : premier arrivé, premier servi !"
-    return subject, layout("Nouvelles pièces pour vous", intro, pieces, token)
+    pre = f"{pieces[0]['title']} · {money(pieces[0])}" + (f" et {n - 1} autre(s)" if n > 1 else "")
+    return subject, layout("Nouvelles pièces pour vous", intro, pieces, token, pre), text_version("Nouvelles pièces pour vous", intro, pieces, token)
 
 
 def weekly_mail(pieces, token=None):
     n = len(pieces)
     subject = f"Les nouveautés de la semaine · {n} pièce{'s' if n > 1 else ''}"
     intro = f"Voici les {n} pièce{'s' if n > 1 else ''} arrivée{'s' if n > 1 else ''} cette semaine à la brocante. Chacune est unique."
-    return subject, layout("Les nouveautés de la semaine", intro, pieces, token)
+    pre = " · ".join(p["title"] for p in pieces[:3])
+    return subject, layout("Les nouveautés de la semaine", intro, pieces, token, pre), text_version("Les nouveautés de la semaine", intro, pieces, token)
 
 
 def main():
@@ -112,8 +128,8 @@ def main():
         cat = recent[0].get("cat")
         sample = [p for p in recent if p.get("cat") == cat][:3]
         for to in test_to:
-            s, c = alert_mail(sample, [cat]); send(to, "[TEST] " + s, c)
-            s, c = weekly_mail(recent[:6]); send(to, "[TEST] " + s, c)
+            s, c, txt = alert_mail(sample, [cat]); send(to, "[TEST] " + s, c, txt)
+            s, c, txt = weekly_mail(recent[:6]); send(to, "[TEST] " + s, c, txt)
         return 0
 
     if not os.environ.get("BREVO_API_KEY") or not os.environ.get("SUPABASE_SECRET_KEY"):
@@ -129,8 +145,8 @@ def main():
             return 0
         for s in subs:
             if s.get("newsletter"):
-                subject, content = weekly_mail(pieces, s.get("unsub_token"))
-                send(s["email"], subject, content)
+                subject, content, txt = weekly_mail(pieces, s.get("unsub_token"))
+                send(s["email"], subject, content, txt)
         return 0
 
     ids = [str(p["id"]) for p in items]
@@ -148,8 +164,8 @@ def main():
         cats = set(s.get("alert_cats") or [])
         mine = [p for p in new if p.get("cat") in cats]
         if mine:
-            subject, content = alert_mail(mine, sorted({p["cat"] for p in mine}), s.get("unsub_token"))
-            send(s["email"], subject, content)
+            subject, content, txt = alert_mail(mine, sorted({p["cat"] for p in mine}), s.get("unsub_token"))
+            send(s["email"], subject, content, txt)
     return 0
 
 

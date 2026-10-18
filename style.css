@@ -371,7 +371,7 @@ h1 i, h2 i, .logo i { font-family: var(--serif-text); font-style: italic; }
 .obj-desc { color: var(--muted); font-size: 15px; max-width: 62ch; }
 .obj-page .products .card { display: block; }
 @media (max-width: 760px) {
-  .obj-grid { grid-template-columns: 1fr; gap: 20px; }
+  .obj-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .obj-grid .gallery { padding: 12px; }
   .obj-grid .info { position: static; padding: 0; }
 }
