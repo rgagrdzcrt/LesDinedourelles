@@ -29,7 +29,8 @@ jobs:
         env:
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
-        run: python alertes.py || echo "Alertes : erreur (catalogue enregistré quand même)."
+        run: |
+          python alertes.py || echo "Alertes en erreur, catalogue enregistré quand même."
       - name: Enregistrer le catalogue
         run: |
           git config user.name "github-actions[bot]"
