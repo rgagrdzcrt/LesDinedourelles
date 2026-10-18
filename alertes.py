@@ -53,15 +53,18 @@ def money(p):
 
 
 def card(p):
+    """Une pièce : photo et titre cliquables (vers sa page sur le site), plus un lien « Voir la pièce »."""
     url = f"{SITE}/{p['page']}" if p.get("page") else SITE
     img = html.escape((p.get("images") or [""])[0])
-    return (f'<tr><td style="padding:10px 0;border-top:1px solid #e3d8c6">'
-            f'<a href="{url}" style="text-decoration:none;color:#1d1914">'
-            f'<img src="{img}" width="96" height="96" alt="" style="float:left;width:96px;height:96px;object-fit:cover;border-radius:6px;margin-right:14px;border:0">'
-            f'<span style="display:block;font:15px/1.35 Arial,sans-serif;font-weight:bold">{html.escape(p["title"])}</span>'
-            f'<span style="display:block;margin-top:4px;font:13px Arial,sans-serif;color:#6e655a">{html.escape(p.get("sub") or "")}</span>'
-            f'<span style="display:block;margin-top:6px;font:15px Arial,sans-serif;font-weight:bold">{money(p)}</span>'
-            f'</a></td></tr>')
+    link = 'style="color:#1d1914;text-decoration:none"'
+    return (f'<tr><td width="96" valign="top" style="padding:12px 14px 12px 0;border-top:1px solid #e3d8c6">'
+            f'<a href="{url}"><img src="{img}" width="96" height="96" alt="{html.escape(p["title"])}" style="display:block;width:96px;height:96px;object-fit:cover;border-radius:6px;border:0"></a></td>'
+            f'<td valign="top" style="padding:12px 0;border-top:1px solid #e3d8c6;font-family:Arial,sans-serif">'
+            f'<a href="{url}" {link}><span style="font-size:15px;line-height:1.35;font-weight:bold">{html.escape(p["title"])}</span></a>'
+            f'<div style="margin-top:4px;font-size:13px;color:#6e655a">{html.escape(p.get("sub") or "")}</div>'
+            f'<div style="margin-top:6px;font-size:15px;font-weight:bold">{money(p)}</div>'
+            f'<div style="margin-top:8px"><a href="{url}" style="font-size:14px;font-weight:bold;color:#9c4a2a">Voir la pièce →</a></div>'
+            f'</td></tr>')
 
 
 def layout(title, intro, pieces, unsub_token=None):
