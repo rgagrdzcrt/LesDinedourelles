@@ -43,6 +43,7 @@
       <input id="q" type="search" autocomplete="off" data-i18n-ph="searchPh" placeholder="Rechercher une pièce, une origine, une matière…">
     </label>
     <div class="icons">
+      <button type="button" id="accBtn" class="icon-link acc-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.2-4 4.3-6 8-6s6.8 2 8 6"/></svg><span class="lbl" id="accBtnLbl">Compte</span></button>
       <button type="button" id="favBtn" class="icon-link" aria-pressed="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 4.5 6.8 4.5c2.2 0 3.6 1.2 5.2 3 1.6-1.8 3-3 5.2-3 3.8 0 5.9 4 4.4 7.3C19.5 16.4 12 21 12 21Z"/></svg>
         <span class="lbl" data-i18n="favs">Favoris</span><span class="badge" id="favCount">0</span>
@@ -182,7 +183,7 @@
         <li><a href="https://linktr.ee/jeanpierrecartier" target="_blank" rel="noopener">Linktree</a></li>
       </ul></div>
     </div>
-    <div class="legal"><span>© <span id="year">2026</span> Les Dinedourelles</span><span id="updated"></span></div>
+    <div class="legal"><span>© <span id="year">2026</span> Les Dinedourelles · <a href="confidentialite.html">Confidentialité</a></span><span id="updated"></span></div>
   </div>
 </footer>
 
@@ -204,6 +205,14 @@
   </div>
 </dialog>
 
+<dialog class="acc" id="account" aria-labelledby="accTitle">
+  <button class="close" id="accClose" type="button" aria-label="Fermer">✕</button>
+  <h2 id="accTitle">Mon compte</h2>
+  <div id="accBody"></div>
+</dialog>
+
 <script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+<script src="account.js"></script>
 </body>
 </html>

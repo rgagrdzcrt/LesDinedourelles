@@ -94,6 +94,29 @@ button { cursor: pointer; border: 0; background: none; }
   :root:not([data-theme="light"]) .theme .moon { display: none; }
   :root:not([data-theme="light"]) .theme .sun { display: block; }
 }
+/* Compte visiteur */
+.acc-btn.on svg { fill: var(--accent-soft); stroke: var(--accent); }
+.acc { width: min(480px, calc(100vw - 32px)); max-height: calc(100vh - 32px); margin: auto; padding: 36px 32px 28px; border: 0; border-radius: 10px; background: var(--paper); color: var(--ink); box-shadow: 0 30px 80px rgba(0, 0, 0, .3); }
+.acc::backdrop { background: rgba(20, 20, 20, .55); backdrop-filter: blur(3px); }
+.acc[open] { animation: pop .3s var(--ease); }
+.acc h2 { margin-bottom: 14px; }
+.acc-intro, .acc-note { color: var(--muted); }
+.acc-perks { margin: 10px 0 20px 18px; display: grid; gap: 4px; }
+.acc-field { display: grid; gap: 6px; margin-bottom: 12px; font-size: 14px; font-weight: 600; }
+.acc-field input { height: 46px; padding: 0 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--chip); font-size: 15px; font-weight: 400; }
+.acc-field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.acc-check { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; font-size: 14px; cursor: pointer; }
+.acc-check input { width: 18px; height: 18px; margin-top: 1px; accent-color: var(--accent); flex: none; }
+.acc-check a { color: var(--accent); text-decoration: underline; }
+.acc-msg { min-height: 20px; margin: 6px 0 10px; font-size: 13.5px; color: var(--accent); }
+.acc-sent { padding: 14px 16px; border-radius: 8px; background: var(--soft); }
+.acc-hello { margin-bottom: 4px; }
+.acc-h { margin: 22px 0 6px; font: 600 12px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.acc-cats { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.acc-foot { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; }
+.acc-foot button { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.acc-foot button:hover { color: var(--accent); }
+@media (max-width: 560px) { .acc { padding: 30px 20px 22px; } .acc-cats { grid-template-columns: 1fr; } }
 .lang { min-width: 38px; height: 32px; justify-content: center; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .06em; }
 /* Colonne des catégories : uniquement dans « La collection », elle reste visible en faisant défiler les pièces (ordinateur) ;
    panneau coulissant (téléphone). */

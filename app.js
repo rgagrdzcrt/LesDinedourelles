@@ -322,8 +322,10 @@
 
   function toggleFav(id) {
     id = String(id);
-    favs = favs.includes(id) ? favs.filter(x => x !== id) : [...favs, id];
+    const added = !favs.includes(id);
+    favs = added ? [...favs, id] : favs.filter(x => x !== id);
     saveFavs();
+    if (window.DD.onFav) window.DD.onFav(id, added); // compte connecté : favori enregistré en ligne
   }
 
   /* ---------- Fiche objet ---------- */
@@ -411,6 +413,7 @@
   $('langBtn').addEventListener('click', () => {
     lang = lang === 'fr' ? 'en' : 'fr';
     try { localStorage.setItem('dd_lang', lang); } catch (e) {}
+    document.dispatchEvent(new Event('dd:lang'));
     if (filter && filter.cat) filter.label = cn(filter.sub || filter.cat);
     if (filter && filter.key.startsWith('origin:')) filter.label = t('origins')[filter.key.slice(7)];
     renderAll();
@@ -421,6 +424,13 @@
     if (!items.length) return;
     renderNav(); renderHero(); renderCats(); renderMosaic(); renderPrice(); renderGrid(); renderGone();
   }
+
+  // Passerelle pour account.js (comptes visiteurs) : favoris, langue, catégories.
+  window.DD = {
+    favs: () => favs.slice(),
+    setFavs: list => { favs = list.map(String); saveFavs(); if (items.length) renderGrid(); renderSheetFav(); },
+    lang: () => lang, cats: CAT_ORDER, cn: s => cn(s), hasCat: c => items.some(p => p.cat === c), track,
+  };
 
   $('year').textContent = new Date().getFullYear();
   applyLang();
