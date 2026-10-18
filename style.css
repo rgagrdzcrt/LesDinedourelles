@@ -62,7 +62,7 @@ img { display: block; max-width: 100%; }
 button, input, select { font: inherit; color: inherit; }
 button { cursor: pointer; border: 0; background: none; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.wrap { max-width: 1320px; margin: 0 auto; padding-inline: 28px; }
+.wrap { max-width: 1640px; margin: 0 auto; padding-inline: 28px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .promo { padding: 9px 16px; background: var(--foot); color: #fff; text-align: center; font-size: 13px; }
@@ -103,6 +103,7 @@ button { cursor: pointer; border: 0; background: none; }
   .col-layout .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (min-width: 1400px) { .col-layout .products { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 1500px) { .col-layout .products { grid-template-columns: repeat(5, minmax(0, 1fr)); } .cats { gap: 24px; } }
 .side-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .side-head h3 { font: 600 12px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .side-close, .cats-btn { display: none; }
