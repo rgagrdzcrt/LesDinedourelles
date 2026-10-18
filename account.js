@@ -166,5 +166,13 @@
   $('accClose').addEventListener('click', () => $('account').close());
   $('account').addEventListener('click', e => { if (e.target === $('account')) $('account').close(); });
   document.addEventListener('dd:lang', render);
+  // Lien « Gérer mes alertes » des e-mails : lesdinedourelles.com/#compte ouvre directement la fenêtre.
+  const openFromHash = () => {
+    if (location.hash !== '#compte') return;
+    history.replaceState(null, '', location.pathname + location.search);
+    render(); if (!$('account').open) $('account').showModal();
+  };
+  window.addEventListener('hashchange', openFromHash);
   render();
+  openFromHash();
 })();
