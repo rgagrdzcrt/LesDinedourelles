@@ -17,7 +17,8 @@
       perks: ['Vos favoris sur tous vos appareils', 'Une alerte dès qu’une pièce arrive dans les catégories qui vous intéressent', 'Les nouveautés de la semaine'],
       email: 'Votre adresse e-mail', consent: 'J’accepte la <a href="confidentialite.html" target="_blank" rel="noopener">politique de confidentialité</a>.',
       send: 'Recevoir mon lien de connexion', sending: 'Envoi…',
-      sent: e => `C’est envoyé ! Ouvrez l’e-mail reçu à <b>${esc(e)}</b> et cliquez sur le lien pour vous connecter.`,
+      sent: e => `C’est envoyé à <b>${esc(e)}</b> ! Cliquez sur le lien de l’e-mail <b>sur cet appareil</b>, ou tapez ici le code à 6 chiffres qu’il contient (pratique si vous lisez vos e-mails sur un autre appareil).`,
+      code: 'Code reçu par e-mail', verify: 'Me connecter', badCode: 'Ce code ne fonctionne pas. Vérifiez-le ou demandez un nouveau lien.',
       needConsent: 'Merci d’accepter la politique de confidentialité.', badEmail: 'Cette adresse e-mail ne semble pas valide.',
       error: 'Une erreur est survenue. Réessayez dans un instant.',
       hello: e => `Connecté avec <b>${esc(e)}</b>`, favs: n => `${n} pièce${n > 1 ? 's' : ''} en favori, enregistrée${n > 1 ? 's' : ''} sur votre compte.`,
@@ -31,7 +32,8 @@
       perks: ['Your favourites on all your devices', 'An alert as soon as a piece arrives in the categories you follow', 'This week’s new arrivals'],
       email: 'Your email address', consent: 'I accept the <a href="confidentialite.html" target="_blank" rel="noopener">privacy policy</a>.',
       send: 'Send me a sign-in link', sending: 'Sending…',
-      sent: e => `Sent! Open the email we sent to <b>${esc(e)}</b> and click the link to sign in.`,
+      sent: e => `Sent to <b>${esc(e)}</b>! Click the link in the email <b>on this device</b>, or type the 6-digit code it contains here (handy if you read your email on another device).`,
+      code: 'Code from the email', verify: 'Sign in', badCode: 'This code does not work. Check it or ask for a new link.',
       needConsent: 'Please accept the privacy policy.', badEmail: 'This email address does not look valid.',
       error: 'Something went wrong. Please try again in a moment.',
       hello: e => `Signed in as <b>${esc(e)}</b>`, favs: n => `${n} favourite${n > 1 ? 's' : ''} saved to your account.`,
@@ -113,7 +115,19 @@
     const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: location.origin + location.pathname } });
     $('accSend').disabled = false; $('accSend').textContent = t('send');
     if (error) { msg.textContent = t('error'); console.warn(error); return; }
-    $('accForm').innerHTML = `<p class="acc-sent">${t('sent')(email)}</p>`;
+    $('accForm').innerHTML = `<p class="acc-sent">${t('sent')(email)}</p>
+      <label class="acc-field"><span>${esc(t('code'))}</span><input id="accCode" inputmode="numeric" autocomplete="one-time-code" maxlength="10" pattern="[0-9]*"></label>
+      <p class="acc-msg" id="accMsg" role="status"></p>
+      <button class="cta wide" type="button" id="accVerify">${esc(t('verify'))}</button>`;
+    $('accVerify').addEventListener('click', async () => {
+      const token = $('accCode').value.replace(/\D/g, '');
+      if (token.length < 6) { $('accMsg').textContent = t('badCode'); return; }
+      $('accVerify').disabled = true;
+      const { error } = await sb.auth.verifyOtp({ email, token, type: 'email' });
+      $('accVerify').disabled = false;
+      if (error) { $('accMsg').textContent = t('badCode'); return; }
+      DD.track('compte/connexion', 'Connexion (code)');
+    });
     DD.track('compte/lien', 'Demande de lien de connexion');
   }
 

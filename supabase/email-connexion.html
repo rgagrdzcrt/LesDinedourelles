@@ -1,0 +1,13 @@
+<!-- Modèle d'e-mail de connexion, à coller dans Supabase : Authentication → Emails → Templates → « Magic Link ».
+     Objet : Votre lien de connexion · Les Dinedourelles -->
+<div style="margin:0;padding:32px 16px;background:#f6efe2;font-family:Georgia,'Times New Roman',serif;color:#1d1914">
+  <div style="max-width:480px;margin:0 auto;padding:32px 28px;background:#fffcf6;border-radius:10px">
+    <p style="margin:0 0 4px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#9c4a2a;font-family:Arial,sans-serif">Les Dinedourelles</p>
+    <h1 style="margin:0 0 18px;font-size:28px;font-weight:400">Votre lien de connexion</h1>
+    <p style="margin:0 0 22px;font-size:16px;line-height:1.5;font-family:Arial,sans-serif">Bonjour,<br>Cliquez sur le bouton ci-dessous pour vous connecter à votre compte Les Dinedourelles.</p>
+    <p style="margin:0 0 26px"><a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:14px 26px;border-radius:999px;background:#1d1914;color:#fffcf6;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold">Me connecter</a></p>
+    <p style="margin:0 0 8px;font-size:15px;font-family:Arial,sans-serif">Vous lisez cet e-mail sur un autre appareil ? Tapez plutôt ce code sur le site :</p>
+    <p style="margin:0 0 26px;font-size:30px;letter-spacing:.3em;font-family:'Courier New',monospace;font-weight:bold">{{ .Token }}</p>
+    <p style="margin:0;font-size:13px;line-height:1.5;color:#6e655a;font-family:Arial,sans-serif">Le lien et le code sont valables une heure. Si vous n'avez rien demandé, ignorez simplement cet e-mail.<br>Les Dinedourelles · 5 ter Impasse des Pins, 11200 Escales · <a href="https://lesdinedourelles.com" style="color:#9c4a2a">lesdinedourelles.com</a></p>
+  </div>
+</div>
