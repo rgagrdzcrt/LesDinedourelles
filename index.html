@@ -28,24 +28,10 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="with-side">
-  <aside class="side" id="side">
-    <div class="side-head"><h3 data-i18n="catsTitle">Catégories</h3><button type="button" class="side-close" id="sideClose" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
-    <nav class="side-list" id="nav" aria-label="Catégories"></nav>
-    <div class="price-filter">
-      <h3 data-i18n="priceTitle">Prix</h3>
-      <p class="price-val" id="priceVal" aria-live="polite">Tous les prix</p>
-      <div class="range">
-        <div class="range-track"><span id="rangeFill"></span></div>
-        <input type="range" id="pMin" min="0" max="11" step="1" value="0" data-i18n-aria="priceMin" aria-label="Prix minimum">
-        <input type="range" id="pMax" min="0" max="11" step="1" value="11" data-i18n-aria="priceMax" aria-label="Prix maximum">
-      </div>
-      <button type="button" class="price-reset" id="priceReset" hidden data-i18n="priceAll">Tous les prix</button>
-    </div>
-  </aside>
+<body>
 <div class="promo" data-i18n-html="promo">Nouveautés chaque semaine · <b>Expédition soignée depuis l'Aude</b> · Paiement sécurisé par eBay</div>
 
 <header class="site-head">
@@ -106,9 +92,25 @@
         </label>
       </div>
     </div>
-    <div class="col-main">
+    <div class="col-layout">
+      <aside class="side" id="side">
+        <div class="side-head"><h3 data-i18n="catsTitle">Catégories</h3><button type="button" class="side-close" id="sideClose" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
+        <nav class="side-list" id="nav" aria-label="Catégories"></nav>
+        <div class="price-filter">
+          <h3 data-i18n="priceTitle">Prix</h3>
+          <p class="price-val" id="priceVal" aria-live="polite">Tous les prix</p>
+          <div class="range">
+            <div class="range-track"><span id="rangeFill"></span></div>
+            <input type="range" id="pMin" min="0" max="11" step="1" value="0" data-i18n-aria="priceMin" aria-label="Prix minimum">
+            <input type="range" id="pMax" min="0" max="11" step="1" value="11" data-i18n-aria="priceMax" aria-label="Prix maximum">
+          </div>
+          <button type="button" class="price-reset" id="priceReset" hidden data-i18n="priceAll">Tous les prix</button>
+        </div>
+      </aside>
+      <div class="col-main">
         <div class="products" id="grid"></div>
         <div class="more-wrap"><button type="button" class="cta ghost" id="moreBtn" hidden></button></div>
+      </div>
     </div>
     <div class="side-backdrop" id="sideBackdrop" hidden></div>
   </section>
