@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-17T18:47:41+00:00",
+ "updated": "2026-10-18T01:00:32+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -2148,44 +2148,6 @@
    "page": "objet/plat-art-deco-verlys-ovale-1930-257396009699.html"
   },
   {
-   "id": "257396009400",
-   "title": "Statue Africaine Baoulé",
-   "price": 299.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Arts, objets ethniques",
-   "images": [
-    "https://i.ebayimg.com/images/g/E68AAeSwCJhpcN5~/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/WGoAAeSweaZpcN5~/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/R6cAAeSwwhFpcN5~/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/R~MAAeSwdnNpcN6A/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/WEQAAeSwlVdpcN6A/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/MloAAeSwkgVpcN6A/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/XLAAAeSwcG1pcN6A/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/XlMAAeSwd49pcN6A/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/LUsAAeSwMw5pcN6A/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/SP0AAeSwdkdpcN6A/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/DFcAAeSwO6ZpcN6B/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/RokAAeSwzFVpcN6B/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257396009400?hash=item3bedff69b8:g:E68AAeSwCJhpcN5~",
-   "location": "FR",
-   "listed": "2026-03-20T16:15:01.000Z",
-   "firstSeen": "2026-03-20",
-   "aspects": [
-    [
-     "Origine",
-     "Afrique"
-    ]
-   ],
-   "description": "Statue Africaine Baoulé en état général satisfaisant. 2 très légers accidents sur les oreilles. Le bras gauche est légèrement abîmé. Très joli décor. Poids 2,2 kilos Dimensions 63*20*17cm",
-   "title_en": "Baoulé African Statue",
-   "description_en": "Baoulé African statue in generally satisfactory condition. Two very slight chips on the ears. The left arm is slightly damaged. Very attractive decoration. Weight: 2.2 kg. Dimensions: 63 × 20 × 17 cm",
-   "tr_src": "15b1bf098cfc",
-   "page": "objet/statue-africaine-baoule-257396009400.html"
-  },
-  {
    "id": "257396008919",
    "title": "Statue Fétiche Teke Congo",
    "price": 239.0,
@@ -2236,37 +2198,6 @@
    "description_en": "Early 20th-century crystal liqueur bottle in very good overall condition. Gold-plated stopper with floral decoration. Weight: 320 g. Dimensions: 33 × 13 × 13 cm",
    "tr_src": "b960bdb33714",
    "page": "objet/bouteille-a-liqueur-en-cristal-debut-20eme-257396008745.html"
-  },
-  {
-   "id": "257396008402",
-   "title": "Boîte à chaux Timor 20eme",
-   "price": 79.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Arts, objets ethniques",
-   "images": [
-    "https://i.ebayimg.com/images/g/Rd0AAeSwPMdpcOXE/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/bMEAAeSwz9ZpcOXF/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/QdQAAeSwXzZpcOXE/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/hNQAAeSwWkJpcOXE/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/fwgAAeSwoBVpcOXE/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257396008402?hash=item3bedff65d2:g:Rd0AAeSwPMdpcOXE",
-   "location": "FR",
-   "listed": "2026-03-18T16:00:01.000Z",
-   "firstSeen": "2026-03-18",
-   "aspects": [
-    [
-     "Type",
-     "Boîte"
-    ]
-   ],
-   "description": "Boîte à chaux Timor 20eme en bambou gravé. Très bel état d’usage. Poids 45g Dimensions 17*3*3cm",
-   "title_en": "Timor 20th Lime Box",
-   "description_en": "20th-century Timor lime box made of engraved bamboo. In very good condition. Weight: 45 g. Dimensions: 17 × 3 × 3 cm",
-   "tr_src": "a6b6f2abcc0f",
-   "page": "objet/boite-a-chaux-timor-20eme-257396008402.html"
   },
   {
    "id": "257396008227",
