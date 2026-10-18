@@ -1,16 +1,18 @@
-/* Les Dinedourelles — galerie en ligne : grand blanc, titres serif fins,
+/* Les Dinedourelles — galerie en ligne : fond ivoire, titres serif fins,
    interface sans-serif nette, une seule couleur d'accent (terre de Sienne). */
 :root {
-  --paper: #ffffff;
-  --soft: #f6f5f2;
-  --shade: #ecebe7;
-  --ink: #141414;
-  --muted: #6b6b6b;
-  --line: #e7e5e0;
+  --paper: #f6efe2;    /* parchemin, comme un vieux catalogue */
+  --soft: #ede2cf;
+  --shade: #e4d7c1;
+  --ink: #1d1914;
+  --muted: #6e655a;
+  --line: #ddcfb8;
   --accent: #9c4a2a;
-  --accent-soft: #f6ece6;
-  --on-ink: #ffffff;   /* texte posé sur un fond --ink (boutons noirs) */
-  --chip: #ffffff;     /* pastilles sur les photos (étiquette, cœur, fermer) */
+  --accent-soft: #efdccb;
+  /* Grain de papier très léger (mode jour seulement) */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .26 0 0 0 0 .16 0 0 0 .075 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --on-ink: #fffcf6;   /* texte posé sur un fond --ink (boutons noirs) */
+  --chip: #fffcf6;     /* pastilles sur les photos (étiquette, cœur, fermer) */
   --foot: #141414;     /* bandeau du haut et pied de page, toujours sombres */
   --serif: "Libre Caslon Display", "Libre Caslon Text", Georgia, "Times New Roman", serif;   /* grands titres */
   --serif-text: "Libre Caslon Text", Georgia, "Times New Roman", serif;                     /* petits titres, citations, italiques */
@@ -33,6 +35,7 @@
     --chip: #26221f;
     --foot: #0e0d0c;
     color-scheme: dark;
+    --grain: none;
   }
 }
 :root[data-theme="dark"] {
@@ -48,11 +51,12 @@
   --chip: #26221f;
   --foot: #0e0d0c;
   color-scheme: dark;
+  --grain: none;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 [hidden] { display: none !important; }
 html { scroll-behavior: smooth; scroll-padding-top: 150px; }
-body { background: var(--paper); color: var(--ink); font: 15px/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
+body { background: var(--paper) var(--grain); color: var(--ink); font: 15px/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 button, input, select { font: inherit; color: inherit; }
@@ -128,7 +132,7 @@ button { cursor: pointer; border: 0; background: none; }
 .side-backdrop { position: fixed; inset: 0; z-index: 19; background: rgba(20, 18, 16, .4); }
 
 /* ---------- Ouverture ---------- */
-.hero { display: grid; grid-template-columns: 1.15fr 1fr; min-height: 540px; background: var(--soft); }
+.hero { display: grid; grid-template-columns: 1.15fr 1fr; min-height: 540px; background: var(--soft) var(--grain); }
 .hero-img { position: relative; overflow: hidden; background: var(--shade); }
 .hero-img button { position: absolute; inset: 0; width: 100%; opacity: 0; transition: opacity .9s ease; }
 .hero-img button.on { opacity: 1; z-index: 1; }
@@ -359,3 +363,9 @@ h1 i, h2 i, .logo i { font-family: var(--serif-text); font-style: italic; }
 /* Très petits téléphones : logo et icônes resserrés pour que le nom ne touche pas les boutons */
 @media (max-width: 380px) { .logo { font-size: 15.5px; gap: 4px; } .logo .mascot { height: 32px; } .icons { gap: 4px; } .lang, .theme { min-width: 30px; width: 30px; height: 30px; } }
 @media (max-width: 340px) { .logo { font-size: 14px; } .logo .mascot { height: 28px; } .icons { gap: 2px; } }
+/* « Explorer la collection » et avis : bandeaux sable sur toute la largeur, pour rompre les grands fonds clairs */
+#avis, #explorer { position: relative; padding-block: 56px; background: var(--soft); box-shadow: 0 0 0 100vmax var(--soft); clip-path: inset(0 -100vmax); }
+#avis { margin-top: 72px; }
+#explorer { margin-top: 0; }
+#explorer + #collection { padding-top: 64px; }
+#avis .review { background: var(--paper); border-color: transparent; }
