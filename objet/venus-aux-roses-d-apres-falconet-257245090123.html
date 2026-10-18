@@ -44,6 +44,10 @@
       <p class="sheet-price">170,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257245090123?hash=item3be500914b:g:dHwAAeSwMYZpCG3R" target="_blank" rel="noopener" data-goatcounter-click="ebay/257245090123" data-goatcounter-title="Clic eBay : Vénus aux roses d’après Falconet">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257245090123">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20V%C3%A9nus%20aux%20roses%20d%E2%80%99apr%C3%A8s%20Falconet%20%C2%BB%20%28170%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/venus-aux-roses-d-apres-falconet-257245090123.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257245090123">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/venus-aux-roses-d-apres-falconet-257245090123.html" data-title="Vénus aux roses d’après Falconet">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Sculptures et bronzes</dd><dt>Détail</dt><dd>Marbre, pierre et terre cuite</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257245090123</dd></dl>
       <p class="obj-desc">Vénus aux roses d’après Falconet en bon état. Un orteil a été recollé. Poids 2,6 kilos Dimensions 34*30*21cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/tete-sculptee-en-terre-cuite-19eme-257350626243.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/PbsAAeSwBpNpQTWy/s-l500.jpg" alt="Tête sculptée en terre cuite 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Tête sculptée en terre cuite 19eme</h3><div class="sub">Marbre, pierre et terre cuite</div><div class="pr">239,00 €</div></a><a class="card" href="../objet/boule-en-marbre-257350625950.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/Hq4AAeSw4VlpQTHr/s-l500.jpg" alt="Boule en marbre" loading="lazy" referrerpolicy="no-referrer"></div><h3>Boule en marbre</h3><div class="sub">Marbre, pierre et terre cuite</div><div class="pr">95,00 €</div></a><a class="card" href="../objet/sculpture-en-terre-cuite-visage-a-gueule-de-singe-257305128326.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/gyQAAeSwlitpOZNA/s-l500.jpg" alt="Sculpture en terre cuite visage à gueule de singe" loading="lazy" referrerpolicy="no-referrer"></div><h3>Sculpture en terre cuite visage à gueule de singe</h3><div class="sub">Marbre, pierre et terre cuite</div><div class="pr">129,00 €</div></a><a class="card" href="../objet/statuette-de-chien-en-albatre-257038000577.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/vZgAAeSwgEdoZ~AR/s-l500.jpg" alt="Statuette de chien en albâtre" loading="lazy" referrerpolicy="no-referrer"></div><h3>Statuette de chien en albâtre</h3><div class="sub">Marbre, pierre et terre cuite</div><div class="pr">120,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

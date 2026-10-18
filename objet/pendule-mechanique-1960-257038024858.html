@@ -44,6 +44,10 @@
       <p class="sheet-price">129,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257038024858?hash=item3bd8a9009a:g:50MAAeSwOzFoWqOA" target="_blank" rel="noopener" data-goatcounter-click="ebay/257038024858" data-goatcounter-title="Clic eBay : Pendule Mechanique 1960">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257038024858">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Pendule%20Mechanique%201960%20%C2%BB%20%28129%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/pendule-mechanique-1960-257038024858.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257038024858">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/pendule-mechanique-1960-257038024858.html" data-title="Pendule Mechanique 1960">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Mobilier et décoration</dd><dt>Détail</dt><dd>Horloges et pendules</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257038024858</dd></dl>
       <p class="obj-desc">Pendule Mécanique des années 1960 en état de fonctionnement. Bel état général de la pendule. Hauteur 27* 12* 17cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/pendule-de-cheminee-art-deco-decor-de-2-faisans-257350960111.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/YFQAAeSw4gtpb4h0/s-l500.jpg" alt="Pendule de cheminée art Déco, décor de 2 faisans" loading="lazy" referrerpolicy="no-referrer"></div><h3>Pendule de cheminée art Déco, décor de 2 faisans</h3><div class="sub">Horloges et pendules</div><div class="pr">349,00 €</div></a><a class="card" href="../objet/selette-art-deco-en-bois-257538439228.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/WL0AAeSwfbVpx9PG/s-l500.jpg" alt="Selette Art déco en bois" loading="lazy" referrerpolicy="no-referrer"></div><h3>Selette Art déco en bois</h3><div class="sub">Petits meubles et sièges</div><div class="pr">199,00 €</div></a><a class="card" href="../objet/beau-gabarit-a-maille-de-filets-en-buis-257537969712.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/R2YAAeSw0uxpuDxx/s-l500.jpg" alt="BEAU GABARIT à maille de filets en buis" loading="lazy" referrerpolicy="no-referrer"></div><h3>BEAU GABARIT à maille de filets en buis</h3><div class="sub">Objets de décoration</div><div class="pr">79,00 €</div></a><a class="card" href="../objet/sabot-de-cheval-decoratif-19eme-257537910362.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/qtsAAeSwCmBqDe65/s-l500.jpg" alt="Sabot de cheval décoratif 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Sabot de cheval décoratif 19eme</h3><div class="sub">Objets de décoration</div><div class="pr">59,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

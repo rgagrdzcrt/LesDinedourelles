@@ -44,6 +44,10 @@
       <p class="sheet-price">89,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257112271437?hash=item3bdd15ea4d:g:xe0AAeSwb7Jopfzq" target="_blank" rel="noopener" data-goatcounter-click="ebay/257112271437" data-goatcounter-title="Clic eBay : Ancienne lampe à huile Indienne">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257112271437">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Ancienne%20lampe%20%C3%A0%20huile%20Indienne%20%C2%BB%20%2889%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/ancienne-lampe-a-huile-indienne-257112271437.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257112271437">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/ancienne-lampe-a-huile-indienne-257112271437.html" data-title="Ancienne lampe à huile Indienne">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Luminaires et bougeoirs</dd><dt>Détail</dt><dd>Lampes</dd><dt>Origine</dt><dd>Moyen-Orient</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257112271437</dd></dl>
       <p class="obj-desc">Ancienne lampe à huile indienne avec 5 sorties et à décor de félin, très belle patine. Poids 750 grammes Dimensions 14*16*16cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/grande-lampe-a-huile-inde-annees-50-60-257493061228.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/STQAAeSw4itpx7O9/s-l500.jpg" alt="Grande lampe à huile Inde années 50-60" loading="lazy" referrerpolicy="no-referrer"></div><h3>Grande lampe à huile Inde années 50-60</h3><div class="sub">Lampes</div><div class="pr">539,00 €</div></a><a class="card" href="../objet/lampe-de-bureau-art-deco-vers-1930-257396008040.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/NZYAAeSwgSdpcOdb/s-l500.jpg" alt="Lampe de bureau art déco vers 1930" loading="lazy" referrerpolicy="no-referrer"></div><h3>Lampe de bureau art déco vers 1930</h3><div class="sub">Lampes</div><div class="pr">289,00 €</div></a><a class="card" href="../objet/lampe-annees-70-257396005116.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/wlcAAeSwwJdpf0R2/s-l500.jpg" alt="Lampe années 70" loading="lazy" referrerpolicy="no-referrer"></div><h3>Lampe années 70</h3><div class="sub">Lampes</div><div class="pr">239,00 €</div></a><a class="card" href="../objet/grande-lampe-pagode-annees-80-257396000255.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/8~oAAeSwgsVpf0xQ/s-l500.jpg" alt="Grande lampe pagode années 80" loading="lazy" referrerpolicy="no-referrer"></div><h3>Grande lampe pagode années 80</h3><div class="sub">Lampes</div><div class="pr">249,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

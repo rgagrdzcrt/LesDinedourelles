@@ -44,6 +44,10 @@
       <p class="sheet-price">79,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257305141894?hash=item3be894e286:g:~FkAAeSwMYZpGzML" target="_blank" rel="noopener" data-goatcounter-click="ebay/257305141894" data-goatcounter-title="Clic eBay : Bouteille vintage Eau de Cologn* Guerlai">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257305141894">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Bouteille%20vintage%20Eau%20de%20Cologn%2A%20Guerlai%20%C2%BB%20%2879%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/bouteille-vintage-eau-de-cologn-guerlai-257305141894.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257305141894">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/bouteille-vintage-eau-de-cologn-guerlai-257305141894.html" data-title="Bouteille vintage Eau de Cologn* Guerlai">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Verre et cristal</dd><dt>Détail</dt><dd>Carafes, flacons et verres</dd><dt>État</dt><dd>Occasion</dd><dt>Type</dt><dd>Flacon sans emballage</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257305141894</dd></dl>
       <p class="obj-desc">Bouteille vintage Eau de Cologn* Guerlai* en très bon état. Poids 480g Dimensions 20*8*8cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/bouteille-de-champagne-piper-heidsieck-422cl-257538442110.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/514AAeSw33xpx89N/s-l500.jpg" alt="Bouteille de champagne Piper-Heidsieck 422cl" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bouteille de champagne Piper-Heidsieck 422cl</h3><div class="sub">Carafes, flacons et verres</div><div class="pr">89,00 €</div></a><a class="card" href="../objet/ancien-piege-a-guepes-en-verre-souffle-19eme-257538437389.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/PSYAAeSw7Axpx9Ei/s-l500.jpg" alt="Ancien piège à guêpes en verre soufflé 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Ancien piège à guêpes en verre soufflé 19eme</h3><div class="sub">Carafes, flacons et verres</div><div class="pr">129,00 €</div></a><a class="card" href="../objet/paire-de-vases-bleus-en-verre-emaille-debut-20eme-a-decor-floral-257538436061.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/MUgAAeSwYwFpx9BI/s-l500.jpg" alt="Paire de vases bleus en Verre émaillé début 20eme à décor floral" loading="lazy" referrerpolicy="no-referrer"></div><h3>Paire de vases bleus en Verre émaillé début 20eme à décor floral</h3><div class="sub">Carafes, flacons et verres</div><div class="pr">139,00 €</div></a><a class="card" href="../objet/bouteille-a-liqueur-en-cristal-debut-20eme-257396008745.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/bPAAAeSw1yhpcOUZ/s-l500.jpg" alt="Bouteille à liqueur en cristal début 20eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bouteille à liqueur en cristal début 20eme</h3><div class="sub">Carafes, flacons et verres</div><div class="pr">169,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

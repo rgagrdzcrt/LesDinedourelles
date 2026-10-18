@@ -44,6 +44,10 @@
       <p class="sheet-price">39,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257037988216?hash=item3bd8a87178:g:xykAAeSw6GRoZ~S~" target="_blank" rel="noopener" data-goatcounter-click="ebay/257037988216" data-goatcounter-title="Clic eBay : Vase en de Vallauris contemporain">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257037988216">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Vase%20en%20de%20Vallauris%20contemporain%20%C2%BB%20%2839%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/vase-en-de-vallauris-contemporain-257037988216.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257037988216">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/vase-en-de-vallauris-contemporain-257037988216.html" data-title="Vase en de Vallauris contemporain">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Céramique et faïence</dd><dt>Détail</dt><dd>Vallauris et céramistes du XXe</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257037988216</dd></dl>
       <p class="obj-desc">Vase en céramique Vallauris contemporain. Très décoratif. Hauteur 15cm Diamètre 11cm Poids 760 grammes</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/ceramique-ancienne-pique-fleurs-michel-gardelle-objet-de-collection-si-257624060508.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/KyEAAeSweGNqDzDl/s-l500.jpg" alt="Céramique Ancienne pique fleurs MICHEL GARDELLE Objet De Collection Signé" loading="lazy" referrerpolicy="no-referrer"></div><h3>Céramique Ancienne pique fleurs MICHEL GARDELLE Objet De Collection Signé</h3><div class="sub">Vallauris et céramistes du XXe</div><div class="pr">169,00 €</div></a><a class="card" href="../objet/coupe-en-ceramique-de-vallaurys-257537909886.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/rlUAAeSwfLxqDfDH/s-l500.jpg" alt="Coupe en céramique de Vallaurys" loading="lazy" referrerpolicy="no-referrer"></div><h3>Coupe en céramique de Vallaurys</h3><div class="sub">Vallauris et céramistes du XXe</div><div class="pr">99,00 €</div></a><a class="card" href="../objet/5-assiettes-vallauris-257493049760.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/Ow8AAeSw2nhpvXXs/s-l500.jpg" alt="5 assiettes Vallauris" loading="lazy" referrerpolicy="no-referrer"></div><h3>5 assiettes Vallauris</h3><div class="sub">Vallauris et céramistes du XXe</div><div class="pr">79,00 €</div></a><a class="card" href="../objet/vase-du-street-artist-irlo-257396015417.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/8dgAAeSwrphpcLeQ/s-l500.jpg" alt="Vase du street artist IRLO" loading="lazy" referrerpolicy="no-referrer"></div><h3>Vase du street artist IRLO</h3><div class="sub">Vallauris et céramistes du XXe</div><div class="pr">289,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

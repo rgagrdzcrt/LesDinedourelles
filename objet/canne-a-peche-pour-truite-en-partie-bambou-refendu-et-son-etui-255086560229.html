@@ -44,6 +44,10 @@
       <p class="sheet-price">80,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/255086560229?hash=item3b645803e5:g:E48AAOSwwFldkNxM" target="_blank" rel="noopener" data-goatcounter-click="ebay/255086560229" data-goatcounter-title="Clic eBay : Canne à peche pour truite en partie bambou refendu et son étui">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="255086560229">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Canne%20%C3%A0%20peche%20pour%20truite%20en%20partie%20bambou%20refendu%20et%20son%20%C3%A9tui%20%C2%BB%20%2880%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/canne-a-peche-pour-truite-en-partie-bambou-refendu-et-son-etui-255086560229.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/255086560229">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/canne-a-peche-pour-truite-en-partie-bambou-refendu-et-son-etui-255086560229.html" data-title="Canne à peche pour truite en partie bambou refendu et son étui">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Mobilier et décoration</dd><dt>Détail</dt><dd>Objets de décoration</dd><dt>État</dt><dd>Occasion</dd><dt>Couleur</dt><dd>Marron</dd><dt>Objet modifié</dt><dd>Non</dd><dt>Espèce</dt><dd>Truite</dd><dt>Type de pêche</dt><dd>Eau douce</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>255086560229</dd></dl>
       <p class="obj-desc">Moulinet diamètre 5,5cm.</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/beau-gabarit-a-maille-de-filets-en-buis-257537969712.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/R2YAAeSw0uxpuDxx/s-l500.jpg" alt="BEAU GABARIT à maille de filets en buis" loading="lazy" referrerpolicy="no-referrer"></div><h3>BEAU GABARIT à maille de filets en buis</h3><div class="sub">Objets de décoration</div><div class="pr">79,00 €</div></a><a class="card" href="../objet/sabot-de-cheval-decoratif-19eme-257537910362.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/qtsAAeSwCmBqDe65/s-l500.jpg" alt="Sabot de cheval décoratif 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Sabot de cheval décoratif 19eme</h3><div class="sub">Objets de décoration</div><div class="pr">59,00 €</div></a><a class="card" href="../objet/cadre-photo-en-metal-argente-vers-1900-257537910256.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/FXcAAeSweQNqDe9b/s-l500.jpg" alt="Cadre photo en Métal argenté vers 1900" loading="lazy" referrerpolicy="no-referrer"></div><h3>Cadre photo en Métal argenté vers 1900</h3><div class="sub">Objets de décoration</div><div class="pr">69,00 €</div></a><a class="card" href="../objet/socle-en-bois-257537909693.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/nCoAAeSwDgxqDfFJ/s-l500.jpg" alt="Socle en bois" loading="lazy" referrerpolicy="no-referrer"></div><h3>Socle en bois</h3><div class="sub">Objets de décoration</div><div class="pr">39,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

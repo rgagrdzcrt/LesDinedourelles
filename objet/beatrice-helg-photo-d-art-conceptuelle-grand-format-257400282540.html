@@ -44,6 +44,10 @@
       <p class="sheet-price">1 499,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257400282540?hash=item3bee409dac:g:WAUAAeSwdkdpcLPG" target="_blank" rel="noopener" data-goatcounter-click="ebay/257400282540" data-goatcounter-title="Clic eBay : Béatrice HELG - Photo d’art conceptuelle grand format">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257400282540">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20B%C3%A9atrice%20HELG%20-%20Photo%20d%E2%80%99art%20conceptuelle%20grand%20format%20%C2%BB%20%281%20499%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/beatrice-helg-photo-d-art-conceptuelle-grand-format-257400282540.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257400282540">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/beatrice-helg-photo-d-art-conceptuelle-grand-format-257400282540.html" data-title="Béatrice HELG - Photo d’art conceptuelle grand format">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Tableaux et dessins</dd><dt>Détail</dt><dd>Photographie d&#x27;art</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257400282540</dd></dl>
       <p class="obj-desc">Photo d’art conceptuel Béatrice Helg. Grand format ( 44*57cm). Numéroté. Béatrice Helg est une photographe conceptuelle et plasticienne Suisse. Poids 4,8 kilos Dimensions avec encadrement : 81*67cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/photographie-d-art-conceptuel-beatrice-helg-grand-format-numerotee-enc-257400281446.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/iyAAAeSwhVlqhebI/s-l500.jpg" alt="Photographie d&#x27;art conceptuel Béatrice Helg — grand format, numérotée, encadrée" loading="lazy" referrerpolicy="no-referrer"></div><h3>Photographie d&#x27;art conceptuel Béatrice Helg — grand format, numérotée, encadrée</h3><div class="sub">Photographie d&#x27;art</div><div class="pr">1 499,00 €</div></a><a class="card" href="../objet/dessin-ancien-18eme-257538424648.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/urcAAeSwShhpx8yL/s-l500.jpg" alt="Dessin Ancien /18eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Dessin Ancien /18eme</h3><div class="sub">Dessins et gravures</div><div class="pr">499,00 €</div></a><a class="card" href="../objet/tableau-huile-nuit-etoilee-tuce-ecole-de-cassis-257493062166.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/QrcAAeSw2Rtpx8uJ/s-l500.jpg" alt="Tableau  huile« Nuit Étoilée » , Tucé, École De Cassis" loading="lazy" referrerpolicy="no-referrer"></div><h3>Tableau  huile« Nuit Étoilée » , Tucé, École De Cassis</h3><div class="sub">Peintures</div><div class="pr">520,00 €</div></a><a class="card" href="../objet/huile-sur-carton-musicien-et-sa-muse-debut-20eme-257493061779.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/omoAAeSw3bppx7b3/s-l500.jpg" alt="Huile sur carton, musicien et sa muse début 20eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Huile sur carton, musicien et sa muse début 20eme</h3><div class="sub">Peintures</div><div class="pr">189,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

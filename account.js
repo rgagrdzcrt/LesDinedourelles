@@ -7,6 +7,8 @@
   const DD = window.DD;
   if (!window.supabase || !DD) return;
   const sb = window.supabase.createClient(SB_URL, SB_KEY);
+  // Nombre de personnes ayant chaque pièce en favori (chiffres seulement, aucune identité)
+  sb.rpc('fav_counts').then(({ data }) => { if (data) DD.setCounts(data); });
   const $ = id => document.getElementById(id);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
@@ -22,7 +24,7 @@
       needConsent: 'Merci d’accepter la politique de confidentialité.', badEmail: 'Cette adresse e-mail ne semble pas valide.',
       error: 'Une erreur est survenue. Réessayez dans un instant.',
       hello: e => `Connecté avec <b>${esc(e)}</b>`, favs: n => `${n} pièce${n > 1 ? 's' : ''} en favori, enregistrée${n > 1 ? 's' : ''} sur votre compte.`,
-      alerts: 'Mes alertes par e-mail', weekly: 'Les nouveautés de la semaine', catsHint: 'Prévenez-moi dès qu’une pièce arrive dans :',
+      alerts: 'Mes alertes par e-mail', weekly: 'Les nouveautés de la semaine', favAlerts: 'Mes favoris : baisse de prix et rappel s\u2019ils sont toujours disponibles', catsHint: 'Prévenez-moi dès qu’une pièce arrive dans :',
       save: 'Enregistrer', saved: 'Enregistré ✓', logout: 'Se déconnecter', del: 'Supprimer mon compte',
       delConfirm: 'Supprimer définitivement votre compte, vos favoris enregistrés et vos alertes ?', deleted: 'Votre compte a été supprimé.',
     },
@@ -37,7 +39,7 @@
       needConsent: 'Please accept the privacy policy.', badEmail: 'This email address does not look valid.',
       error: 'Something went wrong. Please try again in a moment.',
       hello: e => `Signed in as <b>${esc(e)}</b>`, favs: n => `${n} favourite${n > 1 ? 's' : ''} saved to your account.`,
-      alerts: 'My email alerts', weekly: 'This week’s new arrivals', catsHint: 'Let me know when a piece arrives in:',
+      alerts: 'My email alerts', weekly: 'This week’s new arrivals', favAlerts: 'My favourites: price drops and a reminder if still available', catsHint: 'Let me know when a piece arrives in:',
       save: 'Save', saved: 'Saved ✓', logout: 'Sign out', del: 'Delete my account',
       delConfirm: 'Permanently delete your account, saved favourites and alerts?', deleted: 'Your account has been deleted.',
     },
@@ -58,7 +60,7 @@
   }
   DD.onFav = (id, added) => {
     if (!user) return;
-    if (added) sb.from('favorites').insert({ user_id: user.id, item_id: String(id) }).then(() => {});
+    if (added) sb.from('favorites').insert({ user_id: user.id, item_id: String(id) }).then(() => sb.rpc('fav_counts')).then(r => { if (r && r.data) DD.setCounts(r.data); });
     else sb.from('favorites').delete().eq('user_id', user.id).eq('item_id', String(id)).then(() => {});
   };
 
@@ -96,6 +98,7 @@
     box.innerHTML = `<p class="acc-hello">${t('hello')(user.email)}</p><p class="acc-note">${esc(t('favs')(DD.favs().length))}</p>
       <h3 class="acc-h">${esc(t('alerts'))}</h3>
       <label class="acc-check"><input type="checkbox" id="accWeekly" ${!profile || profile.newsletter ? 'checked' : ''}> <span>${esc(t('weekly'))}</span></label>
+      ${profile && 'fav_alerts' in profile ? `<label class="acc-check"><input type="checkbox" id="accFavAlerts" ${profile.fav_alerts ? 'checked' : ''}> <span>${esc(t('favAlerts'))}</span></label>` : ''}
       <p class="acc-note">${esc(t('catsHint'))}</p>
       <div class="acc-cats">${cats.map(c => `<label class="acc-check"><input type="checkbox" value="${esc(c)}" ${sel.has(c) ? 'checked' : ''}> <span>${esc(DD.cn(c))}</span></label>`).join('')}</div>
       <p class="acc-msg" id="accMsg" role="status"></p>
@@ -134,6 +137,7 @@
   async function saveAlerts() {
     const alert_cats = [...document.querySelectorAll('#accBody .acc-cats input:checked')].map(i => i.value);
     const patch = { newsletter: $('accWeekly').checked, alert_cats, lang: DD.lang() };
+    if ($('accFavAlerts')) patch.fav_alerts = $('accFavAlerts').checked;
     const { error } = await sb.from('profiles').update(patch).eq('id', user.id);
     $('accMsg').textContent = error ? t('error') : t('saved');
     if (!error) Object.assign(profile || (profile = {}), patch);

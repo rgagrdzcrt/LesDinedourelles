@@ -44,6 +44,10 @@
       <p class="sheet-price">230,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/256729369767?hash=item3bc6434ca7:g:ZpYAAOSwao1nRe1O" target="_blank" rel="noopener" data-goatcounter-click="ebay/256729369767" data-goatcounter-title="Clic eBay : Pichet à Thé Tibétain 19 Eme">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="256729369767">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Pichet%20%C3%A0%20Th%C3%A9%20Tib%C3%A9tain%2019%20Eme%20%C2%BB%20%28230%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/pichet-a-the-tibetain-19-eme-256729369767.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/256729369767">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/pichet-a-the-tibetain-19-eme-256729369767.html" data-title="Pichet à Thé Tibétain 19 Eme">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Asie et Orient</dd><dt>Détail</dt><dd>Inde, Tibet et Népal</dd><dt>Sous-type</dt><dd>Pichet</dd><dt>Authenticité</dt><dd>Original</dd><dt>Type</dt><dd>Objet d&#x27;art populaire</dd><dt>Origine</dt><dd>Asie</dd><dt>Hauteur</dt><dd>14</dd><dt>Matière</dt><dd>Cuivre</dd><dt>Style</dt><dd>Antiquité</dd><dt>Largeur</dt><dd>9</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>256729369767</dd></dl>
       <p class="obj-desc">Pichet à Thé Tibétain 19 Eme.</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/masque-nepal-elephant-257305150883.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/5nAAAeSws~RpDc9E/s-l500.jpg" alt="Masque Népal éléphant" loading="lazy" referrerpolicy="no-referrer"></div><h3>Masque Népal éléphant</h3><div class="sub">Inde, Tibet et Népal</div><div class="pr">269,00 €</div></a><a class="card" href="../objet/ancien-recipient-kharal-indien-en-bois-257305133115.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/CnwAAeSwd3JpHdbx/s-l500.jpg" alt="Ancien Récipient Kharal indien en bois" loading="lazy" referrerpolicy="no-referrer"></div><h3>Ancien Récipient Kharal indien en bois</h3><div class="sub">Inde, Tibet et Népal</div><div class="pr">99,00 €</div></a><a class="card" href="../objet/petite-statuette-de-divinite-indou-en-bois-19eme-257305128210.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/OAQAAeSwm~NpOZTS/s-l500.jpg" alt="Petite statuette de divinité Indou en bois 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Petite statuette de divinité Indou en bois 19eme</h3><div class="sub">Inde, Tibet et Népal</div><div class="pr">79,00 €</div></a><a class="card" href="../objet/grand-pot-en-bois-nepalais-257245091389.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/LiwAAeSwIehpBjAT/s-l500.jpg" alt="Grand pot en bois népalais" loading="lazy" referrerpolicy="no-referrer"></div><h3>Grand pot en bois népalais</h3><div class="sub">Inde, Tibet et Népal</div><div class="pr">349,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

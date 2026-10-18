@@ -44,6 +44,10 @@
       <p class="sheet-price">130,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/255088960889?hash=item3b647ca579:g:hIgAAOSwKX9appHh" target="_blank" rel="noopener" data-goatcounter-click="ebay/255088960889" data-goatcounter-title="Clic eBay : encrier bronze">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="255088960889">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20encrier%20bronze%20%C2%BB%20%28130%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/encrier-bronze-255088960889.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/255088960889">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/encrier-bronze-255088960889.html" data-title="encrier bronze">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Cabinet de curiosités</dd><dt>Détail</dt><dd>Écriture et bureau</dd><dt>Quantité unitaire</dt><dd>1</dd><dt>Matière</dt><dd>Bronze</dd><dt>Type</dt><dd>Objet de vitrine, Décoratif</dd><dt>Authenticité</dt><dd>Original</dd><dt>Unité de mesure</dt><dd>Unité</dd><dt>Origine</dt><dd>France</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>255088960889</dd></dl>
       <p class="obj-desc">Encrier bronze epoque NIII.</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/presse-papier-en-marbre-rouge-pyramidale-vintage-257537926483.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/ZqAAAeSwEJpqDelK/s-l500.jpg" alt="Presse papier en marbre rouge pyramidale vintage" loading="lazy" referrerpolicy="no-referrer"></div><h3>Presse papier en marbre rouge pyramidale vintage</h3><div class="sub">Écriture et bureau</div><div class="pr">85,00 €</div></a><a class="card" href="../objet/sculpture-encrier-en-pierre-de-lard-chinois-257350937841.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/XV4AAeSwbbJpQr01/s-l500.jpg" alt="Sculpture encrier en pierre de lard chinois" loading="lazy" referrerpolicy="no-referrer"></div><h3>Sculpture encrier en pierre de lard chinois</h3><div class="sub">Écriture et bureau</div><div class="pr">109,00 €</div></a><a class="card" href="../objet/porte-plume-en-bronze-19eme-257301976325.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/WFYAAeSwk5NpQsWt/s-l500.jpg" alt="Porte Plume en bronze 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Porte Plume en bronze 19eme</h3><div class="sub">Écriture et bureau</div><div class="pr">230,00 €</div></a><a class="card" href="../objet/porte-buvard-ours-foret-noire-19eme-257297627721.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/UeAAAeSwR3ppQrhj/s-l500.jpg" alt="Porte buvard Ours forêt noire 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Porte buvard Ours forêt noire 19eme</h3><div class="sub">Écriture et bureau</div><div class="pr">250,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

@@ -16,7 +16,7 @@ import re
 import sys
 import urllib.error
 import urllib.request
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -35,10 +35,24 @@ def http_json(url, headers, data=None, method=None):
         return json.loads(raw) if raw else None
 
 
-def subscribers():
+def sb_headers():
     key = os.environ["SUPABASE_SECRET_KEY"]
-    return http_json(f"{SB_URL}/rest/v1/profiles?select=email,newsletter,alert_cats,lang,unsub_token",
-                     {"apikey": key, "Authorization": f"Bearer {key}"} if not key.startswith("sb_secret_") else {"apikey": key})
+    return {"apikey": key, "Authorization": f"Bearer {key}"} if not key.startswith("sb_secret_") else {"apikey": key}
+
+
+def subscribers():
+    base = f"{SB_URL}/rest/v1/profiles?select=id,email,newsletter,alert_cats,lang,unsub_token"
+    try:
+        return http_json(base + ",fav_alerts", sb_headers())
+    except urllib.error.HTTPError:  # colonne fav_alerts pas encore créée (supabase/ajout-favoris.sql)
+        return [dict(s, fav_alerts=False) for s in http_json(base, sb_headers())]
+
+
+def favorites():
+    try:
+        return http_json(f"{SB_URL}/rest/v1/favorites?select=user_id,item_id,created_at,reminded_at", sb_headers())
+    except urllib.error.HTTPError:
+        return []
 
 
 def send(to, subject, content, text):
@@ -110,6 +124,55 @@ def alert_mail(pieces, cats, token=None):
     return subject, layout("Nouvelles pièces pour vous", intro, pieces, token, pre), text_version("Nouvelles pièces pour vous", intro, pieces, token)
 
 
+def drop_mail(pieces, old_prices, token=None):
+    n = len(pieces)
+    first = pieces[0]
+    subject = f"Baisse de prix : {first['title']}" if n == 1 else f"Baisse de prix sur {n} de vos favoris"
+    lines = "<br>".join(f"{html.escape(p['title'])} : <s>{money({'price': old_prices[str(p['id'])]})}</s> → <b>{money(p)}</b>" for p in pieces)
+    intro = f"Bonne nouvelle : {'une pièce' if n == 1 else f'{n} pièces'} de vos favoris {'vient' if n == 1 else 'viennent'} de baisser.<br>{lines}"
+    pre = f"{first['title']} passe à {money(first)}"
+    return subject, layout("Baisse de prix sur vos favoris", intro, pieces, token, pre), text_version("Baisse de prix sur vos favoris", intro, pieces, token)
+
+
+def reminder_mail(pieces, token=None):
+    n = len(pieces)
+    subject = f"Toujours disponible : {pieces[0]['title']}" if n == 1 else f"{n} de vos favoris sont toujours disponibles"
+    intro = (f"Vous aviez mis {'cette pièce' if n == 1 else 'ces pièces'} de côté il y a quelques semaines : "
+             f"{'elle est' if n == 1 else 'elles sont'} toujours disponible{'s' if n > 1 else ''}. Chaque pièce est unique : "
+             "si elle vous plaît encore, c'est le moment.")
+    pre = "Vos favoris vous attendent encore aux Dinedourelles"
+    return subject, layout("Toujours disponible", intro, pieces, token, pre), text_version("Toujours disponible", intro, pieces, token)
+
+
+def favorite_alerts(items, subs, old_prices):
+    """Baisses de prix et rappel « toujours disponible » 15 jours après la mise en favori (une seule fois)."""
+    favs = favorites()
+    if not favs:
+        return
+    by_id = {str(p["id"]): p for p in items}
+    people = {s["id"]: s for s in subs if s.get("fav_alerts")}
+    dropped = {i for i, p in by_id.items() if p.get("price") is not None and old_prices.get(i) is not None and p["price"] < old_prices[i]}
+    limit = (datetime.now(timezone.utc) - timedelta(days=15)).isoformat()
+    drops, reminders = {}, {}
+    for f in favs:
+        who, item = f["user_id"], str(f["item_id"])
+        if who not in people or item not in by_id:
+            continue
+        if item in dropped:
+            drops.setdefault(who, []).append(by_id[item])
+        elif not f.get("reminded_at") and f["created_at"] < limit:
+            reminders.setdefault(who, []).append(by_id[item])
+    for who, pieces in drops.items():
+        s = people[who]
+        send(s["email"], *drop_mail(pieces, old_prices, s.get("unsub_token")))
+    for who, pieces in reminders.items():
+        s = people[who]
+        send(s["email"], *reminder_mail(pieces, s.get("unsub_token")))
+        ids = ",".join(str(p["id"]) for p in pieces)
+        http_json(f"{SB_URL}/rest/v1/favorites?user_id=eq.{who}&item_id=in.({ids})", sb_headers(),
+                  {"reminded_at": datetime.now(timezone.utc).isoformat()}, method="PATCH")
+
+
 def weekly_mail(pieces, token=None):
     n = len(pieces)
     subject = f"Les nouveautés de la semaine · {n} pièce{'s' if n > 1 else ''}"
@@ -130,6 +193,9 @@ def main():
         for to in test_to:
             s, c, txt = alert_mail(sample, [cat]); send(to, "[TEST] " + s, c, txt)
             s, c, txt = weekly_mail(recent[:6]); send(to, "[TEST] " + s, c, txt)
+            first = recent[0]
+            s, c, txt = drop_mail([first], {str(first["id"]): round((first.get("price") or 100) * 1.2)}); send(to, "[TEST] " + s, c, txt)
+            s, c, txt = reminder_mail(recent[1:3]); send(to, "[TEST] " + s, c, txt)
         return 0
 
     if not os.environ.get("BREVO_API_KEY") or not os.environ.get("SUPABASE_SECRET_KEY"):
@@ -150,13 +216,18 @@ def main():
         return 0
 
     ids = [str(p["id"]) for p in items]
+    prices = {str(p["id"]): p.get("price") for p in items}
     if not STATE.exists():  # première fois : on mémorise le catalogue actuel, sans rien envoyer
-        STATE.write_text(json.dumps(ids), encoding="utf-8")
+        STATE.write_text(json.dumps({"ids": ids, "prices": prices}), encoding="utf-8")
         print("État initialisé : les prochaines nouvelles pièces seront annoncées.")
         return 0
-    known = set(json.loads(STATE.read_text(encoding="utf-8")))
+    state = json.loads(STATE.read_text(encoding="utf-8"))
+    if isinstance(state, list):  # ancien format : liste des pièces déjà annoncées
+        state = {"ids": state, "prices": {}}
+    known, old_prices = set(state["ids"]), state.get("prices", {})
     new = [p for p in items if str(p["id"]) not in known]
-    STATE.write_text(json.dumps(sorted(known | set(ids))), encoding="utf-8")
+    STATE.write_text(json.dumps({"ids": sorted(known | set(ids)), "prices": prices}), encoding="utf-8")
+    favorite_alerts(items, subs, old_prices)
     if not new:
         print("Pas de nouvelle pièce.")
         return 0

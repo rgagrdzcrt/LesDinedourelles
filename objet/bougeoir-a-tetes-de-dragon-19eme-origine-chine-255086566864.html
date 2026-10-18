@@ -44,6 +44,10 @@
       <p class="sheet-price">150,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/255086566864?hash=item3b64581dd0:g:TV8AAOSw4O1dg5P0" target="_blank" rel="noopener" data-goatcounter-click="ebay/255086566864" data-goatcounter-title="Clic eBay : Bougeoir à têtes de dragon,19ème, origine Chine">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="255086566864">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Bougeoir%20%C3%A0%20t%C3%AAtes%20de%20dragon%2C19%C3%A8me%2C%20origine%20Chine%20%C2%BB%20%28150%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/bougeoir-a-tetes-de-dragon-19eme-origine-chine-255086566864.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/255086566864">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/bougeoir-a-tetes-de-dragon-19eme-origine-chine-255086566864.html" data-title="Bougeoir à têtes de dragon,19ème, origine Chine">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Luminaires et bougeoirs</dd><dt>Détail</dt><dd>Bougeoirs et candélabres</dd><dt>Style</dt><dd>19ème</dd><dt>Authenticité</dt><dd>Original</dd><dt>Origine</dt><dd>Chine</dd><dt>Type</dt><dd>Bougeoir</dd><dt>Quantité unitaire</dt><dd>1</dd><dt>Matière</dt><dd>Métal</dd><dt>Unité de mesure</dt><dd>kg</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>255086566864</dd></dl>
       <p class="obj-desc">Largeur 17cm.</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/paire-de-bougeoirs-vintage-argente-et-cuir-257537929017.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/4poAAeSwh5lqDePs/s-l500.jpg" alt="Paire de bougeoirs vintage Argenté et cuir" loading="lazy" referrerpolicy="no-referrer"></div><h3>Paire de bougeoirs vintage Argenté et cuir</h3><div class="sub">Bougeoirs et candélabres</div><div class="pr">89,00 €</div></a><a class="card" href="../objet/ancien-bougeoir-art-populaire-indien-bois-sculpte-257537928230.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/zwUAAeSwpZhqDeU1/s-l500.jpg" alt="Ancien Bougeoir art populaire indien bois sculpté" loading="lazy" referrerpolicy="no-referrer"></div><h3>Ancien Bougeoir art populaire indien bois sculpté</h3><div class="sub">Bougeoirs et candélabres</div><div class="pr">99,00 €</div></a><a class="card" href="../objet/bougeoir-en-verre-souffle-mercurise-20eme-257493061525.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/VwQAAeSwx2dpx7S4/s-l500.jpg" alt="Bougeoir en verre soufflé mercurisé 20eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bougeoir en verre soufflé mercurisé 20eme</h3><div class="sub">Bougeoirs et candélabres</div><div class="pr">65,00 €</div></a><a class="card" href="../objet/paire-de-bougeoirs-cloisonnees-19eme-257493050876.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/T-4AAeSwjC9pxBaV/s-l500.jpg" alt="Paire de bougeoirs cloisonnées 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Paire de bougeoirs cloisonnées 19eme</h3><div class="sub">Bougeoirs et candélabres</div><div class="pr">195,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

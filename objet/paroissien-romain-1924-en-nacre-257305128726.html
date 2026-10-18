@@ -44,6 +44,10 @@
       <p class="sheet-price">169,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257305128726?hash=item3be894af16:g:ewwAAeSwobVpOZDl" target="_blank" rel="noopener" data-goatcounter-click="ebay/257305128726" data-goatcounter-title="Clic eBay : Paroissien romain 1924 en nacre">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257305128726">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Paroissien%20romain%201924%20en%20nacre%20%C2%BB%20%28169%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/paroissien-romain-1924-en-nacre-257305128726.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257305128726">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/paroissien-romain-1924-en-nacre-257305128726.html" data-title="Paroissien romain 1924 en nacre">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Cabinet de curiosités</dd><dt>Détail</dt><dd>Art religieux</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257305128726</dd></dl>
       <p class="obj-desc">Paroissien romain 1924 en nacre avec son porte monnaie en nacre également. Le tout dans un coffret. Excellent état général. Poids 350g Dimensions 4*17*15cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/crucifix-en-bronze-dore-richement-decore-257537936524.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/R4UAAeSwyG9prXNr/s-l500.jpg" alt="Crucifix en Bronze Doré richement décoré" loading="lazy" referrerpolicy="no-referrer"></div><h3>Crucifix en Bronze Doré richement décoré</h3><div class="sub">Art religieux</div><div class="pr">129,00 €</div></a><a class="card" href="../objet/crucifix-en-bronze-dore-257537932108.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/vB8AAeSwojBprXag/s-l500.jpg" alt="Crucifix en bronze doré" loading="lazy" referrerpolicy="no-referrer"></div><h3>Crucifix en bronze doré</h3><div class="sub">Art religieux</div><div class="pr">85,00 €</div></a><a class="card" href="../objet/croix-en-ceramique-peinte-a-la-main-signee-257350621354.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/R-IAAeSwaXxpQR1X/s-l500.jpg" alt="Croix en céramique peinte à la main  signée" loading="lazy" referrerpolicy="no-referrer"></div><h3>Croix en céramique peinte à la main  signée</h3><div class="sub">Art religieux</div><div class="pr">60,00 €</div></a><a class="card" href="../objet/benitier-en-faience-19eme-257330333521.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/U64AAeSw7~xpBeSz/s-l500.jpg" alt="Benitier en faïence 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Benitier en faïence 19eme</h3><div class="sub">Art religieux</div><div class="pr">99,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

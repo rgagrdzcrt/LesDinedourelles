@@ -44,6 +44,10 @@
       <p class="sheet-price">70,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257493053316?hash=item3bf3c82f84:g:EWIAAeSwAi5pxBjq" target="_blank" rel="noopener" data-goatcounter-click="ebay/257493053316" data-goatcounter-title="Clic eBay : Pipe à Opi*m debut 20eme">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257493053316">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Pipe%20%C3%A0%20Opi%2Am%20debut%2020eme%20%C2%BB%20%2870%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/pipe-a-opi-m-debut-20eme-257493053316.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257493053316">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/pipe-a-opi-m-debut-20eme-257493053316.html" data-title="Pipe à Opi*m debut 20eme">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Cabinet de curiosités</dd><dt>Détail</dt><dd>Pipes et fumeurs</dd><dt>État</dt><dd>Occasion</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257493053316</dd></dl>
       <p class="obj-desc">Pipe à Opi*m debut 20eme en excellent état. Très beau design de main en dessous du fourneau. Poids 50g 23*8cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/fourneau-de-pipe-antique-sculpte-a-decor-de-vanite-19eme-257395992862.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/dO4AAeSwdDtpgifF/s-l500.jpg" alt="Fourneau de pipe antique sculpté a décor de vanité - 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Fourneau de pipe antique sculpté a décor de vanité - 19eme</h3><div class="sub">Pipes et fumeurs</div><div class="pr">249,00 €</div></a><a class="card" href="../objet/ancienne-pipe-en-ecume-de-mer-collection-257389046950.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/o~AAAeSw9Z5phiBW/s-l500.jpg" alt="ancienne pipe en écume de mer collection" loading="lazy" referrerpolicy="no-referrer"></div><h3>ancienne pipe en écume de mer collection</h3><div class="sub">Pipes et fumeurs</div><div class="pr">199,00 €</div></a><a class="card" href="../objet/pipe-en-ecume-de-mer-257389046639.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/0QsAAeSw22RphiFb/s-l500.jpg" alt="pipe en écume de mer" loading="lazy" referrerpolicy="no-referrer"></div><h3>pipe en écume de mer</h3><div class="sub">Pipes et fumeurs</div><div class="pr">89,00 €</div></a><a class="card" href="../objet/ancienne-pipe-de-thailande-257350958863.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/gpIAAeSwaSZpRVP4/s-l500.jpg" alt="Ancienne pipe de Thaïlande" loading="lazy" referrerpolicy="no-referrer"></div><h3>Ancienne pipe de Thaïlande</h3><div class="sub">Pipes et fumeurs</div><div class="pr">59,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

@@ -44,6 +44,10 @@
       <p class="sheet-price">180,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257112284637?hash=item3bdd161ddd:g:QPUAAeSwA4lol1RL" target="_blank" rel="noopener" data-goatcounter-click="ebay/257112284637" data-goatcounter-title="Clic eBay : mandoline ancienne">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257112284637">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20mandoline%20ancienne%20%C2%BB%20%28180%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/mandoline-ancienne-257112284637.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257112284637">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/mandoline-ancienne-257112284637.html" data-title="mandoline ancienne">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Cabinet de curiosités</dd><dt>Détail</dt><dd>Instruments de musique</dd><dt>État</dt><dd>Occasion</dd><dt>Epoque</dt><dd>Ancienne</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257112284637</dd></dl>
       <p class="obj-desc">mandoline ancienne avec quelques usures du temps. Dimensions : 60*19*17cm Poids 600 grammes</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/boite-a-musique-a-cylindre-19eme-257350966487.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/plsAAeSwAHxpcKk~/s-l500.jpg" alt="Boîte à musique à cylindre 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Boîte à musique à cylindre 19eme</h3><div class="sub">Instruments de musique</div><div class="pr">499,00 €</div></a><a class="card" href="../objet/instruments-de-musique-xylophone-indonesien-256731489547.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/2dcAAOSwxg9nSH5s/s-l500.jpg" alt="instruments de musique Xylophone Indonésien" loading="lazy" referrerpolicy="no-referrer"></div><h3>instruments de musique Xylophone Indonésien</h3><div class="sub">Instruments de musique</div><div class="pr">340,00 €</div></a><a class="card" href="../objet/medaille-de-berceau-angelot-piery-la-canebiere-257538419791.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/RVMAAeSw16NprXKD/s-l500.jpg" alt="Medaille de berceau angelot « piery La Canebiere »" loading="lazy" referrerpolicy="no-referrer"></div><h3>Medaille de berceau angelot « piery La Canebiere »</h3><div class="sub">Souvenirs historiques et médailles</div><div class="pr">70,00 €</div></a><a class="card" href="../objet/crucifix-en-bronze-dore-richement-decore-257537936524.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/R4UAAeSwyG9prXNr/s-l500.jpg" alt="Crucifix en Bronze Doré richement décoré" loading="lazy" referrerpolicy="no-referrer"></div><h3>Crucifix en Bronze Doré richement décoré</h3><div class="sub">Art religieux</div><div class="pr">129,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

@@ -44,6 +44,10 @@
       <p class="sheet-price">309,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257013279434?hash=item3bd72f6aca:g:ivIAAeSwM5VoWYLh" target="_blank" rel="noopener" data-goatcounter-click="ebay/257013279434" data-goatcounter-title="Clic eBay : Collier 20ème en Perle de Culture, fermoir Or jaune">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257013279434">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Collier%2020%C3%A8me%20en%20Perle%20de%20Culture%2C%20fermoir%20Or%20jaune%20%C2%BB%20%28309%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/collier-20eme-en-perle-de-culture-fermoir-or-jaune-257013279434.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257013279434">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/collier-20eme-en-perle-de-culture-fermoir-or-jaune-257013279434.html" data-title="Collier 20ème en Perle de Culture, fermoir Or jaune">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Bijoux</dd><dt>Détail</dt><dd>Perles, or et montres</dd><dt>État</dt><dd>Occasion</dd><dt>Type</dt><dd>Collier de perle</dd><dt>Couleur pierre dominante</dt><dd>Blanc</dd><dt>Métal</dt><dd>Or jaune</dd><dt>Création pierre dominante</dt><dd>Culture</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257013279434</dd></dl>
       <p class="obj-desc">Longueur totale du collier : +- 1 mètre.</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/montre-femme-guess-257016127547.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/3QgAAeSwx5ZoYTik/s-l500.jpg" alt="Montre femme Guess" loading="lazy" referrerpolicy="no-referrer"></div><h3>Montre femme Guess</h3><div class="sub">Perles, or et montres</div><div class="pr">100,00 €</div></a><a class="card" href="../objet/bracelet-africain-en-bronze-257396011131.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/p6wAAeSwiNlpcNdk/s-l500.jpg" alt="Bracelet africain en bronze" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bracelet africain en bronze</h3><div class="sub">Bijoux vintage</div><div class="pr">199,00 €</div></a><a class="card" href="../objet/bracelet-berbere-en-argent-richement-decore-257350939804.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/iCIAAeSwrgtpQsbg/s-l500.jpg" alt="Bracelet Berbère en argent richement décoré" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bracelet Berbère en argent richement décoré</h3><div class="sub">Bijoux berbères en argent</div><div class="pr">200,00 €</div></a><a class="card" href="../objet/bracelet-berbere-en-argent-richement-travaille-257301936802.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/snIAAeSw7jRpQseK/s-l500.jpg" alt="Bracelet berbère en argent richement travaillé" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bracelet berbère en argent richement travaillé</h3><div class="sub">Bijoux berbères en argent</div><div class="pr">200,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

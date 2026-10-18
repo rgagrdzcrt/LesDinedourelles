@@ -44,6 +44,10 @@
       <p class="sheet-price">90,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257538419517?hash=item3bf67c6b3d:g:yaIAAeSwKDVp~fv9" target="_blank" rel="noopener" data-goatcounter-click="ebay/257538419517" data-goatcounter-title="Clic eBay : Lot d’environ 90 magazine Pilote du 3 au 131">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257538419517">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Lot%20d%E2%80%99environ%2090%20magazine%20Pilote%20du%203%20au%20131%20%C2%BB%20%2890%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/lot-d-environ-90-magazine-pilote-du-3-au-131-257538419517.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257538419517">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/lot-d-environ-90-magazine-pilote-du-3-au-131-257538419517.html" data-title="Lot d’environ 90 magazine Pilote du 3 au 131">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Papiers, livres et jeux</dd><dt>Détail</dt><dd>BD et magazines</dd><dt>État</dt><dd>Bon état</dd><dt>Titre de série</dt><dd>Pilote</dd><dt>Tradition</dt><dd>BD franco-belge</dd><dt>Type</dt><dd>Comic strip</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257538419517</dd></dl>
       <p class="obj-desc">Lot d’environ 90 magazine Pilote du 3 au 131 avec évidemment certains magazines manquants. Qualité variable selon le magazine. 3 HS Pilote &amp; Charlie. Plusieurs hors série « bis ». Poids du lot 18-20 kilos</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/lot-de-14-magazines-circus-annees-1980-257538419129.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/G0YAAeSwPKtqALWl/s-l500.jpg" alt="Lot de 14 magazines Circus années 1980" loading="lazy" referrerpolicy="no-referrer"></div><h3>Lot de 14 magazines Circus années 1980</h3><div class="sub">BD et magazines</div><div class="pr">30,00 €</div></a><a class="card" href="../objet/lot-de-6-magazines-special-usa-bd-annees-80-257538418843.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/gT0AAeSweJZqALcJ/s-l500.jpg" alt="Lot de 6 magazines Spécial USA, BD Années 80" loading="lazy" referrerpolicy="no-referrer"></div><h3>Lot de 6 magazines Spécial USA, BD Années 80</h3><div class="sub">BD et magazines</div><div class="pr">20,00 €</div></a><a class="card" href="../objet/lot-de-45-magazines-charlie-annees-1980-257538418688.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/uLIAAeSwZXNqALid/s-l500.jpg" alt="Lot de 45 magazines Charlie années 1980" loading="lazy" referrerpolicy="no-referrer"></div><h3>Lot de 45 magazines Charlie années 1980</h3><div class="sub">BD et magazines</div><div class="pr">100,00 €</div></a><a class="card" href="../objet/17-magazines-l-echo-des-savanes-annees-80-257538418096.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/fGEAAeSweQNqALZ1/s-l500.jpg" alt="17 Magazines « L’écho Des Savanes » années 80" loading="lazy" referrerpolicy="no-referrer"></div><h3>17 Magazines « L’écho Des Savanes » années 80</h3><div class="sub">BD et magazines</div><div class="pr">45,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

@@ -44,6 +44,10 @@
       <p class="sheet-price">449,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/255088966271?hash=item3b647cba7f:g:fZMAAOSwDApaXSqr" target="_blank" rel="noopener" data-goatcounter-click="ebay/255088966271" data-goatcounter-title="Clic eBay : Ancienne valise d&#x27;apprentissage à la réanimation &quot;The breath of life&quot;">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="255088966271">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Ancienne%20valise%20d%27apprentissage%20%C3%A0%20la%20r%C3%A9animation%20%22The%20breath%20of%20life%22%20%C2%BB%20%28449%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/ancienne-valise-d-apprentissage-a-la-reanimation-the-breath-of-life-255088966271.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/255088966271">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/ancienne-valise-d-apprentissage-a-la-reanimation-the-breath-of-life-255088966271.html" data-title="Ancienne valise d&#x27;apprentissage à la réanimation &quot;The breath of life&quot;">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Cabinet de curiosités</dd><dt>Détail</dt><dd>Médecine, sciences et naturalia</dd><dt>État</dt><dd>Occasion</dd><dt>Epoque</dt><dd>1900 - 1950</dd><dt>Type</dt><dd>réannimation</dd><dt>Pays d&#x27;origine</dt><dd>angleterre</dd><dt>Matière</dt><dd>bois plastic</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>255088966271</dd></dl>
       <p class="obj-desc">Belle valise d&#x27;apprentissage à la réanimation en bon état général, objet rare et peu commun d&#x27;origine anglaise.</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/oeuf-d-autruche-en-ceramique-257537929863.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/ktMAAeSwyJ5qDeMW/s-l500.jpg" alt="Oeuf d’autruche en céramique" loading="lazy" referrerpolicy="no-referrer"></div><h3>Oeuf d’autruche en céramique</h3><div class="sub">Médecine, sciences et naturalia</div><div class="pr">59,00 €</div></a><a class="card" href="../objet/belle-agathe-soclee-ancienne-257537926847.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/Z5cAAeSw0lVqDehX/s-l500.jpg" alt="Belle Agathe soclée ancienne" loading="lazy" referrerpolicy="no-referrer"></div><h3>Belle Agathe soclée ancienne</h3><div class="sub">Médecine, sciences et naturalia</div><div class="pr">99,00 €</div></a><a class="card" href="../objet/formation-geologique-septaria-madagascar-257350964170.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/kzUAAeSw2ihpb468/s-l500.jpg" alt="Formation géologique Septaria Madagascar" loading="lazy" referrerpolicy="no-referrer"></div><h3>Formation géologique Septaria Madagascar</h3><div class="sub">Médecine, sciences et naturalia</div><div class="pr">389,00 €</div></a><a class="card" href="../objet/sacoche-de-medecin-cuir-debut-20eme-257305153899.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/yV8AAeSwzv1pCdPu/s-l500.jpg" alt="Sacoche de médecin cuir début 20eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Sacoche de médecin cuir début 20eme</h3><div class="sub">Médecine, sciences et naturalia</div><div class="pr">89,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

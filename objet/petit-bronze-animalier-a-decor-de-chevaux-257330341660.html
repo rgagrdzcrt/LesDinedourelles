@@ -44,6 +44,10 @@
       <p class="sheet-price">150,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257330341660?hash=item3bea15671c:g:1vMAAeSwlqlopYhH" target="_blank" rel="noopener" data-goatcounter-click="ebay/257330341660" data-goatcounter-title="Clic eBay : Petit Bronze Animalier À Décor De Chevaux">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257330341660">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Petit%20Bronze%20Animalier%20%C3%80%20D%C3%A9cor%20De%20Chevaux%20%C2%BB%20%28150%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/petit-bronze-animalier-a-decor-de-chevaux-257330341660.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257330341660">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/petit-bronze-animalier-a-decor-de-chevaux-257330341660.html" data-title="Petit Bronze Animalier À Décor De Chevaux">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Sculptures et bronzes</dd><dt>Détail</dt><dd>Bronzes et régules</dd><dt>Matière</dt><dd>Bronze</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257330341660</dd></dl>
       <p class="obj-desc">Petit bronze représentant deux chevaux, belle patine et parfait état. Fin 19eme. Poids 900 grammes Dimensions 15*11*6cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/sculpture-bronze-comtemporain-catacombes-257537909421.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/DY0AAeSw16pqDzBC/s-l500.jpg" alt="Sculpture Bronze comtemporain catacombes" loading="lazy" referrerpolicy="no-referrer"></div><h3>Sculpture Bronze comtemporain catacombes</h3><div class="sub">Bronzes et régules</div><div class="pr">150,00 €</div></a><a class="card" href="../objet/statuette-en-bronze-257350967231.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/yAkAAeSwYixpcKo9/s-l500.jpg" alt="Statuette en Bronze" loading="lazy" referrerpolicy="no-referrer"></div><h3>Statuette en Bronze</h3><div class="sub">Bronzes et régules</div><div class="pr">229,00 €</div></a><a class="card" href="../objet/bronze-de-vienne-chat-257350957895.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/1mcAAeSwdfBpRVIs/s-l500.jpg" alt="Bronze de vienne chat" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bronze de vienne chat</h3><div class="sub">Bronzes et régules</div><div class="pr">180,00 €</div></a><a class="card" href="../objet/bronze-maria-jesus-urgoiti-la-cigarerra-1986-257350631409.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/YyYAAeSwCUJpQo77/s-l500.jpg" alt="Bronze Maria jesus URGOITI, « La Cigarerra » 1986" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bronze Maria jesus URGOITI, « La Cigarerra » 1986</h3><div class="sub">Bronzes et régules</div><div class="pr">299,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

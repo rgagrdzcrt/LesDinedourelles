@@ -5,6 +5,7 @@ Lancement manuel (sans appel à eBay) : python pages.py
 """
 
 import html
+from urllib.parse import quote
 import json
 import re
 import shutil
@@ -149,6 +150,10 @@ def render(p, related):
       <p class="sheet-price">{e(money(p))}</p>
       <a class="cta wide" href="{e(p.get('url'))}" target="_blank" rel="noopener" data-goatcounter-click="ebay/{e(p['id'])}" data-goatcounter-title="Clic eBay : {e(p['title'])}">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="{e(p['id'])}">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text={e(quote(f"Bonjour Jean-Pierre, je suis intéressé(e) par « {p['title']} » ({money(p)}) : {url}"))}" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/{e(p['id'])}">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="{e(url)}" data-title="{e(p['title'])}">Partager</button>
+      </div>
       <dl class="specs">{''.join(rows)}</dl>
       {long_desc}
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -156,7 +161,7 @@ def render(p, related):
   </div>
   {f'<section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products">{rel}</div></section>' if rel else ''}
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© {datetime.now().year} {SHOP} · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© {datetime.now().year} {SHOP} · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {{
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -169,6 +174,11 @@ def render(p, related):
   }});
   show();
 }})();
+document.getElementById('shareBtn').addEventListener('click', function () {{
+  var b = this, u = b.dataset.url;
+  if (navigator.share) {{ navigator.share({{ title: b.dataset.title, url: u }}).catch(function () {{}}); return; }}
+  navigator.clipboard.writeText(u).then(function () {{ b.textContent = 'Lien copié ✓'; }});
+}});
 document.getElementById('thumbs').addEventListener('click', function (ev) {{
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;
@@ -260,7 +270,7 @@ def build(data):
     day = (data.get("updated") or datetime.now(timezone.utc).isoformat())[:10]
     urls = [f"<url><loc>{SITE}</loc><lastmod>{day}</lastmod></url>"]
     urls += [f"<url><loc>{SITE}{p['page']}</loc><lastmod>{day}</lastmod></url>" for p in items]
-    urls += [f"<url><loc>{SITE}{page}</loc></url>" for page in ("mentions-legales.html", "confidentialite.html")]
+    urls += [f"<url><loc>{SITE}{page}</loc></url>" for page in ("infos-pratiques.html", "mentions-legales.html", "confidentialite.html")]
     (ROOT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "\n".join(urls) + "\n</urlset>\n", encoding="utf-8")

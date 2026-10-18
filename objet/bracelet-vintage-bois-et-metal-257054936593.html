@@ -44,6 +44,10 @@
       <p class="sheet-price">25,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257054936593?hash=item3bd9ab0e11:g:yUwAAeSw5mhoYqcY" target="_blank" rel="noopener" data-goatcounter-click="ebay/257054936593" data-goatcounter-title="Clic eBay : Bracelet vintage bois et métal">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257054936593">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Bracelet%20vintage%20bois%20et%20m%C3%A9tal%20%C2%BB%20%2825%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/bracelet-vintage-bois-et-metal-257054936593.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257054936593">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/bracelet-vintage-bois-et-metal-257054936593.html" data-title="Bracelet vintage bois et métal">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Bijoux</dd><dt>Détail</dt><dd>Bijoux vintage</dd><dt>État</dt><dd>Occasion</dd><dt>Marque</dt><dd>- Sans marque/Générique -</dd><dt>Style</dt><dd>Bracelet</dd><dt>Matière</dt><dd>Bois</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257054936593</dd></dl>
       <p class="obj-desc">Joli bracelet vintage bois et métal. Très élégant. Poids 280 grammes Largeur 3,5cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/bracelet-africain-en-bronze-257396011131.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/p6wAAeSwiNlpcNdk/s-l500.jpg" alt="Bracelet africain en bronze" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bracelet africain en bronze</h3><div class="sub">Bijoux vintage</div><div class="pr">199,00 €</div></a><a class="card" href="../objet/bracelet-en-laiton-et-nacre-vintage-257054938680.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/BQEAAeSwfRloYqh-/s-l500.jpg" alt="Bracelet en laiton et nacre vintage" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bracelet en laiton et nacre vintage</h3><div class="sub">Bijoux vintage</div><div class="pr">30,00 €</div></a><a class="card" href="../objet/collier-vintage-metal-argente-et-bois-257054942817.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/KaQAAeSwJhFoYqmU/s-l500.jpg" alt="Collier vintage métal argenté et bois" loading="lazy" referrerpolicy="no-referrer"></div><h3>Collier vintage métal argenté et bois</h3><div class="sub">Bijoux vintage</div><div class="pr">50,00 €</div></a><a class="card" href="../objet/bracelet-extensible-en-nacre-257054932748.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/SLkAAeSwfzRoYqT2/s-l500.jpg" alt="Bracelet extensible en nacre" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bracelet extensible en nacre</h3><div class="sub">Bijoux vintage</div><div class="pr">30,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

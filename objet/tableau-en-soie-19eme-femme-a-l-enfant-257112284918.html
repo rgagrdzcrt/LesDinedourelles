@@ -44,6 +44,10 @@
       <p class="sheet-price">340,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257112284918?hash=item3bdd161ef6:g:l1sAAeSwffdolwxN" target="_blank" rel="noopener" data-goatcounter-click="ebay/257112284918" data-goatcounter-title="Clic eBay : Tableau en soie 19ème, Femme à l’enfant">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257112284918">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Tableau%20en%20soie%2019%C3%A8me%2C%20Femme%20%C3%A0%20l%E2%80%99enfant%20%C2%BB%20%28340%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/tableau-en-soie-19eme-femme-a-l-enfant-257112284918.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257112284918">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/tableau-en-soie-19eme-femme-a-l-enfant-257112284918.html" data-title="Tableau en soie 19ème, Femme à l’enfant">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Tableaux et dessins</dd><dt>Détail</dt><dd>Peintures</dd><dt>Thème</dt><dd>Enfant</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257112284918</dd></dl>
       <p class="obj-desc">Tableau en soie 19ème, Femme à l’enfant et son encadrement. Dimensions : 28*22cm Poids : 1 kilo</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/tableau-huile-nuit-etoilee-tuce-ecole-de-cassis-257493062166.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/QrcAAeSw2Rtpx8uJ/s-l500.jpg" alt="Tableau  huile« Nuit Étoilée » , Tucé, École De Cassis" loading="lazy" referrerpolicy="no-referrer"></div><h3>Tableau  huile« Nuit Étoilée » , Tucé, École De Cassis</h3><div class="sub">Peintures</div><div class="pr">520,00 €</div></a><a class="card" href="../objet/huile-sur-carton-musicien-et-sa-muse-debut-20eme-257493061779.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/omoAAeSw3bppx7b3/s-l500.jpg" alt="Huile sur carton, musicien et sa muse début 20eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Huile sur carton, musicien et sa muse début 20eme</h3><div class="sub">Peintures</div><div class="pr">189,00 €</div></a><a class="card" href="../objet/huile-sur-toile-surrealiste-serge-carre-257396012450.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/8MAAAeSwD6NpcNS1/s-l500.jpg" alt="Huile sur toile surréaliste - Serge Carré" loading="lazy" referrerpolicy="no-referrer"></div><h3>Huile sur toile surréaliste - Serge Carré</h3><div class="sub">Peintures</div><div class="pr">399,00 €</div></a><a class="card" href="../objet/huile-miniature-fin-18eme-sur-boite-a-priser-en-carton-bouilli-laque-257389048023.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/f0EAAeSwOkppg3Mg/s-l500.jpg" alt="Huile Miniature Fin 18eme Sur Boîte À Priser En Carton Bouilli Laqué" loading="lazy" referrerpolicy="no-referrer"></div><h3>Huile Miniature Fin 18eme Sur Boîte À Priser En Carton Bouilli Laqué</h3><div class="sub">Peintures</div><div class="pr">390,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

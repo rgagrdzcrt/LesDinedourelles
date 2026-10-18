@@ -44,6 +44,10 @@
       <p class="sheet-price">169,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257100834437?hash=item3bdc676685:g:3MUAAeSw4KVolxPz" target="_blank" rel="noopener" data-goatcounter-click="ebay/257100834437" data-goatcounter-title="Clic eBay : Paire de buste en porcelaine vintage">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257100834437">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Paire%20de%20buste%20en%20porcelaine%20vintage%20%C2%BB%20%28169%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/paire-de-buste-en-porcelaine-vintage-257100834437.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257100834437">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/paire-de-buste-en-porcelaine-vintage-257100834437.html" data-title="Paire de buste en porcelaine vintage">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Céramique et faïence</dd><dt>Détail</dt><dd>Faïence et porcelaine</dd><dt>Matière</dt><dd>Porcelaine</dd><dt>Thème</dt><dd>Buste</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257100834437</dd></dl>
       <p class="obj-desc">Paire de buste en porcelaine vintage représentant une femme habillée en rose avec son éventail. Poids : 2,1 kilos la paire Dimensions : 24*13*12cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/elephant-en-faience-perlee-style-art-deco-257396007855.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/jy8AAeSwOXFpcOhE/s-l500.jpg" alt="Éléphant en faïence perlée style art déco" loading="lazy" referrerpolicy="no-referrer"></div><h3>Éléphant en faïence perlée style art déco</h3><div class="sub">Faïence et porcelaine</div><div class="pr">159,00 €</div></a><a class="card" href="../objet/pichet-antropomorphe-jacquot-en-faience-emaillee-bleue-257330324907.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/1IwAAeSwAehpCcln/s-l500.jpg" alt="Pichet Antropomorphe Jacquot en faïence émaillée bleue" loading="lazy" referrerpolicy="no-referrer"></div><h3>Pichet Antropomorphe Jacquot en faïence émaillée bleue</h3><div class="sub">Faïence et porcelaine</div><div class="pr">209,00 €</div></a><a class="card" href="../objet/pichet-20eme-en-faience-de-malicorne-257112267051.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/Hh8AAeSwvSpoqdEh/s-l500.jpg" alt="Pichet 20eme en Faïence de Malicorne" loading="lazy" referrerpolicy="no-referrer"></div><h3>Pichet 20eme en Faïence de Malicorne</h3><div class="sub">Faïence et porcelaine</div><div class="pr">89,00 €</div></a><a class="card" href="../objet/plat-rond-sinceny-18eme-257029074618.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/pTIAAeSwbvhoXBCf/s-l500.jpg" alt="Plat Rond Sinceny 18eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Plat Rond Sinceny 18eme</h3><div class="sub">Faïence et porcelaine</div><div class="pr">285,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

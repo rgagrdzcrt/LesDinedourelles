@@ -44,6 +44,10 @@
       <p class="sheet-price">299,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257305146561?hash=item3be894f4c1:g:4esAAeSwd39pFeyH" target="_blank" rel="noopener" data-goatcounter-click="ebay/257305146561" data-goatcounter-title="Clic eBay : Mortier et pilon en fer 18eme">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257305146561">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Mortier%20et%20pilon%20en%20fer%2018eme%20%C2%BB%20%28299%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/mortier-et-pilon-en-fer-18eme-257305146561.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257305146561">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/mortier-et-pilon-en-fer-18eme-257305146561.html" data-title="Mortier et pilon en fer 18eme">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Arts de la table</dd><dt>Détail</dt><dd>Ustensiles et vaisselle anciens</dd><dt>Matière</dt><dd>Bronze</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257305146561</dd></dl>
       <p class="obj-desc">Mortier et pilon en fer 18eme avec une très belle patine. Très bel état. Poids 4 kilos Dimensions 12*15cm (mortier) 27cm (pilon)</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/petit-saleron-en-porcelaine-vintage-decor-corse-257395996033.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/JXgAAeSwUMRpf017/s-l500.jpg" alt="Petit saleron en porcelaine vintage décor Corse" loading="lazy" referrerpolicy="no-referrer"></div><h3>Petit saleron en porcelaine vintage décor Corse</h3><div class="sub">Ustensiles et vaisselle anciens</div><div class="pr">29,00 €</div></a><a class="card" href="../objet/soupiere-et-son-plat-en-faience-debut-20eme-257395995775.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/LM4AAeSwaZFpf05Z/s-l500.jpg" alt="Soupière et son plat en faïence début 20eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Soupière et son plat en faïence début 20eme</h3><div class="sub">Ustensiles et vaisselle anciens</div><div class="pr">169,00 €</div></a><a class="card" href="../objet/paire-de-ciseau-argent-a-raisins-de-table-19eme-257350939401.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/~KgAAeSwsoNpQsJr/s-l500.jpg" alt="Paire de ciseau argent à raisins de table 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Paire de ciseau argent à raisins de table 19eme</h3><div class="sub">Ustensiles et vaisselle anciens</div><div class="pr">90,00 €</div></a><a class="card" href="../objet/6-gobelets-en-metal-argente-257305150226.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/t-gAAeSwVZVpDdG1/s-l500.jpg" alt="6 gobelets en métal argenté" loading="lazy" referrerpolicy="no-referrer"></div><h3>6 gobelets en métal argenté</h3><div class="sub">Ustensiles et vaisselle anciens</div><div class="pr">99,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

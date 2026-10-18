@@ -44,6 +44,10 @@
       <p class="sheet-price">139,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257305142703?hash=item3be894e5af:g:K3UAAeSwv7hpGzD2" target="_blank" rel="noopener" data-goatcounter-click="ebay/257305142703" data-goatcounter-title="Clic eBay : Flacon à parfum Lalique">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257305142703">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Flacon%20%C3%A0%20parfum%20Lalique%20%C2%BB%20%28139%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/flacon-a-parfum-lalique-257305142703.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257305142703">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/flacon-a-parfum-lalique-257305142703.html" data-title="Flacon à parfum Lalique">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Verre et cristal</dd><dt>Détail</dt><dd>Art Déco et Art Nouveau</dd><dt>État</dt><dd>Occasion</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257305142703</dd></dl>
       <p class="obj-desc">Flacon à parfum Lalique en parfait état. Poids 70g Dimensions 8*5*1cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/grande-coupe-lotz-orange-et-noire-art-deco-257537906112.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/ysgAAeSwNVJqDzM5/s-l500.jpg" alt="Grande coupe Lötz orange et noire Art Déco" loading="lazy" referrerpolicy="no-referrer"></div><h3>Grande coupe Lötz orange et noire Art Déco</h3><div class="sub">Art Déco et Art Nouveau</div><div class="pr">299,00 €</div></a><a class="card" href="../objet/paire-de-vases-rouges-attribuee-a-legras-257493048778.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/fysAAeSwKONpvXAO/s-l500.jpg" alt="Paire de vases rouges attribuée à Legras" loading="lazy" referrerpolicy="no-referrer"></div><h3>Paire de vases rouges attribuée à Legras</h3><div class="sub">Art Déco et Art Nouveau</div><div class="pr">230,00 €</div></a><a class="card" href="../objet/plat-art-deco-verlys-ovale-1930-257396009699.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/8wgAAeSw3itpcNnK/s-l500.jpg" alt="Plat art Déco Verlys Ovale 1930" loading="lazy" referrerpolicy="no-referrer"></div><h3>Plat art Déco Verlys Ovale 1930</h3><div class="sub">Art Déco et Art Nouveau</div><div class="pr">299,00 €</div></a><a class="card" href="../objet/bol-art-deco-en-verre-givre-signe-legras-257305140642.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/jowAAeSwsJ1pGzTJ/s-l500.jpg" alt="Bol Art Déco en verre givré signé Legras" loading="lazy" referrerpolicy="no-referrer"></div><h3>Bol Art Déco en verre givré signé Legras</h3><div class="sub">Art Déco et Art Nouveau</div><div class="pr">329,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

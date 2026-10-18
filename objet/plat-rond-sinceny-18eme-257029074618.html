@@ -44,6 +44,10 @@
       <p class="sheet-price">285,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257029074618?hash=item3bd8206eba:g:pTIAAeSwbvhoXBCf" target="_blank" rel="noopener" data-goatcounter-click="ebay/257029074618" data-goatcounter-title="Clic eBay : Plat Rond Sinceny 18eme">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257029074618">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Plat%20Rond%20Sinceny%2018eme%20%C2%BB%20%28285%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/plat-rond-sinceny-18eme-257029074618.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257029074618">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/plat-rond-sinceny-18eme-257029074618.html" data-title="Plat Rond Sinceny 18eme">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Céramique et faïence</dd><dt>Détail</dt><dd>Faïence et porcelaine</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257029074618</dd></dl>
       <p class="obj-desc">Plat Rond Sinceny 18eme. Défaut de cuisson sur le côté droit du plat - Agrafé au dos(cf photo) Diamètre 41cm Poids +-3 kilos</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/elephant-en-faience-perlee-style-art-deco-257396007855.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/jy8AAeSwOXFpcOhE/s-l500.jpg" alt="Éléphant en faïence perlée style art déco" loading="lazy" referrerpolicy="no-referrer"></div><h3>Éléphant en faïence perlée style art déco</h3><div class="sub">Faïence et porcelaine</div><div class="pr">159,00 €</div></a><a class="card" href="../objet/pichet-antropomorphe-jacquot-en-faience-emaillee-bleue-257330324907.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/1IwAAeSwAehpCcln/s-l500.jpg" alt="Pichet Antropomorphe Jacquot en faïence émaillée bleue" loading="lazy" referrerpolicy="no-referrer"></div><h3>Pichet Antropomorphe Jacquot en faïence émaillée bleue</h3><div class="sub">Faïence et porcelaine</div><div class="pr">209,00 €</div></a><a class="card" href="../objet/pichet-20eme-en-faience-de-malicorne-257112267051.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/Hh8AAeSwvSpoqdEh/s-l500.jpg" alt="Pichet 20eme en Faïence de Malicorne" loading="lazy" referrerpolicy="no-referrer"></div><h3>Pichet 20eme en Faïence de Malicorne</h3><div class="sub">Faïence et porcelaine</div><div class="pr">89,00 €</div></a><a class="card" href="../objet/paire-de-buste-en-porcelaine-vintage-257100834437.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/3MUAAeSw4KVolxPz/s-l500.jpg" alt="Paire de buste en porcelaine vintage" loading="lazy" referrerpolicy="no-referrer"></div><h3>Paire de buste en porcelaine vintage</h3><div class="sub">Faïence et porcelaine</div><div class="pr">169,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

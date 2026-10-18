@@ -44,6 +44,10 @@
       <p class="sheet-price">400,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257053348672?hash=item3bd992d340:g:LQ0AAeSwnYVoXnYX" target="_blank" rel="noopener" data-goatcounter-click="ebay/257053348672" data-goatcounter-title="Clic eBay : Éventail Ethnique Kota 20ème">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257053348672">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20%C3%89ventail%20Ethnique%20Kota%2020%C3%A8me%20%C2%BB%20%28400%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/eventail-ethnique-kota-20eme-257053348672.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257053348672">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/eventail-ethnique-kota-20eme-257053348672.html" data-title="Éventail Ethnique Kota 20ème">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Arts d&#x27;Afrique</dd><dt>Détail</dt><dd>Objets rituels et du quotidien</dd><dt>Matière</dt><dd>Cuivre</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257053348672</dd></dl>
       <p class="obj-desc">Hauteur 50cm.</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/ancien-tambour-fin-19eme-congo-257350966209.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/oJwAAeSw4rBpcKh2/s-l500.jpg" alt="Ancien tambour fin 19eme - Congo" loading="lazy" referrerpolicy="no-referrer"></div><h3>Ancien tambour fin 19eme - Congo</h3><div class="sub">Objets rituels et du quotidien</div><div class="pr">389,00 €</div></a><a class="card" href="../objet/recipient-en-terre-cuite-cameroun-19eme-257305138443.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/axQAAeSwbrVpGzWW/s-l500.jpg" alt="Recipient en terre cuite Cameroun 19eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Recipient en terre cuite Cameroun 19eme</h3><div class="sub">Objets rituels et du quotidien</div><div class="pr">89,00 €</div></a><a class="card" href="../objet/petit-recipient-cameroun-en-terre-cuite-257305136959.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/E~IAAeSwbmhpHdD4/s-l500.jpg" alt="Petit récipient Cameroun en terre cuite" loading="lazy" referrerpolicy="no-referrer"></div><h3>Petit récipient Cameroun en terre cuite</h3><div class="sub">Objets rituels et du quotidien</div><div class="pr">89,00 €</div></a><a class="card" href="../objet/tambour-a-fente-teke-congo-257305131679.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/HoYAAeSw0RtpHdk2/s-l500.jpg" alt="Tambour à fente Teke Congo" loading="lazy" referrerpolicy="no-referrer"></div><h3>Tambour à fente Teke Congo</h3><div class="sub">Objets rituels et du quotidien</div><div class="pr">249,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

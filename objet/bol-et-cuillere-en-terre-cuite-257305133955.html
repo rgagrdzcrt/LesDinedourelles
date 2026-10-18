@@ -44,6 +44,10 @@
       <p class="sheet-price">149,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257305133955?hash=item3be894c383:g:O3YAAeSw3dFpHdYw" target="_blank" rel="noopener" data-goatcounter-click="ebay/257305133955" data-goatcounter-title="Clic eBay : Bol et cuillère en terre cuite">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257305133955">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Bol%20et%20cuill%C3%A8re%20en%20terre%20cuite%20%C2%BB%20%28149%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/bol-et-cuillere-en-terre-cuite-257305133955.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257305133955">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/bol-et-cuillere-en-terre-cuite-257305133955.html" data-title="Bol et cuillère en terre cuite">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Céramique et faïence</dd><dt>Détail</dt><dd>Grès, terre cuite et céramique</dd><dt>Matière</dt><dd>Terre cuite</dd><dt>Sous-type</dt><dd>Cuillère</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257305133955</dd></dl>
       <p class="obj-desc">Bol et cuillère en terre cuite. Bol à 5 pieds. Bel état général. Très belle patine. Poids 1 kilo Dimensions 12*20*20cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/vase-contemporain-en-gres-emaille-257537931183.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/8QsAAeSwwPRprXdw/s-l500.jpg" alt="Vase contemporain en grès émaillé" loading="lazy" referrerpolicy="no-referrer"></div><h3>Vase contemporain en grès émaillé</h3><div class="sub">Grès, terre cuite et céramique</div><div class="pr">69,00 €</div></a><a class="card" href="../objet/coupe-vide-poche-ceramique-west-germany-257537927764.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/uXAAAeSw5bBqDebe/s-l500.jpg" alt="Coupe vide poche céramique West Germany" loading="lazy" referrerpolicy="no-referrer"></div><h3>Coupe vide poche céramique West Germany</h3><div class="sub">Grès, terre cuite et céramique</div><div class="pr">39,00 €</div></a><a class="card" href="../objet/cruche-en-ceramique-germany-257537911145.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/OWYAAeSwpmZqDe4p/s-l500.jpg" alt="Cruche en céramique Germany" loading="lazy" referrerpolicy="no-referrer"></div><h3>Cruche en céramique Germany</h3><div class="sub">Grès, terre cuite et céramique</div><div class="pr">99,00 €</div></a><a class="card" href="../objet/grand-plat-en-ceramique-20eme-257493060932.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/Sa4AAeSwnQ5px7LY/s-l500.jpg" alt="Grand plat en céramique 20eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Grand plat en céramique 20eme</h3><div class="sub">Grès, terre cuite et céramique</div><div class="pr">170,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

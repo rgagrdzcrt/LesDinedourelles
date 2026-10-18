@@ -5,7 +5,9 @@
   const $ = id => document.getElementById(id);
   const PAGE = 24;
   let data = { items: [] }, items = [];
-  let soldCount = 176, sold = [], heroPick = null;
+  let soldCount = 176, sold = [], heroPick = null, favCounts = {};
+  const WA_NUMBER = '33678522504'; // WhatsApp de Jean-Pierre (06 78 52 25 04)
+  const pieceUrl = p => 'https://lesdinedourelles.com/' + (p.page || '');
   // Curseur de prix : paliers (plus fins là où se trouvent la plupart des pièces). Le dernier palier = « et plus ».
   const STEPS = [0, 20, 50, 75, 100, 150, 200, 300, 500, 750, 1000, 1500];
   const LAST = STEPS.length - 1;
@@ -41,7 +43,8 @@
       linktreeNote: 'Retrouvez aussi Jean-Pierre sur Selency, Vinted, WhatsApp et Facebook, tous réunis dans le Linktree ci-dessus.', footText: "Art africain, objets anciens et curiosités. Brocantes à Pézenas et à Escales, envois depuis l'Aude.",
       footCol: 'Collection', footBuy: 'Acheter', footHouse: 'La maison', footStory: 'Notre histoire',
       updated: 'Catalogue mis à jour le ', close: 'Fermer', sheetNote: 'Commande, paiement et livraison se font sur eBay.',
-      descTitle: 'Description', descNote: '', buy: 'Acheter sur eBay ↗', ask: 'Poser une question au vendeur ↗', seeStore: 'Voir la boutique eBay ↗', category: 'Catégorie', detail: 'Détail', condition: 'État',
+      descTitle: 'Description', descNote: '', buy: 'Acheter sur eBay ↗', ask: 'Poser une question au vendeur ↗', wa: 'Une question ? WhatsApp', share: 'Partager', copied: 'Lien copié ✓', copy: 'Copier le lien',
+      favPop: n => `♥ ${n} personnes ont cette pièce en favori`, waMsg: (ti, pr, u) => `Bonjour Jean-Pierre, je suis intéressé(e) par « ${ti} » (${pr}) : ${u}`, seeStore: 'Voir la boutique eBay ↗', category: 'Catégorie', detail: 'Détail', condition: 'État',
       shipping: 'Expédition', shipFrom: "Depuis l'Aude, France", ref: 'Référence', photo: 'Photo', priceOnEbay: 'Prix sur eBay',
       locale: 'fr-FR', under: a => `Moins de ${a}`, between: (a, b) => `${a} à ${b}`, over: a => `Plus de ${a}`,
       cols: { all: 'Toute la collection' },
@@ -74,7 +77,8 @@
       linktreeNote: 'You can also find Jean-Pierre on Selency, Vinted, WhatsApp and Facebook, all gathered in the Linktree above.', footText: 'African art, antiques and curiosities. Antiques shops in Pézenas and Escales, shipping from the Aude, France.',
       footCol: 'Collection', footBuy: 'Shop', footHouse: 'About', footStory: 'Our story',
       updated: 'Catalogue updated ', close: 'Close', sheetNote: 'Ordering, payment and delivery take place on eBay.',
-      descTitle: 'Description', descNote: 'Written by the seller in French.', descAuto: 'Automatically translated from French.', buy: 'Buy on eBay ↗', ask: 'Ask the seller a question ↗', seeStore: 'Visit the eBay store ↗', category: 'Category', detail: 'Detail', condition: 'Condition',
+      descTitle: 'Description', descNote: 'Written by the seller in French.', descAuto: 'Automatically translated from French.', buy: 'Buy on eBay ↗', ask: 'Ask the seller a question ↗', wa: 'A question? WhatsApp', share: 'Share', copied: 'Link copied ✓', copy: 'Copy link',
+      favPop: n => `♥ ${n} people have this piece in their favourites`, waMsg: (ti, pr, u) => `Hello Jean-Pierre, I am interested in “${ti}” (${pr}): ${u}`, seeStore: 'Visit the eBay store ↗', category: 'Category', detail: 'Detail', condition: 'Condition',
       shipping: 'Shipping', shipFrom: 'From the Aude, France', ref: 'Reference', photo: 'Photo', priceOnEbay: 'Price on eBay',
       locale: 'en-US', under: a => `Under ${a}`, between: (a, b) => `${a} to ${b}`, over: a => `Over ${a}`,
       cols: { all: 'Whole collection' },
@@ -353,6 +357,11 @@
     $('sheetAsk').hidden = !!p.example;
     $('sheetAsk').href = `${new URL(data.storeUrl || 'https://www.ebay.fr').origin}/itm/${p.id}?m2mOpen=1`;
     $('sheetAsk').textContent = t('ask');
+    // WhatsApp avec le nom de la pièce déjà écrit, partage, nombre de personnes qui l'ont en favori
+    $('sheetWa').href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t('waMsg')(ttl(p), money(p), pieceUrl(p)))}`;
+    $('sheetWaLbl').textContent = t('wa'); $('sheetShareLbl').textContent = t('share'); $('shareCopy').textContent = t('copy');
+    $('shareMenu').hidden = true;
+    renderPop();
     renderSheetFav();
     const descEn = lang === 'en' && String(p.description_en || '').trim();
     const desc = descEn || String(p.description || '').trim();
@@ -364,6 +373,12 @@
     $('sheetSpecs').innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
     $('sheet').showModal();
     track('fiche/' + p.id, p.title);
+  }
+  function renderPop() {
+    if (!current) return;
+    const n = favCounts[String(current.id)] || 0;
+    $('sheetPop').hidden = n < 2; // affiché à partir de 2 personnes
+    $('sheetPop').textContent = n >= 2 ? t('favPop')(n) : '';
   }
   function renderSheetFav() {
     if (!current) return;
@@ -400,6 +415,20 @@
   $('sheetFav').addEventListener('click', () => { if (current) { toggleFav(current.id); renderSheetFav(); renderGrid(); } });
   $('sheetBuy').addEventListener('click', () => { if (current) track('ebay/' + current.id, 'Clic eBay : ' + current.title); });
   $('sheetAsk').addEventListener('click', () => { if (current) track('question/' + current.id, 'Question : ' + current.title); });
+  $('sheetWa').addEventListener('click', () => { if (current) track('whatsapp/' + current.id, 'WhatsApp : ' + current.title); });
+  $('sheetShare').addEventListener('click', async () => {
+    if (!current) return;
+    const url = pieceUrl(current), title = ttl(current);
+    track('partage/' + current.id, 'Partage : ' + current.title);
+    if (navigator.share) { try { await navigator.share({ title, text: title + ' · ' + money(current), url }); } catch (e) {} return; }
+    $('shareWa').href = `https://wa.me/?text=${encodeURIComponent(title + ' · ' + url)}`;
+    $('sharePin').href = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent((current.images || [])[0] || '')}&description=${encodeURIComponent(title)}`;
+    $('shareFb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+    $('shareMenu').hidden = !$('shareMenu').hidden;
+  });
+  $('shareCopy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(pieceUrl(current)); $('shareCopy').textContent = t('copied'); } catch (e) {}
+  });
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href*="instagram.com"], a[href*="linktr.ee"], #storeLink');
     if (a) track(a.href.includes('instagram') ? 'sortie/instagram' : a.href.includes('linktr') ? 'sortie/linktree' : 'sortie/boutique-ebay', a.textContent.trim());
@@ -431,6 +460,7 @@
   window.DD = {
     favs: () => favs.slice(),
     setFavs: list => { favs = list.map(String); saveFavs(); if (items.length) renderGrid(); renderSheetFav(); },
+    setCounts: rows => { favCounts = Object.fromEntries((rows || []).map(r => [String(r.item_id), Number(r.n)])); renderPop(); },
     lang: () => lang, cats: CAT_ORDER, cn: s => cn(s), hasCat: c => items.some(p => p.cat === c), track,
   };
 

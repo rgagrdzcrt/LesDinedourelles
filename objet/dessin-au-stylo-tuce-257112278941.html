@@ -44,6 +44,10 @@
       <p class="sheet-price">189,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257112278941?hash=item3bdd16079d:g:tsgAAeSwJVRom0Vf" target="_blank" rel="noopener" data-goatcounter-click="ebay/257112278941" data-goatcounter-title="Clic eBay : Dessin au stylo TUCE">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257112278941">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Dessin%20au%20stylo%20TUCE%20%C2%BB%20%28189%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/dessin-au-stylo-tuce-257112278941.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257112278941">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/dessin-au-stylo-tuce-257112278941.html" data-title="Dessin au stylo TUCE">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Tableaux et dessins</dd><dt>Détail</dt><dd>Dessins et gravures</dd><dt>Type</dt><dd>Dessin</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257112278941</dd></dl>
       <p class="obj-desc">Dessin fantaisie au stylo TUCE, Jean-Claude Arnouil. Poids : 500 grammes Dimensions : 19*15cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/dessin-ancien-18eme-257538424648.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/urcAAeSwShhpx8yL/s-l500.jpg" alt="Dessin Ancien /18eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Dessin Ancien /18eme</h3><div class="sub">Dessins et gravures</div><div class="pr">499,00 €</div></a><a class="card" href="../objet/ecole-de-cassis-l-aigle-noir-encre-de-chine-257396015626.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/gO8AAeSwA0dpcLZq/s-l500.jpg" alt="École de Cassis - « L’aigle Noir » - Encre De Chine" loading="lazy" referrerpolicy="no-referrer"></div><h3>École de Cassis - « L’aigle Noir » - Encre De Chine</h3><div class="sub">Dessins et gravures</div><div class="pr">169,00 €</div></a><a class="card" href="../objet/gravure-bouquet-de-fleur-debut-20eme-monogrammee-pv-255086562357.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/FU8AAOSwgsddkPA4/s-l500.jpg" alt="Gravure &quot;bouquet de fleur&quot; début 20ème monogrammée PV" loading="lazy" referrerpolicy="no-referrer"></div><h3>Gravure &quot;bouquet de fleur&quot; début 20ème monogrammée PV</h3><div class="sub">Dessins et gravures</div><div class="pr">250,00 €</div></a><a class="card" href="../objet/tableau-huile-nuit-etoilee-tuce-ecole-de-cassis-257493062166.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/QrcAAeSw2Rtpx8uJ/s-l500.jpg" alt="Tableau  huile« Nuit Étoilée » , Tucé, École De Cassis" loading="lazy" referrerpolicy="no-referrer"></div><h3>Tableau  huile« Nuit Étoilée » , Tucé, École De Cassis</h3><div class="sub">Peintures</div><div class="pr">520,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

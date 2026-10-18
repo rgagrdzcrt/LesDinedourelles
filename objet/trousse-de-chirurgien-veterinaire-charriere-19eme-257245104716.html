@@ -44,6 +44,10 @@
       <p class="sheet-price">480,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257245104716?hash=item3be500ca4c:g:tJkAAeSwIDlopbV7" target="_blank" rel="noopener" data-goatcounter-click="ebay/257245104716" data-goatcounter-title="Clic eBay : Trousse de chirurgien vétérinaire Charrière 19ème.">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257245104716">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Trousse%20de%20chirurgien%20v%C3%A9t%C3%A9rinaire%20Charri%C3%A8re%2019%C3%A8me.%20%C2%BB%20%28480%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/trousse-de-chirurgien-veterinaire-charriere-19eme-257245104716.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257245104716">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/trousse-de-chirurgien-veterinaire-charriere-19eme-257245104716.html" data-title="Trousse de chirurgien vétérinaire Charrière 19ème.">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Cabinet de curiosités</dd><dt>Détail</dt><dd>Médecine, sciences et naturalia</dd><dt>État</dt><dd>Occasion</dd><dt>Epoque</dt><dd>1800 - 1899</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257245104716</dd></dl>
       <p class="obj-desc">Trousse de chirurgien vétérinaire Charrière 19ème complète en bon état. La trousse contient un set de 15 outils. « Frédéric Charrière est incontestablement un des plus remarquables fabricants d&#x27;instruments médicaux du 19ème siècle. Il sut tout particulièrement adapter son savoir faire artisanal à l&#x27;évolution des progrès de la chirurgie par sa technicité, par une exigence de qualité, le goût d&#x27;une haute finition en y ajoutant une recherche esthétique permanente. » Poids : 350 grammes Dimensions : 17*7*4cm</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/oeuf-d-autruche-en-ceramique-257537929863.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/ktMAAeSwyJ5qDeMW/s-l500.jpg" alt="Oeuf d’autruche en céramique" loading="lazy" referrerpolicy="no-referrer"></div><h3>Oeuf d’autruche en céramique</h3><div class="sub">Médecine, sciences et naturalia</div><div class="pr">59,00 €</div></a><a class="card" href="../objet/belle-agathe-soclee-ancienne-257537926847.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/Z5cAAeSw0lVqDehX/s-l500.jpg" alt="Belle Agathe soclée ancienne" loading="lazy" referrerpolicy="no-referrer"></div><h3>Belle Agathe soclée ancienne</h3><div class="sub">Médecine, sciences et naturalia</div><div class="pr">99,00 €</div></a><a class="card" href="../objet/formation-geologique-septaria-madagascar-257350964170.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/kzUAAeSw2ihpb468/s-l500.jpg" alt="Formation géologique Septaria Madagascar" loading="lazy" referrerpolicy="no-referrer"></div><h3>Formation géologique Septaria Madagascar</h3><div class="sub">Médecine, sciences et naturalia</div><div class="pr">389,00 €</div></a><a class="card" href="../objet/sacoche-de-medecin-cuir-debut-20eme-257305153899.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/yV8AAeSwzv1pCdPu/s-l500.jpg" alt="Sacoche de médecin cuir début 20eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Sacoche de médecin cuir début 20eme</h3><div class="sub">Médecine, sciences et naturalia</div><div class="pr">89,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

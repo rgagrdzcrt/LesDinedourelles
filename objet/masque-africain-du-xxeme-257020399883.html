@@ -44,6 +44,10 @@
       <p class="sheet-price">1 250,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257020399883?hash=item3bd79c110b:g:cS8AAeSwV4loW~Lf" target="_blank" rel="noopener" data-goatcounter-click="ebay/257020399883" data-goatcounter-title="Clic eBay : Masque Africain du XXème">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257020399883">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Masque%20Africain%20du%20XX%C3%A8me%20%C2%BB%20%281%20250%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/masque-africain-du-xxeme-257020399883.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257020399883">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/masque-africain-du-xxeme-257020399883.html" data-title="Masque Africain du XXème">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Arts d&#x27;Afrique</dd><dt>Détail</dt><dd>Masques</dd><dt>Type</dt><dd>Masque</dd><dt>Origine</dt><dd>Afrique</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257020399883</dd></dl>
       <p class="obj-desc">Masque Africain début XXème (village de Toumokoro, Côte d&#x27;Ivoire) avec quelques petits manques à déplorer. Largeur 37cm Hauteur sans socle : 55cm Hauteur avec socle : 66cm Poids avec socle : 2,150kg</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/masque-bobo-burkina-faso-257350970579.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/wxUAAeSwD81pcLBJ/s-l500.jpg" alt="Masque Bobo - Burkina Faso" loading="lazy" referrerpolicy="no-referrer"></div><h3>Masque Bobo - Burkina Faso</h3><div class="sub">Masques</div><div class="pr">559,00 €</div></a><a class="card" href="../objet/nigeria-yoruba-cimier-culturel-egungun-257350965918.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/g9EAAeSwm-9pcKdH/s-l500.jpg" alt="Nigéria, Yoruba - Cimier Culturel « Egungun »" loading="lazy" referrerpolicy="no-referrer"></div><h3>Nigéria, Yoruba - Cimier Culturel « Egungun »</h3><div class="sub">Masques</div><div class="pr">399,00 €</div></a><a class="card" href="../objet/masque-africain-lega-257330337141.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/QHQAAeSw8sRpBeNN/s-l500.jpg" alt="Masque africain Lega" loading="lazy" referrerpolicy="no-referrer"></div><h3>Masque africain Lega</h3><div class="sub">Masques</div><div class="pr">269,00 €</div></a><a class="card" href="../objet/masque-senufo-debut-20eme-257330335225.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/racAAeSwd3lpBeQQ/s-l500.jpg" alt="Masque senufo début 20eme" loading="lazy" referrerpolicy="no-referrer"></div><h3>Masque senufo début 20eme</h3><div class="sub">Masques</div><div class="pr">299,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;

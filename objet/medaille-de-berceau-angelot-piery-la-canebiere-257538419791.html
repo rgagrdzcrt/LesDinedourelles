@@ -44,6 +44,10 @@
       <p class="sheet-price">70,00 €</p>
       <a class="cta wide" href="https://www.ebay.fr/itm/257538419791?hash=item3bf67c6c4f:g:RVMAAeSw16NprXKD" target="_blank" rel="noopener" data-goatcounter-click="ebay/257538419791" data-goatcounter-title="Clic eBay : Medaille de berceau angelot « piery La Canebiere »">Acheter sur eBay ↗</a>
       <button class="cta ghost wide" type="button" id="favBtn" data-id="257538419791">♡ Ajouter aux favoris</button>
+      <div class="sheet-actions">
+        <a class="sheet-act" href="https://wa.me/33678522504?text=Bonjour%20Jean-Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20%C2%AB%20Medaille%20de%20berceau%20angelot%20%C2%AB%C2%A0piery%20La%20Canebiere%C2%A0%C2%BB%20%C2%BB%20%2870%2C00%20%E2%82%AC%29%20%3A%20https%3A//lesdinedourelles.com/objet/medaille-de-berceau-angelot-piery-la-canebiere-257538419791.html" target="_blank" rel="noopener" data-goatcounter-click="whatsapp/257538419791">Une question ? WhatsApp</a>
+        <button class="sheet-act" type="button" id="shareBtn" data-url="https://lesdinedourelles.com/objet/medaille-de-berceau-angelot-piery-la-canebiere-257538419791.html" data-title="Medaille de berceau angelot « piery La Canebiere »">Partager</button>
+      </div>
       <dl class="specs"><dt>Catégorie</dt><dd>Cabinet de curiosités</dd><dt>Détail</dt><dd>Souvenirs historiques et médailles</dd><dt>État</dt><dd>Occasion</dd><dt>Expédition</dt><dd>Depuis l&#x27;Aude, France</dd><dt>Référence eBay</dt><dd>257538419791</dd></dl>
       <p class="obj-desc">Medaille de berceau angelot « piery La Canebiere ». Fournie avec sa boîte. Pour la matière de la médaille : cf. Photo. Poids 90g Dimensions médaille : 5*5cm.</p>
       <p class="note">Pièce unique. Commande, paiement et livraison se font sur eBay.</p>
@@ -51,7 +55,7 @@
   </div>
   <section class="block"><div class="head"><h2>Dans la même catégorie</h2></div><div class="products"><a class="card" href="../objet/ordre-national-de-la-legion-d-honneur-1922-257396012905.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/lt0AAeSwcDtpcNGj/s-l500.jpg" alt="Ordre national de la légion d’honneur 1922" loading="lazy" referrerpolicy="no-referrer"></div><h3>Ordre national de la légion d’honneur 1922</h3><div class="sub">Souvenirs historiques et médailles</div><div class="pr">229,00 €</div></a><a class="card" href="../objet/2-marrons-sculptes-travail-de-poilus-premiere-guerre-mondiale-257350959310.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/Eu4AAeSwdC9pRVSK/s-l500.jpg" alt="2 Marrons sculptés, travail de poilus, première guerre mondiale" loading="lazy" referrerpolicy="no-referrer"></div><h3>2 Marrons sculptés, travail de poilus, première guerre mondiale</h3><div class="sub">Souvenirs historiques et médailles</div><div class="pr">119,00 €</div></a><a class="card" href="../objet/support-ajustable-de-cheminee-anglais-19eme-franc-maconnerie-257350626066.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/Q2MAAeSw9iJpQTNs/s-l500.jpg" alt="Support ajustable de cheminée anglais 19eme - franc-maçonnerie" loading="lazy" referrerpolicy="no-referrer"></div><h3>Support ajustable de cheminée anglais 19eme - franc-maçonnerie</h3><div class="sub">Souvenirs historiques et médailles</div><div class="pr">149,00 €</div></a><a class="card" href="../objet/tasse-napoleon-bonaparte-257245090973.html"><div class="ph"><img src="https://i.ebayimg.com/images/g/3SIAAeSwUXdpCGje/s-l500.jpg" alt="Tasse Napoléon Bonaparte" loading="lazy" referrerpolicy="no-referrer"></div><h3>Tasse Napoléon Bonaparte</h3><div class="sub">Souvenirs historiques et médailles</div><div class="pr">49,00 €</div></a></div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="legal"><span>© 2026 Les Dinedourelles · Brocante à Pézenas</span><span><a href="../">Toute la collection</a> · <a href="../infos-pratiques.html">Infos pratiques</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../mentions-legales.html">Mentions légales</a></span></div></div></footer>
 <script>
 (function () {
   var b = document.getElementById('favBtn'), id = b.dataset.id, favs = [];
@@ -64,6 +68,11 @@
   });
   show();
 })();
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var b = this, u = b.dataset.url;
+  if (navigator.share) { navigator.share({ title: b.dataset.title, url: u }).catch(function () {}); return; }
+  navigator.clipboard.writeText(u).then(function () { b.textContent = 'Lien copié ✓'; });
+});
 document.getElementById('thumbs').addEventListener('click', function (ev) {
   var b = ev.target.closest('[data-src]'); if (!b) return;
   document.querySelector('#stage img').src = b.dataset.src;
