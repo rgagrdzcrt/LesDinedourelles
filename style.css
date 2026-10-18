@@ -108,6 +108,9 @@ button { cursor: pointer; border: 0; background: none; }
 .side-list button small { font-size: 12px; font-weight: 400; color: var(--muted); }
 .side-list button[aria-pressed="true"] { background: var(--ink); color: var(--on-ink); }
 .side-list button[aria-pressed="true"] small { color: inherit; opacity: .7; }
+.side-list .cat-btn.open[aria-pressed="false"] { color: var(--accent); font-weight: 600; }
+.side-list .subs { display: flex; flex-direction: column; gap: 1px; margin: 2px 0 8px 14px; padding-left: 8px; border-left: 1px solid var(--line); }
+.side-list .subs button { padding: 7px 10px; font-size: 13.5px; font-weight: 400; }
 .price-filter { margin-top: 26px; padding: 20px 12px 6px; border-top: 1px solid var(--line); }
 .price-filter h3 { font: 600 12px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .price-val { margin: 12px 0 14px; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -355,3 +358,4 @@ h1 i, h2 i, .logo i { font-family: var(--serif-text); font-style: italic; }
 .sheet-desc[data-note]:not([data-note=""])::after { content: attr(data-note); display: block; margin-top: 8px; color: var(--muted); font-size: 12px; font-style: italic; }
 /* Très petits téléphones : logo et icônes resserrés pour que le nom ne touche pas les boutons */
 @media (max-width: 380px) { .logo { font-size: 15.5px; gap: 4px; } .logo .mascot { height: 32px; } .icons { gap: 4px; } .lang, .theme { min-width: 30px; width: 30px; height: 30px; } }
+@media (max-width: 340px) { .logo { font-size: 14px; } .logo .mascot { height: 28px; } .icons { gap: 2px; } }

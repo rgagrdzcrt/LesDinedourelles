@@ -27,6 +27,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import categories
 import pages
 
 ROOT = Path(__file__).resolve().parent
@@ -412,6 +413,7 @@ def main():
     deepl_key = os.environ.get("DEEPL_API_KEY", "").strip()
     add_english(products, previous, deepl_key)
     fix_terms(products)
+    categories.apply(products)  # catégorie et sous-catégorie du site (categories.py)
     cat_en = previous_data.get("cat_en", {})
     missing = sorted({p.get(k) for p in products for k in ("category", "subcategory") if p.get(k)} - cat_en.keys())
     if missing and deepl_key:

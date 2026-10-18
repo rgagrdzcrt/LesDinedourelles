@@ -44,7 +44,7 @@
       descTitle: 'Description', descNote: '', buy: 'Acheter sur eBay ↗', ask: 'Poser une question au vendeur ↗', seeStore: 'Voir la boutique eBay ↗', category: 'Catégorie', detail: 'Détail', condition: 'État',
       shipping: 'Expédition', shipFrom: "Depuis l'Aude, France", ref: 'Référence', photo: 'Photo', priceOnEbay: 'Prix sur eBay',
       locale: 'fr-FR', under: a => `Moins de ${a}`, between: (a, b) => `${a} à ${b}`, over: a => `Plus de ${a}`,
-      cols: { africa: 'Arts premiers', sculpture: 'Sculptures et statues', ceramics: 'Céramiques', vases: 'Vases', glass: 'Verrerie', asia: 'Asie', metal: 'Bronze et métal', lighting: 'Luminaires', pictures: 'Tableaux et dessins', jewellery: 'Bijoux', furniture: 'Mobilier et miroirs', antique: 'XIXe et avant', all: 'Toute la collection' },
+      cols: { all: 'Toute la collection' },
     },
     en: {
       promo: 'New finds every week · <b>Carefully shipped from the south of France</b> · Secure payment through eBay',
@@ -77,7 +77,7 @@
       descTitle: 'Description', descNote: 'Written by the seller in French.', descAuto: 'Automatically translated from French.', buy: 'Buy on eBay ↗', ask: 'Ask the seller a question ↗', seeStore: 'Visit the eBay store ↗', category: 'Category', detail: 'Detail', condition: 'Condition',
       shipping: 'Shipping', shipFrom: 'From the Aude, France', ref: 'Reference', photo: 'Photo', priceOnEbay: 'Price on eBay',
       locale: 'en-US', under: a => `Under ${a}`, between: (a, b) => `${a} to ${b}`, over: a => `Over ${a}`,
-      cols: { africa: 'Tribal art', sculpture: 'Sculpture', ceramics: 'Ceramics', vases: 'Vases', glass: 'Glassware', asia: 'Asian art', metal: 'Bronze and metal', lighting: 'Lighting', pictures: 'Paintings and drawings', jewellery: 'Jewellery', furniture: 'Furniture and mirrors', antique: '19th century and earlier', all: 'Whole collection' },
+      cols: { all: 'Whole collection' },
     },
   };
   const CAT_EN = { 'Antiquités': 'Antiques', 'Art': 'Art', 'Objets de collection': 'Collectibles', 'Poterie et verre': 'Pottery & glass', 'Jouets et modélisme': 'Toys & models', 'Bijoux et montres': 'Jewellery & watches', 'Maison et jardin': 'Home & garden', 'Livres': 'Books', 'Occasion': 'Used' };
@@ -132,26 +132,31 @@
   const text = p => norm([p.title, p.title_en, p.category, p.subcategory].join(' '));
   const heartSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 4.5 6.8 4.5c2.2 0 3.6 1.2 5.2 3 1.6-1.8 3-3 5.2-3 3.8 0 5.9 4 4.4 7.3C19.5 16.4 12 21 12 21Z"/></svg>';
 
-  /* Rubriques du menu : mots-clés cherchés dans le titre (français et anglais) et le détail eBay.
-     Un objet peut appartenir à plusieurs rubriques. */
-  const words = p => norm([p.title, p.title_en, p.subcategory].join(' '));
-  const rule = re => p => re.test(words(p));
-  const titleOnly = p => norm([p.title, p.title_en].join(' '));
   const ASIA = /asiat|\bchin(e|ois|oise|a|ese)|japan|japon|asian|satsuma|imari|vietnam|bouddha|buddha|\bthai|\binde?\b|indien|india|timor|indones|tibet|nepal|birman|meiji/;
-  const COLLECTIONS = [
-    { key: 'africa', test: p => /afric|tribal|congo|lobi|teke|baoul|dogon|senouf|senufo|\bfang\b|yoruba|ashanti|bambara|\bkota\b|fetich|fetish|\bmask|masque|burkina|\bmali\b|nigeria|cote d.ivoire|gabon|cameroun|somalie|berbere|\brdc\b/.test(titleOnly(p)) || (/ethni/.test(words(p)) && !ASIA.test(words(p))) },
-    { key: 'sculpture', test: rule(/sculpt|statue|statuette|\bbuste?s?\b|figurine/) },
-    { key: 'ceramics', test: rule(/ceram|faience|porcelain|porcelaine|\bgres\b|stoneware|poterie|pottery|earthenware|terre cuite|vallauris|barbotine|majolica/) },
-    { key: 'vases', test: rule(/\bvases?\b|soliflore|tulipier/) },
-    { key: 'glass', test: rule(/\bverres?\b|glass|cristal|crystal|murano|opaline|carafe|decanter|\bflacons?\b|pate de verre/) },
-    { key: 'asia', test: p => ASIA.test(words(p).replace('encre de chine', '')) },
-    { key: 'metal', test: rule(/bronze|laiton|brass|cuivre|copper|\betain\b|pewter|fer forge|wrought iron|\bargent|silver|\bmetal/) },
-    { key: 'lighting', test: rule(/\blampes?\b|\blamps?\b|lustre|applique|eclairage|lighting|bougeoir|candlestick|chandelier/) },
-    { key: 'pictures', test: p => !/palette|sucrier/.test(titleOnly(p)) && (/tableau|peinture|painting|huile sur|oil on|aquarelle|watercolou?r|gravure|engraving|lithograph|dessin|drawing|lavis|photo d.art|encre de chine/.test(titleOnly(p)) || ['Peintures', 'Dessins, lavis', "Photographies d'art"].includes(p.subcategory)) },
-    { key: 'jewellery', test: p => !/boite a bijoux|jewel(le)?ry box/.test(titleOnly(p)) && /\bbagues?\b|collier|bracelet|bijou|pendentif|broche|jewel|necklace|pendant/.test(words(p)) },
-    { key: 'furniture', test: rule(/tabouret|\bstool|\bsieges?\b|chaise|fauteuil|armchair|s[e]?ll?ette|plant stand|miroir|mirror|horloge|pendule|\bclock|meuble|furniture|\bconsole\b|chairs?\b/) },
-    { key: 'antique', test: rule(/\bxix|\bxviii|\bxvii|19e|18e|17e|19th|18th|17th|objets du xixe et avant|napoleon|empire|louis (xv|xvi|philippe)/) },
-  ];
+
+  /* Catégories et sous-catégories du menu : calculées à chaque mise à jour du catalogue par categories.py
+     (champs p.cat et p.sub de products.json). Une pièce = une catégorie, une sous-catégorie. */
+  const CAT_ORDER = ["Arts d'Afrique", 'Asie et Orient', 'Céramique et faïence', 'Verre et cristal', 'Sculptures et bronzes',
+    'Tableaux et dessins', 'Luminaires et bougeoirs', 'Mobilier et décoration', 'Cabinet de curiosités', 'Arts de la table', 'Bijoux', 'Papiers, livres et jeux'];
+  const SITE_EN = {
+    "Arts d'Afrique": 'African art', 'Masques': 'Masks', 'Statues et fétiches': 'Statues and fetishes', 'Sièges et appuie-tête': 'Stools and headrests', 'Objets rituels et du quotidien': 'Ritual and everyday objects',
+    'Asie et Orient': 'Asia and the Orient', 'Japon': 'Japan', 'Chine': 'China', 'Inde, Tibet et Népal': 'India, Tibet and Nepal', 'Asie du Sud-Est et Océanie': 'Southeast Asia and Oceania', 'Maghreb et Orient': 'North Africa and the Middle East',
+    'Céramique et faïence': 'Ceramics and earthenware', 'Vallauris et céramistes du XXe': 'Vallauris and 20th-century ceramists', 'Faïence et porcelaine': 'Faience and porcelain', 'Grès, terre cuite et céramique': 'Stoneware, terracotta and pottery',
+    'Verre et cristal': 'Glass and crystal', 'Murano et verre italien': 'Murano and Italian glass', 'Art Déco et Art Nouveau': 'Art Deco and Art Nouveau', 'Design scandinave': 'Scandinavian design', 'Carafes, flacons et verres': 'Decanters, bottles and glasses',
+    'Sculptures et bronzes': 'Sculpture and bronzes', 'Bronzes et régules': 'Bronzes and spelter', 'Marbre, pierre et terre cuite': 'Marble, stone and terracotta', 'Bois sculpté': 'Carved wood',
+    'Tableaux et dessins': 'Paintings and drawings', 'Peintures': 'Paintings', 'Dessins et gravures': 'Drawings and prints', "Photographie d'art": 'Fine art photography',
+    'Luminaires et bougeoirs': 'Lighting and candlesticks', 'Lampes': 'Lamps', 'Bougeoirs et candélabres': 'Candlesticks and candelabra',
+    'Mobilier et décoration': 'Furniture and decor', 'Miroirs': 'Mirrors', 'Horloges et pendules': 'Clocks', 'Petits meubles et sièges': 'Small furniture and seating', 'Objets de décoration': 'Decorative objects',
+    'Cabinet de curiosités': 'Cabinet of curiosities', 'Art religieux': 'Religious art', 'Médecine, sciences et naturalia': 'Medicine, science and naturalia', 'Souvenirs historiques et médailles': 'Historical memorabilia and medals', 'Pipes et fumeurs': 'Pipes and smoking', 'Instruments de musique': 'Musical instruments', 'Écriture et bureau': 'Writing and desk items',
+    'Arts de la table': 'Tableware', 'Ustensiles et vaisselle anciens': 'Antique kitchenware and tableware',
+    'Bijoux': 'Jewellery', 'Bijoux berbères en argent': 'Berber silver jewellery', 'Perles, or et montres': 'Pearls, gold and watches', 'Bijoux vintage': 'Vintage jewellery',
+    'Papiers, livres et jeux': 'Paper, books and toys', 'BD et magazines': 'Comics and magazines', 'Livres, journaux et affiches': 'Books, newspapers and posters', 'Jouets et miniatures': 'Toys and models',
+  };
+  const cn = s => (lang === 'en' && SITE_EN[s]) || s;
+  const catFilter = c => ({ key: 'cat:' + c, cat: c, label: cn(c), test: p => p.cat === c });
+  const subFilter = (c, sb) => ({ key: 'sub:' + c + '|' + sb, cat: c, sub: sb, label: cn(sb), test: p => p.cat === c && p.sub === sb });
+  // Pièces mises en avant (carrousel) : pas les magazines, les bijoux fantaisie ni la vaisselle.
+  const featured = p => !['Papiers, livres et jeux', 'Bijoux', 'Arts de la table'].includes(p.cat);
 
   /* ---------- Langue ---------- */
   function applyLang() {
@@ -169,18 +174,25 @@
 
   /* ---------- Sections fixes ---------- */
   function renderNav() {
-    const shown = items.length ? COLLECTIONS.filter(c => items.some(c.test)) : COLLECTIONS;
-    const count = c => items.length ? `<small>${items.filter(c.test).length}</small>` : '';
+    const cats = CAT_ORDER.filter(c => items.some(p => p.cat === c));
+    const open = filter && filter.cat;
+    const n = f => items.filter(f).length;
     const all = `<button type="button" data-col="all" aria-pressed="${!filter && !favOnly}">${esc(t('cols').all)}${items.length ? `<small>${items.length}</small>` : ''}</button>`;
-    $('nav').innerHTML = all + shown.map(c => `<button type="button" data-col="${c.key}" aria-pressed="${!!filter && filter.key === c.key}">${esc(t('cols')[c.key])}${count(c)}</button>`).join('');
-    $('footCats').innerHTML = shown.slice(0, 6).map(c => `<li><button type="button" data-col="${c.key}">${esc(t('cols')[c.key])}</button></li>`).join('');
+    $('nav').innerHTML = all + cats.map(c => {
+      const btn = `<button type="button" class="cat-btn${open === c ? ' open' : ''}" data-cat="${esc(c)}" aria-expanded="${open === c}" aria-pressed="${!!filter && filter.key === 'cat:' + c}">${esc(cn(c))}<small>${n(p => p.cat === c)}</small></button>`;
+      if (open !== c) return btn;
+      const subs = [...new Set(items.filter(p => p.cat === c).map(p => p.sub))]
+        .map(sb => [sb, n(p => p.cat === c && p.sub === sb)]).sort((x, y) => y[1] - x[1]);
+      return btn + `<div class="subs">${subs.map(([sb, k]) => `<button type="button" data-cat="${esc(c)}" data-sub="${esc(sb)}" aria-pressed="${!!filter && filter.key === 'sub:' + c + '|' + sb}">${esc(cn(sb))}<small>${k}</small></button>`).join('')}</div>`;
+    }).join('');
+    $('footCats').innerHTML = cats.slice(0, 6).map(c => `<li><button type="button" data-cat="${esc(c)}">${esc(cn(c))}</button></li>`).join('');
   }
 
   function renderHero() {
-    // 6 pièces tirées au hasard à chaque visite, parmi celles des rubriques du menu à 50 € et plus (pas de magazines ni de petits objets).
+    // 6 pièces tirées au hasard à chaque visite, parmi les pièces à 50 € et plus des grandes catégories (pas de magazines ni de petits objets).
     // Le tirage est gardé pour la visite : changer de langue ne mélange pas à nouveau.
     if (!heroPick) {
-      const pool = items.filter(p => p.price >= 50 && COLLECTIONS.some(c => c.test(p)));
+      const pool = items.filter(p => p.price >= 50 && featured(p));
       const list = (pool.length >= 6 ? pool : items).slice();
       for (let i = list.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [list[i], list[j]] = [list[j], list[i]]; }
       heroPick = list.slice(0, 6);
@@ -223,9 +235,9 @@
 
 
   function renderMosaic() {
-    // Une pièce par rubrique du menu (Arts premiers, Céramiques, Verrerie…), sans doublon ni pièce du carrousel.
+    // Une pièce par catégorie du menu (Afrique, Asie, Céramique…), sans doublon ni pièce du carrousel.
     const used = new Set([...$('heroImgs').querySelectorAll('[data-id]')].map(b => b.dataset.id)), pick = [];
-    COLLECTIONS.forEach(c => { const p = items.find(x => c.test(x) && !used.has(String(x.id))); if (p) { used.add(String(p.id)); pick.push(p); } });
+    CAT_ORDER.forEach(c => { const p = items.find(x => x.cat === c && x.price >= 50 && !used.has(String(x.id))) || items.find(x => x.cat === c && !used.has(String(x.id))); if (p) { used.add(String(p.id)); pick.push(p); } });
     $('mosaic').innerHTML = pick.map(p => `<button type="button" data-id="${esc(p.id)}" aria-label="${esc(ttl(p))}"><img src="${esc(p.images[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('');
   }
 
@@ -274,7 +286,7 @@
     const on = favs.includes(String(p.id));
     return `<div class="card"><a class="open" href="${esc(p.page || '#')}" data-id="${esc(p.id)}" style="display:block">
       <div class="ph"><img src="${esc(p.images[0])}" alt="${esc(ttl(p))}" loading="lazy" referrerpolicy="no-referrer"><span class="tag${isNew(p) ? ' new' : ''}">${esc(t(isNew(p) ? 'fresh' : 'unique'))}</span></div>
-      <h3>${esc(ttl(p))}</h3><div class="sub">${esc(tr(p.subcategory || p.category))}</div><div class="pr">${esc(money(p))}</div></a>
+      <h3>${esc(ttl(p))}</h3><div class="sub">${esc(p.sub ? cn(p.sub) : tr(p.subcategory || p.category))}</div><div class="pr">${esc(money(p))}</div></a>
       <button type="button" class="heart${on ? ' on' : ''}" data-fav="${esc(p.id)}" aria-pressed="${on}" aria-label="${esc(on ? t('favRemove') : t('favAdd'))}">${heartSvg}</button></div>`;
   }
 
@@ -284,7 +296,6 @@
     $('colTitle').textContent = title;
     $('count').textContent = t('pieces')(all.length);
     $('clearFilter').hidden = !filter && !favOnly;
-    document.querySelectorAll('#nav [data-col]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.col === (filter ? filter.key : favOnly ? '' : 'all'))));
     $('clearFilter').textContent = title;
     $('grid').innerHTML = all.length ? all.slice(0, shown).map(card).join('')
       : `<div class="empty"><strong>${esc(t('emptyT'))}</strong>${esc(favOnly ? t('emptyFav') : t('emptyS'))}</div>`;
@@ -297,7 +308,7 @@
 
   function setFilter(f, scroll = true) {
     filter = f; favOnly = false; shown = PAGE;
-    renderGrid();
+    renderNav(); renderGrid();
     if (scroll) $('collection').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   }
 
@@ -329,7 +340,7 @@
     $('thumbs').innerHTML = imgs.length > 1 ? imgs.map((src, i) => `<button type="button" data-i="${i}" aria-label="${esc(t('photo'))} ${i + 1}"><img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join('') : '';
     $('thumbs').onclick = e => { const b = e.target.closest('[data-i]'); if (b) show(Number(b.dataset.i)); };
     show(0);
-    $('sheetCat').textContent = [tr(p.category), tr(p.subcategory)].filter(Boolean).join(' · ');
+    $('sheetCat').textContent = p.cat ? [cn(p.cat), cn(p.sub)].join(' · ') : [tr(p.category), tr(p.subcategory)].filter(Boolean).join(' · ');
     $('sheetTitle').textContent = ttl(p);
     $('sheetPrice').textContent = money(p);
     $('sheetBuy').href = p.url || data.storeUrl;
@@ -345,7 +356,7 @@
     $('sheetDescTitle').textContent = t('descTitle');
     $('sheetDescText').textContent = desc;
     $('sheetDesc').dataset.note = descEn ? t('descAuto') : t('descNote');
-    const rows = [[t('category'), tr(p.category)], [t('detail'), tr(p.subcategory)], [t('condition'), tr(p.condition)], [t('shipping'), t('shipFrom')], [t('ref'), p.example ? '' : p.id]].filter(r => r[1]);
+    const rows = [[t('category'), p.cat ? cn(p.cat) : tr(p.category)], [t('detail'), p.sub ? cn(p.sub) : tr(p.subcategory)], [t('condition'), tr(p.condition)], [t('shipping'), t('shipFrom')], [t('ref'), p.example ? '' : p.id]].filter(r => r[1]);
     $('sheetSpecs').innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
     $('sheet').showModal();
     track('fiche/' + p.id, p.title);
@@ -362,7 +373,10 @@
     if (fav) { toggleFav(fav.dataset.fav); if (favs.includes(String(fav.dataset.fav))) track('favori/' + fav.dataset.fav, 'Favori'); renderGrid(); return; }
     const col = e.target.closest('[data-col]');
     if (col && col.dataset.col === 'all') { closeSide(); setFilter(null); return; }
-    if (col) { closeSide(); const c = COLLECTIONS.find(x => x.key === col.dataset.col); setFilter(filter && filter.key === c.key ? null : { key: c.key, label: t('cols')[c.key], test: c.test }); return; }
+    const cb = e.target.closest('[data-cat]');
+    if (cb && cb.dataset.sub) { closeSide(); setFilter(subFilter(cb.dataset.cat, cb.dataset.sub)); return; }
+    // Catégorie : un clic l'ouvre (et filtre), un second clic la referme. Sur téléphone le panneau reste ouvert pour choisir une sous-catégorie.
+    if (cb) { const c = cb.dataset.cat, again = filter && filter.key === 'cat:' + c; if (!cb.closest('#nav')) closeSide(); setFilter(again ? null : catFilter(c), !cb.closest('#nav') || !document.body.classList.contains('side-open')); return; }
     const origin = e.target.closest('[data-origin]');
     if (origin) { const o = ORIGINS.find(x => x.key === origin.dataset.origin); setFilter({ key: 'origin:' + o.key, label: t('origins')[o.key], test: p => o.re.test(place(p)) }); return; }
     const opener = e.target.closest('[data-id]');
@@ -397,7 +411,7 @@
   $('langBtn').addEventListener('click', () => {
     lang = lang === 'fr' ? 'en' : 'fr';
     try { localStorage.setItem('dd_lang', lang); } catch (e) {}
-    if (filter && COLLECTIONS.some(c => c.key === filter.key)) filter.label = t('cols')[filter.key];
+    if (filter && filter.cat) filter.label = cn(filter.sub || filter.cat);
     if (filter && filter.key.startsWith('origin:')) filter.label = t('origins')[filter.key.slice(7)];
     renderAll();
   });
