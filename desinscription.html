@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Désinscription · Les Dinedourelles</title>
+<link rel="icon" href="favicon.png?v=4" type="image/png" sizes="64x64">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>.unsub { max-width: 560px; padding-block: 64px 80px; } .unsub h1 { font: 400 clamp(32px, 4vw, 44px)/1.1 var(--serif); margin-bottom: 14px; } .unsub p { margin-bottom: 18px; color: var(--muted); }</style>
+</head>
+<body>
+<header class="site-head"><div class="wrap top" style="grid-template-columns:auto auto;justify-content:space-between"><a class="logo" href="./" aria-label="Les Dinedourelles"><img class="mascot" src="logo-jp.webp?v=4" width="141" height="160" alt=""><span class="word">les <i>dinedourelles</i></span></a></div></header>
+<main class="wrap unsub">
+  <h1 id="title">Désinscription…</h1>
+  <p id="text">Un instant, nous mettons à jour vos préférences.</p>
+  <a class="cta" href="./#compte">Gérer mes alertes</a>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+<script>
+(async function () {
+  // Lien des e-mails : desinscription.html?t=<jeton personnel>. Coupe toutes les alertes et les nouveautés.
+  const title = document.getElementById('title'), text = document.getElementById('text');
+  const token = new URLSearchParams(location.search).get('t');
+  const done = ok => {
+    title.textContent = ok ? 'Vous êtes désinscrit(e)' : 'Lien non reconnu';
+    text.textContent = ok ? 'Vous ne recevrez plus nos alertes ni les nouveautés de la semaine. Votre compte et vos favoris sont conservés : vous pouvez réactiver vos alertes à tout moment.'
+      : 'Ce lien de désinscription ne fonctionne pas. Connectez-vous pour gérer vos alertes, ou écrivez à contact@lesdinedourelles.com.';
+  };
+  if (!token || !window.supabase) return done(false);
+  const sb = window.supabase.createClient('https://iysjxzbyvfzosyfmjnfb.supabase.co', 'sb_publishable_u7gQSr9rZDumGoEOtyXF0w_DtcPioEk');
+  const { data, error } = await sb.rpc('unsubscribe', { p_token: token });
+  done(!error && data === true);
+})();
+</script>
+</body>
+</html>

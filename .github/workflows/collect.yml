@@ -25,6 +25,11 @@ jobs:
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: python collect.py
+      - name: Alertes e-mail (nouvelles pièces)
+        env:
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+        run: python alertes.py || echo "Alertes : erreur (catalogue enregistré quand même)."
       - name: Enregistrer le catalogue
         run: |
           git config user.name "github-actions[bot]"
@@ -33,6 +38,7 @@ jobs:
           if [ -f shopify_products.csv ]; then git add shopify_products.csv; fi
           if [ -f sitemap.xml ]; then git add sitemap.xml; fi
           if [ -f sold.json ]; then git add sold.json; fi
+          if [ -f alertes_etat.json ]; then git add alertes_etat.json; fi
           git add pinterest.csv feed.xml 2>/dev/null || true
           if [ -d objet ]; then git add -A objet; fi
           if git diff --cached --quiet; then echo "Catalogue inchangé."; exit 0; fi

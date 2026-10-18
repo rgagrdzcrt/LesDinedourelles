@@ -63,3 +63,14 @@ create or replace view public.clients with (security_invoker = true) as
   from public.profiles p
   order by p.created_at desc;
 revoke all on public.clients from anon, authenticated;
+
+-- ===== Ajout : désinscription en un clic depuis les e-mails (à exécuter aussi, une seule fois) =====
+alter table public.profiles add column if not exists unsub_token uuid not null default gen_random_uuid();
+create or replace function public.unsubscribe(p_token uuid)
+returns boolean language plpgsql security definer set search_path = public as $$
+begin
+  update public.profiles set newsletter = false, alert_cats = '{}' where unsub_token = p_token;
+  return found;
+end;
+$$;
+grant execute on function public.unsubscribe(uuid) to anon, authenticated;

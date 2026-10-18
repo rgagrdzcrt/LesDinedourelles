@@ -1,0 +1,29 @@
+name: E-mails aux inscrits
+on:
+  schedule:
+    - cron: '0 7 * * 1'   # chaque lundi, 8 h ou 9 h en France : nouveautés de la semaine
+  workflow_dispatch:
+    inputs:
+      test_to:
+        description: "Test : adresses séparées par des virgules (seules elles reçoivent un exemple de chaque e-mail)"
+        required: false
+        default: ""
+permissions:
+  contents: read
+jobs:
+  envoyer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Envoyer
+        env:
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          TEST_TO: ${{ github.event.inputs.test_to }}
+        run: python alertes.py --hebdo
