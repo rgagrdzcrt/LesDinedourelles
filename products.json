@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-19T07:08:46+00:00",
+ "updated": "2026-10-19T13:02:36+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -1699,40 +1699,6 @@
    "page": "objet/pipe-a-opi-m-debut-20eme-257493053316.html"
   },
   {
-   "id": "257493051871",
-   "title": "Paire de petits pots en céramiques fin 19eme",
-   "price": 120.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XIXe et avant",
-   "images": [
-    "https://i.ebayimg.com/images/g/DdYAAeSwvlZpxBft/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/CQ8AAeSwe3dpxBft/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/HZ8AAeSw9lFpxBft/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/HtYAAeSw6HJpxBft/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/~J8AAeSwYc1pxBfu/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/BdkAAeSwajlpxBfu/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257493051871?hash=item3bf3c829df:g:DdYAAeSwvlZpxBft",
-   "location": "FR",
-   "listed": "2026-05-10T17:00:01.000Z",
-   "firstSeen": "2026-05-10",
-   "aspects": [
-    [
-     "Matière",
-     "Céramique"
-    ]
-   ],
-   "description": "Très belle paire de petits pots à confit en céramiques fin 19eme (probablement Castelnaudary) Coloration jaune et bleue. Très bon état. Poids 520g 10*9*9cm",
-   "title_en": "Pair of small ceramic pots from the late 19th century",
-   "description_en": "A very beautiful pair of small ceramic confit pots from the late 19th century (probably Castelnaudary). Yellow and blue glaze. In very good condition. Weight: 520 g; 10 × 9 × 9 cm",
-   "tr_src": "4e98b21124aa",
-   "cat": "Céramique et faïence",
-   "sub": "Grès, terre cuite et céramique",
-   "page": "objet/paire-de-petits-pots-en-ceramiques-fin-19eme-257493051871.html"
-  },
-  {
    "id": "257493050876",
    "title": "Paire de bougeoirs cloisonnées 19eme",
    "price": 195.0,
@@ -3361,35 +3327,6 @@
    "cat": "Arts d'Afrique",
    "sub": "Objets rituels et du quotidien",
    "page": "objet/ancien-tambour-fin-19eme-congo-257350966209.html"
-  },
-  {
-   "id": "257350965918",
-   "title": "Nigéria, Yoruba - Cimier Culturel « Egungun »",
-   "price": 399.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Arts, objets ethniques",
-   "images": [
-    "https://i.ebayimg.com/images/g/g9EAAeSwm-9pcKdH/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/LPMAAeSwb1dpcKdH/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/h5kAAeSw6eJpcKdH/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/EZwAAeSwFoppcKdH/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/ng8AAeSwRQ9pcKdH/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Ex4AAeSwbmdpcKdH/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257350965918?hash=item3beb501a9e:g:g9EAAeSwm-9pcKdH",
-   "location": "FR",
-   "listed": "2026-02-26T16:30:01.000Z",
-   "firstSeen": "2026-02-26",
-   "aspects": [],
-   "description": "Cimier cultuel \"Egungun\", il présente un visage scarifié les yeux grand ouverts, la coiffe se terminant à l'arrière par une natte caractéristique associée au dieu \"Eshu\". Bois polychromé à l'aide de colorants naturels. Ancienne patine d'usage. Yoruba, Nigeria. Poids 1,7 kilo Dimensions 26*20*16cm",
-   "title_en": "Nigeria, Yoruba - \"Egungun\" Cultural Crest",
-   "description_en": "\"Egungun\" ritual crest featuring a scarified face with wide-open eyes; the headdress ends at the back with a characteristic braid associated with the god \"Eshu.\" Wood painted with natural dyes. Antique patina from use. Yoruba, Nigeria. Weight: 1.7 kg. Dimensions: 26 × 20 × 16 cm",
-   "tr_src": "444efa93792c",
-   "cat": "Arts d'Afrique",
-   "sub": "Masques",
-   "page": "objet/nigeria-yoruba-cimier-culturel-egungun-257350965918.html"
   },
   {
    "id": "257350965570",
@@ -6201,32 +6138,6 @@
    "page": "objet/ancien-recipient-kharal-indien-en-bois-257305133115.html"
   },
   {
-   "id": "257305132434",
-   "title": "Moule à gâteau de riz offrande de temple",
-   "price": 59.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/QpcAAeSwtcVpHdeZ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/RKoAAeSwv89pHdeZ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/DJwAAeSwoqZpHdeY/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257305132434?hash=item3be894bd92:g:QpcAAeSwtcVpHdeZ",
-   "location": "FR",
-   "listed": "2026-01-18T20:15:01.000Z",
-   "firstSeen": "2026-01-18",
-   "aspects": [],
-   "description": "Moule à gâteau de riz offrande de temple. Parfait état. Poids 110g Dimensions 2*20*10cm",
-   "title_en": "Temple Offering Rice Cake Mold",
-   "description_en": "Temple offering rice cake mold. In perfect condition. Weight: 110 g. Dimensions: 2 × 20 × 10 cm",
-   "tr_src": "f61783d657ac",
-   "cat": "Arts de la table",
-   "sub": "Ustensiles et vaisselle anciens",
-   "page": "objet/moule-a-gateau-de-riz-offrande-de-temple-257305132434.html"
-  },
-  {
    "id": "257305131679",
    "title": "Tambour à fente Teke Congo",
    "price": 249.0,
@@ -6284,44 +6195,6 @@
    "cat": "Asie et Orient",
    "sub": "Chine",
    "page": "objet/boite-de-toilette-chinoise-annees-60-257305132091.html"
-  },
-  {
-   "id": "257305130205",
-   "title": "Panier / jardinière chinois en métal et bronze",
-   "price": 219.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/lKYAAeSwYFlpOYot/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/4YAAAeSwJcNpOYou/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/ZmMAAeSwCX5pOYot/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/DFIAAeSw7QVpOYou/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/MycAAeSwgIdpOYou/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/EeAAAeSw8~ppOYou/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257305130205?hash=item3be894b4dd:g:lKYAAeSwYFlpOYot",
-   "location": "FR",
-   "listed": "2026-01-17T17:00:01.000Z",
-   "firstSeen": "2026-01-17",
-   "aspects": [
-    [
-     "Matière",
-     "Bronze"
-    ],
-    [
-     "Sous-type",
-     "Panier"
-    ]
-   ],
-   "description": "Panier / jardinière chinois en métal et bronze en bon état général. Très joli décor de chien. Un des pied est légèrement tordu, réparation assez facile. Poids 1 kilo Dimensions 26*18*16cm",
-   "title_en": "Chinese metal and bronze basket / planter",
-   "description_en": "Chinese metal and bronze basket/planter in good overall condition. Very pretty dog design. One of the legs is slightly bent, but it’s fairly easy to repair. Weight: 1 kilo. Dimensions: 26 x 18 x 16 cm",
-   "tr_src": "4eff802f8266",
-   "cat": "Asie et Orient",
-   "sub": "Chine",
-   "page": "objet/panier-jardiniere-chinois-en-metal-et-bronze-257305130205.html"
   },
   {
    "id": "257305130568",
@@ -7388,6 +7261,53 @@
    "page": "objet/tete-en-bois-sculpte-myanmar-19eme-257245093903.html"
   },
   {
+   "id": "257245093430",
+   "title": "Lampe de bureau industrielle pied en bois début 20eme",
+   "price": 190.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Eclairage, lampes",
+   "images": [
+    "https://i.ebayimg.com/images/g/A5AAAeSwakppBimH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/~fwAAeSwAWNpBimH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/oAIAAeSwKxFpBimH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/-lAAAeSw1DppBimH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/ArIAAeSwUlNpBimI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/-pcAAeSwO5dpBimI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/-gsAAeSw-QtpBimI/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257245093430?hash=item3be5009e36:g:A5AAAeSwakppBimH",
+   "location": "FR",
+   "listed": "2025-12-13T17:30:01.000Z",
+   "firstSeen": "2025-12-13",
+   "aspects": [
+    [
+     "Type",
+     "Pied de lampe"
+    ],
+    [
+     "Matière",
+     "Bois"
+    ],
+    [
+     "Sous-type",
+     "Bureau"
+    ],
+    [
+     "Style",
+     "Industriel"
+    ]
+   ],
+   "description": "Lampe de bureau verte industrielle début 20eme pied en bois. Très originale et bel état. Poids 750g Dimensions 54*50*14cm",
+   "title_en": "Industrial desk lamp with a wooden base, early 20th century",
+   "description_en": "Green industrial desk lamp from the early 20th century with a wooden base. Very unique and in excellent condition. Weight: 750 g. Dimensions: 54 × 50 × 14 cm",
+   "tr_src": "af399326b3ec",
+   "cat": "Luminaires et bougeoirs",
+   "sub": "Lampes",
+   "page": "objet/lampe-de-bureau-industrielle-pied-en-bois-debut-20eme-257245093430.html"
+  },
+  {
    "id": "257245092094",
    "title": "Paire de pique cierges en laiton doré",
    "price": 149.0,
@@ -7990,6 +7910,34 @@
    "cat": "Arts d'Afrique",
    "sub": "Objets rituels et du quotidien",
    "page": "objet/pipe-de-ceremonie-luba-et-bakongo-rdc-debut-20eme-257146573398.html"
+  },
+  {
+   "id": "257146573259",
+   "title": "Lampe à huile chinoise",
+   "price": 99.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XIXe et avant",
+   "images": [
+    "https://i.ebayimg.com/images/g/GR8AAeSwMGhopaDZ/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/ss0AAeSwCltopaDZ/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/~OMAAeSwK2dopaDZ/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/RCkAAeSwWhRopaDZ/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/FpEAAeSwGM5opaDZ/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257146573259?hash=item3bdf2151cb:g:GR8AAeSwMGhopaDZ",
+   "location": "FR",
+   "listed": "2025-10-13T18:00:01.000Z",
+   "firstSeen": "2025-10-13",
+   "aspects": [],
+   "description": "Lampe à huile chinoise avec une jolie patine. Très bon état général Poids 650 grammes Dimensions 14*15*12cm",
+   "title_en": "Chinese oil lamp",
+   "description_en": "Chinese oil lamp with a beautiful patina. In very good overall condition. Weight: 650 grams. Dimensions: 14 x 15 x 12 cm",
+   "tr_src": "43f366573bbe",
+   "cat": "Luminaires et bougeoirs",
+   "sub": "Lampes",
+   "page": "objet/lampe-a-huile-chinoise-257146573259.html"
   },
   {
    "id": "257146573101",

@@ -250,5 +250,61 @@
   "firstSeen": "2025-12-13",
   "goneOn": "2026-10-19",
   "days": 310
+ },
+ {
+  "id": "257493051871",
+  "title": "Paire de petits pots en céramiques fin 19eme",
+  "price": 120.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XIXe et avant",
+  "cat": "Céramique et faïence",
+  "sub": "Grès, terre cuite et céramique",
+  "image": "https://i.ebayimg.com/images/g/DdYAAeSwvlZpxBft/s-l1600.jpg",
+  "firstSeen": "2026-05-10",
+  "goneOn": "2026-10-19",
+  "days": 162
+ },
+ {
+  "id": "257350965918",
+  "title": "Nigéria, Yoruba - Cimier Culturel « Egungun »",
+  "price": 399.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Arts, objets ethniques",
+  "cat": "Arts d'Afrique",
+  "sub": "Masques",
+  "image": "https://i.ebayimg.com/images/g/g9EAAeSwm-9pcKdH/s-l1600.jpg",
+  "firstSeen": "2026-02-26",
+  "goneOn": "2026-10-19",
+  "days": 235
+ },
+ {
+  "id": "257305132434",
+  "title": "Moule à gâteau de riz offrande de temple",
+  "price": 59.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "cat": "Arts de la table",
+  "sub": "Ustensiles et vaisselle anciens",
+  "image": "https://i.ebayimg.com/images/g/QpcAAeSwtcVpHdeZ/s-l1600.jpg",
+  "firstSeen": "2026-01-18",
+  "goneOn": "2026-10-19",
+  "days": 274
+ },
+ {
+  "id": "257305130205",
+  "title": "Panier / jardinière chinois en métal et bronze",
+  "price": 219.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "cat": "Asie et Orient",
+  "sub": "Chine",
+  "image": "https://i.ebayimg.com/images/g/lKYAAeSwYFlpOYot/s-l1600.jpg",
+  "firstSeen": "2026-01-17",
+  "goneOn": "2026-10-19",
+  "days": 275
  }
 ]
