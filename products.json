@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-18T18:48:38+00:00",
+ "updated": "2026-10-19T01:01:19+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -1408,6 +1408,35 @@
    "cat": "Tableaux et dessins",
    "sub": "Peintures",
    "page": "objet/tableau-huile-nuit-etoilee-tuce-ecole-de-cassis-257493062166.html"
+  },
+  {
+   "id": "257493061891",
+   "title": "Horloge années 70 Kienzle Automatic",
+   "price": 179.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Horloges, pendules",
+   "images": [
+    "https://i.ebayimg.com/images/g/DxEAAeSw2QVpx72b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/BOMAAeSwgHhpx72b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/YZ8AAeSwg0Bpx72b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/4RUAAeSwsaxpx72b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/7o4AAeSwPxVpx72c/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/bhsAAeSwFVNpx72b/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257493061891?hash=item3bf3c85103:g:DxEAAeSw2QVpx72b",
+   "location": "FR",
+   "listed": "2026-05-16T18:00:01.000Z",
+   "firstSeen": "2026-05-16",
+   "aspects": [],
+   "description": "Horloge années 60-70 Kienzle Automatic. Joli design, bel état général. 30*25cm 1,3 kilo",
+   "title_en": "1970s Kienzle Automatic Clock",
+   "description_en": "Kienzle Automatic clock from the 1960s–1970s. Attractive design, in good overall condition. 30 × 25 cm, 1.3 kg",
+   "tr_src": "6d75e1b43ea8",
+   "cat": "Mobilier et décoration",
+   "sub": "Horloges et pendules",
+   "page": "objet/horloge-annees-70-kienzle-automatic-257493061891.html"
   },
   {
    "id": "257493061779",
@@ -8042,34 +8071,6 @@
    "page": "objet/pipe-de-ceremonie-luba-et-bakongo-rdc-debut-20eme-257146573398.html"
   },
   {
-   "id": "257146573259",
-   "title": "Lampe à huile chinoise",
-   "price": 99.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XIXe et avant",
-   "images": [
-    "https://i.ebayimg.com/images/g/GR8AAeSwMGhopaDZ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/ss0AAeSwCltopaDZ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/~OMAAeSwK2dopaDZ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/RCkAAeSwWhRopaDZ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/FpEAAeSwGM5opaDZ/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257146573259?hash=item3bdf2151cb:g:GR8AAeSwMGhopaDZ",
-   "location": "FR",
-   "listed": "2025-10-13T18:00:01.000Z",
-   "firstSeen": "2025-10-13",
-   "aspects": [],
-   "description": "Lampe à huile chinoise avec une jolie patine. Très bon état général Poids 650 grammes Dimensions 14*15*12cm",
-   "title_en": "Chinese oil lamp",
-   "description_en": "Chinese oil lamp with a beautiful patina. In very good overall condition. Weight: 650 grams. Dimensions: 14 x 15 x 12 cm",
-   "tr_src": "43f366573bbe",
-   "cat": "Luminaires et bougeoirs",
-   "sub": "Lampes",
-   "page": "objet/lampe-a-huile-chinoise-257146573259.html"
-  },
-  {
    "id": "257146573101",
    "title": "Statuette Loby début 20eme",
    "price": 480.0,
@@ -10001,41 +10002,6 @@
    "cat": "Luminaires et bougeoirs",
    "sub": "Lampes",
    "page": "objet/paire-de-lampes-en-bois-patine-ancien-257054720142.html"
-  },
-  {
-   "id": "257053348672",
-   "title": "Éventail Ethnique Kota 20ème",
-   "price": 400.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Sculptures, statues",
-   "images": [
-    "https://i.ebayimg.com/images/g/LQ0AAeSwnYVoXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/qlIAAeSwtlpoXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/bLcAAeSwtS9oXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/qtoAAeSwCdVoXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/5I0AAeSwUK9oXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/gRwAAeSwIcFoXnYX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/IxQAAeSwHNhoXnYY/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257053348672?hash=item3bd992d340:g:LQ0AAeSwnYVoXnYX",
-   "location": "FR",
-   "listed": "2025-08-06T13:06:22.000Z",
-   "firstSeen": "2025-08-06",
-   "aspects": [
-    [
-     "Matière",
-     "Cuivre"
-    ]
-   ],
-   "description": "Hauteur 50cm.",
-   "title_en": "20th-Century Kota Ethnic Fan",
-   "description_en": "Height: 50 cm.",
-   "tr_src": "3646cb7379f1",
-   "cat": "Arts d'Afrique",
-   "sub": "Objets rituels et du quotidien",
-   "page": "objet/eventail-ethnique-kota-20eme-257053348672.html"
   },
   {
    "id": "257038024858",

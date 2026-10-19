@@ -222,5 +222,19 @@
   "days": 214,
   "cat": "Asie et Orient",
   "sub": "Asie du Sud-Est et Océanie"
+ },
+ {
+  "id": "257146573259",
+  "title": "Lampe à huile chinoise",
+  "price": 99.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XIXe et avant",
+  "cat": "Luminaires et bougeoirs",
+  "sub": "Lampes",
+  "image": "https://i.ebayimg.com/images/g/GR8AAeSwMGhopaDZ/s-l1600.jpg",
+  "firstSeen": "2025-10-13",
+  "goneOn": "2026-10-19",
+  "days": 371
  }
 ]
