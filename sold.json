@@ -306,5 +306,33 @@
   "firstSeen": "2026-01-17",
   "goneOn": "2026-10-19",
   "days": 275
+ },
+ {
+  "id": "257537928230",
+  "title": "Ancien Bougeoir art populaire indien bois sculpté",
+  "price": 99.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "cat": "Luminaires et bougeoirs",
+  "sub": "Bougeoirs et candélabres",
+  "image": "https://i.ebayimg.com/images/g/zwUAAeSwpZhqDeU1/s-l1600.jpg",
+  "firstSeen": "2026-05-31",
+  "goneOn": "2026-10-21",
+  "days": 143
+ },
+ {
+  "id": "257305148864",
+  "title": "Paire de vases en verre rose et dorée",
+  "price": 69.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "cat": "Verre et cristal",
+  "sub": "Carafes, flacons et verres",
+  "image": "https://i.ebayimg.com/images/g/0WsAAeSwGqxpDdBb/s-l1600.jpg",
+  "firstSeen": "2026-01-27",
+  "goneOn": "2026-10-21",
+  "days": 267
  }
 ]
