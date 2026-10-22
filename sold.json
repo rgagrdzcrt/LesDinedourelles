@@ -362,5 +362,19 @@
   "firstSeen": "2026-01-19",
   "goneOn": "2026-10-22",
   "days": 276
+ },
+ {
+  "id": "257350961465",
+  "title": "Tabouret Senoufo en bois Côté d’ivoire",
+  "price": 89.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Arts, objets ethniques",
+  "cat": "Arts d'Afrique",
+  "sub": "Sièges et appuie-tête",
+  "image": "https://i.ebayimg.com/images/g/5PQAAeSwXcBpb4q6/s-l1600.jpg",
+  "firstSeen": "2026-02-22",
+  "goneOn": "2026-10-22",
+  "days": 242
  }
 ]
