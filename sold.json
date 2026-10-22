@@ -334,5 +334,33 @@
   "firstSeen": "2026-01-27",
   "goneOn": "2026-10-21",
   "days": 267
+ },
+ {
+  "id": "257305147468",
+  "title": "Diorama Hong Kong 1951",
+  "price": 89.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "cat": "Asie et Orient",
+  "sub": "Asie du Sud-Est et Océanie",
+  "image": "https://i.ebayimg.com/images/g/OmIAAeSw7lFpFeq~/s-l1600.jpg",
+  "firstSeen": "2026-01-27",
+  "goneOn": "2026-10-22",
+  "days": 268
+ },
+ {
+  "id": "257305133955",
+  "title": "Bol et cuillère en terre cuite",
+  "price": 149.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "cat": "Céramique et faïence",
+  "sub": "Grès, terre cuite et céramique",
+  "image": "https://i.ebayimg.com/images/g/O3YAAeSw3dFpHdYw/s-l1600.jpg",
+  "firstSeen": "2026-01-19",
+  "goneOn": "2026-10-22",
+  "days": 276
  }
 ]
