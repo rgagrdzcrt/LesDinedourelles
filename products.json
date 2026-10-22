@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-22T07:06:13+00:00",
+ "updated": "2026-10-22T13:03:09+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -5512,6 +5512,34 @@
    "cat": "Arts de la table",
    "sub": "Ustensiles et vaisselle anciens",
    "page": "objet/moule-en-ceramique-ancien-257305147982.html"
+  },
+  {
+   "id": "257305147468",
+   "title": "Diorama Hong Kong 1951",
+   "price": 89.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/OmIAAeSw7lFpFeq~/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/0acAAeSwNRxpFeq~/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/rmAAAeSwtFRpFerA/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/siIAAeSwkRFpFerA/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/4n4AAeSwbd9pFerA/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257305147468?hash=item3be894f84c:g:OmIAAeSw7lFpFeq~",
+   "location": "FR",
+   "listed": "2026-01-27T16:30:01.000Z",
+   "firstSeen": "2026-01-27",
+   "aspects": [],
+   "description": "Très joli diorama de Hong Kong 1951. Très bon état général. Poids 330g Dimensions 25*19cm",
+   "title_en": "Hong Kong Diorama, 1951",
+   "description_en": "A very nice diorama of Hong Kong in 1951. In very good overall condition. Weight: 330 g. Dimensions: 25 × 19 cm",
+   "tr_src": "6f5c932ea312",
+   "cat": "Asie et Orient",
+   "sub": "Asie du Sud-Est et Océanie",
+   "page": "objet/diorama-hong-kong-1951-257305147468.html"
   },
   {
    "id": "257305146561",
