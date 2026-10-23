@@ -376,5 +376,19 @@
   "firstSeen": "2026-02-22",
   "goneOn": "2026-10-22",
   "days": 242
+ },
+ {
+  "id": "257305142957",
+  "title": "Moule à gâteau 20eme en fer blanc",
+  "price": 59.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "cat": "Arts de la table",
+  "sub": "Ustensiles et vaisselle anciens",
+  "image": "https://i.ebayimg.com/images/g/DX0AAeSwQ1ppGul9/s-l1600.jpg",
+  "firstSeen": "2026-01-23",
+  "goneOn": "2026-10-23",
+  "days": 273
  }
 ]
