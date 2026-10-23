@@ -402,3 +402,69 @@ h1 i, h2 i, .logo i { font-family: var(--serif-text); font-style: italic; }
 #explorer { margin-top: 0; }
 #explorer + #collection { padding-top: 64px; }
 #avis .review { background: var(--paper); border-color: transparent; }
+
+/* ---------- Animations et retours visuels ----------
+   Uniquement transform et opacity (fluide, sans recalcul de mise en page). Les apparitions au défilement ne
+   s'activent que si le script tourne (classe js-motion sur <html>) : rien n'est masqué si JavaScript échoue.
+   Tout est coupé par la règle « prefers-reduced-motion » plus haut. */
+
+/* Retour d'appui sur les boutons (téléphone compris) */
+.cta, .sheet-act { transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .15s var(--ease); }
+.cta:active, .sheet-act:active, .side-list button:active, .price-reset:active { transform: scale(.97); }
+.side-list button { transition: background-color .2s ease, color .2s ease, transform .15s var(--ease); }
+.cta .arr { display: inline-block; transition: transform .25s var(--ease); }
+.cta:hover .arr { transform: translateX(4px); }
+
+/* En-tête : ombre légère dès qu'on fait défiler la page */
+.site-head { transition: box-shadow .3s ease; }
+.site-head.scrolled { box-shadow: 0 8px 22px -14px rgba(45, 28, 12, .45); }
+
+/* Cartes et vignettes qui se soulèvent au survol (appareils avec souris uniquement) */
+@media (hover: hover) {
+  .card, .cat { transition: transform .4s var(--ease); }
+  .card:hover, .cat:hover { transform: translateY(-4px); }
+  .card .ph, .cat .ph { transition: box-shadow .4s var(--ease); }
+  .card:hover .ph, .cat:hover .ph { box-shadow: 0 18px 32px -20px rgba(60, 35, 15, .55); }
+}
+
+/* Cœur des favoris et compteur de l'en-tête */
+@keyframes heart-pop { 0% { transform: scale(1); } 35% { transform: scale(1.32); } 65% { transform: scale(.92); } 100% { transform: scale(1); } }
+@keyframes bump { 0%, 100% { transform: scale(1); } 40% { transform: scale(1.35); } }
+.heart.pop { animation: heart-pop .45s var(--ease); }
+.badge.bump { animation: bump .4s var(--ease); }
+
+/* Grille fantôme pendant le chargement du catalogue, reflet sur les photos qui chargent */
+@keyframes shimmer { from { background-position: 120% 0; } to { background-position: -20% 0; } }
+.card.sk { pointer-events: none; }
+.sk-line { height: 12px; margin-top: 14px; border-radius: 4px; background: var(--shade); }
+.sk-line.short { width: 40%; margin-top: 8px; }
+.card.sk .ph, .js-motion .card .ph:not(:has(img.ok)), .js-motion .cat .ph:not(:has(img.ok)) {
+  background: linear-gradient(100deg, var(--shade) 35%, var(--soft) 50%, var(--shade) 65%) var(--shade);
+  background-size: 250% 100%; animation: shimmer 1.4s linear infinite;
+}
+/* Photos en fondu à leur arrivée */
+.js-motion .ph img, .js-motion .insta-grid img, .js-motion .gone-item img { opacity: 0; transition: opacity .5s ease, transform .6s var(--ease); }
+.js-motion .ph img.ok, .js-motion .insta-grid img.ok, .js-motion .gone-item img.ok { opacity: 1; }
+
+/* Apparition douce au défilement, en cascade (--d = délai) */
+.js-motion .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s var(--ease), transform .65s var(--ease); transition-delay: var(--d, 0s); }
+.js-motion .reveal.in { opacity: 1; transform: none; }
+
+/* Sous-catégories qui s'ouvrent en douceur */
+@keyframes drop-in { from { opacity: 0; transform: translateY(-6px); } }
+.js-motion .side-list .subs.opening { animation: drop-in .35s var(--ease); }
+
+/* Carrousel : le tiret actif se remplit pendant l'affichage de la photo (4,5 s) */
+.dots span { position: relative; overflow: hidden; }
+.js-motion .dots span.on { background: var(--line); }
+.js-motion .dots span.on::after { content: ""; position: absolute; inset: 0; background: var(--ink); transform-origin: left; animation: dot-fill 4.5s linear forwards; }
+@keyframes dot-fill { from { transform: scaleX(0); } }
+
+/* Fenêtres (fiche, compte) : fermeture en douceur, fond qui s'estompe */
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes pop-out { to { opacity: 0; transform: translateY(12px); } }
+@keyframes fade-out { to { opacity: 0; } }
+.sheet[open]::backdrop, .acc[open]::backdrop { animation: fade-in .3s ease; }
+.sheet.closing, .acc.closing { animation: pop-out .22s var(--ease) forwards; }
+.sheet.closing::backdrop, .acc.closing::backdrop { animation: fade-out .22s ease forwards; }
+.js-motion .acc-sent, .js-motion .acc-msg:not(:empty) { animation: pop .35s var(--ease); }

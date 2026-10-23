@@ -167,8 +167,10 @@
   });
 
   $('accBtn').addEventListener('click', () => { render(); $('account').showModal(); });
-  $('accClose').addEventListener('click', () => $('account').close());
-  $('account').addEventListener('click', e => { if (e.target === $('account')) $('account').close(); });
+  const closeAcc = () => (DD.closeDialog ? DD.closeDialog($('account')) : $('account').close());
+  $('accClose').addEventListener('click', closeAcc);
+  $('account').addEventListener('click', e => { if (e.target === $('account')) closeAcc(); });
+  $('account').addEventListener('cancel', e => { if (DD.closeDialog) { e.preventDefault(); closeAcc(); } });
   document.addEventListener('dd:lang', render);
   // Lien « Gérer mes alertes » des e-mails : lesdinedourelles.com/#compte ouvre directement la fenêtre.
   const openFromHash = () => {

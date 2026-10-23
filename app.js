@@ -5,6 +5,7 @@
   const $ = id => document.getElementById(id);
   const PAGE = 24;
   let data = { items: [] }, items = [];
+  let gridKey = '', gridShown = 0;
   let soldCount = 176, sold = [], heroPick = null, favCounts = {};
   const WA_NUMBER = '33678522504'; // WhatsApp de Jean-Pierre (06 78 52 25 04)
   const pieceUrl = p => 'https://lesdinedourelles.com/' + (p.page || '');
@@ -127,6 +128,46 @@
     document.head.appendChild(sc);
   }).catch(() => {});
 
+  /* ---------- Animations (coupées si le visiteur préfère réduire les animations) ---------- */
+  const motion = 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (motion) document.documentElement.classList.add('js-motion');
+  // Apparition au défilement : la classe « reveal » est retirée une fois l'animation finie,
+  // pour ne pas gêner les effets de survol des cartes.
+  const io = motion ? new IntersectionObserver(entries => entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    const el = en.target; io.unobserve(el);
+    el.classList.add('in');
+    setTimeout(() => { el.classList.remove('reveal', 'in'); el.style.removeProperty('--d'); }, 900 + (parseFloat(el.style.getPropertyValue('--d')) || 0));
+  }), { rootMargin: '0px 0px -6% 0px' }) : null;
+  const reveal = (els, step = 70, per = 4) => {
+    if (!io) return;
+    [...els].forEach((el, i) => { el.classList.add('reveal'); el.style.setProperty('--d', (i % per) * step + 'ms'); io.observe(el); });
+  };
+  // Photos : fondu à l'arrivée (« ok » une fois chargées, ou en erreur pour ne jamais rester invisibles)
+  const markLoaded = root => root.querySelectorAll('img').forEach(i => { if (i.complete) i.classList.add('ok'); });
+  if (motion) {
+    document.addEventListener('load', e => { if (e.target.tagName === 'IMG') e.target.classList.add('ok'); }, true);
+    document.addEventListener('error', e => { if (e.target.tagName === 'IMG') e.target.classList.add('ok'); }, true);
+  }
+  // Petite animation ponctuelle (cœur, compteur) : rejouable à chaque clic
+  const pulse = (el, cls) => { if (!el || !motion) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); el.addEventListener('animationend', () => el.classList.remove(cls), { once: true }); };
+  // Fenêtres : fermeture en douceur (bouton, clic sur le fond ou touche Échap)
+  const closeDialog = d => {
+    if (!d.open) return;
+    if (!motion) { d.close(); return; }
+    d.classList.add('closing');
+    const done = () => { d.classList.remove('closing'); if (d.open) d.close(); };
+    d.addEventListener('animationend', done, { once: true });
+    setTimeout(done, 320);
+  };
+  // En-tête : ombre dès qu'on fait défiler
+  const head = document.querySelector('.site-head');
+  let ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => { head.classList.toggle('scrolled', scrollY > 8); ticking = false; });
+  }, { passive: true });
+
   /* ---------- Outils ---------- */
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -179,6 +220,7 @@
   }
 
   /* ---------- Sections fixes ---------- */
+  let navOpen = null;
   function renderNav() {
     const cats = CAT_ORDER.filter(c => items.some(p => p.cat === c));
     const open = filter && filter.cat;
@@ -189,8 +231,9 @@
       if (open !== c) return btn;
       const subs = [...new Set(items.filter(p => p.cat === c).map(p => p.sub))]
         .map(sb => [sb, n(p => p.cat === c && p.sub === sb)]).sort((x, y) => y[1] - x[1]);
-      return btn + `<div class="subs">${subs.map(([sb, k]) => `<button type="button" data-cat="${esc(c)}" data-sub="${esc(sb)}" aria-pressed="${!!filter && filter.key === 'sub:' + c + '|' + sb}">${esc(cn(sb))}<small>${k}</small></button>`).join('')}</div>`;
+      return btn + `<div class="subs${c !== navOpen ? ' opening' : ''}">${subs.map(([sb, k]) => `<button type="button" data-cat="${esc(c)}" data-sub="${esc(sb)}" aria-pressed="${!!filter && filter.key === 'sub:' + c + '|' + sb}">${esc(cn(sb))}<small>${k}</small></button>`).join('')}</div>`;
     }).join('');
+    navOpen = open || null;
     $('footCats').innerHTML = cats.slice(0, 6).map(c => `<li><button type="button" data-cat="${esc(c)}">${esc(cn(c))}</button></li>`).join('');
   }
 
@@ -206,7 +249,7 @@
     const heroes = heroPick;
     $('heroImgs').innerHTML = heroes.map((p, i) => `<button type="button" class="${i === slide ? 'on' : ''}" data-id="${esc(p.id)}" aria-label="${esc(ttl(p))}"><img src="${esc(p.images[0])}" alt="${esc(ttl(p))}" ${i ? 'loading="lazy"' : ''} referrerpolicy="no-referrer"><span class="cap">${esc(ttl(p))} · ${esc(money(p))}</span></button>`).join('');
     $('dots').innerHTML = `<b id="slideNo">${slide + 1}</b>/${heroes.length} ` + heroes.map((_, i) => `<span class="${i === slide ? 'on' : ''}"></span>`).join('');
-    $('heroCta').textContent = t('heroCta')(items.length);
+    $('heroCta').innerHTML = esc(t('heroCta')(items.length)).replace('→', '<span class="arr" aria-hidden="true">→</span>');
     clearInterval(timer);
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches && heroes.length > 1) {
       timer = setInterval(() => {
@@ -237,6 +280,7 @@
       used.add(String(cover.id));
       return `<button type="button" class="cat" data-origin="${o.key}"><div class="ph"><img src="${esc(thumb(cover.images[0]))}" alt="" loading="lazy" referrerpolicy="no-referrer"></div><h3>${esc(t('origins')[o.key])}</h3><p>${esc(t('pieces')(list.length))}</p></button>`;
     }).join('');
+    reveal($('cats').children); markLoaded($('cats'));
   }
 
 
@@ -252,6 +296,7 @@
     const live = new Set(items.map(p => String(p.id)));
     const list = sold.filter(s => s.image && !live.has(String(s.id))).sort((a, b) => b.goneOn.localeCompare(a.goneOn)).slice(0, 8);
     $('gone').hidden = !list.length;
+    setTimeout(() => { reveal($('goneGrid').children, 50, 8); markLoaded($('goneGrid')); });
     $('goneGrid').innerHTML = list.map(s => `<div class="gone-item"><div class="ph"><img src="${esc(thumb(s.image))}" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="tag">${esc(t('soldTag'))}</span></div><h3>${esc(s.title)}</h3><div class="sub">${esc(s.sub ? cn(s.sub) : tr(s.subcategory || s.category))}</div></div>`).join('');
   }
 
@@ -305,6 +350,11 @@
     $('clearFilter').textContent = title;
     $('grid').innerHTML = all.length ? all.slice(0, shown).map(card).join('')
       : `<div class="empty"><strong>${esc(t('emptyT'))}</strong>${esc(favOnly ? t('emptyFav') : t('emptyS'))}</div>`;
+    const key = [filter && filter.key, favOnly, $('q').value, $('sort').value, $('pMin').value, $('pMax').value, lang].join('|');
+    const from = key !== gridKey ? 0 : shown > gridShown ? gridShown : -1;
+    gridKey = key; gridShown = shown;
+    if (from >= 0) reveal([...$('grid').children].slice(from), 55, 5);
+    markLoaded($('grid'));
     const rest = all.length - shown;
     $('moreBtn').hidden = rest <= 0;
     if (rest > 0) $('moreBtn').textContent = t('more')(Math.min(rest, PAGE));
@@ -389,7 +439,15 @@
   /* ---------- Événements ---------- */
   document.addEventListener('click', e => {
     const fav = e.target.closest('[data-fav]');
-    if (fav) { toggleFav(fav.dataset.fav); if (favs.includes(String(fav.dataset.fav))) track('favori/' + fav.dataset.fav, 'Favori'); renderGrid(); return; }
+    if (fav) {
+      const id = String(fav.dataset.fav);
+      toggleFav(id); const on = favs.includes(id);
+      if (on) track('favori/' + id, 'Favori');
+      renderGrid();
+      if (on) pulse(document.querySelector(`#grid [data-fav="${CSS.escape(id)}"]`), 'pop');
+      pulse($('favCount'), 'bump');
+      return;
+    }
     const col = e.target.closest('[data-col]');
     if (col && col.dataset.col === 'all') { closeSide(); setFilter(null); return; }
     const cb = e.target.closest('[data-cat]');
@@ -412,7 +470,7 @@
   $('q').addEventListener('input', () => { shown = PAGE; renderGrid(); });
   $('q').addEventListener('keydown', e => { if (e.key === 'Enter') $('collection').scrollIntoView({ behavior: 'smooth' }); });
   $('sort').addEventListener('change', () => { shown = PAGE; renderGrid(); });
-  $('sheetFav').addEventListener('click', () => { if (current) { toggleFav(current.id); renderSheetFav(); renderGrid(); } });
+  $('sheetFav').addEventListener('click', () => { if (current) { toggleFav(current.id); renderSheetFav(); renderGrid(); pulse($('favCount'), 'bump'); } });
   $('sheetBuy').addEventListener('click', () => { if (current) track('ebay/' + current.id, 'Clic eBay : ' + current.title); });
   $('sheetAsk').addEventListener('click', () => { if (current) track('question/' + current.id, 'Question : ' + current.title); });
   $('sheetWa').addEventListener('click', () => { if (current) track('whatsapp/' + current.id, 'WhatsApp : ' + current.title); });
@@ -433,8 +491,9 @@
     const a = e.target.closest('a[href*="instagram.com"], a[href*="linktr.ee"], #storeLink');
     if (a) track(a.href.includes('instagram') ? 'sortie/instagram' : a.href.includes('linktr') ? 'sortie/linktree' : 'sortie/boutique-ebay', a.textContent.trim());
   });
-  $('closeSheet').addEventListener('click', () => $('sheet').close());
-  $('sheet').addEventListener('click', e => { if (e.target === $('sheet')) $('sheet').close(); });
+  $('closeSheet').addEventListener('click', () => closeDialog($('sheet')));
+  $('sheet').addEventListener('click', e => { if (e.target === $('sheet')) closeDialog($('sheet')); });
+  $('sheet').addEventListener('cancel', e => { if (motion) { e.preventDefault(); closeDialog($('sheet')); } });
   $('themeBtn').addEventListener('click', () => {
     const root = document.documentElement;
     const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
@@ -463,6 +522,11 @@
     setCounts: rows => { favCounts = Object.fromEntries((rows || []).map(r => [String(r.item_id), Number(r.n)])); renderPop(); },
     lang: () => lang, cats: CAT_ORDER, cn: s => cn(s), hasCat: c => items.some(p => p.cat === c), track,
   };
+
+  reveal(document.querySelectorAll('.block .head, #maison .insta'), 0, 1);
+  reveal(document.querySelectorAll('.trust > div'), 90, 4);
+  reveal(document.querySelectorAll('#avis .review'), 80, 3);
+  window.DD.closeDialog = closeDialog; window.DD.pulse = pulse;
 
   $('year').textContent = new Date().getFullYear();
   applyLang();
