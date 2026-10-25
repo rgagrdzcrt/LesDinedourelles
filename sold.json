@@ -390,5 +390,19 @@
   "firstSeen": "2026-01-23",
   "goneOn": "2026-10-23",
   "days": 273
+ },
+ {
+  "id": "257537910256",
+  "title": "Cadre photo en Métal argenté vers 1900",
+  "price": 69.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "cat": "Mobilier et décoration",
+  "sub": "Objets de décoration",
+  "image": "https://i.ebayimg.com/images/g/FXcAAeSweQNqDe9b/s-l1600.jpg",
+  "firstSeen": "2026-05-31",
+  "goneOn": "2026-10-25",
+  "days": 147
  }
 ]

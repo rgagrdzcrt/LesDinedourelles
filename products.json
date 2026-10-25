@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-25T12:56:40+00:00",
+ "updated": "2026-10-25T18:51:56+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -1165,44 +1165,6 @@
    "cat": "Mobilier et décoration",
    "sub": "Objets de décoration",
    "page": "objet/sabot-de-cheval-decoratif-19eme-257537910362.html"
-  },
-  {
-   "id": "257537910256",
-   "title": "Cadre photo en Métal argenté vers 1900",
-   "price": 69.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/FXcAAeSweQNqDe9b/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Md4AAeSwATdqDe9b/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/LZIAAeSw0rNqDe9b/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/hxgAAeSwNylqDe9a/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/NCQAAeSwqqJqDe9b/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Pc0AAeSwhLRqDe9c/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257537910256?hash=item3bf674a5f0:g:FXcAAeSweQNqDe9b",
-   "location": "FR",
-   "listed": "2026-05-31T11:41:39.000Z",
-   "firstSeen": "2026-05-31",
-   "aspects": [
-    [
-     "Matière",
-     "Métal argenté"
-    ],
-    [
-     "Sous-type",
-     "Cadre"
-    ]
-   ],
-   "description": "Cadre photo en métal argenté vers 1900. 25*15cm 300g",
-   "title_en": "Silver-plated metal picture frame, circa 1900",
-   "description_en": "Silver-plated metal photo frame, circa 1900. 25 x 15 cm, 300 g",
-   "tr_src": "2c79cc14d48d",
-   "cat": "Mobilier et décoration",
-   "sub": "Objets de décoration",
-   "page": "objet/cadre-photo-en-metal-argente-vers-1900-257537910256.html"
   },
   {
    "id": "257537909886",
@@ -3363,6 +3325,35 @@
    "page": "objet/ancien-tambour-fin-19eme-congo-257350966209.html"
   },
   {
+   "id": "257350965918",
+   "title": "Nigéria, Yoruba - Cimier Culturel « Egungun »",
+   "price": 399.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/g9EAAeSwm-9pcKdH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/LPMAAeSwb1dpcKdH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/h5kAAeSw6eJpcKdH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/EZwAAeSwFoppcKdH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/ng8AAeSwRQ9pcKdH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/Ex4AAeSwbmdpcKdH/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257350965918?hash=item3beb501a9e:g:g9EAAeSwm-9pcKdH",
+   "location": "FR",
+   "listed": "2026-02-26T16:30:01.000Z",
+   "firstSeen": "2026-02-26",
+   "aspects": [],
+   "description": "Cimier cultuel \"Egungun\", il présente un visage scarifié les yeux grand ouverts, la coiffe se terminant à l'arrière par une natte caractéristique associée au dieu \"Eshu\". Bois polychromé à l'aide de colorants naturels. Ancienne patine d'usage. Yoruba, Nigeria. Poids 1,7 kilo Dimensions 26*20*16cm",
+   "title_en": "Nigeria, Yoruba - \"Egungun\" Cultural Crest",
+   "description_en": "\"Egungun\" ritual crest featuring a scarified face with wide-open eyes; the headdress ends at the back with a characteristic braid associated with the god \"Eshu.\" Wood painted with natural dyes. Antique patina from use. Yoruba, Nigeria. Weight: 1.7 kg. Dimensions: 26 × 20 × 16 cm",
+   "tr_src": "444efa93792c",
+   "cat": "Arts d'Afrique",
+   "sub": "Masques",
+   "page": "objet/nigeria-yoruba-cimier-culturel-egungun-257350965918.html"
+  },
+  {
    "id": "257350965570",
    "title": "Sourire de Reims Champagne  1932",
    "price": 25.0,
@@ -5413,6 +5404,43 @@
    "cat": "Arts de la table",
    "sub": "Ustensiles et vaisselle anciens",
    "page": "objet/6-gobelets-en-metal-argente-257305150226.html"
+  },
+  {
+   "id": "257305148864",
+   "title": "Paire de vases en verre rose et dorée",
+   "price": 69.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/0WsAAeSwGqxpDdBb/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/KPcAAeSwzv1pDdBb/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/DjwAAeSw~l9pDdBc/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/k8MAAeSwUfxpDdBb/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/1U4AAeSwdndpDdBc/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257305148864?hash=item3be894fdc0:g:0WsAAeSwGqxpDdBb",
+   "location": "FR",
+   "listed": "2026-01-27T18:30:01.000Z",
+   "firstSeen": "2026-01-27",
+   "aspects": [
+    [
+     "Matière",
+     "Verre"
+    ],
+    [
+     "Sous-type",
+     "Vase"
+    ]
+   ],
+   "description": "Paire de vases en verre rose et dorée début 20 eme en parfait état. Poids 1,5 kilos Dimension 24*15*15cm",
+   "title_en": "Pair of pink and gold glass vases",
+   "description_en": "Pair of early 20th-century pink and gold glass vases in perfect condition. Weight: 1.5 kilograms. Dimensions: 24 × 15 × 15 cm",
+   "tr_src": "623a7e70b108",
+   "cat": "Verre et cristal",
+   "sub": "Carafes, flacons et verres",
+   "page": "objet/paire-de-vases-en-verre-rose-et-doree-257305148864.html"
   },
   {
    "id": "257305147982",
