@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-25T18:51:56+00:00",
+ "updated": "2026-10-26T01:12:41+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -875,40 +875,6 @@
    "page": "objet/paire-de-bougeoirs-vintage-argente-et-cuir-257537929017.html"
   },
   {
-   "id": "257537928230",
-   "title": "Ancien Bougeoir art populaire indien bois sculpté",
-   "price": 99.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/zwUAAeSwpZhqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/VP0AAeSwrURqDeU2/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/4c0AAeSwldpqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/NYoAAeSw5GNqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/myIAAeSwnSNqDeU2/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/5h4AAeSwGTpqDeU2/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257537928230?hash=item3bf674ec26:g:zwUAAeSwpZhqDeU1",
-   "location": "FR",
-   "listed": "2026-05-31T11:59:02.000Z",
-   "firstSeen": "2026-05-31",
-   "aspects": [
-    [
-     "Matière",
-     "Bois"
-    ]
-   ],
-   "description": "Ancien bougeoir art populaire indien bois sculpté. 20*24cm 1,2k",
-   "title_en": "Antique Indian Folk Art Carved Wooden Candleholder",
-   "description_en": "Antique carved wooden Indian folk art candleholder. 20 x 24 cm, 1.2 kg",
-   "tr_src": "5cf1374b1fcb",
-   "cat": "Luminaires et bougeoirs",
-   "sub": "Bougeoirs et candélabres",
-   "page": "objet/ancien-bougeoir-art-populaire-indien-bois-sculpte-257537928230.html"
-  },
-  {
    "id": "257537928081",
    "title": "miniature 1/16 renault frégate 1959 Solido",
    "price": 39.0,
@@ -1165,6 +1131,44 @@
    "cat": "Mobilier et décoration",
    "sub": "Objets de décoration",
    "page": "objet/sabot-de-cheval-decoratif-19eme-257537910362.html"
+  },
+  {
+   "id": "257537910256",
+   "title": "Cadre photo en Métal argenté vers 1900",
+   "price": 69.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/FXcAAeSweQNqDe9b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/Md4AAeSwATdqDe9b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/LZIAAeSw0rNqDe9b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/hxgAAeSwNylqDe9a/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/NCQAAeSwqqJqDe9b/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/Pc0AAeSwhLRqDe9c/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257537910256?hash=item3bf674a5f0:g:FXcAAeSweQNqDe9b",
+   "location": "FR",
+   "listed": "2026-05-31T11:41:39.000Z",
+   "firstSeen": "2026-05-31",
+   "aspects": [
+    [
+     "Matière",
+     "Métal argenté"
+    ],
+    [
+     "Sous-type",
+     "Cadre"
+    ]
+   ],
+   "description": "Cadre photo en métal argenté vers 1900. 25*15cm 300g",
+   "title_en": "Silver-plated metal picture frame, circa 1900",
+   "description_en": "Silver-plated metal picture frame, circa 1900. 25 x 15 cm, 300 g",
+   "tr_src": "2c79cc14d48d",
+   "cat": "Mobilier et décoration",
+   "sub": "Objets de décoration",
+   "page": "objet/cadre-photo-en-metal-argente-vers-1900-257537910256.html"
   },
   {
    "id": "257537909886",
@@ -1659,40 +1663,6 @@
    "cat": "Cabinet de curiosités",
    "sub": "Pipes et fumeurs",
    "page": "objet/pipe-a-opi-m-debut-20eme-257493053316.html"
-  },
-  {
-   "id": "257493051871",
-   "title": "Paire de petits pots en céramiques fin 19eme",
-   "price": 120.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XIXe et avant",
-   "images": [
-    "https://i.ebayimg.com/images/g/DdYAAeSwvlZpxBft/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/CQ8AAeSwe3dpxBft/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/HZ8AAeSw9lFpxBft/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/HtYAAeSw6HJpxBft/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/~J8AAeSwYc1pxBfu/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/BdkAAeSwajlpxBfu/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257493051871?hash=item3bf3c829df:g:DdYAAeSwvlZpxBft",
-   "location": "FR",
-   "listed": "2026-05-10T17:00:01.000Z",
-   "firstSeen": "2026-05-10",
-   "aspects": [
-    [
-     "Matière",
-     "Céramique"
-    ]
-   ],
-   "description": "Très belle paire de petits pots à confit en céramiques fin 19eme (probablement Castelnaudary) Coloration jaune et bleue. Très bon état. Poids 520g 10*9*9cm",
-   "title_en": "Pair of small ceramic pots from the late 19th century",
-   "description_en": "A very beautiful pair of small ceramic confit pots from the late 19th century (probably Castelnaudary). Yellow and blue glaze. In very good condition. Weight: 520 g; 10 × 9 × 9 cm",
-   "tr_src": "4e98b21124aa",
-   "cat": "Céramique et faïence",
-   "sub": "Grès, terre cuite et céramique",
-   "page": "objet/paire-de-petits-pots-en-ceramiques-fin-19eme-257493051871.html"
   },
   {
    "id": "257493050876",
@@ -2473,43 +2443,6 @@
    "page": "objet/lampe-de-bureau-art-deco-vers-1930-257396008040.html"
   },
   {
-   "id": "257396007855",
-   "title": "Éléphant en faïence perlée style art déco",
-   "price": 159.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/jy8AAeSwOXFpcOhE/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/O8gAAeSw1xtpcOhE/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/kK8AAeSwcG1pcOhE/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/jdkAAeSwARlpcOhE/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/eacAAeSwBYhpcOhE/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257396007855?hash=item3bedff63af:g:jy8AAeSwOXFpcOhE",
-   "location": "FR",
-   "listed": "2026-03-16T17:00:01.000Z",
-   "firstSeen": "2026-03-16",
-   "aspects": [
-    [
-     "Matière",
-     "Faïence"
-    ],
-    [
-     "Période",
-     "Art Déco"
-    ]
-   ],
-   "description": "Éléphant en faïence perlée style art déco en très bon état général. Poids 1 kilo Dimensions 22*28*8cm",
-   "title_en": "Art Deco-style beaded earthenware elephant",
-   "description_en": "Art Deco-style beaded earthenware elephant in very good overall condition. Weight: 1 kilo. Dimensions: 22 × 28 × 8 cm",
-   "tr_src": "21df3333bda9",
-   "cat": "Céramique et faïence",
-   "sub": "Faïence et porcelaine",
-   "page": "objet/elephant-en-faience-perlee-style-art-deco-257396007855.html"
-  },
-  {
    "id": "257396007714",
    "title": "Boîte en bois brutaliste asiatique",
    "price": 139.0,
@@ -2546,6 +2479,43 @@
    "cat": "Asie et Orient",
    "sub": "Asie du Sud-Est et Océanie",
    "page": "objet/boite-en-bois-brutaliste-asiatique-257396007714.html"
+  },
+  {
+   "id": "257396007855",
+   "title": "Éléphant en faïence perlée style art déco",
+   "price": 159.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/jy8AAeSwOXFpcOhE/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/O8gAAeSw1xtpcOhE/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/kK8AAeSwcG1pcOhE/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/jdkAAeSwARlpcOhE/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/eacAAeSwBYhpcOhE/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257396007855?hash=item3bedff63af:g:jy8AAeSwOXFpcOhE",
+   "location": "FR",
+   "listed": "2026-03-16T17:00:01.000Z",
+   "firstSeen": "2026-03-16",
+   "aspects": [
+    [
+     "Matière",
+     "Faïence"
+    ],
+    [
+     "Période",
+     "Art Déco"
+    ]
+   ],
+   "description": "Éléphant en faïence perlée style art déco en très bon état général. Poids 1 kilo Dimensions 22*28*8cm",
+   "title_en": "Art Deco-style beaded earthenware elephant",
+   "description_en": "Art Deco-style beaded earthenware elephant in very good overall condition. Weight: 1 kilo. Dimensions: 22 × 28 × 8 cm",
+   "tr_src": "21df3333bda9",
+   "cat": "Céramique et faïence",
+   "sub": "Faïence et porcelaine",
+   "page": "objet/elephant-en-faience-perlee-style-art-deco-257396007855.html"
   },
   {
    "id": "257396007412",
@@ -8118,34 +8088,6 @@
    "page": "objet/carte-relief-sud-de-france-signe-alabert-257146572269.html"
   },
   {
-   "id": "257146571819",
-   "title": "Broderie britannique 20ème « Dieu et mon Droit »",
-   "price": 220.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/H8wAAeSwGw1om17X/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/N6gAAeSw36Nom17X/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/PTEAAeSwskpom17X/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/NkkAAeSwM59om17W/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/M~AAAeSwTGxom17X/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257146571819?hash=item3bdf214c2b:g:H8wAAeSwGw1om17X",
-   "location": "FR",
-   "listed": "2025-10-12T17:00:01.000Z",
-   "firstSeen": "2025-10-12",
-   "aspects": [],
-   "description": "Broderie britannique 20ème « Dieu et mon Droit ». Dimensions : 62*54cm Poids : 3 kilos",
-   "title_en": "20th-century British embroidery: “God and My Right”",
-   "description_en": "20th-century British embroidery, “God and My Right.” Dimensions: 62 × 54 cm. Weight: 3 kilograms",
-   "tr_src": "64ea29ed0f57",
-   "cat": "Cabinet de curiosités",
-   "sub": "Souvenirs historiques et médailles",
-   "page": "objet/broderie-britannique-20eme-dieu-et-mon-droit-257146571819.html"
-  },
-  {
    "id": "257146570786",
    "title": "Tenue de parade Do Gon Mali",
    "price": 540.0,
@@ -8179,6 +8121,34 @@
    "cat": "Arts d'Afrique",
    "sub": "Objets rituels et du quotidien",
    "page": "objet/tenue-de-parade-do-gon-mali-257146570786.html"
+  },
+  {
+   "id": "257146571819",
+   "title": "Broderie britannique 20ème « Dieu et mon Droit »",
+   "price": 220.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/H8wAAeSwGw1om17X/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/N6gAAeSw36Nom17X/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/PTEAAeSwskpom17X/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/NkkAAeSwM59om17W/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/M~AAAeSwTGxom17X/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257146571819?hash=item3bdf214c2b:g:H8wAAeSwGw1om17X",
+   "location": "FR",
+   "listed": "2025-10-12T17:00:01.000Z",
+   "firstSeen": "2025-10-12",
+   "aspects": [],
+   "description": "Broderie britannique 20ème « Dieu et mon Droit ». Dimensions : 62*54cm Poids : 3 kilos",
+   "title_en": "20th-century British embroidery: “God and My Right”",
+   "description_en": "20th-century British embroidery, “God and My Right.” Dimensions: 62 × 54 cm. Weight: 3 kilograms",
+   "tr_src": "64ea29ed0f57",
+   "cat": "Cabinet de curiosités",
+   "sub": "Souvenirs historiques et médailles",
+   "page": "objet/broderie-britannique-20eme-dieu-et-mon-droit-257146571819.html"
   },
   {
    "id": "257146568791",
