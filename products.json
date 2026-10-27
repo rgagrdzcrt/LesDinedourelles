@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-27T01:06:25+00:00",
+ "updated": "2026-10-27T07:04:58+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -6512,6 +6512,38 @@
    "cat": "Sculptures et bronzes",
    "sub": "Marbre, pierre et terre cuite",
    "page": "objet/sculpture-en-terre-cuite-visage-a-gueule-de-singe-257305128326.html"
+  },
+  {
+   "id": "257305128210",
+   "title": "Petite statuette de divinité Indou en bois 19eme",
+   "price": 79.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/OAQAAeSwm~NpOZTS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/9fUAAeSwITNpOZTR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/IlEAAeSwzkRpOZTR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/~ZYAAeSwuylpOZTT/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257305128210?hash=item3be894ad12:g:OAQAAeSwm~NpOZTS",
+   "location": "FR",
+   "listed": "2026-01-15T16:00:01.000Z",
+   "firstSeen": "2026-01-15",
+   "aspects": [
+    [
+     "Matière",
+     "Bois"
+    ]
+   ],
+   "description": "Petite statuette de divinité Indou en bois 19eme belle patine d’usage. Poids 50g Dimensions 10*8*4cm",
+   "title_en": "Small 19th-century wooden statuette of a Hindu deity",
+   "description_en": "Small wooden statuette of a Hindu deity from the 19th century, with a beautiful patina from age. Weight: 50 g. Dimensions: 10 × 8 × 4 cm",
+   "tr_src": "6cd3a49ca519",
+   "cat": "Asie et Orient",
+   "sub": "Inde, Tibet et Népal",
+   "page": "objet/petite-statuette-de-divinite-indou-en-bois-19eme-257305128210.html"
   },
   {
    "id": "257305126162",
