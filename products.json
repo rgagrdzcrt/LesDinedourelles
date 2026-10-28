@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-28T01:18:03+00:00",
+ "updated": "2026-10-28T07:16:44+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -873,6 +873,40 @@
    "cat": "Luminaires et bougeoirs",
    "sub": "Bougeoirs et candélabres",
    "page": "objet/paire-de-bougeoirs-vintage-argente-et-cuir-257537929017.html"
+  },
+  {
+   "id": "257537928230",
+   "title": "Ancien Bougeoir art populaire indien bois sculpté",
+   "price": 99.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/zwUAAeSwpZhqDeU1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/VP0AAeSwrURqDeU2/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/4c0AAeSwldpqDeU1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/NYoAAeSw5GNqDeU1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/myIAAeSwnSNqDeU2/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/5h4AAeSwGTpqDeU2/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257537928230?hash=item3bf674ec26:g:zwUAAeSwpZhqDeU1",
+   "location": "FR",
+   "listed": "2026-05-31T11:59:02.000Z",
+   "firstSeen": "2026-05-31",
+   "aspects": [
+    [
+     "Matière",
+     "Bois"
+    ]
+   ],
+   "description": "Ancien bougeoir art populaire indien bois sculpté. 20*24cm 1,2k",
+   "title_en": "Antique Indian Folk Art Carved Wooden Candleholder",
+   "description_en": "Antique carved wooden Indian folk art candleholder. 20 x 24 cm, 1.2 kg",
+   "tr_src": "5cf1374b1fcb",
+   "cat": "Luminaires et bougeoirs",
+   "sub": "Bougeoirs et candélabres",
+   "page": "objet/ancien-bougeoir-art-populaire-indien-bois-sculpte-257537928230.html"
   },
   {
    "id": "257537928081",
