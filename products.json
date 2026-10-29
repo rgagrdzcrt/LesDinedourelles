@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-29T07:17:48+00:00",
+ "updated": "2026-10-29T13:17:01+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -873,6 +873,40 @@
    "cat": "Luminaires et bougeoirs",
    "sub": "Bougeoirs et candélabres",
    "page": "objet/paire-de-bougeoirs-vintage-argente-et-cuir-257537929017.html"
+  },
+  {
+   "id": "257537928230",
+   "title": "Ancien Bougeoir art populaire indien bois sculpté",
+   "price": 99.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/zwUAAeSwpZhqDeU1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/VP0AAeSwrURqDeU2/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/4c0AAeSwldpqDeU1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/NYoAAeSw5GNqDeU1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/myIAAeSwnSNqDeU2/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/5h4AAeSwGTpqDeU2/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257537928230?hash=item3bf674ec26:g:zwUAAeSwpZhqDeU1",
+   "location": "FR",
+   "listed": "2026-05-31T11:59:02.000Z",
+   "firstSeen": "2026-05-31",
+   "aspects": [
+    [
+     "Matière",
+     "Bois"
+    ]
+   ],
+   "description": "Ancien bougeoir art populaire indien bois sculpté. 20*24cm 1,2k",
+   "title_en": "Antique Indian Folk Art Carved Wooden Candleholder",
+   "description_en": "Antique carved wooden Indian folk art candleholder. 20 x 24 cm, 1.2 kg",
+   "tr_src": "5cf1374b1fcb",
+   "cat": "Luminaires et bougeoirs",
+   "sub": "Bougeoirs et candélabres",
+   "page": "objet/ancien-bougeoir-art-populaire-indien-bois-sculpte-257537928230.html"
   },
   {
    "id": "257537928081",
@@ -10089,34 +10123,6 @@
    "cat": "Arts de la table",
    "sub": "Ustensiles et vaisselle anciens",
    "page": "objet/pince-a-sagou-debut-20eme-257038023317.html"
-  },
-  {
-   "id": "257038028743",
-   "title": "Képi de policier Vietnamien, période Indochine",
-   "price": 189.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/2XYAAeSwwUxoWqTg/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/dQgAAeSwCdVoWqTg/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/BwkAAeSw-nxoWqTg/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/2T8AAeSw4g1oWqTg/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/ZRcAAeSw~pdoWqTh/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257038028743?hash=item3bd8a90fc7:g:2XYAAeSwwUxoWqTg",
-   "location": "FR",
-   "listed": "2025-07-31T22:00:01.000Z",
-   "firstSeen": "2025-07-31",
-   "aspects": [],
-   "description": "Képi de policier Vietnamien en tressage issu de la période Indochine. Longueur avec visière 28cm.",
-   "title_en": "Vietnamese police kepi, Indochina period",
-   "description_en": "Vietnamese police kepi made of braided material from the Indochina period. Length including brim: 28 cm.",
-   "tr_src": "dd5d87c8e7ae",
-   "cat": "Cabinet de curiosités",
-   "sub": "Souvenirs historiques et médailles",
-   "page": "objet/kepi-de-policier-vietnamien-periode-indochine-257038028743.html"
   },
   {
    "id": "257038014625",
