@@ -404,5 +404,19 @@
   "firstSeen": "2026-05-31",
   "goneOn": "2026-10-25",
   "days": 147
+ },
+ {
+  "id": "255069983896",
+  "title": "Outil Agricole Africain du Congo XXème",
+  "price": 140.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Arts, objets ethniques",
+  "cat": "Arts d'Afrique",
+  "sub": "Objets rituels et du quotidien",
+  "image": "https://i.ebayimg.com/images/g/3PwAAOSwS4Bgq7Hn/s-l1600.jpg",
+  "firstSeen": "2021-07-28",
+  "goneOn": "2026-10-29",
+  "days": 1919
  }
 ]
