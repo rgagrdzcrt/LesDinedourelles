@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-29T01:16:29+00:00",
+ "updated": "2026-10-29T07:17:48+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -873,40 +873,6 @@
    "cat": "Luminaires et bougeoirs",
    "sub": "Bougeoirs et candélabres",
    "page": "objet/paire-de-bougeoirs-vintage-argente-et-cuir-257537929017.html"
-  },
-  {
-   "id": "257537928230",
-   "title": "Ancien Bougeoir art populaire indien bois sculpté",
-   "price": 99.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/zwUAAeSwpZhqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/VP0AAeSwrURqDeU2/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/4c0AAeSwldpqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/NYoAAeSw5GNqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/myIAAeSwnSNqDeU2/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/5h4AAeSwGTpqDeU2/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257537928230?hash=item3bf674ec26:g:zwUAAeSwpZhqDeU1",
-   "location": "FR",
-   "listed": "2026-05-31T11:59:02.000Z",
-   "firstSeen": "2026-05-31",
-   "aspects": [
-    [
-     "Matière",
-     "Bois"
-    ]
-   ],
-   "description": "Ancien bougeoir art populaire indien bois sculpté. 20*24cm 1,2k",
-   "title_en": "Antique Indian Folk Art Carved Wooden Candleholder",
-   "description_en": "Antique carved wooden Indian folk art candleholder. 20 x 24 cm, 1.2 kg",
-   "tr_src": "5cf1374b1fcb",
-   "cat": "Luminaires et bougeoirs",
-   "sub": "Bougeoirs et candélabres",
-   "page": "objet/ancien-bougeoir-art-populaire-indien-bois-sculpte-257537928230.html"
   },
   {
    "id": "257537928081",
@@ -12990,6 +12956,69 @@
    "cat": "Arts d'Afrique",
    "sub": "Objets rituels et du quotidien",
    "page": "objet/arme-de-ceremonie-du-congo-xxeme-255086522783.html"
+  },
+  {
+   "id": "255069983896",
+   "title": "Outil Agricole Africain du Congo XXème",
+   "price": 140.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/3PwAAOSwS4Bgq7Hn/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/61IAAOSwz2Fgq7Hq/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/ZCYAAOSwtC1gq7Ht/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/255069983896?hash=item3b635b1498:g:3PwAAOSwS4Bgq7Hn",
+   "location": "FR",
+   "listed": "2021-07-28T20:41:06.000Z",
+   "firstSeen": "2021-07-28",
+   "aspects": [
+    [
+     "Authenticité",
+     "Original"
+    ],
+    [
+     "Poids",
+     "760"
+    ],
+    [
+     "Origine",
+     "Afrique"
+    ],
+    [
+     "Période",
+     "1900-1949"
+    ],
+    [
+     "Quantité unitaire",
+     "1"
+    ],
+    [
+     "Unité de mesure",
+     "kg"
+    ],
+    [
+     "Hauteur",
+     "54"
+    ],
+    [
+     "Matière",
+     "Acier"
+    ],
+    [
+     "Largeur",
+     "15"
+    ]
+   ],
+   "description": "Outil agricole africaindu Congo datant du début XXème siècle en acier.",
+   "title_en": "African Farming Tool from the Congo, 20th Century",
+   "description_en": "African agricultural tool from the Congo, made of steel and dating from the early 20th century.",
+   "tr_src": "a8fd16434490",
+   "cat": "Arts d'Afrique",
+   "sub": "Objets rituels et du quotidien",
+   "page": "objet/outil-agricole-africain-du-congo-xxeme-255069983896.html"
   },
   {
    "id": "255069983694",
