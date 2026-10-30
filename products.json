@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-10-30T07:17:13+00:00",
+ "updated": "2026-10-30T13:13:23+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -3363,6 +3363,35 @@
    "page": "objet/ancien-tambour-fin-19eme-congo-257350966209.html"
   },
   {
+   "id": "257350965918",
+   "title": "Nigéria, Yoruba - Cimier Culturel « Egungun »",
+   "price": 399.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/g9EAAeSwm-9pcKdH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/LPMAAeSwb1dpcKdH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/h5kAAeSw6eJpcKdH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/EZwAAeSwFoppcKdH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/ng8AAeSwRQ9pcKdH/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/Ex4AAeSwbmdpcKdH/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257350965918?hash=item3beb501a9e:g:g9EAAeSwm-9pcKdH",
+   "location": "FR",
+   "listed": "2026-02-26T16:30:01.000Z",
+   "firstSeen": "2026-02-26",
+   "aspects": [],
+   "description": "Cimier cultuel \"Egungun\", il présente un visage scarifié les yeux grand ouverts, la coiffe se terminant à l'arrière par une natte caractéristique associée au dieu \"Eshu\". Bois polychromé à l'aide de colorants naturels. Ancienne patine d'usage. Yoruba, Nigeria. Poids 1,7 kilo Dimensions 26*20*16cm",
+   "title_en": "Nigeria, Yoruba - \"Egungun\" Cultural Crest",
+   "description_en": "\"Egungun\" ritual crest featuring a scarified face with wide-open eyes; the headdress ends at the back with a characteristic braid associated with the god \"Eshu.\" Wood painted with natural dyes. Antique patina from use. Yoruba, Nigeria. Weight: 1.7 kg. Dimensions: 26 × 20 × 16 cm",
+   "tr_src": "444efa93792c",
+   "cat": "Arts d'Afrique",
+   "sub": "Masques",
+   "page": "objet/nigeria-yoruba-cimier-culturel-egungun-257350965918.html"
+  },
+  {
    "id": "257350965570",
    "title": "Sourire de Reims Champagne  1932",
    "price": 25.0,
@@ -5485,6 +5514,34 @@
    "page": "objet/moule-en-ceramique-ancien-257305147982.html"
   },
   {
+   "id": "257305147468",
+   "title": "Diorama Hong Kong 1951",
+   "price": 89.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/OmIAAeSw7lFpFeq~/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/0acAAeSwNRxpFeq~/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/rmAAAeSwtFRpFerA/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/siIAAeSwkRFpFerA/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/4n4AAeSwbd9pFerA/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257305147468?hash=item3be894f84c:g:OmIAAeSw7lFpFeq~",
+   "location": "FR",
+   "listed": "2026-01-27T16:30:01.000Z",
+   "firstSeen": "2026-01-27",
+   "aspects": [],
+   "description": "Très joli diorama de Hong Kong 1951. Très bon état général. Poids 330g Dimensions 25*19cm",
+   "title_en": "Hong Kong Diorama, 1951",
+   "description_en": "A very nice diorama of Hong Kong in 1951. In very good overall condition. Weight: 330 g. Dimensions: 25 × 19 cm",
+   "tr_src": "6f5c932ea312",
+   "cat": "Asie et Orient",
+   "sub": "Asie du Sud-Est et Océanie",
+   "page": "objet/diorama-hong-kong-1951-257305147468.html"
+  },
+  {
    "id": "257305146561",
    "title": "Mortier et pilon en fer 18eme",
    "price": 299.0,
@@ -6142,6 +6199,32 @@
    "cat": "Asie et Orient",
    "sub": "Inde, Tibet et Népal",
    "page": "objet/ancien-recipient-kharal-indien-en-bois-257305133115.html"
+  },
+  {
+   "id": "257305132434",
+   "title": "Moule à gâteau de riz offrande de temple",
+   "price": 59.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/QpcAAeSwtcVpHdeZ/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/RKoAAeSwv89pHdeZ/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/DJwAAeSwoqZpHdeY/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257305132434?hash=item3be894bd92:g:QpcAAeSwtcVpHdeZ",
+   "location": "FR",
+   "listed": "2026-01-18T20:15:01.000Z",
+   "firstSeen": "2026-01-18",
+   "aspects": [],
+   "description": "Moule à gâteau de riz offrande de temple. Parfait état. Poids 110g Dimensions 2*20*10cm",
+   "title_en": "Temple Offering Rice Cake Mold",
+   "description_en": "Temple offering rice cake mold. In perfect condition. Weight: 110 g. Dimensions: 2 × 20 × 10 cm",
+   "tr_src": "f61783d657ac",
+   "cat": "Arts de la table",
+   "sub": "Ustensiles et vaisselle anciens",
+   "page": "objet/moule-a-gateau-de-riz-offrande-de-temple-257305132434.html"
   },
   {
    "id": "257305131679",
@@ -8955,40 +9038,6 @@
    "cat": "Mobilier et décoration",
    "sub": "Objets de décoration",
    "page": "objet/vide-poche-chateau-lagarde-1952-257112272663.html"
-  },
-  {
-   "id": "257112272167",
-   "title": "Ancienne statuette de fertilité en bois",
-   "price": 160.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Arts, objets ethniques",
-   "images": [
-    "https://i.ebayimg.com/images/g/ouIAAeSwvRJopZPx/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/4g0AAeSw1HBopZPx/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/L1kAAeSwe2xopZPx/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/ogIAAeSwfYBopZPx/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/17sAAeSw2EBopZPx/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/1rUAAeSwA7ZopZPy/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257112272167?hash=item3bdd15ed27:g:ouIAAeSwvRJopZPx",
-   "location": "FR",
-   "listed": "2025-09-20T04:45:01.000Z",
-   "firstSeen": "2025-09-20",
-   "aspects": [
-    [
-     "Matière",
-     "Bois"
-    ]
-   ],
-   "description": "Ancienne statuette de fertilité en bois avec une très belle patine. Poids 350 grammes Dimensions 21*9cm",
-   "title_en": "Antique wooden fertility figurine",
-   "description_en": "Antique wooden fertility figurine with a beautiful patina. Weight: 350 grams. Dimensions: 21 × 9 cm",
-   "tr_src": "4aa1714fa951",
-   "cat": "Arts d'Afrique",
-   "sub": "Statues et fétiches",
-   "page": "objet/ancienne-statuette-de-fertilite-en-bois-257112272167.html"
   },
   {
    "id": "257112271035",

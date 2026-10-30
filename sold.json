@@ -446,5 +446,19 @@
   "firstSeen": "2026-01-13",
   "goneOn": "2026-10-30",
   "days": 290
+ },
+ {
+  "id": "257112272167",
+  "title": "Ancienne statuette de fertilité en bois",
+  "price": 160.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Arts, objets ethniques",
+  "cat": "Arts d'Afrique",
+  "sub": "Statues et fétiches",
+  "image": "https://i.ebayimg.com/images/g/ouIAAeSwvRJopZPx/s-l1600.jpg",
+  "firstSeen": "2025-09-20",
+  "goneOn": "2026-10-30",
+  "days": 405
  }
 ]
