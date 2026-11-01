@@ -502,5 +502,19 @@
   "firstSeen": "2025-10-12",
   "goneOn": "2026-10-31",
   "days": 384
+ },
+ {
+  "id": "257538418096",
+  "title": "17 Magazines « L’écho Des Savanes » années 80",
+  "price": 45.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XXe, récents",
+  "cat": "Papiers, livres et jeux",
+  "sub": "BD et magazines",
+  "image": "https://i.ebayimg.com/images/g/fGEAAeSweQNqALZ1/s-l1600.jpg",
+  "firstSeen": "2026-05-31",
+  "goneOn": "2026-11-01",
+  "days": 154
  }
 ]
