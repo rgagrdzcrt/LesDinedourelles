@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-03T07:30:06+00:00",
+ "updated": "2026-11-03T13:24:11+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -873,40 +873,6 @@
    "cat": "Luminaires et bougeoirs",
    "sub": "Bougeoirs et candélabres",
    "page": "objet/paire-de-bougeoirs-vintage-argente-et-cuir-257537929017.html"
-  },
-  {
-   "id": "257537928230",
-   "title": "Ancien Bougeoir art populaire indien bois sculpté",
-   "price": 99.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/zwUAAeSwpZhqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/VP0AAeSwrURqDeU2/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/4c0AAeSwldpqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/NYoAAeSw5GNqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/myIAAeSwnSNqDeU2/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/5h4AAeSwGTpqDeU2/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257537928230?hash=item3bf674ec26:g:zwUAAeSwpZhqDeU1",
-   "location": "FR",
-   "listed": "2026-05-31T11:59:02.000Z",
-   "firstSeen": "2026-05-31",
-   "aspects": [
-    [
-     "Matière",
-     "Bois"
-    ]
-   ],
-   "description": "Ancien bougeoir art populaire indien bois sculpté. 20*24cm 1,2k",
-   "title_en": "Antique Indian Folk Art Carved Wooden Candleholder",
-   "description_en": "Antique carved wooden Indian folk art candleholder. 20 x 24 cm, 1.2 kg",
-   "tr_src": "5cf1374b1fcb",
-   "cat": "Luminaires et bougeoirs",
-   "sub": "Bougeoirs et candélabres",
-   "page": "objet/ancien-bougeoir-art-populaire-indien-bois-sculpte-257537928230.html"
   },
   {
    "id": "257537928081",
@@ -9144,6 +9110,43 @@
    "page": "objet/ancienne-lampe-a-huile-indienne-257112271437.html"
   },
   {
+   "id": "257112271927",
+   "title": "Paire de vases bleu en verre",
+   "price": 299.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XIXe et avant",
+   "images": [
+    "https://i.ebayimg.com/images/g/u6QAAeSwTFZopZ3N/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/7RUAAeSwH6hopZ3M/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/0mcAAeSwldlopZ3N/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/DtoAAeSwwbVopZ3L/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/1pcAAeSwEFlopZ3P/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257112271927?hash=item3bdd15ec37:g:u6QAAeSwTFZopZ3N",
+   "location": "FR",
+   "listed": "2025-09-19T16:45:01.000Z",
+   "firstSeen": "2025-09-19",
+   "aspects": [
+    [
+     "Matière",
+     "Verre"
+    ],
+    [
+     "Sous-type",
+     "Vase"
+    ]
+   ],
+   "description": "Paire de vases bleu en verre avec un beau décor floral. Très beau travail du verre qui est extrêmement fin. Poids unitaire 450 grammes Dimensions 30*15*15cm",
+   "title_en": "Pair of blue glass vases",
+   "description_en": "Pair of blue glass vases with a beautiful floral design. Exquisitely crafted from extremely thin glass. Weight per vase: 450 grams. Dimensions: 30 x 15 x 15 cm",
+   "tr_src": "df76e8af0a88",
+   "cat": "Verre et cristal",
+   "sub": "Carafes, flacons et verres",
+   "page": "objet/paire-de-vases-bleu-en-verre-257112271927.html"
+  },
+  {
    "id": "257112268588",
    "title": "Suite de deux carafes aiguières en cristal et métal argenté",
    "price": 480.0,
@@ -9993,6 +9996,41 @@
    "cat": "Luminaires et bougeoirs",
    "sub": "Lampes",
    "page": "objet/paire-de-lampes-en-bois-patine-ancien-257054720142.html"
+  },
+  {
+   "id": "257053348672",
+   "title": "Éventail Ethnique Kota 20ème",
+   "price": 400.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Sculptures, statues",
+   "images": [
+    "https://i.ebayimg.com/images/g/LQ0AAeSwnYVoXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/qlIAAeSwtlpoXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/bLcAAeSwtS9oXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/qtoAAeSwCdVoXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/5I0AAeSwUK9oXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/gRwAAeSwIcFoXnYX/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/IxQAAeSwHNhoXnYY/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257053348672?hash=item3bd992d340:g:LQ0AAeSwnYVoXnYX",
+   "location": "FR",
+   "listed": "2025-08-06T13:06:22.000Z",
+   "firstSeen": "2025-08-06",
+   "aspects": [
+    [
+     "Matière",
+     "Cuivre"
+    ]
+   ],
+   "description": "Hauteur 50cm.",
+   "title_en": "20th-Century Kota Ethnic Fan",
+   "description_en": "Height: 50 cm.",
+   "tr_src": "3646cb7379f1",
+   "cat": "Arts d'Afrique",
+   "sub": "Objets rituels et du quotidien",
+   "page": "objet/eventail-ethnique-kota-20eme-257053348672.html"
   },
   {
    "id": "257038024858",
