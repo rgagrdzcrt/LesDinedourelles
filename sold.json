@@ -530,5 +530,19 @@
   "firstSeen": "2025-07-29",
   "goneOn": "2026-11-01",
   "days": 460
+ },
+ {
+  "id": "257112271927",
+  "title": "Paire de vases bleu en verre",
+  "price": 299.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XIXe et avant",
+  "cat": "Verre et cristal",
+  "sub": "Carafes, flacons et verres",
+  "image": "https://i.ebayimg.com/images/g/u6QAAeSwTFZopZ3N/s-l1600.jpg",
+  "firstSeen": "2025-09-19",
+  "goneOn": "2026-11-03",
+  "days": 410
  }
 ]
