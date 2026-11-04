@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-04T07:34:27+00:00",
+ "updated": "2026-11-04T13:25:24+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -4689,6 +4689,41 @@
    "cat": "Arts d'Afrique",
    "sub": "Masques",
    "page": "objet/masque-africain-lega-257330337141.html"
+  },
+  {
+   "id": "257330335225",
+   "title": "Masque senufo début 20eme",
+   "price": 299.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/racAAeSwd3lpBeQQ/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/wQAAAeSwlmppBeQQ/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/x8cAAeSwg1tpBeQR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/iiIAAeSwZjZpBeQR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/rasAAeSwd3lpBeQR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/zaUAAeSwgYJpBeQR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/tsgAAeSwfe9pBeQS/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257330335225?hash=item3bea154df9:g:racAAeSwd3lpBeQQ",
+   "location": "FR",
+   "listed": "2026-02-06T16:30:01.000Z",
+   "firstSeen": "2026-02-06",
+   "aspects": [
+    [
+     "Type",
+     "Masque"
+    ]
+   ],
+   "description": "Masque senufo début 20 eme en bois dur. Bel état général et jolie patine. Petite restauration. Poids 380g Dimensions 28*16*5cm",
+   "title_en": "Senufo mask, early 20th century",
+   "description_en": "Early 20th-century Senufo mask made of hardwood. In good overall condition with a nice patina. Minor restoration. Weight: 380 g. Dimensions: 28 × 16 × 5 cm",
+   "tr_src": "2631ff08dc78",
+   "cat": "Arts d'Afrique",
+   "sub": "Masques",
+   "page": "objet/masque-senufo-debut-20eme-257330335225.html"
   },
   {
    "id": "257330333521",
