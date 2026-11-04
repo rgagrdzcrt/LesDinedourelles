@@ -544,5 +544,33 @@
   "firstSeen": "2025-09-19",
   "goneOn": "2026-11-03",
   "days": 410
+ },
+ {
+  "id": "257330335225",
+  "title": "Masque senufo début 20eme",
+  "price": 299.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Arts, objets ethniques",
+  "cat": "Arts d'Afrique",
+  "sub": "Masques",
+  "image": "https://i.ebayimg.com/images/g/racAAeSwd3lpBeQQ/s-l1600.jpg",
+  "firstSeen": "2026-02-06",
+  "goneOn": "2026-11-04",
+  "days": 271
+ },
+ {
+  "id": "256731474231",
+  "title": "Paire De Lampe À Pétrole",
+  "price": 280.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Eclairage, lampes",
+  "cat": "Luminaires et bougeoirs",
+  "sub": "Lampes",
+  "image": "https://i.ebayimg.com/images/g/-~cAAOSwHutnSHos/s-l1600.jpg",
+  "firstSeen": "2024-11-28",
+  "goneOn": "2026-11-04",
+  "days": 706
  }
 ]
