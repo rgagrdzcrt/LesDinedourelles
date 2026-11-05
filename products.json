@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-05T13:29:54+00:00",
+ "updated": "2026-11-05T19:13:57+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -9038,40 +9038,6 @@
    "cat": "Mobilier et décoration",
    "sub": "Objets de décoration",
    "page": "objet/vide-poche-chateau-lagarde-1952-257112272663.html"
-  },
-  {
-   "id": "257112272167",
-   "title": "Ancienne statuette de fertilité en bois",
-   "price": 160.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Arts, objets ethniques",
-   "images": [
-    "https://i.ebayimg.com/images/g/ouIAAeSwvRJopZPx/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/4g0AAeSw1HBopZPx/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/L1kAAeSwe2xopZPx/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/ogIAAeSwfYBopZPx/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/17sAAeSw2EBopZPx/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/1rUAAeSwA7ZopZPy/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257112272167?hash=item3bdd15ed27:g:ouIAAeSwvRJopZPx",
-   "location": "FR",
-   "listed": "2025-09-20T04:45:01.000Z",
-   "firstSeen": "2025-09-20",
-   "aspects": [
-    [
-     "Matière",
-     "Bois"
-    ]
-   ],
-   "description": "Ancienne statuette de fertilité en bois avec une très belle patine. Poids 350 grammes Dimensions 21*9cm",
-   "title_en": "Antique wooden fertility figurine",
-   "description_en": "Antique wooden fertility figurine with a beautiful patina. Weight: 350 grams. Dimensions: 21 × 9 cm",
-   "tr_src": "4aa1714fa951",
-   "cat": "Arts d'Afrique",
-   "sub": "Statues et fétiches",
-   "page": "objet/ancienne-statuette-de-fertilite-en-bois-257112272167.html"
   },
   {
    "id": "257112271035",
