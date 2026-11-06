@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-06T07:33:33+00:00",
+ "updated": "2026-11-06T13:25:38+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -873,40 +873,6 @@
    "cat": "Luminaires et bougeoirs",
    "sub": "Bougeoirs et candélabres",
    "page": "objet/paire-de-bougeoirs-vintage-argente-et-cuir-257537929017.html"
-  },
-  {
-   "id": "257537928230",
-   "title": "Ancien Bougeoir art populaire indien bois sculpté",
-   "price": 99.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/zwUAAeSwpZhqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/VP0AAeSwrURqDeU2/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/4c0AAeSwldpqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/NYoAAeSw5GNqDeU1/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/myIAAeSwnSNqDeU2/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/5h4AAeSwGTpqDeU2/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257537928230?hash=item3bf674ec26:g:zwUAAeSwpZhqDeU1",
-   "location": "FR",
-   "listed": "2026-05-31T11:59:02.000Z",
-   "firstSeen": "2026-05-31",
-   "aspects": [
-    [
-     "Matière",
-     "Bois"
-    ]
-   ],
-   "description": "Ancien bougeoir art populaire indien bois sculpté. 20*24cm 1,2k",
-   "title_en": "Antique Indian Folk Art Carved Wooden Candleholder",
-   "description_en": "Antique carved wooden Indian folk art candleholder. 20 x 24 cm, 1.2 kg",
-   "tr_src": "5cf1374b1fcb",
-   "cat": "Luminaires et bougeoirs",
-   "sub": "Bougeoirs et candélabres",
-   "page": "objet/ancien-bougeoir-art-populaire-indien-bois-sculpte-257537928230.html"
   },
   {
    "id": "257537928081",
@@ -2434,6 +2400,39 @@
    "cat": "Asie et Orient",
    "sub": "Asie du Sud-Est et Océanie",
    "page": "objet/boite-a-chaux-timor-20eme-257396008402.html"
+  },
+  {
+   "id": "257396008227",
+   "title": "Boîte à chaux Timor 20eme",
+   "price": 79.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/RyMAAeSwtdVpcOZv/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/KJsAAeSw-y9pcOZv/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/KKkAAeSw-y9pcOZx/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/Yn0AAeSwCONpcOZv/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/Xy4AAeSw9u9pcOZv/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257396008227?hash=item3bedff6523:g:RyMAAeSwtdVpcOZv",
+   "location": "FR",
+   "listed": "2026-03-17T17:00:01.000Z",
+   "firstSeen": "2026-03-17",
+   "aspects": [
+    [
+     "Type",
+     "Boîte"
+    ]
+   ],
+   "description": "Boîte à chaux Timor 20eme en bambou gravé, très bel état d’usage. Poids 30g Dimensions 16*3*3cm",
+   "title_en": "Timor 20th Lime Box",
+   "description_en": "20th-century Timor chalk box made of engraved bamboo, in very good condition. Weight: 30 g. Dimensions: 16 × 3 × 3 cm",
+   "tr_src": "b34d00b6b450",
+   "cat": "Asie et Orient",
+   "sub": "Asie du Sud-Est et Océanie",
+   "page": "objet/boite-a-chaux-timor-20eme-257396008227.html"
   },
   {
    "id": "257396008040",
