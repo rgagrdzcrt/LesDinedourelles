@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-05T19:13:57+00:00",
+ "updated": "2026-11-06T01:28:30+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -1613,34 +1613,6 @@
    "cat": "Asie et Orient",
    "sub": "Asie du Sud-Est et Océanie",
    "page": "objet/bois-sculpte-asiatique-a-decor-de-reptiles-257493060413.html"
-  },
-  {
-   "id": "257493058352",
-   "title": "Calendrier 50 ans 1925-1975 vintage",
-   "price": 69.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/pwQAAeSw5Dhpx6dk/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/-DMAAeSww7Fpx6dl/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/mmoAAeSw33Zpx6dl/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/9moAAeSwjOxpx6dk/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/rQsAAeSwGTppx6dl/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257493058352?hash=item3bf3c84330:g:pwQAAeSw5Dhpx6dk",
-   "location": "FR",
-   "listed": "2026-05-12T17:00:01.000Z",
-   "firstSeen": "2026-05-12",
-   "aspects": [],
-   "description": "Calendrier anglais 50 ans 1925-1975 vintage en bronze. Très joli travail du métal. Calendrier anglais. 15cm de diamètre 290g",
-   "title_en": "Vintage 50th Anniversary Calendar, 1925–1975",
-   "description_en": "Vintage 1925–1975 English calendar, 50 years, made of bronze. Beautiful metalwork. English calendar. 15 cm in diameter, 290 g",
-   "tr_src": "cfb2b092aaed",
-   "cat": "Papiers, livres et jeux",
-   "sub": "Livres, journaux et affiches",
-   "page": "objet/calendrier-50-ans-1925-1975-vintage-257493058352.html"
   },
   {
    "id": "257493055974",
@@ -9038,6 +9010,40 @@
    "cat": "Mobilier et décoration",
    "sub": "Objets de décoration",
    "page": "objet/vide-poche-chateau-lagarde-1952-257112272663.html"
+  },
+  {
+   "id": "257112272167",
+   "title": "Ancienne statuette de fertilité en bois",
+   "price": 160.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/ouIAAeSwvRJopZPx/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/4g0AAeSw1HBopZPx/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/L1kAAeSwe2xopZPx/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/ogIAAeSwfYBopZPx/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/17sAAeSw2EBopZPx/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/1rUAAeSwA7ZopZPy/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257112272167?hash=item3bdd15ed27:g:ouIAAeSwvRJopZPx",
+   "location": "FR",
+   "listed": "2025-09-20T04:45:01.000Z",
+   "firstSeen": "2025-09-20",
+   "aspects": [
+    [
+     "Matière",
+     "Bois"
+    ]
+   ],
+   "description": "Ancienne statuette de fertilité en bois avec une très belle patine. Poids 350 grammes Dimensions 21*9cm",
+   "title_en": "Antique wooden fertility figurine",
+   "description_en": "Antique wooden fertility figurine with a beautiful patina. Weight: 350 grams. Dimensions: 21 × 9 cm",
+   "tr_src": "4aa1714fa951",
+   "cat": "Arts d'Afrique",
+   "sub": "Statues et fétiches",
+   "page": "objet/ancienne-statuette-de-fertilite-en-bois-257112272167.html"
   },
   {
    "id": "257112271035",
