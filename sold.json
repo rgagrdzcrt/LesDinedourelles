@@ -586,5 +586,19 @@
   "firstSeen": "2026-05-12",
   "goneOn": "2026-11-06",
   "days": 178
+ },
+ {
+  "id": "257396008227",
+  "title": "Boîte à chaux Timor 20eme",
+  "price": 79.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Arts, objets ethniques",
+  "cat": "Asie et Orient",
+  "sub": "Asie du Sud-Est et Océanie",
+  "image": "https://i.ebayimg.com/images/g/RyMAAeSwtdVpcOZv/s-l1600.jpg",
+  "firstSeen": "2026-03-17",
+  "goneOn": "2026-11-06",
+  "days": 234
  }
 ]

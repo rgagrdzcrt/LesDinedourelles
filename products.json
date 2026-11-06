@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-06T01:28:30+00:00",
+ "updated": "2026-11-06T07:33:33+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -1615,6 +1615,34 @@
    "page": "objet/bois-sculpte-asiatique-a-decor-de-reptiles-257493060413.html"
   },
   {
+   "id": "257493058352",
+   "title": "Calendrier 50 ans 1925-1975 vintage",
+   "price": 69.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/pwQAAeSw5Dhpx6dk/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/-DMAAeSww7Fpx6dl/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/mmoAAeSw33Zpx6dl/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/9moAAeSwjOxpx6dk/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/rQsAAeSwGTppx6dl/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257493058352?hash=item3bf3c84330:g:pwQAAeSw5Dhpx6dk",
+   "location": "FR",
+   "listed": "2026-05-12T17:00:01.000Z",
+   "firstSeen": "2026-05-12",
+   "aspects": [],
+   "description": "Calendrier anglais 50 ans 1925-1975 vintage en bronze. Très joli travail du métal. Calendrier anglais. 15cm de diamètre 290g",
+   "title_en": "Vintage 50th Anniversary Calendar, 1925–1975",
+   "description_en": "Vintage English calendar, 50 years, 1925–1975, made of bronze. Beautiful metalwork. English calendar. 15 cm in diameter, 290 g",
+   "tr_src": "cfb2b092aaed",
+   "cat": "Papiers, livres et jeux",
+   "sub": "Livres, journaux et affiches",
+   "page": "objet/calendrier-50-ans-1925-1975-vintage-257493058352.html"
+  },
+  {
    "id": "257493055974",
    "title": "Petit vase soliflore Murano en verre",
    "price": 59.0,
@@ -2406,39 +2434,6 @@
    "cat": "Asie et Orient",
    "sub": "Asie du Sud-Est et Océanie",
    "page": "objet/boite-a-chaux-timor-20eme-257396008402.html"
-  },
-  {
-   "id": "257396008227",
-   "title": "Boîte à chaux Timor 20eme",
-   "price": 79.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Arts, objets ethniques",
-   "images": [
-    "https://i.ebayimg.com/images/g/RyMAAeSwtdVpcOZv/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/KJsAAeSw-y9pcOZv/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/KKkAAeSw-y9pcOZx/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Yn0AAeSwCONpcOZv/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/Xy4AAeSw9u9pcOZv/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257396008227?hash=item3bedff6523:g:RyMAAeSwtdVpcOZv",
-   "location": "FR",
-   "listed": "2026-03-17T17:00:01.000Z",
-   "firstSeen": "2026-03-17",
-   "aspects": [
-    [
-     "Type",
-     "Boîte"
-    ]
-   ],
-   "description": "Boîte à chaux Timor 20eme en bambou gravé, très bel état d’usage. Poids 30g Dimensions 16*3*3cm",
-   "title_en": "Timor 20th Lime Box",
-   "description_en": "20th-century Timor chalk box made of engraved bamboo, in very good condition. Weight: 30 g. Dimensions: 16 × 3 × 3 cm",
-   "tr_src": "b34d00b6b450",
-   "cat": "Asie et Orient",
-   "sub": "Asie du Sud-Est et Océanie",
-   "page": "objet/boite-a-chaux-timor-20eme-257396008227.html"
   },
   {
    "id": "257396008040",
