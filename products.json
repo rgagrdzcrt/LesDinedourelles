@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-08T07:21:25+00:00",
+ "updated": "2026-11-08T13:10:15+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -11187,6 +11187,44 @@
    "cat": "Asie et Orient",
    "sub": "Chine",
    "page": "objet/sculpture-immortel-en-bambou-xixeme-257017455026.html"
+  },
+  {
+   "id": "257017451810",
+   "title": "Sculpture Immortel en Bambou",
+   "price": 200.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Sculptures, statues",
+   "images": [
+    "https://i.ebayimg.com/images/g/mOsAAeSwA6JoW8P1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/y7wAAeSwDNdoW8P1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/1zgAAeSwv8loW8P1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/-AcAAeSwS-5oW8P1/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/T9IAAeSwgcZoW8P2/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/kZwAAeSwO1loW8P2/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257017451810?hash=item3bd76f1522:g:mOsAAeSwA6JoW8P1",
+   "location": "FR",
+   "listed": "2025-07-15T07:18:28.000Z",
+   "firstSeen": "2025-07-15",
+   "aspects": [
+    [
+     "Type",
+     "Sculpture"
+    ],
+    [
+     "Matière",
+     "Bois"
+    ]
+   ],
+   "description": "Sculpture Immortel tenant un sceptre Ruyi en Bambou du XIXème (Dynastie Qing) Provenance : Chine Hauteur : 20cm Longueur : 13cm Largeur : 12cm Poids 210g",
+   "title_en": "\"Immortal\" Bamboo Sculpture",
+   "description_en": "19th-century (Qing Dynasty) bamboo sculpture of an Immortal holding a Ruyi scepter. Origin: China. Height: 20 cm. Length: 13 cm. Width: 12 cm. Weight: 210 g.",
+   "tr_src": "12fd8538263d",
+   "cat": "Asie et Orient",
+   "sub": "Chine",
+   "page": "objet/sculpture-immortel-en-bambou-257017451810.html"
   },
   {
    "id": "257016180046",
