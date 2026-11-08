@@ -600,5 +600,19 @@
   "firstSeen": "2026-03-17",
   "goneOn": "2026-11-06",
   "days": 234
+ },
+ {
+  "id": "257017451810",
+  "title": "Sculpture Immortel en Bambou",
+  "price": 200.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Sculptures, statues",
+  "cat": "Asie et Orient",
+  "sub": "Chine",
+  "image": "https://i.ebayimg.com/images/g/mOsAAeSwA6JoW8P1/s-l1600.jpg",
+  "firstSeen": "2025-07-15",
+  "goneOn": "2026-11-08",
+  "days": 481
  }
 ]
