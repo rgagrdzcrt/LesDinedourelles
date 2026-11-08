@@ -614,5 +614,19 @@
   "firstSeen": "2025-07-15",
   "goneOn": "2026-11-08",
   "days": 481
+ },
+ {
+  "id": "257054913821",
+  "title": "Boucle de ceinture métal et céramique Rouges, début XXème",
+  "price": 125.0,
+  "currency": "EUR",
+  "category": "Bijoux, montres",
+  "subcategory": "Bracelets",
+  "cat": "Bijoux",
+  "sub": "Bijoux vintage",
+  "image": "https://i.ebayimg.com/images/g/kesAAeSw7pVoYTaN/s-l1600.jpg",
+  "firstSeen": "2025-08-08",
+  "goneOn": "2026-11-08",
+  "days": 457
  }
 ]
