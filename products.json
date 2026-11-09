@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-09T07:45:00+00:00",
+ "updated": "2026-11-09T13:31:46+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -4007,43 +4007,6 @@
    "cat": "Verre et cristal",
    "sub": "Carafes, flacons et verres",
    "page": "objet/carafe-a-eau-vintage-mauve-en-verre-257350937066.html"
-  },
-  {
-   "id": "257350936777",
-   "title": "Ancien vase bourgeon en verre art suédois Orrefors par Edvin Ohrstrom",
-   "price": 120.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets de décoration",
-   "images": [
-    "https://i.ebayimg.com/images/g/mC4AAeSw2FBpQre-/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/t50AAeSwsKppQre-/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/ZswAAeSwGtBpQre-/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/3LAAAeSwZitpQre-/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/26YAAeSwir1pQre~/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257350936777?hash=item3beb4fa8c9:g:mC4AAeSw2FBpQre-",
-   "location": "FR",
-   "listed": "2026-02-16T17:15:01.000Z",
-   "firstSeen": "2026-02-16",
-   "aspects": [
-    [
-     "Type",
-     "Vase"
-    ],
-    [
-     "Matière",
-     "Verre"
-    ]
-   ],
-   "description": "Ancien vase bourgeon en verre art suédois Orrefors par Edvin Ohrstrom en parfait état. Poids 1,3 kilo Dimensions 12*11*11cm",
-   "title_en": "Antique Orrefors Swedish art glass bud vase by Edvin Ohrstrom",
-   "description_en": "Antique Orrefors Swedish art glass \"Bourgeon\" vase by Edvin Ohrstrom, in perfect condition. Weight: 1.3 kilograms. Dimensions: 12 × 11 × 11 cm",
-   "tr_src": "e09636cbd371",
-   "cat": "Verre et cristal",
-   "sub": "Design scandinave",
-   "page": "objet/ancien-vase-bourgeon-en-verre-art-suedois-orrefors-par-edvin-ohrstrom-257350936777.html"
   },
   {
    "id": "257350633578",
@@ -8085,6 +8048,34 @@
    "cat": "Mobilier et décoration",
    "sub": "Objets de décoration",
    "page": "objet/carte-relief-sud-de-france-signe-alabert-257146572269.html"
+  },
+  {
+   "id": "257146571819",
+   "title": "Broderie britannique 20ème « Dieu et mon Droit »",
+   "price": 220.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/H8wAAeSwGw1om17X/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/N6gAAeSw36Nom17X/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/PTEAAeSwskpom17X/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/NkkAAeSwM59om17W/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/M~AAAeSwTGxom17X/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257146571819?hash=item3bdf214c2b:g:H8wAAeSwGw1om17X",
+   "location": "FR",
+   "listed": "2025-10-12T17:00:01.000Z",
+   "firstSeen": "2025-10-12",
+   "aspects": [],
+   "description": "Broderie britannique 20ème « Dieu et mon Droit ». Dimensions : 62*54cm Poids : 3 kilos",
+   "title_en": "20th-century British embroidery: “God and My Right”",
+   "description_en": "20th-century British embroidery, “God and My Right.” Dimensions: 62 × 54 cm. Weight: 3 kilograms",
+   "tr_src": "64ea29ed0f57",
+   "cat": "Cabinet de curiosités",
+   "sub": "Souvenirs historiques et médailles",
+   "page": "objet/broderie-britannique-20eme-dieu-et-mon-droit-257146571819.html"
   },
   {
    "id": "257146570786",

@@ -642,5 +642,19 @@
   "firstSeen": "2026-02-05",
   "goneOn": "2026-11-09",
   "days": 277
+ },
+ {
+  "id": "257350936777",
+  "title": "Ancien vase bourgeon en verre art suédois Orrefors par Edvin Ohrstrom",
+  "price": 120.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets de décoration",
+  "cat": "Verre et cristal",
+  "sub": "Design scandinave",
+  "image": "https://i.ebayimg.com/images/g/mC4AAeSw2FBpQre-/s-l1600.jpg",
+  "firstSeen": "2026-02-16",
+  "goneOn": "2026-11-09",
+  "days": 266
  }
 ]
