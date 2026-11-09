@@ -628,5 +628,19 @@
   "firstSeen": "2025-08-08",
   "goneOn": "2026-11-08",
   "days": 457
+ },
+ {
+  "id": "257330331857",
+  "title": "Cloche en Bronze 19eme",
+  "price": 99.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XIXe et avant",
+  "cat": "Sculptures et bronzes",
+  "sub": "Bronzes et régules",
+  "image": "https://i.ebayimg.com/images/g/05EAAeSwgYJpBeVQ/s-l1600.jpg",
+  "firstSeen": "2026-02-05",
+  "goneOn": "2026-11-09",
+  "days": 277
  }
 ]
