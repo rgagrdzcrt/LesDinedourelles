@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-09T13:31:46+00:00",
+ "updated": "2026-11-10T01:36:59+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -2434,6 +2434,39 @@
    "cat": "Asie et Orient",
    "sub": "Asie du Sud-Est et Océanie",
    "page": "objet/boite-a-chaux-timor-20eme-257396008402.html"
+  },
+  {
+   "id": "257396008227",
+   "title": "Boîte à chaux Timor 20eme",
+   "price": 79.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Arts, objets ethniques",
+   "images": [
+    "https://i.ebayimg.com/images/g/RyMAAeSwtdVpcOZv/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/KJsAAeSw-y9pcOZv/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/KKkAAeSw-y9pcOZx/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/Yn0AAeSwCONpcOZv/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/Xy4AAeSw9u9pcOZv/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257396008227?hash=item3bedff6523:g:RyMAAeSwtdVpcOZv",
+   "location": "FR",
+   "listed": "2026-03-17T17:00:01.000Z",
+   "firstSeen": "2026-03-17",
+   "aspects": [
+    [
+     "Type",
+     "Boîte"
+    ]
+   ],
+   "description": "Boîte à chaux Timor 20eme en bambou gravé, très bel état d’usage. Poids 30g Dimensions 16*3*3cm",
+   "title_en": "Timor 20th Lime Box",
+   "description_en": "20th-century Timor chalk box made of engraved bamboo, in very good condition. Weight: 30 g. Dimensions: 16 × 3 × 3 cm",
+   "tr_src": "b34d00b6b450",
+   "cat": "Asie et Orient",
+   "sub": "Asie du Sud-Est et Océanie",
+   "page": "objet/boite-a-chaux-timor-20eme-257396008227.html"
   },
   {
    "id": "257396008040",
@@ -5470,39 +5503,6 @@
    "page": "objet/mortier-et-pilon-en-fer-18eme-257305146561.html"
   },
   {
-   "id": "257305146243",
-   "title": "Moule à gâteau en cuivre 19eme",
-   "price": 59.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XIXe et avant",
-   "images": [
-    "https://i.ebayimg.com/images/g/fAgAAeSwxNlpGubW/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/pr8AAeSwW8BpGubX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/NIMAAeSwumFpGubX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/rJ4AAeSwxjZpGubX/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/c98AAeSwKxFpGubY/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257305146243?hash=item3be894f383:g:fAgAAeSwxNlpGubW",
-   "location": "FR",
-   "listed": "2026-01-26T17:30:01.000Z",
-   "firstSeen": "2026-01-26",
-   "aspects": [
-    [
-     "Matière",
-     "Cuivre"
-    ]
-   ],
-   "description": "Moule à gâteau en cuivre 19eme en très bon état. Poids 550g Dimensions 9*23*23cm",
-   "title_en": "19th-century copper cake pan",
-   "description_en": "19th-century copper cake pan in very good condition. Weight: 550 g. Dimensions: 9 × 23 × 23 cm",
-   "tr_src": "eedb18259341",
-   "cat": "Arts de la table",
-   "sub": "Ustensiles et vaisselle anciens",
-   "page": "objet/moule-a-gateau-en-cuivre-19eme-257305146243.html"
-  },
-  {
    "id": "257305146108",
    "title": "Moule à gâteau en cuivre 19eme",
    "price": 59.0,
@@ -8048,34 +8048,6 @@
    "cat": "Mobilier et décoration",
    "sub": "Objets de décoration",
    "page": "objet/carte-relief-sud-de-france-signe-alabert-257146572269.html"
-  },
-  {
-   "id": "257146571819",
-   "title": "Broderie britannique 20ème « Dieu et mon Droit »",
-   "price": 220.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/H8wAAeSwGw1om17X/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/N6gAAeSw36Nom17X/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/PTEAAeSwskpom17X/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/NkkAAeSwM59om17W/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/M~AAAeSwTGxom17X/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257146571819?hash=item3bdf214c2b:g:H8wAAeSwGw1om17X",
-   "location": "FR",
-   "listed": "2025-10-12T17:00:01.000Z",
-   "firstSeen": "2025-10-12",
-   "aspects": [],
-   "description": "Broderie britannique 20ème « Dieu et mon Droit ». Dimensions : 62*54cm Poids : 3 kilos",
-   "title_en": "20th-century British embroidery: “God and My Right”",
-   "description_en": "20th-century British embroidery, “God and My Right.” Dimensions: 62 × 54 cm. Weight: 3 kilograms",
-   "tr_src": "64ea29ed0f57",
-   "cat": "Cabinet de curiosités",
-   "sub": "Souvenirs historiques et médailles",
-   "page": "objet/broderie-britannique-20eme-dieu-et-mon-droit-257146571819.html"
   },
   {
    "id": "257146570786",

@@ -656,5 +656,19 @@
   "firstSeen": "2026-02-16",
   "goneOn": "2026-11-09",
   "days": 266
+ },
+ {
+  "id": "257305146243",
+  "title": "Moule à gâteau en cuivre 19eme",
+  "price": 59.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XIXe et avant",
+  "cat": "Arts de la table",
+  "sub": "Ustensiles et vaisselle anciens",
+  "image": "https://i.ebayimg.com/images/g/fAgAAeSwxNlpGubW/s-l1600.jpg",
+  "firstSeen": "2026-01-26",
+  "goneOn": "2026-11-10",
+  "days": 288
  }
 ]
