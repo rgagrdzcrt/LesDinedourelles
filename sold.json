@@ -670,5 +670,19 @@
   "firstSeen": "2026-01-26",
   "goneOn": "2026-11-10",
   "days": 288
+ },
+ {
+  "id": "257493062166",
+  "title": "Tableau  huile« Nuit Étoilée » , Tucé, École De Cassis",
+  "price": 520.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Peintures",
+  "cat": "Tableaux et dessins",
+  "sub": "Peintures",
+  "image": "https://i.ebayimg.com/images/g/QrcAAeSw2Rtpx8uJ/s-l1600.jpg",
+  "firstSeen": "2026-05-17",
+  "goneOn": "2026-11-11",
+  "days": 178
  }
 ]

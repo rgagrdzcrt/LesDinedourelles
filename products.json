@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-11T06:35:29+00:00",
+ "updated": "2026-11-11T19:40:38+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -1299,43 +1299,6 @@
    "cat": "Mobilier et décoration",
    "sub": "Miroirs",
    "page": "objet/miroir-ovale-en-fonte-de-fer-fin-19eme-257493062021.html"
-  },
-  {
-   "id": "257493062166",
-   "title": "Tableau  huile« Nuit Étoilée » , Tucé, École De Cassis",
-   "price": 520.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Peintures",
-   "images": [
-    "https://i.ebayimg.com/images/g/QrcAAeSw2Rtpx8uJ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/zYwAAeSw5ohpx8uJ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/fUgAAeSwgERpx8uJ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/qeIAAeSwkcppx8uJ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/JEgAAeSwXBNpx8uK/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/z1YAAeSwbzppx8uK/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/1WYAAeSwcalpx8uK/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/yGgAAeSwYFxpx8uK/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/BxoAAeSwxbxpx8uK/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257493062166?hash=item3bf3c85216:g:QrcAAeSw2Rtpx8uJ",
-   "location": "FR",
-   "listed": "2026-05-17T17:00:01.000Z",
-   "firstSeen": "2026-05-17",
-   "aspects": [
-    [
-     "Type",
-     "Huile"
-    ]
-   ],
-   "description": "Tableau huile sur toile « Nuit Étoilée », Tucé, École De Cassis, 1973. Très belle peinture. 50*61cm Poids 3,3 kilos",
-   "title_en": "Oil painting “Starry Night,” Tucé, École de Cassis",
-   "description_en": "Oil on canvas painting titled “Starry Night,” by Tucé, École De Cassis, 1973. A very beautiful painting. 50 x 61 cm. Weight: 3.3 kilograms",
-   "tr_src": "a600dbdc6a18",
-   "cat": "Tableaux et dessins",
-   "sub": "Peintures",
-   "page": "objet/tableau-huile-nuit-etoilee-tuce-ecole-de-cassis-257493062166.html"
   },
   {
    "id": "257493061891",
