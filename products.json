@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-12T20:00:20+00:00",
+ "updated": "2026-11-13T06:52:28+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -7658,6 +7658,36 @@
    "cat": "Sculptures et bronzes",
    "sub": "Bronzes et régules",
    "page": "objet/regule-fin-19eme-representant-2-cherubins-257245089787.html"
+  },
+  {
+   "id": "257245086989",
+   "title": "Candélabre en fer forgé signé",
+   "price": 89.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XXe, récents",
+   "images": [
+    "https://i.ebayimg.com/images/g/uKUAAeSw9vlpDdOB/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/vy4AAeSwxyFpDdOB/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/H-QAAeSwi8hpDdOB/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/H-UAAeSwi8hpDdOB/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/qR4AAeSwXp5pDdOC/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/C54AAeSwI1ppDdOC/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/XCAAAeSwnjtpDdOC/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257245086989?hash=item3be500850d:g:uKUAAeSw9vlpDdOB",
+   "location": "FR",
+   "listed": "2025-12-07T17:15:01.000Z",
+   "firstSeen": "2025-12-07",
+   "aspects": [],
+   "description": "Candélabre en fer forgé à 3 bougeoirs signé. Bel patine et très bon état. Poids 2 kilos Dimensions 34*32*16cm",
+   "title_en": "Signed wrought-iron candelabra",
+   "description_en": "Signed wrought-iron candelabra with 3 candle holders. Beautiful patina and in very good condition. Weight: 2 kilograms. Dimensions: 34 × 32 × 16 cm",
+   "tr_src": "5ec9fd5812c0",
+   "cat": "Luminaires et bougeoirs",
+   "sub": "Bougeoirs et candélabres",
+   "page": "objet/candelabre-en-fer-forge-signe-257245086989.html"
   },
   {
    "id": "257245086045",
