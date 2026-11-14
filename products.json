@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-13T19:48:30+00:00",
+ "updated": "2026-11-14T06:34:13+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -8249,6 +8249,45 @@
    "page": "objet/miroir-a-parcloses-en-laiton-257146569156.html"
   },
   {
+   "id": "257146569623",
+   "title": "Miroir en plâtre polychrome, Art Nouveau signé Joliveaux",
+   "price": 490.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Sculptures, statues",
+   "images": [
+    "https://i.ebayimg.com/images/g/KQEAAeSwEnNom1wS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/rKEAAeSwmQRom1wS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/IPoAAeSwPu5om1wR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/8aAAAeSwEUVom1wS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/usEAAeSwaNlom1wS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/aO8AAeSwDGBom1wS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/7J4AAeSwZYRom1wS/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257146569623?hash=item3bdf214397:g:KQEAAeSwEnNom1wS",
+   "location": "FR",
+   "listed": "2025-10-11T16:00:01.000Z",
+   "firstSeen": "2025-10-11",
+   "aspects": [
+    [
+     "Matière",
+     "Plâtre"
+    ],
+    [
+     "Caractéristiques",
+     "Signée"
+    ]
+   ],
+   "description": "Miroir en plâtre polychrome, Art Nouveau signé Joliveaux. En bel état général. Dimensions 52*38*17cm Poids : 9 kilos",
+   "title_en": "Polychrome plaster mirror, Art Nouveau, signed Joliveaux",
+   "description_en": "Polychrome plaster mirror, Art Nouveau, signed Joliveaux. In good overall condition. Dimensions: 52 x 38 x 17 cm. Weight: 9 kilograms",
+   "tr_src": "bca1563ca2f1",
+   "cat": "Mobilier et décoration",
+   "sub": "Miroirs",
+   "page": "objet/miroir-en-platre-polychrome-art-nouveau-signe-joliveaux-257146569623.html"
+  },
+  {
    "id": "257146568064",
    "title": "Sculpture bronze Malienne",
    "price": 175.0,
@@ -8288,45 +8327,6 @@
    "cat": "Arts d'Afrique",
    "sub": "Statues et fétiches",
    "page": "objet/sculpture-bronze-malienne-257146568064.html"
-  },
-  {
-   "id": "257146569623",
-   "title": "Miroir en plâtre polychrome, Art Nouveau signé Joliveaux",
-   "price": 490.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Sculptures, statues",
-   "images": [
-    "https://i.ebayimg.com/images/g/KQEAAeSwEnNom1wS/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/rKEAAeSwmQRom1wS/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/IPoAAeSwPu5om1wR/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/8aAAAeSwEUVom1wS/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/usEAAeSwaNlom1wS/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/aO8AAeSwDGBom1wS/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/7J4AAeSwZYRom1wS/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257146569623?hash=item3bdf214397:g:KQEAAeSwEnNom1wS",
-   "location": "FR",
-   "listed": "2025-10-11T16:00:01.000Z",
-   "firstSeen": "2025-10-11",
-   "aspects": [
-    [
-     "Matière",
-     "Plâtre"
-    ],
-    [
-     "Caractéristiques",
-     "Signée"
-    ]
-   ],
-   "description": "Miroir en plâtre polychrome, Art Nouveau signé Joliveaux. En bel état général. Dimensions 52*38*17cm Poids : 9 kilos",
-   "title_en": "Polychrome plaster mirror, Art Nouveau, signed Joliveaux",
-   "description_en": "Polychrome plaster mirror, Art Nouveau, signed Joliveaux. In good overall condition. Dimensions: 52 x 38 x 17 cm. Weight: 9 kilograms",
-   "tr_src": "bca1563ca2f1",
-   "cat": "Mobilier et décoration",
-   "sub": "Miroirs",
-   "page": "objet/miroir-en-platre-polychrome-art-nouveau-signe-joliveaux-257146569623.html"
   },
   {
    "id": "257146567191",
