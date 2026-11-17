@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-17T08:01:20+00:00",
+ "updated": "2026-11-17T21:00:13+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -8085,34 +8085,6 @@
    "page": "objet/carte-relief-sud-de-france-signe-alabert-257146572269.html"
   },
   {
-   "id": "257146571819",
-   "title": "Broderie britannique 20ème « Dieu et mon Droit »",
-   "price": 220.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/H8wAAeSwGw1om17X/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/N6gAAeSw36Nom17X/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/PTEAAeSwskpom17X/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/NkkAAeSwM59om17W/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/M~AAAeSwTGxom17X/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257146571819?hash=item3bdf214c2b:g:H8wAAeSwGw1om17X",
-   "location": "FR",
-   "listed": "2025-10-12T17:00:01.000Z",
-   "firstSeen": "2025-10-12",
-   "aspects": [],
-   "description": "Broderie britannique 20ème « Dieu et mon Droit ». Dimensions : 62*54cm Poids : 3 kilos",
-   "title_en": "20th-century British embroidery: “God and My Right”",
-   "description_en": "20th-century British embroidery, “God and My Right.” Dimensions: 62 × 54 cm. Weight: 3 kilograms",
-   "tr_src": "64ea29ed0f57",
-   "cat": "Cabinet de curiosités",
-   "sub": "Souvenirs historiques et médailles",
-   "page": "objet/broderie-britannique-20eme-dieu-et-mon-droit-257146571819.html"
-  },
-  {
    "id": "257146570786",
    "title": "Tenue de parade Do Gon Mali",
    "price": 540.0,
@@ -8646,44 +8618,6 @@
    "cat": "Sculptures et bronzes",
    "sub": "Bois sculpté",
    "page": "objet/sculpture-bois-femme-et-son-parapluie-signe-par-cavin-257112284399.html"
-  },
-  {
-   "id": "257112283908",
-   "title": "Petit vase en céramique",
-   "price": 129.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XXe, récents",
-   "images": [
-    "https://i.ebayimg.com/images/g/zy8AAeSwAU9omxDC/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/t6QAAeSwn1NomxDC/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/toIAAeSwWghomxDC/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/810AAeSwQDpomxDC/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/uQEAAeSw48BomxDD/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/sVYAAeSwAfJomxDD/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257112283908?hash=item3bdd161b04:g:zy8AAeSwAU9omxDC",
-   "location": "FR",
-   "listed": "2025-09-26T16:00:01.000Z",
-   "firstSeen": "2025-09-26",
-   "aspects": [
-    [
-     "Matière",
-     "Céramique"
-    ],
-    [
-     "Sous-type",
-     "Vase"
-    ]
-   ],
-   "description": "Joli petit vase en céramique en parfait état. Poids 250 grammes Dimensions : 9*9*10cm",
-   "title_en": "Small ceramic vase",
-   "description_en": "A pretty little ceramic vase in perfect condition. Weight: 250 grams. Dimensions: 9 x 9 x 10 cm",
-   "tr_src": "9c3922aee641",
-   "cat": "Céramique et faïence",
-   "sub": "Grès, terre cuite et céramique",
-   "page": "objet/petit-vase-en-ceramique-257112283908.html"
   },
   {
    "id": "257112283706",
