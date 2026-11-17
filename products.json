@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-16T22:12:50+00:00",
+ "updated": "2026-11-17T08:01:20+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -8176,6 +8176,41 @@
    "page": "objet/vase-chinois-debut-20eme-257146568791.html"
   },
   {
+   "id": "257146569156",
+   "title": "Miroir à Parcloses en laiton",
+   "price": 270.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Miroirs",
+   "images": [
+    "https://i.ebayimg.com/images/g/EeMAAeSwuQxom1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/IvYAAeSw~lZom1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/54AAAeSwV15om1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/hgIAAeSwv9Bom1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/kCsAAeSwcH5om1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/PCkAAeSwIwxom1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/EyYAAeSwKKRom1YI/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257146569156?hash=item3bdf2141c4:g:EeMAAeSwuQxom1YI",
+   "location": "FR",
+   "listed": "2025-10-11T17:00:01.000Z",
+   "firstSeen": "2025-10-11",
+   "aspects": [
+    [
+     "Matière du cadre",
+     "Laiton"
+    ]
+   ],
+   "description": "Miroir à Parcloses en laiton anciennement doré à décor de feuillages. Dimensions : 59*34cm Poids : 2,6 kilos",
+   "title_en": "Mirror with Brass Glazing Beads",
+   "description_en": "Mirror with brass frames, formerly gilded, featuring a foliage design. Dimensions: 59 x 34 cm. Weight: 2.6 kilograms",
+   "tr_src": "a7bb0b28f33c",
+   "cat": "Mobilier et décoration",
+   "sub": "Miroirs",
+   "page": "objet/miroir-a-parcloses-en-laiton-257146569156.html"
+  },
+  {
    "id": "257146568432",
    "title": "Vase décoratif verre et bronze",
    "price": 199.0,
@@ -8212,80 +8247,6 @@
    "cat": "Verre et cristal",
    "sub": "Carafes, flacons et verres",
    "page": "objet/vase-decoratif-verre-et-bronze-257146568432.html"
-  },
-  {
-   "id": "257146569156",
-   "title": "Miroir à Parcloses en laiton",
-   "price": 270.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Miroirs",
-   "images": [
-    "https://i.ebayimg.com/images/g/EeMAAeSwuQxom1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/IvYAAeSw~lZom1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/54AAAeSwV15om1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/hgIAAeSwv9Bom1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/kCsAAeSwcH5om1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/PCkAAeSwIwxom1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/EyYAAeSwKKRom1YI/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257146569156?hash=item3bdf2141c4:g:EeMAAeSwuQxom1YI",
-   "location": "FR",
-   "listed": "2025-10-11T17:00:01.000Z",
-   "firstSeen": "2025-10-11",
-   "aspects": [
-    [
-     "Matière du cadre",
-     "Laiton"
-    ]
-   ],
-   "description": "Miroir à Parcloses en laiton anciennement doré à décor de feuillages. Dimensions : 59*34cm Poids : 2,6 kilos",
-   "title_en": "Mirror with Brass Glazing Beads",
-   "description_en": "Mirror with brass frames, formerly gilded, featuring a foliage design. Dimensions: 59 x 34 cm. Weight: 2.6 kilograms",
-   "tr_src": "a7bb0b28f33c",
-   "cat": "Mobilier et décoration",
-   "sub": "Miroirs",
-   "page": "objet/miroir-a-parcloses-en-laiton-257146569156.html"
-  },
-  {
-   "id": "257146569623",
-   "title": "Miroir en plâtre polychrome, Art Nouveau signé Joliveaux",
-   "price": 490.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Sculptures, statues",
-   "images": [
-    "https://i.ebayimg.com/images/g/KQEAAeSwEnNom1wS/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/rKEAAeSwmQRom1wS/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/IPoAAeSwPu5om1wR/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/8aAAAeSwEUVom1wS/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/usEAAeSwaNlom1wS/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/aO8AAeSwDGBom1wS/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/7J4AAeSwZYRom1wS/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257146569623?hash=item3bdf214397:g:KQEAAeSwEnNom1wS",
-   "location": "FR",
-   "listed": "2025-10-11T16:00:01.000Z",
-   "firstSeen": "2025-10-11",
-   "aspects": [
-    [
-     "Matière",
-     "Plâtre"
-    ],
-    [
-     "Caractéristiques",
-     "Signée"
-    ]
-   ],
-   "description": "Miroir en plâtre polychrome, Art Nouveau signé Joliveaux. En bel état général. Dimensions 52*38*17cm Poids : 9 kilos",
-   "title_en": "Polychrome plaster mirror, Art Nouveau, signed Joliveaux",
-   "description_en": "Polychrome plaster mirror, Art Nouveau, signed Joliveaux. In good overall condition. Dimensions: 52 x 38 x 17 cm. Weight: 9 kilograms",
-   "tr_src": "bca1563ca2f1",
-   "cat": "Mobilier et décoration",
-   "sub": "Miroirs",
-   "page": "objet/miroir-en-platre-polychrome-art-nouveau-signe-joliveaux-257146569623.html"
   },
   {
    "id": "257146568064",
@@ -8327,6 +8288,45 @@
    "cat": "Arts d'Afrique",
    "sub": "Statues et fétiches",
    "page": "objet/sculpture-bronze-malienne-257146568064.html"
+  },
+  {
+   "id": "257146569623",
+   "title": "Miroir en plâtre polychrome, Art Nouveau signé Joliveaux",
+   "price": 490.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Sculptures, statues",
+   "images": [
+    "https://i.ebayimg.com/images/g/KQEAAeSwEnNom1wS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/rKEAAeSwmQRom1wS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/IPoAAeSwPu5om1wR/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/8aAAAeSwEUVom1wS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/usEAAeSwaNlom1wS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/aO8AAeSwDGBom1wS/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/7J4AAeSwZYRom1wS/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257146569623?hash=item3bdf214397:g:KQEAAeSwEnNom1wS",
+   "location": "FR",
+   "listed": "2025-10-11T16:00:01.000Z",
+   "firstSeen": "2025-10-11",
+   "aspects": [
+    [
+     "Matière",
+     "Plâtre"
+    ],
+    [
+     "Caractéristiques",
+     "Signée"
+    ]
+   ],
+   "description": "Miroir en plâtre polychrome, Art Nouveau signé Joliveaux. En bel état général. Dimensions 52*38*17cm Poids : 9 kilos",
+   "title_en": "Polychrome plaster mirror, Art Nouveau, signed Joliveaux",
+   "description_en": "Polychrome plaster mirror, Art Nouveau, signed Joliveaux. In good overall condition. Dimensions: 52 x 38 x 17 cm. Weight: 9 kilograms",
+   "tr_src": "bca1563ca2f1",
+   "cat": "Mobilier et décoration",
+   "sub": "Miroirs",
+   "page": "objet/miroir-en-platre-polychrome-art-nouveau-signe-joliveaux-257146569623.html"
   },
   {
    "id": "257146567191",
