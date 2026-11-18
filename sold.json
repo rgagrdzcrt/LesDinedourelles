@@ -726,5 +726,19 @@
   "firstSeen": "2025-09-26",
   "goneOn": "2026-11-17",
   "days": 417
+ },
+ {
+  "id": "257396005890",
+  "title": "Porte piques à escargot signé Bauer",
+  "price": 89.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets de décoration",
+  "cat": "Mobilier et décoration",
+  "sub": "Objets de décoration",
+  "image": "https://i.ebayimg.com/images/g/G4MAAeSwu2Rpf0L~/s-l1600.jpg",
+  "firstSeen": "2026-03-14",
+  "goneOn": "2026-11-18",
+  "days": 249
  }
 ]
