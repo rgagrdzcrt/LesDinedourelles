@@ -740,5 +740,19 @@
   "firstSeen": "2026-03-14",
   "goneOn": "2026-11-18",
   "days": 249
+ },
+ {
+  "id": "257350939401",
+  "title": "Paire de ciseau argent à raisins de table 19eme",
+  "price": 90.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XIXe et avant",
+  "cat": "Arts de la table",
+  "sub": "Ustensiles et vaisselle anciens",
+  "image": "https://i.ebayimg.com/images/g/~KgAAeSwsoNpQsJr/s-l1600.jpg",
+  "firstSeen": "2026-02-17",
+  "goneOn": "2026-11-20",
+  "days": 276
  }
 ]
