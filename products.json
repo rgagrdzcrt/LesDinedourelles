@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-22T06:58:34+00:00",
+ "updated": "2026-11-22T19:46:11+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -9040,6 +9040,39 @@
    "page": "objet/paire-de-vases-bleu-en-verre-257112271927.html"
   },
   {
+   "id": "257112271437",
+   "title": "Ancienne lampe à huile Indienne",
+   "price": 89.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XIXe et avant",
+   "images": [
+    "https://i.ebayimg.com/images/g/xe0AAeSwb7Jopfzq/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/02AAAeSwm75opfzq/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/V48AAeSwhbVopfzq/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/tgIAAeSwvg9opfzt/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/VQkAAeSw43popfzq/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257112271437?hash=item3bdd15ea4d:g:xe0AAeSwb7Jopfzq",
+   "location": "FR",
+   "listed": "2025-09-19T16:45:01.000Z",
+   "firstSeen": "2025-09-19",
+   "aspects": [
+    [
+     "Origine",
+     "Moyen-Orient"
+    ]
+   ],
+   "description": "Ancienne lampe à huile indienne avec 5 sorties et à décor de félin, très belle patine. Poids 750 grammes Dimensions 14*16*16cm",
+   "title_en": "Antique Indian oil lamp",
+   "description_en": "Antique Indian oil lamp with 5 spouts and a feline design, featuring a beautiful patina. Weight: 750 grams. Dimensions: 14 x 16 x 16 cm",
+   "tr_src": "0a5d8e0a5a93",
+   "cat": "Luminaires et bougeoirs",
+   "sub": "Lampes",
+   "page": "objet/ancienne-lampe-a-huile-indienne-257112271437.html"
+  },
+  {
    "id": "257112271035",
    "title": "Bronze Dogon, Mali 20eme",
    "price": 195.0,
@@ -9075,39 +9108,6 @@
    "cat": "Arts d'Afrique",
    "sub": "Statues et fétiches",
    "page": "objet/bronze-dogon-mali-20eme-257112271035.html"
-  },
-  {
-   "id": "257112271437",
-   "title": "Ancienne lampe à huile Indienne",
-   "price": 89.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Objets du XIXe et avant",
-   "images": [
-    "https://i.ebayimg.com/images/g/xe0AAeSwb7Jopfzq/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/02AAAeSwm75opfzq/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/V48AAeSwhbVopfzq/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/tgIAAeSwvg9opfzt/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/VQkAAeSw43popfzq/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257112271437?hash=item3bdd15ea4d:g:xe0AAeSwb7Jopfzq",
-   "location": "FR",
-   "listed": "2025-09-19T16:45:01.000Z",
-   "firstSeen": "2025-09-19",
-   "aspects": [
-    [
-     "Origine",
-     "Moyen-Orient"
-    ]
-   ],
-   "description": "Ancienne lampe à huile indienne avec 5 sorties et à décor de félin, très belle patine. Poids 750 grammes Dimensions 14*16*16cm",
-   "title_en": "Antique Indian oil lamp",
-   "description_en": "Antique Indian oil lamp with 5 spouts and a feline design, featuring a beautiful patina. Weight: 750 grams. Dimensions: 14 x 16 x 16 cm",
-   "tr_src": "0a5d8e0a5a93",
-   "cat": "Luminaires et bougeoirs",
-   "sub": "Lampes",
-   "page": "objet/ancienne-lampe-a-huile-indienne-257112271437.html"
   },
   {
    "id": "257112268588",
@@ -10744,33 +10744,6 @@
    "cat": "Céramique et faïence",
    "sub": "Grès, terre cuite et céramique",
    "page": "objet/vase-decoratif-xxeme-257027155382.html"
-  },
-  {
-   "id": "257027149389",
-   "title": "Médaille Groupe Irso Apso 30 Ans",
-   "price": 45.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Sculptures, statues",
-   "images": [
-    "https://i.ebayimg.com/images/g/8LkAAeSwZFtoW~28/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/KyEAAeSw9HxoW~29/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/aXQAAeSw6MNoW~28/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/S9EAAeSwEHpoW~28/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257027149389?hash=item3bd8030e4d:g:8LkAAeSwZFtoW~28",
-   "location": "FR",
-   "listed": "2025-07-21T09:14:16.000Z",
-   "firstSeen": "2025-07-21",
-   "aspects": [],
-   "description": "Objet publicitaire en inclusion Médaille Groupe Irso Apso 30 Ans. Hauteur 10cm Longueur 13cm Largeur 5cm Poids 1300 grammes",
-   "title_en": "Irso Apso Group 30th Anniversary Medal",
-   "description_en": "Promotional item included: Irso Apso Group 30th Anniversary Medal. Height: 10 cm, Length: 13 cm, Width: 5 cm, Weight: 1,300 grams",
-   "tr_src": "ac8abb443662",
-   "cat": "Cabinet de curiosités",
-   "sub": "Souvenirs historiques et médailles",
-   "page": "objet/medaille-groupe-irso-apso-30-ans-257027149389.html"
   },
   {
    "id": "257027144715",

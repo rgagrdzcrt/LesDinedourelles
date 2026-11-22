@@ -754,5 +754,19 @@
   "firstSeen": "2026-02-17",
   "goneOn": "2026-11-20",
   "days": 276
+ },
+ {
+  "id": "257027149389",
+  "title": "Médaille Groupe Irso Apso 30 Ans",
+  "price": 45.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Sculptures, statues",
+  "cat": "Cabinet de curiosités",
+  "sub": "Souvenirs historiques et médailles",
+  "image": "https://i.ebayimg.com/images/g/8LkAAeSwZFtoW~28/s-l1600.jpg",
+  "firstSeen": "2025-07-21",
+  "goneOn": "2026-11-22",
+  "days": 489
  }
 ]
