@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-25T08:44:02+00:00",
+ "updated": "2026-11-25T21:46:32+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -3180,43 +3180,6 @@
    "cat": "Sculptures et bronzes",
    "sub": "Bois sculpté",
    "page": "objet/sculpture-art-populaire-en-bois-foret-noire-257389046362.html"
-  },
-  {
-   "id": "257350970579",
-   "title": "Masque Bobo - Burkina Faso",
-   "price": 559.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Arts, objets ethniques",
-   "images": [
-    "https://i.ebayimg.com/images/g/wxUAAeSwD81pcLBJ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/QiUAAeSwawRpcLBI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/RowAAeSwrt9pcLBI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/QRcAAeSwYXBpcLBI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/WBIAAeSwIGlpcLBJ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/1vgAAeSwAHxpcLBJ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/tCkAAeSwzvtpcLBJ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/7AEAAeSw8wNpcLBJ/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/RiYAAeSwbyVpcLBJ/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257350970579?hash=item3beb502cd3:g:wxUAAeSwD81pcLBJ",
-   "location": "FR",
-   "listed": "2026-02-28T18:30:01.000Z",
-   "firstSeen": "2026-02-28",
-   "aspects": [
-    [
-     "Type",
-     "Masque"
-    ]
-   ],
-   "description": "Masque Bobo - Burkina Faso. Pièce de la première moitié du 20eme. Les Bobo sont un peuple d'Afrique de l'Ouest établi principalement au nord-ouest du Burkina Faso, également de l'autre côté de la frontière au Mali. Ils sont proches des Bwas. Poids 1,2 kilo Dimensions 40*40*20cm",
-   "title_en": "Bobo Mask - Burkina Faso",
-   "description_en": "Bobo Mask - Burkina Faso. From the first half of the 20th century. The Bobo are a West African people primarily settled in northwestern Burkina Faso, as well as across the border in Mali. They are closely related to the Bwa. Weight: 1.2 kilograms. Dimensions: 40 x 40 x 20 cm",
-   "tr_src": "417bcccfeb52",
-   "cat": "Arts d'Afrique",
-   "sub": "Masques",
-   "page": "objet/masque-bobo-burkina-faso-257350970579.html"
   },
   {
    "id": "257350967862",

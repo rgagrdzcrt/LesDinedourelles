@@ -768,5 +768,19 @@
   "firstSeen": "2025-07-21",
   "goneOn": "2026-11-22",
   "days": 489
+ },
+ {
+  "id": "257350970579",
+  "title": "Masque Bobo - Burkina Faso",
+  "price": 559.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Arts, objets ethniques",
+  "cat": "Arts d'Afrique",
+  "sub": "Masques",
+  "image": "https://i.ebayimg.com/images/g/wxUAAeSwD81pcLBJ/s-l1600.jpg",
+  "firstSeen": "2026-02-28",
+  "goneOn": "2026-11-25",
+  "days": 270
  }
 ]
