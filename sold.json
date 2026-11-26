@@ -782,5 +782,33 @@
   "firstSeen": "2026-02-28",
   "goneOn": "2026-11-25",
   "days": 270
+ },
+ {
+  "id": "257350957895",
+  "title": "Bronze de vienne chat",
+  "price": 180.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XIXe et avant",
+  "cat": "Sculptures et bronzes",
+  "sub": "Bronzes et régules",
+  "image": "https://i.ebayimg.com/images/g/1mcAAeSwdfBpRVIs/s-l1600.jpg",
+  "firstSeen": "2026-02-20",
+  "goneOn": "2026-11-26",
+  "days": 279
+ },
+ {
+  "id": "257305136959",
+  "title": "Petit récipient Cameroun en terre cuite",
+  "price": 89.0,
+  "currency": "EUR",
+  "category": "Art",
+  "subcategory": "Objets du XIXe et avant",
+  "cat": "Arts d'Afrique",
+  "sub": "Objets rituels et du quotidien",
+  "image": "https://i.ebayimg.com/images/g/E~IAAeSwbmhpHdD4/s-l1600.jpg",
+  "firstSeen": "2026-01-21",
+  "goneOn": "2026-11-26",
+  "days": 309
  }
 ]
