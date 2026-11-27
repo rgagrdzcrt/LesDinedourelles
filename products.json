@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-26T21:39:50+00:00",
+ "updated": "2026-11-27T08:43:39+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -3817,6 +3817,40 @@
    "page": "objet/ancienne-pipe-de-thailande-257350958863.html"
   },
   {
+   "id": "257350957895",
+   "title": "Bronze de vienne chat",
+   "price": 180.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XIXe et avant",
+   "images": [
+    "https://i.ebayimg.com/images/g/1mcAAeSwdfBpRVIs/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/njkAAeSwOoppRVIs/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/1BUAAeSwkR5pRVIs/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/X5EAAeSwS31pRVIr/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/MzEAAeSwd01pRVIs/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/Li0AAeSwH9ZpRVIt/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257350957895?hash=item3beb4ffb47:g:1mcAAeSwdfBpRVIs",
+   "location": "FR",
+   "listed": "2026-02-20T16:15:01.000Z",
+   "firstSeen": "2026-02-20",
+   "aspects": [
+    [
+     "Matière",
+     "Bronze"
+    ]
+   ],
+   "description": "Bronze de vienne chat jouant avec une balle. Bel état général. Poids 150g Dimensions 4*7*3cm",
+   "title_en": "Vienna Bronze Cat",
+   "description_en": "Vienna bronze sculpture of a cat playing with a ball. In good overall condition. Weight: 150 g. Dimensions: 4 × 7 × 3 cm",
+   "tr_src": "5689fb14abbd",
+   "cat": "Sculptures et bronzes",
+   "sub": "Bronzes et régules",
+   "page": "objet/bronze-de-vienne-chat-257350957895.html"
+  },
+  {
    "id": "257350952883",
    "title": "Lampe industrielle de bureau années 1950",
    "price": 89.0,
@@ -5919,6 +5953,39 @@
    "cat": "Arts d'Afrique",
    "sub": "Objets rituels et du quotidien",
    "page": "objet/recipient-en-terre-cuite-cameroun-19eme-257305138443.html"
+  },
+  {
+   "id": "257305136959",
+   "title": "Petit récipient Cameroun en terre cuite",
+   "price": 89.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Objets du XIXe et avant",
+   "images": [
+    "https://i.ebayimg.com/images/g/E~IAAeSwbmhpHdD4/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/tXoAAeSwU61pHdD4/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/5mkAAeSw75tpHdD4/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/IfgAAeSwNZNpHdD4/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/65sAAeSwkKtpHdD5/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257305136959?hash=item3be894cf3f:g:E~IAAeSwbmhpHdD4",
+   "location": "FR",
+   "listed": "2026-01-21T17:15:01.000Z",
+   "firstSeen": "2026-01-21",
+   "aspects": [
+    [
+     "Matière",
+     "Terre cuite"
+    ]
+   ],
+   "description": "Petit récipient Cameroun en terre cuite en bel état général. Poids 820g Dimensions 15*19*19cm",
+   "title_en": "Small Cameroonian terracotta container",
+   "description_en": "Small Cameroonian terracotta container in good overall condition. Weight: 820 g. Dimensions: 15 × 19 × 19 cm",
+   "tr_src": "6d0fd4138c21",
+   "cat": "Arts d'Afrique",
+   "sub": "Objets rituels et du quotidien",
+   "page": "objet/petit-recipient-cameroun-en-terre-cuite-257305136959.html"
   },
   {
    "id": "257305135117",
