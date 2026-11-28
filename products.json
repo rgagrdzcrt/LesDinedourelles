@@ -2,7 +2,7 @@
  "shop": "Les Dinedourelles",
  "seller": "lesdinedourelles",
  "storeUrl": "https://www.ebay.fr/str/lesdinedourelles",
- "updated": "2026-11-27T21:24:22+00:00",
+ "updated": "2026-11-28T07:57:05+00:00",
  "cat_en": {
   "1ère guerre mondiale 14-18": "World War I, 1914–1918",
   "Absinthe, cuillère": "Absinthe, spoon",
@@ -8176,6 +8176,41 @@
    "page": "objet/vase-chinois-debut-20eme-257146568791.html"
   },
   {
+   "id": "257146569156",
+   "title": "Miroir à Parcloses en laiton",
+   "price": 270.0,
+   "currency": "EUR",
+   "condition": "",
+   "category": "Art",
+   "subcategory": "Miroirs",
+   "images": [
+    "https://i.ebayimg.com/images/g/EeMAAeSwuQxom1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/IvYAAeSw~lZom1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/54AAAeSwV15om1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/hgIAAeSwv9Bom1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/kCsAAeSwcH5om1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/PCkAAeSwIwxom1YI/s-l1600.jpg",
+    "https://i.ebayimg.com/images/g/EyYAAeSwKKRom1YI/s-l1600.jpg"
+   ],
+   "url": "https://www.ebay.fr/itm/257146569156?hash=item3bdf2141c4:g:EeMAAeSwuQxom1YI",
+   "location": "FR",
+   "listed": "2025-10-11T17:00:01.000Z",
+   "firstSeen": "2025-10-11",
+   "aspects": [
+    [
+     "Matière du cadre",
+     "Laiton"
+    ]
+   ],
+   "description": "Miroir à Parcloses en laiton anciennement doré à décor de feuillages. Dimensions : 59*34cm Poids : 2,6 kilos",
+   "title_en": "Mirror with Brass Glazing Beads",
+   "description_en": "Mirror with brass frames, formerly gilded, featuring a foliage design. Dimensions: 59 x 34 cm. Weight: 2.6 kilograms",
+   "tr_src": "a7bb0b28f33c",
+   "cat": "Mobilier et décoration",
+   "sub": "Miroirs",
+   "page": "objet/miroir-a-parcloses-en-laiton-257146569156.html"
+  },
+  {
    "id": "257146568432",
    "title": "Vase décoratif verre et bronze",
    "price": 199.0,
@@ -8212,41 +8247,6 @@
    "cat": "Verre et cristal",
    "sub": "Carafes, flacons et verres",
    "page": "objet/vase-decoratif-verre-et-bronze-257146568432.html"
-  },
-  {
-   "id": "257146569156",
-   "title": "Miroir à Parcloses en laiton",
-   "price": 270.0,
-   "currency": "EUR",
-   "condition": "",
-   "category": "Art",
-   "subcategory": "Miroirs",
-   "images": [
-    "https://i.ebayimg.com/images/g/EeMAAeSwuQxom1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/IvYAAeSw~lZom1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/54AAAeSwV15om1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/hgIAAeSwv9Bom1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/kCsAAeSwcH5om1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/PCkAAeSwIwxom1YI/s-l1600.jpg",
-    "https://i.ebayimg.com/images/g/EyYAAeSwKKRom1YI/s-l1600.jpg"
-   ],
-   "url": "https://www.ebay.fr/itm/257146569156?hash=item3bdf2141c4:g:EeMAAeSwuQxom1YI",
-   "location": "FR",
-   "listed": "2025-10-11T17:00:01.000Z",
-   "firstSeen": "2025-10-11",
-   "aspects": [
-    [
-     "Matière du cadre",
-     "Laiton"
-    ]
-   ],
-   "description": "Miroir à Parcloses en laiton anciennement doré à décor de feuillages. Dimensions : 59*34cm Poids : 2,6 kilos",
-   "title_en": "Mirror with Brass Glazing Beads",
-   "description_en": "Mirror with brass frames, formerly gilded, featuring a foliage design. Dimensions: 59 x 34 cm. Weight: 2.6 kilograms",
-   "tr_src": "a7bb0b28f33c",
-   "cat": "Mobilier et décoration",
-   "sub": "Miroirs",
-   "page": "objet/miroir-a-parcloses-en-laiton-257146569156.html"
   },
   {
    "id": "257146568064",
